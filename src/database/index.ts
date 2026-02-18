@@ -23,6 +23,8 @@ import {
   getSaltRounds
 } from '../auth/password';
 
+import SqliteSessionStore from './sessionStore';
+
 // Re-export everything
 export {
   // Database management
@@ -48,6 +50,9 @@ export {
   validatePassword,
   validatePasswordSync,
   getSaltRounds,
+
+  // Session store
+  SqliteSessionStore,
 
   // Types
   AuthenticatedUser,
