@@ -1,7 +1,7 @@
 import Database from 'better-sqlite3';
-import * as bcrypt from 'bcrypt';
 import * as path from 'path';
 import * as fs from 'fs';
+import { hashPasswordSync, validatePasswordSync } from '../auth/password';
 
 interface User {
   id: number;
@@ -101,9 +101,8 @@ class DatabaseManager {
     const existingAdmin = checkAdmin.get('admin') as User | undefined;
     
     if (!existingAdmin) {
-      const saltRounds = 12;
       const defaultPassword = 'admin123'; // Should be changed on first login
-      const hashedPassword = bcrypt.hashSync(defaultPassword, saltRounds);
+      const hashedPassword = hashPasswordSync(defaultPassword);
       
       const insertAdmin = this.db.prepare(`
         INSERT INTO users (username, password_hash) 
@@ -118,8 +117,7 @@ class DatabaseManager {
 
   // User management methods
   createUser(username: string, password: string): UserCreateResult {
-    const saltRounds = 12;
-    const hashedPassword = bcrypt.hashSync(password, saltRounds);
+    const hashedPassword = hashPasswordSync(password);
     
     const insertUser = this.db.prepare(`
       INSERT INTO users (username, password_hash) 
@@ -148,7 +146,7 @@ class DatabaseManager {
   }
 
   verifyPassword(password: string, hash: string): boolean {
-    return bcrypt.compareSync(password, hash);
+    return validatePasswordSync(password, hash);
   }
 
   // Session management methods

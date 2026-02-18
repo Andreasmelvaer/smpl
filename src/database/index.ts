@@ -15,6 +15,14 @@ import {
   DatabaseStats
 } from './connection';
 
+import {
+  hashPassword,
+  hashPasswordSync,
+  validatePassword,
+  validatePasswordSync,
+  getSaltRounds
+} from '../auth/password';
+
 // Re-export everything
 export {
   // Database management
@@ -33,6 +41,13 @@ export {
   
   // Statistics
   getStats,
+
+  // Password utilities
+  hashPassword,
+  hashPasswordSync,
+  validatePassword,
+  validatePasswordSync,
+  getSaltRounds,
 
   // Types
   AuthenticatedUser,

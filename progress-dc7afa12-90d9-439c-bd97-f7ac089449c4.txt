@@ -1,0 +1,45 @@
+# Progress Log
+Run: dc7afa12-90d9-439c-bd97-f7ac089449c4
+Task: Create protected dashboard area at smpl.as/tools with login authentication to host: 1) OpenClaw Dashboard, 2) CRM Dashboard (currently on port 8900), and 3) Antfarm Dashboard. Set up proper reverse proxy, authentication system, and secure hosting for all three dashboards behind a single login interface.
+Started: 2026-02-18 12:53
+
+## Codebase Patterns
+- Project uses Node.js with Express.js framework
+- TypeScript support added with strict type checking enabled
+- Database: SQLite with better-sqlite3 (synchronous API, not async)
+- Authentication: bcrypt for password hashing with 12 salt rounds  
+- Session storage: custom SQLite sessions table with expiration
+- Tests: Node.js built-in test runner (`node --test`), not jest/mocha
+- File structure: `/src/database/` for database modules, `/src/auth/` for authentication utilities, `/tests/` for test files
+- Database files excluded from git via .gitignore (`data/`, `*.db`)
+- Build process: TypeScript compilation to `/dist/` directory
+- Package scripts: `npm test`, `npm run build`, `npm run typecheck`
+
+---
+
+## 2026-02-18 12:53 - US-001: Create user database schema and session storage
+- Created SQLite database with users and sessions tables
+- Added TypeScript support with strict type checking
+- Implemented bcrypt password hashing for secure authentication
+- Created initial admin user (username: admin, password: admin123)
+- Built database connection module with singleton pattern
+- Added comprehensive test suite covering all acceptance criteria
+- Database file stored at `./data/dashboard.db` with proper permissions
+- Session cleanup functionality for expired sessions
+- Foreign key constraints between users and sessions tables
+- **Learnings:** better-sqlite3 uses synchronous API, proper TypeScript type definitions needed for database results, session cleanup requires careful date handling in SQLite
+---
+
+## 2026-02-18 13:02 - US-002: Implement secure password hashing and validation
+- Created standalone password hashing utility functions in `/src/auth/password.ts`
+- Implemented `hashPassword`, `hashPasswordSync`, `validatePassword`, `validatePasswordSync` functions
+- Ensured salt rounds >= 12 for strong security (set to exactly 12)
+- Updated DatabaseManager to use new utility functions instead of direct bcrypt calls
+- Refactored user creation and authentication to use centralized password utilities
+- Added comprehensive test suite for password utilities with edge cases
+- Added integration tests to verify database layer uses password utilities correctly
+- Exported password utilities from database module for external use
+- All tests pass (26 tests including password utility and integration tests)
+- TypeScript compilation and type checking passes without errors
+- **Learnings:** Separating password hashing into utility functions improves code organization and testability, bcrypt async/sync functions both available for different use cases, password utility functions should handle edge cases like empty passwords and special characters
+---
