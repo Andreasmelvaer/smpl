@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import Navigation from "@/components/Navigation";
 import "./globals.css";
 
 const inter = Inter({
@@ -60,6 +61,7 @@ export default function RootLayout({
             gtag('config', 'G-VZZ9X48SZL');
           `}
         </Script>
+        <Navigation />
         {children}
       </body>
     </html>
