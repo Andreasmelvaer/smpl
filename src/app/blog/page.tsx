@@ -1,15 +1,16 @@
-import { getAllPostsData } from '@/lib/markdown'
+import { getAllPostsData, getPostData } from '@/lib/markdown'
 import Link from 'next/link'
 
 export default async function Blog() {
   const blogPosts = await getAllPostsData('blog')
+  const blogPageData = await getPostData('pages', 'blog')
   
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8">Insights</h1>
+      <h1 className="text-4xl font-bold mb-8">Brain Fuel</h1>
       <p className="text-xl text-gray-600 mb-12">
-        Browse our thoughts on key industry trends, tales of success and disaster, 
-        and tips for getting ahead in a digital world.
+        Find out what's happening at SmplCo, dive into our thoughts on key industry trends, 
+        read tales of success and disaster, and get tips on getting ahead in a digital world.
       </p>
       
       <div className="space-y-8">
