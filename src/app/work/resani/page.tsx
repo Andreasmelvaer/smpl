@@ -37,15 +37,14 @@ export default function Resani() {
               </div>
             </div>
             <div className="relative">
-              {/* Gradient blob decoration */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-80 h-80 bg-gradient-to-br from-pink-300 to-purple-400 rounded-full opacity-20 blur-3xl"></div>
-              </div>
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-purple-500 rounded-full opacity-60 absolute top-10 right-10"></div>
-                <div className="w-12 h-12 bg-pink-400 rounded-full opacity-40 absolute bottom-20 left-10"></div>
-                <div className="w-8 h-8 bg-purple-400 rounded-full opacity-50 absolute top-32 left-20"></div>
-              </div>
+              <Image 
+                src="/images/resani/woman-lips-hero.jpg"
+                alt="Resani Hero - Woman"
+                width={847}
+                height={167}
+                className="w-full h-auto"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -55,12 +54,13 @@ export default function Resani() {
       <section className="py-20 bg-gradient-to-b from-purple-50 to-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="relative">
-            <div className="bg-gray-800 rounded-3xl p-4 shadow-2xl transform rotate-12 inline-block">
-              <div className="w-96 h-72 bg-gradient-to-br from-purple-200 to-pink-200 rounded-2xl p-8 flex flex-col items-center justify-center">
-                <div className="text-6xl font-bold text-gray-800 mb-4">50%</div>
-                <div className="w-32 h-32 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full opacity-60 blur-xl"></div>
-              </div>
-            </div>
+            <Image 
+              src="/images/resani/resani-top-mockup.jpg"
+              alt="Resani Top Mockup"
+              width={600}
+              height={360}
+              className="w-full max-w-3xl h-auto rounded-3xl shadow-2xl mx-auto transform rotate-12"
+            />
           </div>
         </div>
       </section>
@@ -68,96 +68,61 @@ export default function Resani() {
       {/* Mobile App Sections */}
       <section className="py-20 bg-gradient-to-br from-purple-100 to-pink-50">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-3xl p-8 shadow-lg">
-              <div className="aspect-[9/16] bg-gradient-to-b from-purple-100 to-white rounded-2xl p-6">
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <h3 className="font-semibold text-gray-800">Hygiene Status</h3>
-                    <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    {['Wash hands', 'Sanitize area', 'Check temp', 'Daily check'].map((item, index) => (
-                      <div key={index} className="flex items-center space-x-3">
-                        <div className="w-4 h-4 bg-purple-400 rounded-full"></div>
-                        <span className="text-sm text-gray-600">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-6 bg-purple-50 rounded-xl p-4">
-                    <p className="text-sm text-purple-800 font-medium">Daily Goal 8/8</p>
-                    <p className="text-xs text-purple-600">Completed</p>
-                  </div>
-                </div>
-              </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="transform rotate-2">
+              <Image 
+                src="/images/resani/woman.jpg"
+                alt="Woman"
+                width={600}
+                height={360}
+                className="w-full h-auto rounded-3xl shadow-lg"
+              />
             </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-300 to-purple-400 rounded-3xl opacity-30 blur-2xl"></div>
-              <div className="relative bg-white rounded-3xl p-8 shadow-lg h-full flex items-center justify-center">
-                <div className="w-48 h-48 bg-gradient-to-br from-pink-400 via-purple-400 to-pink-500 rounded-full opacity-80 blur-lg"></div>
-              </div>
+            <div className="transform -rotate-1">
+              <Image 
+                src="/images/resani/woman-side-pose.jpg"
+                alt="Woman Side Pose"
+                width={292}
+                height={300}
+                className="w-full h-auto rounded-3xl shadow-lg"
+              />
+            </div>
+            <div className="transform rotate-1">
+              <Image 
+                src="/images/resani/woman-look-camera.jpg"
+                alt="Woman Look Into The Camera"
+                width={292}
+                height={300}
+                className="w-full h-auto rounded-3xl shadow-lg"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Dashboard Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-purple-100">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="bg-white rounded-3xl p-8 shadow-xl">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-gray-900">Hygiene Data Analytics</h3>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
-                    <span className="text-sm text-gray-700">Hand wash compliance</span>
-                    <span className="font-bold text-purple-600">92%</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-pink-50 rounded-lg">
-                    <span className="text-sm text-gray-700">Daily completions</span>
-                    <span className="font-bold text-pink-600">847</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
-                    <span className="text-sm text-gray-700">Active locations</span>
-                    <span className="font-bold text-purple-600">23</span>
-                  </div>
-                </div>
-              </div>
-              <div className="relative">
-                <div className="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl flex items-center justify-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full opacity-70 blur-lg"></div>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-gray-900">Real-time Monitoring</h3>
-                <div className="space-y-3">
-                  {['Station A', 'Station B', 'Station C', 'Station D'].map((station, index) => (
-                    <div key={index} className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span className="text-sm text-gray-700">{station}</span>
-                      <div className="flex items-center space-x-2">
-                        <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                        <span className="text-xs text-gray-600">Active</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <Image 
+            src="/images/resani/resani-home-screen.jpg"
+            alt="Resani Home Screen"
+            width={600}
+            height={360}
+            className="w-full max-w-3xl h-auto rounded-3xl shadow-xl mx-auto"
+          />
         </div>
       </section>
 
-      {/* Pure Gradient Section */}
-      <section className="py-32 bg-gradient-to-br from-purple-200 to-pink-200">
+      {/* Illustration Section */}
+      <section className="py-20 bg-gradient-to-br from-purple-200 to-pink-200">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="relative">
-            <div className="w-80 h-80 bg-gradient-to-br from-pink-400 via-purple-400 to-pink-500 rounded-full mx-auto opacity-60 blur-3xl"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-40 h-40 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full opacity-80 blur-2xl"></div>
-            </div>
-          </div>
+          <Image 
+            src="/images/resani/resani-illustration.jpg"
+            alt="Resani Illustration"
+            width={847}
+            height={476}
+            className="w-full h-auto rounded-3xl shadow-xl mx-auto"
+          />
         </div>
       </section>
 
@@ -184,39 +149,23 @@ export default function Resani() {
       <section className="py-20 bg-gradient-to-br from-purple-100 to-pink-100">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-3xl p-8 shadow-lg">
-              <div className="space-y-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-purple-600 mb-2">20</div>
-                  <p className="text-sm text-gray-600">Active Stations</p>
-                </div>
-                <div className="space-y-3">
-                  {['Medical Unit A', 'Surgery Wing', 'ICU Station', 'Emergency'].map((unit, index) => (
-                    <div key={index} className="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
-                      <span className="text-sm text-gray-700">{unit}</span>
-                      <span className="text-xs text-purple-600 bg-purple-100 px-2 py-1 rounded">Online</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <div className="transform rotate-1">
+              <Image 
+                src="/images/resani/resani-ui-3.jpg"
+                alt="Resani UI 3"
+                width={292}
+                height={300}
+                className="w-full h-auto rounded-3xl shadow-lg"
+              />
             </div>
-            <div className="bg-white rounded-3xl p-8 shadow-lg">
-              <div className="space-y-6">
-                <h3 className="text-lg font-semibold text-gray-900 text-center">Compliance Overview</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center bg-purple-50 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-purple-600">98%</div>
-                    <p className="text-xs text-purple-600">Today</p>
-                  </div>
-                  <div className="text-center bg-pink-50 rounded-xl p-4">
-                    <div className="text-2xl font-bold text-pink-600">94%</div>
-                    <p className="text-xs text-pink-600">Week</p>
-                  </div>
-                </div>
-                <div className="bg-gray-50 rounded-xl h-24 flex items-center justify-center">
-                  <span className="text-gray-400 text-sm">Compliance Chart</span>
-                </div>
-              </div>
+            <div className="transform -rotate-1">
+              <Image 
+                src="/images/resani/resani-ui-4.jpg"
+                alt="Resani UI 4"
+                width={292}
+                height={300}
+                className="w-full h-auto rounded-3xl shadow-lg"
+              />
             </div>
           </div>
         </div>
@@ -232,9 +181,13 @@ export default function Resani() {
               understand how our digital future could look, feel and work."
             </blockquote>
             <div className="flex items-center justify-center space-x-4">
-              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
-                <span className="text-xs text-gray-400">Photo</span>
-              </div>
+              <Image 
+                src="/images/resani/andrew-smith.jpg"
+                alt="Andrew Smith Profile Picture"
+                width={64}
+                height={64}
+                className="w-16 h-16 rounded-full"
+              />
               <div>
                 <h3 className="text-lg font-semibold">Andrew Smith</h3>
                 <p className="text-gray-600">Senior Designer, Resani</p>

@@ -40,17 +40,15 @@ export default function Share50() {
                 </div>
               </div>
             </div>
-            <div className="relative flex items-center justify-center">
-              {/* Runner silhouette */}
-              <div className="w-64 h-64 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-6xl text-red-500">🏃</span>
-                </div>
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-10 -right-10 w-16 h-16 bg-white bg-opacity-20 rounded-full"></div>
-              <div className="absolute -bottom-5 -left-5 w-12 h-12 bg-white bg-opacity-20 rounded-full"></div>
-              <div className="absolute top-1/2 -right-8 w-8 h-8 bg-white bg-opacity-20 rounded-full"></div>
+            <div className="relative">
+              <Image 
+                src="/images/share50/man-running-hero.jpg"
+                alt="Share50 Hero - Man Running"
+                width={768}
+                height={264}
+                className="w-full h-auto"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -63,26 +61,32 @@ export default function Share50() {
       <section className="relative bg-gradient-to-br from-red-500 to-red-600 py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="relative">
-              <div className="bg-white rounded-3xl p-8 shadow-2xl transform rotate-3">
-                <div className="aspect-[9/16] bg-gray-900 rounded-2xl flex items-center justify-center">
-                  <span className="text-red-400">Man Walking</span>
-                </div>
-              </div>
+            <div className="transform rotate-3">
+              <Image 
+                src="/images/share50/man-walking.jpg"
+                alt="Man Walking"
+                width={600}
+                height={360}
+                className="w-full h-auto rounded-3xl shadow-2xl"
+              />
             </div>
-            <div className="relative">
-              <div className="bg-white rounded-3xl p-8 shadow-2xl transform -rotate-2">
-                <div className="aspect-[9/16] bg-gray-900 rounded-2xl flex items-center justify-center">
-                  <span className="text-red-400">Man Riding EV</span>
-                </div>
-              </div>
+            <div className="transform -rotate-2">
+              <Image 
+                src="/images/share50/man-riding-ev.jpg"
+                alt="Man Riding EV"
+                width={292}
+                height={300}
+                className="w-full h-auto rounded-3xl shadow-2xl"
+              />
             </div>
-            <div className="relative">
-              <div className="bg-white rounded-3xl p-8 shadow-2xl transform rotate-1">
-                <div className="aspect-[9/16] bg-gray-900 rounded-2xl flex items-center justify-center">
-                  <span className="text-red-400">Woman Running</span>
-                </div>
-              </div>
+            <div className="transform rotate-1">
+              <Image 
+                src="/images/share50/woman-running.jpg"
+                alt="Woman Running"
+                width={292}
+                height={300}
+                className="w-full h-auto rounded-3xl shadow-2xl"
+              />
             </div>
           </div>
         </div>
@@ -95,26 +99,16 @@ export default function Share50() {
         </div>
       </section>
 
-      {/* ODEON Section - Dark Theme */}
-      <section className="py-20 bg-gray-900">
+      {/* ODEON Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="bg-gray-800 rounded-3xl p-12 shadow-2xl">
-            <div className="mb-8">
-              <div className="bg-red-500 text-white px-8 py-4 rounded-lg text-2xl font-bold inline-block">
-                ODEON
-              </div>
-              <div className="mt-4 text-gray-400">
-                <div className="w-32 h-6 bg-gray-700 rounded mx-auto mb-2"></div>
-                <div className="w-24 h-4 bg-gray-700 rounded mx-auto"></div>
-              </div>
-            </div>
-            <div className="text-white space-y-4">
-              <h3 className="text-xl font-bold">GO 100%</h3>
-              <p className="text-gray-400 max-w-md mx-auto">
-                Create the ultimate fundraising & exercise platform that turns movement into money for the causes that matter to your community
-              </p>
-            </div>
-          </div>
+          <Image 
+            src="/images/share50/odeon-section.jpg"
+            alt="ODEON Partnership Section"
+            width={847}
+            height={476}
+            className="w-full h-auto rounded-3xl shadow-2xl mx-auto"
+          />
         </div>
       </section>
 
@@ -122,25 +116,32 @@ export default function Share50() {
       <section className="relative bg-gradient-to-br from-red-500 to-red-600 py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-3xl p-8 shadow-2xl transform -rotate-1">
-              <div className="aspect-[9/16] bg-gray-900 rounded-2xl flex items-center justify-center">
-                <span className="text-red-400">Woman In The Garden</span>
-              </div>
+            <div className="transform -rotate-1">
+              <Image 
+                src="/images/share50/woman-in-garden.jpg"
+                alt="Woman In The Garden"
+                width={600}
+                height={360}
+                className="w-full h-auto rounded-3xl shadow-2xl"
+              />
             </div>
-            <div className="bg-white rounded-3xl p-8 shadow-2xl transform rotate-2">
-              <div className="aspect-[9/16] bg-red-500 rounded-2xl flex items-center justify-center text-white">
-                <div className="text-center space-y-4">
-                  <div className="w-16 h-16 bg-white rounded-full mx-auto flex items-center justify-center">
-                    <span className="text-red-500 text-2xl">🏃</span>
-                  </div>
-                  <p className="text-sm font-medium">Share with your community</p>
-                </div>
-              </div>
+            <div className="transform rotate-2">
+              <Image 
+                src="/images/share50/woman-night-view.jpg"
+                alt="Woman Night View"
+                width={600}
+                height={360}
+                className="w-full h-auto rounded-3xl shadow-2xl"
+              />
             </div>
-            <div className="bg-white rounded-3xl p-8 shadow-2xl transform -rotate-2">
-              <div className="aspect-[9/16] bg-gray-900 rounded-2xl flex items-center justify-center">
-                <span className="text-red-400">Activity Feed</span>
-              </div>
+            <div className="transform -rotate-2">
+              <Image 
+                src="/images/share50/features-1.jpg"
+                alt="Features 1"
+                width={292}
+                height={300}
+                className="w-full h-auto rounded-3xl shadow-2xl"
+              />
             </div>
           </div>
         </div>
@@ -188,31 +189,23 @@ export default function Share50() {
       <section className="py-20 bg-gray-800">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-900 rounded-3xl p-8 shadow-xl">
-              <div className="aspect-square bg-red-500 rounded-2xl flex items-center justify-center">
-                <div className="text-center text-white space-y-4">
-                  <div className="w-12 h-12 bg-white rounded-full mx-auto flex items-center justify-center">
-                    <span className="text-red-500 text-xl">💳</span>
-                  </div>
-                  <div>
-                    <p className="font-bold">Dashboard</p>
-                    <p className="text-sm opacity-80">Track your earnings</p>
-                  </div>
-                </div>
-              </div>
+            <div className="transform rotate-1">
+              <Image 
+                src="/images/share50/features-1.jpg"
+                alt="Dashboard Features"
+                width={292}
+                height={300}
+                className="w-full h-auto rounded-3xl shadow-xl"
+              />
             </div>
-            <div className="bg-gray-900 rounded-3xl p-8 shadow-xl">
-              <div className="aspect-square bg-red-500 rounded-2xl flex items-center justify-center">
-                <div className="text-center text-white space-y-4">
-                  <div className="w-12 h-12 bg-white rounded-full mx-auto flex items-center justify-center">
-                    <span className="text-red-500 text-xl">🏆</span>
-                  </div>
-                  <div>
-                    <p className="font-bold">View leaderboard</p>
-                    <p className="text-sm opacity-80">Pra individually</p>
-                  </div>
-                </div>
-              </div>
+            <div className="transform -rotate-1">
+              <Image 
+                src="/images/share50/features-2.jpg"
+                alt="Leaderboard Features"
+                width={292}
+                height={300}
+                className="w-full h-auto rounded-3xl shadow-xl"
+              />
             </div>
           </div>
         </div>
