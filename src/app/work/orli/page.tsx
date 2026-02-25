@@ -35,22 +35,14 @@ export default function Orli() {
               </div>
             </div>
             <div className="relative">
-              {/* Floating character elements */}
-              <div className="absolute -top-10 -right-10 w-16 h-16 bg-orange-400 rounded-full flex items-center justify-center">
-                <span className="text-white text-2xl">😊</span>
-              </div>
-              <div className="absolute -bottom-5 -left-5 w-14 h-14 bg-green-400 rounded-full flex items-center justify-center">
-                <span className="text-white text-xl">😌</span>
-              </div>
-              <div className="absolute top-1/2 -right-8 w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center">
-                <span className="text-white text-lg">😄</span>
-              </div>
-              <div className="absolute top-20 left-10 w-10 h-10 bg-purple-400 rounded-full flex items-center justify-center">
-                <span className="text-white text-sm">😍</span>
-              </div>
-              <div className="absolute bottom-20 right-20 w-8 h-8 bg-pink-400 rounded-full flex items-center justify-center">
-                <span className="text-white text-xs">🥰</span>
-              </div>
+              <Image 
+                src="/images/orli/orli-face-cover.jpg"
+                alt="Orli Characters"
+                width={847}
+                height={167}
+                className="w-full h-auto"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -64,20 +56,32 @@ export default function Orli() {
       <section className="relative bg-gradient-to-br from-pink-200 to-pink-300 py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-3xl p-6 shadow-xl transform rotate-2">
-              <div className="aspect-[9/16] bg-gray-100 rounded-2xl flex items-center justify-center">
-                <span className="text-gray-400">Orli UI Element Pink</span>
-              </div>
+            <div className="transform rotate-2">
+              <Image 
+                src="/images/orli/orli-ui-pink.jpg"
+                alt="Orli UI Element Pink"
+                width={600}
+                height={360}
+                className="w-full h-auto rounded-3xl shadow-xl"
+              />
             </div>
-            <div className="bg-white rounded-3xl p-6 shadow-xl transform -rotate-1">
-              <div className="aspect-[9/16] bg-gray-100 rounded-2xl flex items-center justify-center">
-                <span className="text-gray-400">School Card UI</span>
-              </div>
+            <div className="transform -rotate-1">
+              <Image 
+                src="/images/orli/school-card-ui.jpg"
+                alt="School Card UI"
+                width={292}
+                height={300}
+                className="w-full h-auto rounded-3xl shadow-xl"
+              />
             </div>
-            <div className="bg-white rounded-3xl p-6 shadow-xl transform rotate-1">
-              <div className="aspect-[9/16] bg-gray-100 rounded-2xl flex items-center justify-center">
-                <span className="text-gray-400">Social Card UI</span>
-              </div>
+            <div className="transform rotate-1">
+              <Image 
+                src="/images/orli/social-card-ui.jpg"
+                alt="Social Card UI"
+                width={292}
+                height={300}
+                className="w-full h-auto rounded-3xl shadow-xl"
+              />
             </div>
           </div>
         </div>
@@ -111,84 +115,65 @@ export default function Orli() {
       {/* Chat Interface Section - Green Theme */}
       <section className="relative bg-gradient-to-br from-green-200 to-green-300 py-20">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-3xl p-6 shadow-xl transform rotate-1">
-              <div className="aspect-[9/16] bg-gray-100 rounded-2xl flex items-center justify-center">
-                <span className="text-gray-400">Orli UI Element Green</span>
-              </div>
-            </div>
-            <div className="bg-white rounded-3xl p-6 shadow-xl transform -rotate-2">
-              <div className="aspect-[4/3] bg-gray-100 rounded-2xl flex items-center justify-center">
-                <span className="text-gray-400">Reading List for Kids</span>
-              </div>
-            </div>
-            <div className="bg-white rounded-3xl p-6 shadow-xl transform rotate-2">
-              <div className="aspect-[9/16] bg-gray-100 rounded-2xl flex items-center justify-center">
-                <span className="text-gray-400">Chat Interface</span>
-              </div>
-            </div>
+          <div className="text-center">
+            <Image 
+              src="/images/orli/orli-ui-green.jpg"
+              alt="Orli UI Element Green"
+              width={672}
+              height={378}
+              className="w-full max-w-4xl h-auto rounded-3xl shadow-xl mx-auto"
+            />
           </div>
         </div>
       </section>
 
-      {/* Feature Cards Section - Purple Theme */}
-      <section className="relative bg-gradient-to-br from-purple-300 to-purple-400 py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              'Chat Challenges',
-              'School Wellbeing',
-              'Mood Tracking',
-              'Daily Exercises',
-              'Parent Dashboard',
-              'Teacher Tools',
-              'Progress Reports',
-              'Safe Space'
-            ].map((feature, index) => (
-              <div key={index} className={`bg-white rounded-2xl p-6 shadow-lg transform ${index % 2 === 0 ? 'rotate-1' : '-rotate-1'}`}>
-                <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl mb-4 flex items-center justify-center">
-                  <div className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">😊</span>
-                  </div>
-                </div>
-                <h3 className="font-semibold text-sm text-center">{feature}</h3>
-              </div>
-            ))}
-          </div>
+      {/* Feature Cards Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <Image 
+            src="/images/orli/orli-cards.jpg"
+            alt="Orli Feature Cards"
+            width={847}
+            height={477}
+            className="w-full h-auto rounded-3xl shadow-xl mx-auto"
+          />
         </div>
       </section>
 
-      {/* Dashboard Section - Blue Theme */}
-      <section className="relative bg-gradient-to-br from-blue-200 to-blue-300 py-20">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-3xl p-8 shadow-xl transform -rotate-1">
-              <div className="aspect-[4/3] bg-gray-100 rounded-2xl flex items-center justify-center">
-                <span className="text-gray-400">Dashboard Analytics</span>
-              </div>
-            </div>
-            <div className="bg-white rounded-3xl p-8 shadow-xl transform rotate-1">
-              <div className="aspect-[4/3] bg-gray-100 rounded-2xl flex items-center justify-center">
-                <span className="text-gray-400">Progress Tracking</span>
-              </div>
-            </div>
-          </div>
+      {/* Dashboard Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <Image 
+            src="/images/orli/dashboard-1.jpg"
+            alt="Dashboard Analytics"
+            width={672}
+            height={378}
+            className="w-full max-w-3xl h-auto rounded-3xl shadow-xl mx-auto"
+          />
         </div>
       </section>
 
-      {/* Final UI Elements - Light Theme */}
+      {/* Final UI Elements */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-3xl p-8 shadow-lg transform rotate-1">
-              <div className="aspect-[4/3] bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center">
-                <span className="text-purple-400">UI Elements 1</span>
-              </div>
+            <div className="transform rotate-1">
+              <Image 
+                src="/images/orli/ui-elements-1.jpg"
+                alt="UI Elements 1"
+                width={292}
+                height={300}
+                className="w-full h-auto rounded-3xl shadow-lg"
+              />
             </div>
-            <div className="bg-white rounded-3xl p-8 shadow-lg transform -rotate-1">
-              <div className="aspect-[4/3] bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl flex items-center justify-center">
-                <span className="text-orange-400">UI Elements 2</span>
-              </div>
+            <div className="transform -rotate-1">
+              <Image 
+                src="/images/orli/ui-elements-2.jpg"
+                alt="UI Elements 2"
+                width={292}
+                height={300}
+                className="w-full h-auto rounded-3xl shadow-lg"
+              />
             </div>
           </div>
         </div>
@@ -205,9 +190,13 @@ export default function Orli() {
               a huge role in us securing investment."
             </blockquote>
             <div className="flex items-center justify-center space-x-4">
-              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
-                <span className="text-xs text-gray-400">Photo</span>
-              </div>
+              <Image 
+                src="/images/orli/dr-mark-cox.png"
+                alt="Dr. Mark Cox Profile Picture"
+                width={64}
+                height={64}
+                className="w-16 h-16 rounded-full"
+              />
               <div>
                 <h3 className="text-lg font-semibold">Dr. Mark Cox</h3>
                 <p className="text-gray-600">Co-founder Orli</p>
