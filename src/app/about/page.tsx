@@ -22,7 +22,7 @@ export default async function About() {
             We&apos;re a group of <span className="font-editorial">digital experts</span> from the four corners of the
             globe
           </h1>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-gray-600 leading-relaxed font-satoshi">
             Deeply passionate about bringing Big Ideas to life and making magic
             happen. Founded by international entrepreneurs who have built, sold
             and invested in digital companies.
@@ -60,7 +60,7 @@ export default async function About() {
                   {item.step}
                 </span>
                 <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed font-satoshi">
                   {item.desc}
                 </p>
               </div>
@@ -84,7 +84,7 @@ export default async function About() {
                 <div className="w-2 h-2 rounded-full bg-lime mt-2.5 shrink-0" />
                 <div>
                   <h3 className="font-semibold mb-1">{benefit.title}</h3>
-                  <p className="text-gray-600 text-sm">{benefit.desc}</p>
+                  <p className="text-gray-600 text-sm font-satoshi">{benefit.desc}</p>
                 </div>
               </div>
             ))}
@@ -115,8 +115,8 @@ export default async function About() {
                 <h3 className="text-lg font-semibold mb-4">{service.title}</h3>
                 <ul className="space-y-2">
                   {service.items.map((item) => (
-                    <li key={item} className="text-sm text-gray-600 flex items-start gap-2">
-                      <span className="text-lime-bright mt-0.5">+</span>
+                    <li key={item} className="text-sm text-gray-600 flex items-start gap-2 font-satoshi">
+                      <span className="text-pink mt-0.5">+</span>
                       {item}
                     </li>
                   ))}
@@ -131,7 +131,7 @@ export default async function About() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             Let&apos;s build something great
           </h2>
-          <p className="text-gray-400 mb-8 max-w-lg mx-auto">
+          <p className="text-gray-400 mb-8 max-w-lg mx-auto font-satoshi">
             Whether you have a rough idea or a detailed plan, we&apos;re here to
             help you move fast and build smart.
           </p>

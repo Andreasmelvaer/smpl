@@ -57,7 +57,7 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors duration-200 ${
+                className={`text-sm font-medium transition-colors duration-200 font-satoshi ${
                   isActive(item.href)
                     ? 'text-gray-900'
                     : 'text-gray-500 hover:text-gray-900'

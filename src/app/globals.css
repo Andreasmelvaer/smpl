@@ -116,6 +116,19 @@ p { line-height: 1.6; }
 .font-satoshi { font-family: "Satoshi", sans-serif; }
 .font-mono { font-family: "Fragment Mono", monospace; }
 
+/* Pink highlight for secondary accent */
+.highlight-pink {
+  background-color: #ff99e0;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.highlight-pink-light {
+  background-color: #ffe0fc;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
 /* ============================================
    Containers
    ============================================ */
@@ -156,6 +169,7 @@ p { line-height: 1.6; }
 
 .prose {
   max-width: 800px;
+  font-family: "Satoshi", sans-serif;
   font-size: 1.0625rem;
   line-height: 1.7;
   color: #404040;

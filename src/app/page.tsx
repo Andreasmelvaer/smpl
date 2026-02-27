@@ -18,12 +18,12 @@ export default async function HomePage() {
             <br />
             …to <span className="font-editorial">product</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed font-satoshi">
             Put a rocket under your innovation plans. Our unique process and
             unbeatable experience puts you ahead of the game, while slashing
             risk, time, and cost.
           </p>
-          <p className="text-base md:text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed mb-10">
+          <p className="text-base md:text-lg max-w-3xl mx-auto text-gray-700 leading-relaxed mb-10 font-satoshi">
             Join 125+ start-ups, scale-ups, and global brands who&apos;ve
             brought big ideas to life, backed by a team that has built and sold
             digital companies, including a $3bn tech unicorn.{' '}
@@ -78,13 +78,13 @@ export default async function HomePage() {
             <br />
             our word for it
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12 font-satoshi">
             Our clients trust us to bring their biggest ideas to life. Here&apos;s
             what some of them have to say.
           </p>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
             <div className="bg-offwhite rounded-2xl p-8">
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-gray-700 mb-6 leading-relaxed font-satoshi">
                 &ldquo;Smpl has done for us as the name implies — taken something
                 complex and made it beautifully simple, helping us raise and
                 helping us sell.&rdquo;
@@ -95,7 +95,7 @@ export default async function HomePage() {
               </div>
             </div>
             <div className="bg-offwhite rounded-2xl p-8">
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-gray-700 mb-6 leading-relaxed font-satoshi">
                 &ldquo;The 5-day prototype with SmplCo played a key role in
                 shaping the core value of the company. The visual effects kick
                 started a new journey for us.&rdquo;
@@ -121,6 +121,7 @@ export default async function HomePage() {
               Grab your discount using our exclusive offer with Eagle Labs member
               rewards.
             </p>
+
             <Link
               href="/eaglelabs"
               className="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
@@ -135,9 +136,9 @@ export default async function HomePage() {
       <section className="py-24 md:py-32">
         <div className="container-main text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            <span className="highlight-bright">Tailored</span> to you
+            <span className="highlight-pink">Tailored</span> to you
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12 font-satoshi">
             Whether you&apos;re a start-up with a napkin sketch or an enterprise
             with a complex digital challenge, our process adapts to you.
           </p>
@@ -158,7 +159,7 @@ export default async function HomePage() {
             ].map((step) => (
               <div key={step.title} className="bg-offwhite rounded-2xl p-8">
                 <h3 className="text-lg font-semibold mb-3">{step.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-gray-600 text-sm leading-relaxed font-satoshi">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -228,7 +229,7 @@ export default async function HomePage() {
         <div className="container-main">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Insights</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-satoshi">
               Browse our thoughts on key industry trends, tales of success and
               disaster, and tips for getting ahead in a digital world.
             </p>
@@ -290,7 +291,7 @@ export default async function HomePage() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
             Ready to build?
           </h2>
-          <p className="text-lg text-gray-400 max-w-xl mx-auto mb-10">
+          <p className="text-lg text-gray-400 max-w-xl mx-auto mb-10 font-satoshi">
             Every great product starts with a conversation. Get in touch for a
             free consultation with our digital innovation experts.
           </p>

@@ -14,7 +14,7 @@ export default function Partners() {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Our Partner Network
           </h1>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-gray-600 leading-relaxed font-satoshi">
             We&apos;ve built strategic partnerships with industry leaders to provide
             our clients with comprehensive support across every aspect of digital
             product development and business growth.
@@ -50,7 +50,7 @@ export default function Partners() {
                 {partner.type}
               </p>
               <h2 className="text-xl font-semibold mb-3">{partner.name}</h2>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              <p className="text-gray-600 text-sm leading-relaxed mb-4 font-satoshi">
                 {partner.desc}
               </p>
               {partner.link && (
@@ -70,7 +70,7 @@ export default function Partners() {
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
             Interested in partnering?
           </h2>
-          <p className="text-gray-400 mb-6 max-w-md mx-auto">
+          <p className="text-gray-400 mb-6 max-w-md mx-auto font-satoshi">
             We&apos;re always looking for strategic partnerships that benefit our
             clients.
           </p>

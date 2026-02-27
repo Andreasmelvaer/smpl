@@ -20,7 +20,7 @@ export default async function Blog() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
             Brain Fuel
           </h1>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-gray-600 leading-relaxed font-satoshi">
             Find out what&apos;s happening at SmplCo, dive into our thoughts on
             key industry trends, read tales of success and disaster, and get
             tips on getting ahead in a digital world.
@@ -56,7 +56,7 @@ export default async function Blog() {
                   {featured.title}
                 </h2>
                 {featured.excerpt && (
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-gray-600 mb-4 leading-relaxed font-satoshi">
                     {featured.excerpt}
                   </p>
                 )}
@@ -115,7 +115,7 @@ export default async function Blog() {
                   {post.title}
                 </h3>
                 {post.excerpt && (
-                  <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+                  <p className="text-sm text-gray-600 mb-3 line-clamp-2 font-satoshi">
                     {post.excerpt}
                   </p>
                 )}

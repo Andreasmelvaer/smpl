@@ -33,7 +33,7 @@ export default function Footer() {
             <Link href="/" className="text-2xl font-bold tracking-tight">
               Smpl Co
             </Link>
-            <p className="mt-4 text-gray-400 text-sm leading-relaxed">
+            <p className="mt-4 text-gray-400 text-sm leading-relaxed font-satoshi">
               From Post-it to product. We help startups and enterprises prototype
               and build smart digital products in weeks.
             </p>
@@ -49,7 +49,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-white transition-colors text-sm"
+                    className="text-gray-300 hover:text-white transition-colors text-sm font-satoshi"
                   >
                     {link.name}
                   </Link>
@@ -68,7 +68,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-white transition-colors text-sm"
+                    className="text-gray-300 hover:text-white transition-colors text-sm font-satoshi"
                   >
                     {link.name}
                   </Link>
@@ -84,7 +84,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {footerLinks.locations.map((location) => (
-                <li key={location} className="text-gray-400 text-sm">
+                <li key={location} className="text-gray-400 text-sm font-satoshi">
                   {location}
                 </li>
               ))}

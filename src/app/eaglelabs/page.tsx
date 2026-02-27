@@ -19,7 +19,7 @@ export default function EagleLabs() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Barclays Eagle Labs
             </h1>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg text-gray-600 leading-relaxed font-satoshi">
               SmplCo has partnered with Barclays Eagle Labs to offer exclusive
               member discounts on prototyping and product development.
             </p>
@@ -30,7 +30,7 @@ export default function EagleLabs() {
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
               Exclusive Member Discount
             </h2>
-            <p className="text-gray-700 leading-relaxed max-w-lg mx-auto mb-6">
+            <p className="text-gray-700 leading-relaxed max-w-lg mx-auto mb-6 font-satoshi">
               Barclays Eagle Labs member? Grab your discount using our exclusive
               offer with Eagle Labs member rewards. Take your innovation journey
               to the next level with SmplCo&apos;s proven 5 Day Prototype methodology.
@@ -59,7 +59,7 @@ export default function EagleLabs() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </span>
-                  <p className="text-gray-700">{item}</p>
+                  <p className="text-gray-700 font-satoshi">{item}</p>
                 </div>
               ))}
             </div>
@@ -68,7 +68,7 @@ export default function EagleLabs() {
           {/* CTA */}
           <div className="bg-offwhite rounded-2xl p-8 md:p-10 text-center">
             <h3 className="text-xl font-semibold mb-3">Ready to get started?</h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6 font-satoshi">
               Mention Eagle Labs when you get in touch and we&apos;ll apply your
               discount automatically.
             </p>

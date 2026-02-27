@@ -29,7 +29,7 @@ export default function Contact() {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Let&apos;s build together
           </h1>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-gray-600 leading-relaxed font-satoshi">
             We&apos;ve been in your shoes. We&apos;ve lived it. That&apos;s why
             we start by offering{' '}
             <span className="font-semibold text-gray-900">
@@ -45,7 +45,7 @@ export default function Contact() {
           <div>
             <div className="bg-lime rounded-2xl p-8 md:p-10 mb-10">
               <h2 className="text-2xl font-bold mb-3">Free advice from experts</h2>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed font-satoshi">
                 Send us as much or as little detail as you like. We&apos;ll get
                 in touch for your free consultation with our digital innovation
                 experts. And there&apos;ll be no sales pitch either.
@@ -66,7 +66,7 @@ export default function Contact() {
                     <span className="w-8 h-8 rounded-full bg-offwhite text-sm font-semibold flex items-center justify-center shrink-0">
                       {item.step}
                     </span>
-                    <p className="text-gray-700 pt-1">{item.text}</p>
+                    <p className="text-gray-700 pt-1 font-satoshi">{item.text}</p>
                   </div>
                 ))}
               </div>

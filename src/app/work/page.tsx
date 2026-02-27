@@ -19,7 +19,7 @@ export default async function Work() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
             Our Work
           </h1>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-gray-600 leading-relaxed font-satoshi">
             A selection of products, prototypes, and partnerships we&apos;ve
             delivered for startups, scale-ups, and global brands.
           </p>
@@ -56,7 +56,7 @@ export default async function Work() {
                 {project.services && Array.isArray(project.services) && (
                   <div className="flex flex-wrap gap-2 mt-3">
                     {project.services.slice(0, 3).map((s: string) => (
-                      <span key={s} className="text-xs text-gray-500">
+                      <span key={s} className="text-xs text-gray-500 font-satoshi">
                         {s}
                       </span>
                     ))}
