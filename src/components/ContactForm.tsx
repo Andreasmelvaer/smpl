@@ -5,26 +5,36 @@ import { useState, FormEvent } from 'react'
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
+  // Google Apps Script endpoint for sending emails
+  // Set NEXT_PUBLIC_CONTACT_FORM_URL in your .env.local or Vercel env vars
+  // See google-apps-script.js for the Apps Script to deploy
+  const FORM_ENDPOINT = process.env.NEXT_PUBLIC_CONTACT_FORM_URL || ''
+
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setStatus('submitting')
 
     const form = e.currentTarget
-    const data = new FormData(form)
+    const formData = new FormData(form)
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      company: formData.get('company'),
+      message: formData.get('message'),
+    }
 
     try {
-      const res = await fetch('https://formspree.io/f/xpwzgkrn', {
+      await fetch(FORM_ENDPOINT, {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors',
       })
 
-      if (res.ok) {
-        setStatus('success')
-        form.reset()
-      } else {
-        setStatus('error')
-      }
+      // Google Apps Script with no-cors returns opaque response,
+      // so we treat any non-thrown as success
+      setStatus('success')
+      form.reset()
     } catch {
       setStatus('error')
     }
