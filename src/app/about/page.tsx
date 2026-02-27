@@ -32,27 +32,32 @@ export default async function About() {
         {/* Process */}
         <div className="mb-24">
           <h2 className="text-3xl md:text-4xl font-bold mb-12">How we work</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {[
               {
                 step: '01',
-                title: 'Talk to us',
-                desc: 'Every great product starts with a conversation. We dive into your vision, challenges, and goals, collaborating through discussions and workshops.',
+                title: 'Conversation & Workshops',
+                desc: 'Every great product starts with a conversation. We dive into your vision, challenges, and goals, collaborating through discussions and workshops to turn ideas into a solid concept.',
               },
               {
                 step: '02',
-                title: '5 Day Prototype',
-                desc: 'In just five days, we transform your idea into a high-fidelity, clickable prototype ready to wow stakeholders and investors.',
+                title: '5-Day Prototype',
+                desc: 'In just five days, we transform your idea into a high-fidelity, clickable prototype that is ready to wow stakeholders and investors.',
               },
               {
                 step: '03',
-                title: 'Product Development',
-                desc: 'From MVP to full product, we build with modern tools including AI-assisted development for speed without sacrificing quality.',
+                title: 'Design as a Service',
+                desc: 'Our ultra-lean Design as a Service gives you the expert resources you need to design your MVP. You get a full design team for the cost of a single designer.',
               },
               {
                 step: '04',
-                title: 'Launch & Grow',
-                desc: 'With deep expertise in SaaS entrepreneurship, we help position your product for a successful launch and sustainable growth.',
+                title: 'Development',
+                desc: 'We partner with highly skilled developers to transform your prototype into a functional product. Our network of experienced, AI-powered engineers ensures a smooth and efficient development process.',
+              },
+              {
+                step: '05',
+                title: 'Marketing',
+                desc: 'A great product deserves great marketing. We create high-quality websites, compelling videos, and a full suite of marketing materials to showcase your product.',
               },
             ].map((item) => (
               <div key={item.step} className="bg-offwhite rounded-2xl p-8">
