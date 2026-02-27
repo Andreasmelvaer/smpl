@@ -1,7 +1,7 @@
 ---
 title: "Compera – Supply Chain Reporting"
 description: "Compera helps tens of thousands of companies meet regulatory requirements, enhance transparency, and reduce their reporting burden."
-heroImage: "/work/compera-hero.jpg"
+hero_image: "/work/compera-hero.jpg"
 heroAlt: "Woman Lips"
 services:
   - "UI/UX Design"

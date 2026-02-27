@@ -1,7 +1,7 @@
 ---
 title: "Paperdrop – For Contractors"
 description: "PaperDrop is the market-leading software for contractors who want to cut paperwork and simplify everyday tasks like job management, quoting, and invoicing."
-heroImage: "/work/paperdrop-hero.jpg"
+hero_image: "/work/paperdrop-hero.jpg"
 heroAlt: "Paperdrop Contractor Software"
 services:
   - "UI/UX Design"

@@ -5,8 +5,7 @@ category: "Real Estate / FinTech"
 services: ["UI/UX Design", "Prototype", "Illustrations", "Energy", "Landing Page"]
 year: 2025
 featured: true
-hero_image: "https://framerusercontent.com/images/cGidEhrAkR2B7HoVS9xhPZehdI.jpg"
-og_image: "https://framerusercontent.com/images/jlZNlp7hPAczQPL4fKc3Ul8Qfk.jpg"
+hero_image: "/images/enquip/enquip-hero.jpg"
 ---
 
 # Enquip – Real Estate / FS
@@ -48,19 +47,19 @@ Enquip's new "beautifully simple" platform immediately helped the company:
 
 ## Project Images
 
-![Enquip Platform Overview](https://framerusercontent.com/images/5dCPqayxZaFiFqBzfPIuu7qxgvQ.jpg)
+![Enquip Platform Overview](/images/enquip/enquip-overview.jpg)
 *Enquip's new platform interface showcasing sustainability analytics*
 
-![User Interface Design](https://framerusercontent.com/images/p24m2z9B1ikt0qNnyrpIFI24w.jpg)
+![User Interface Design](/images/enquip/enquip-ui-design.jpg)
 *Clean, intuitive UI design focused on user experience*
 
-![Data Visualization](https://framerusercontent.com/images/d7s9nLhB9FqzjK0zDpE5itc1XlM.jpg)
+![Data Visualization](/images/enquip/enquip-data-viz.jpg)
 *Energy data visualization and portfolio insights*
 
-![Platform Dashboard](https://framerusercontent.com/images/fqfPaRSUaRUDG2GuAHu7wcKcL6E.jpg)
+![Platform Dashboard](/images/enquip/enquip-dashboard.jpg)
 *Comprehensive dashboard for real estate portfolio management*
 
-![Sustainability Features](https://framerusercontent.com/images/8G0s0DGcNgBfCMT6ajzwkMATI.jpg)
+![Sustainability Features](/images/enquip/enquip-sustainability.jpg)
 *Advanced sustainability analysis and reporting features*
 
 ## Services Delivered

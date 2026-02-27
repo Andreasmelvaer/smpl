@@ -12,11 +12,11 @@ path,title,page_type,status,notes
 /work/2040,TWENTY40 - Decarbonisation,work-case,migrated,Markdown-based
 /work/altien,Altien - Healthcare,work-case,migrated,Markdown-based
 /work/paperdrop,Paperdrop – For Contractors,work-case,migrated,Markdown-based
-/work/resani,Resani – Hygiene,work-case,needs-unify,Hardcoded React - should convert to markdown
-/work/orli,Orli – Mental Health,work-case,needs-unify,Hardcoded React - should convert to markdown
-/work/tilsig,Tilsig – Energy / Flow Monitoring,work-case,needs-unify,Hardcoded React - should convert to markdown
-/work/share50,Share50 – Ad Revenue,work-case,needs-unify,Hardcoded React - should convert to markdown
-/work/nucase,Nucase – Home Renovation,work-case,needs-unify,Hardcoded React - should convert to markdown
+/work/resani,Resani – Hygiene,work-case,migrated,Markdown-based with gallery
+/work/orli,Orli – Mental Health,work-case,migrated,Markdown-based with gallery
+/work/tilsig,Tilsig – Energy / Flow Monitoring,work-case,migrated,Markdown-based with gallery
+/work/share50,Share50 – Ad Revenue,work-case,migrated,Markdown-based with gallery
+/work/nucase,Nucase – Home Renovation,work-case,migrated,Markdown-based with gallery
 /blog/openclaw,Testing OpenClaw at SmplCo,blog-post,migrated,Markdown
 /blog/vibecoding-how-we-actually-ship-products,The Case for Disciplined Vibecoding,blog-post,migrated,Markdown
 /blog/how-to-build-a-brand-with-stories,The big companies adopting an ancient art,blog-post,migrated,Markdown

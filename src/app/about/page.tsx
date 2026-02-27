@@ -19,7 +19,7 @@ export default async function About() {
         {/* Header */}
         <div className="mb-20 max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            We&apos;re a group of digital experts from the four corners of the
+            We&apos;re a group of <span className="font-editorial">digital experts</span> from the four corners of the
             globe
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed">

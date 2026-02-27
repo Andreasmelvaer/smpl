@@ -1,5 +1,6 @@
 import { generatePageMetadata } from '@/lib/metadata'
 import { getPostData } from '@/lib/markdown'
+import ContactForm from '@/components/ContactForm'
 import type { Metadata } from 'next'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -86,70 +87,9 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right: Contact form placeholder */}
+          {/* Right: Contact form */}
           <div>
-            <div className="bg-offwhite rounded-2xl p-8 md:p-10">
-              <h3 className="text-xl font-semibold mb-6">Get in touch</h3>
-              <form className="space-y-5">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent"
-                    placeholder="you@company.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent"
-                    placeholder="Company name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
-                    Tell us about your project
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent resize-none"
-                    placeholder="What are you building? What stage are you at?"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full py-3.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
-                >
-                  Send message
-                </button>
-                <p className="text-xs text-gray-400 text-center">
-                  We&apos;ll respond within 24 hours. No sales pitch — promise.
-                </p>
-              </form>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </div>

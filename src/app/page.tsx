@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { getAllPostsData } from '@/lib/markdown'
 
 export default async function HomePage() {
@@ -15,7 +16,7 @@ export default async function HomePage() {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] mb-6 tracking-tight">
             From <span className="highlight">Post-it</span>
             <br />
-            …to product
+            …to <span className="font-editorial">product</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
             Put a rocket under your innovation plans. Our unique process and
@@ -187,11 +188,13 @@ export default async function HomePage() {
                   className="group block bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow"
                 >
                   {project.hero_image && (
-                    <div className="aspect-[16/10] overflow-hidden">
-                      <img
+                    <div className="aspect-[16/10] overflow-hidden relative">
+                      <Image
                         src={project.hero_image}
                         alt={project.title}
-                        className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                       />
                     </div>
                   )}

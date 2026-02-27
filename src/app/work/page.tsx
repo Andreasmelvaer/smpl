@@ -1,5 +1,6 @@
 import { getAllPostsData } from '@/lib/markdown'
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -7,33 +8,8 @@ export const metadata: Metadata = {
   description: 'Explore our portfolio of digital products, prototypes, and case studies for startups and enterprises.',
 }
 
-interface WorkProject {
-  slug: string
-  title: string
-  category?: string
-  hero_image?: string
-  services?: string[]
-  [key: string]: unknown
-}
-
-// All work cases — includes both markdown-based and hardcoded pages
-const additionalCases: WorkProject[] = [
-  { slug: 'resani', title: 'Resani – Hygiene', category: 'Healthcare / IoT', hero_image: '/images/resani/woman-lips-hero.jpg' },
-  { slug: 'orli', title: 'Orli – Mental Health', category: 'Healthcare / Wellbeing', hero_image: '/images/orli/orli-hero.jpg' },
-  { slug: 'tilsig', title: 'Tilsig – Energy / Flow Monitoring', category: 'Energy / SaaS', hero_image: '/images/tilsig/tilsig-hero.jpg' },
-  { slug: 'share50', title: 'Share50 – Ad Revenue', category: 'AdTech / SaaS', hero_image: '/images/share50/share50-hero.jpg' },
-  { slug: 'nucase', title: 'Nucase – Home Renovation', category: 'PropTech / Consumer', hero_image: '/images/nucase/nucase-hero.jpg' },
-]
-
 export default async function Work() {
-  const markdownProjects = await getAllPostsData('work')
-
-  // Merge markdown projects with hardcoded ones, avoiding duplicates
-  const markdownSlugs = new Set(markdownProjects.map((p) => p.slug))
-  const allProjects: WorkProject[] = [
-    ...markdownProjects.map((p) => p as WorkProject),
-    ...additionalCases.filter((c) => !markdownSlugs.has(c.slug)),
-  ]
+  const allProjects = await getAllPostsData('work')
 
   return (
     <div className="py-16 md:py-24">
@@ -58,11 +34,13 @@ export default async function Work() {
               className="group block bg-offwhite rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
             >
               {project.hero_image && (
-                <div className="aspect-[16/10] overflow-hidden bg-gray-100">
-                  <img
+                <div className="aspect-[16/10] overflow-hidden bg-gray-100 relative">
+                  <Image
                     src={project.hero_image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                   />
                 </div>
               )}
