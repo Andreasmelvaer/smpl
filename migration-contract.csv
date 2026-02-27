@@ -1,0 +1,34 @@
+path,title,page_type,status,notes
+/,Smpl Co – Prototype Fast Build Smart Digital Products Launch in Weeks,home,migrated,Homepage fully rebuilt with sections
+/about,About Us | Smpl Co – Our Mission & Team,page,migrated,Structured about page with process steps
+/work,Our Work | Smpl Co – Projects & Case Studies,index,migrated,Grid layout showing all projects
+/blog,Blog | Smpl Co – Insights & Articles,index,migrated,Featured post + grid layout
+/contact,Contact Us | Smpl Co – Let's Build Together,page,migrated,Contact form + offices + CTA
+/partners,SmplCo Partners,page,migrated,Partner cards layout
+/eaglelabs,Barclays Eagle Labs,page,migrated,Partnership landing page
+/ui-energy-design,UI Energy Design,page,needs-review,Existing page unchanged
+/work/enquip,Enquip – Real Estate / FS,work-case,migrated,Markdown-based with hero image
+/work/compera,Compera – Supply Chain Reporting,work-case,migrated,Markdown-based
+/work/2040,TWENTY40 - Decarbonisation,work-case,migrated,Markdown-based
+/work/altien,Altien - Healthcare,work-case,migrated,Markdown-based
+/work/paperdrop,Paperdrop – For Contractors,work-case,migrated,Markdown-based
+/work/resani,Resani – Hygiene,work-case,needs-unify,Hardcoded React - should convert to markdown
+/work/orli,Orli – Mental Health,work-case,needs-unify,Hardcoded React - should convert to markdown
+/work/tilsig,Tilsig – Energy / Flow Monitoring,work-case,needs-unify,Hardcoded React - should convert to markdown
+/work/share50,Share50 – Ad Revenue,work-case,needs-unify,Hardcoded React - should convert to markdown
+/work/nucase,Nucase – Home Renovation,work-case,needs-unify,Hardcoded React - should convert to markdown
+/blog/openclaw,Testing OpenClaw at SmplCo,blog-post,migrated,Markdown
+/blog/vibecoding-how-we-actually-ship-products,The Case for Disciplined Vibecoding,blog-post,migrated,Markdown
+/blog/how-to-build-a-brand-with-stories,The big companies adopting an ancient art,blog-post,migrated,Markdown
+/blog/how-to-win-ai-hackathon-buildathon,How to win an AI hackathon / buildathon,blog-post,migrated,Markdown
+/blog/ai-assisted-mvps,SmplCo: world-class AI development,blog-post,migrated,Markdown
+/blog/andreas-wins-peoples-choice-marketing-awards-2025,Peoples Choice Marketing Awards,blog-post,migrated,Markdown
+/blog/lovable-shebuilds-win,Lovable buildathon winners!,blog-post,migrated,Markdown
+/blog/altien,Altien: the app we'll all wish we had,blog-post,migrated,Markdown
+/blog/how-one-big-corporate-nailed-digital-innovation,How one big corporate nailed digital innovation,blog-post,migrated,Markdown
+/blog/no-one-will-ever-love-your-software-and-that-s-ok,No one will ever love your software,blog-post,migrated,Markdown
+/blog/ai-strategy-5-must-knows-truths,AI Strategy 5 Must Know Truths,blog-post,migrated,Markdown
+/blog/news-smplco-signs-deal-with-uk-s-barclays-bank,News! SmplCo signs deal with Barclays,blog-post,migrated,Markdown
+/blog/why-product-nerds-outperform-creative-designers,Why product nerds outperform creative designers,blog-post,migrated,Markdown
+/blog/all-aboard-the-nurture-train,All aboard the nurture train,blog-post,migrated,Markdown
+/blog/graduation-day,Graduation day at SmplAcademy!,blog-post,migrated,Markdown

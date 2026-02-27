@@ -1,26 +1,235 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================
+   SMPL CO – Design System Tokens
+   Migrated from Framer (smpl.as)
+   ============================================ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-lime: #f0ff83;
+  --color-lime-bright: #e5ff21;
+  --color-pink: #ff99e0;
+  --color-pink-light: #ffe0fc;
+
+  --color-white: #ffffff;
+  --color-offwhite: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-400: #a1a1a1;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-900: #262626;
+  --color-black: #000000;
+
+  --color-background: #ffffff;
+  --color-foreground: #262626;
+  --color-muted: #737373;
+  --color-border: #e5e5e5;
+  --color-accent: #f0ff83;
+
+  --font-inter: "Inter", "Inter Display", sans-serif;
+  --font-satoshi: "Satoshi", sans-serif;
+  --font-editorial: "PP Editorial New", serif;
+  --font-mono: "Fragment Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   Font Face Declarations
+   ============================================ */
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://cdn.fontshare.com/wf/EKRUUX5SC5LVJBNOLEKH554CLIIXNYOG/HHD4WG6WWEFYDOVMKBSCNBV7YRSJUUAI/SDMYF42NJLJ25YEO44IT64S5RFWUQHZC.woff2") format("woff2");
+  font-weight: 400 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fragment Mono";
+  src: url("https://fonts.gstatic.com/s/fragmentmono/v4/4iCr6K5wfMRRjxp0DA6-2CLnN4RNh4UI_1GkfoBf.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+:root {
+  --background: #ffffff;
+  --foreground: #262626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Inter", "Inter Display", sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+p { line-height: 1.6; }
+
+.font-editorial {
+  font-family: "PP Editorial New", Georgia, serif;
+  font-style: italic;
+}
+
+.font-satoshi { font-family: "Satoshi", sans-serif; }
+.font-mono { font-family: "Fragment Mono", monospace; }
+
+/* ============================================
+   Containers
+   ============================================ */
+
+.container-main {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.highlight {
+  background-color: #f0ff83;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.highlight-bright {
+  background-color: #e5ff21;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* ============================================
+   Prose / Markdown Content
+   ============================================ */
+
+.prose {
+  max-width: 800px;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #404040;
+}
+
+.prose h1 { font-size: 2.25rem; margin-top: 0; margin-bottom: 1rem; color: #262626; }
+.prose h2 { font-size: 1.75rem; margin-top: 2.5rem; margin-bottom: 0.75rem; color: #262626; }
+.prose h3 { font-size: 1.375rem; margin-top: 2rem; margin-bottom: 0.5rem; color: #262626; }
+.prose p { margin-top: 0; margin-bottom: 1.25rem; }
+
+.prose a {
+  color: #262626;
+  text-decoration: underline;
+  text-decoration-color: #f0ff83;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+  transition: text-decoration-color 0.2s;
+}
+.prose a:hover { text-decoration-color: #e5ff21; }
+
+.prose blockquote {
+  border-left: 3px solid #f0ff83;
+  padding-left: 1.25rem;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: italic;
+  color: #525252;
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose ul, .prose ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+.prose li { margin-bottom: 0.5rem; }
+
+.prose code {
+  font-family: "Fragment Mono", monospace;
+  font-size: 0.9em;
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.prose pre {
+  font-family: "Fragment Mono", monospace;
+  background: #262626;
+  color: #fafafa;
+  padding: 1.25rem;
+  border-radius: 12px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.prose pre code { background: transparent; padding: 0; color: inherit; }
+.prose strong { font-weight: 600; color: #262626; }
+.prose hr { border: none; border-top: 1px solid #e5e5e5; margin: 2.5rem 0; }
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 809px) {
+  .container-main, .container-narrow {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
