@@ -1,5 +1,6 @@
 ---
 title: "Our MD Andreas just won \"People's Choice\" at the 2025 Marketing Awards"
+hero_image: "/images/blog/andreas-wins-peoples-choice-marketing-awards-2025.jpg"
 slug: "andreas-wins-peoples-choice-marketing-awards-2025"
 date: "2025-01-10"
 author: "SmplCo Team"

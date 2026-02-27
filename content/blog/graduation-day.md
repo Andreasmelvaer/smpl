@@ -1,5 +1,6 @@
 ---
 title: "Graduation day at SmplAcademy!"
+hero_image: "/images/blog/graduation-day.jpg"
 slug: "graduation-day"
 date: "2024-05-01"
 author: "SmplCo Team"

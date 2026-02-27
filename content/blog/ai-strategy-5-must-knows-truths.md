@@ -1,5 +1,6 @@
 ---
 title: "5 Must-Know Truths Before You Dive Into AI"
+hero_image: "/images/blog/ai-strategy-5-must-knows-truths.webp"
 slug: "ai-strategy-5-must-knows-truths"
 date: "2024-09-15"
 author: "SmplCo Team"

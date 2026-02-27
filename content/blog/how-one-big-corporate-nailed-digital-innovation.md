@@ -1,5 +1,6 @@
 ---
 title: "How one big corporate nailed digital innovation"
+hero_image: "/images/blog/how-one-big-corporate-nailed-digital-innovation.jpg"
 slug: "how-one-big-corporate-nailed-digital-innovation"
 date: "2024-11-01"
 author: "SmplCo Team"

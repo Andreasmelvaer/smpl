@@ -1,5 +1,6 @@
 ---
 title: "Why Product Nerds Outperform Creative Designers"
+hero_image: "/images/blog/why-product-nerds-outperform-creative-designers.webp"
 slug: "why-product-nerds-outperform-creative-designers"
 date: "2024-07-15"
 author: "SmplCo Team"

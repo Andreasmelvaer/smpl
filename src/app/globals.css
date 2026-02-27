@@ -54,6 +54,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "PP Editorial New";
+  src: url("/fonts/pp-editorial-new-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+
 /* ============================================
    Base Styles
    ============================================ */

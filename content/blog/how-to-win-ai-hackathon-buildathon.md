@@ -1,5 +1,6 @@
 ---
 title: "How to win an AI hackathon / buildathon"
+hero_image: "/images/blog/how-to-win-ai-hackathon-buildathon.jpg"
 slug: "how-to-win-ai-hackathon-buildathon"
 date: "2025-01-20"
 author: "Line Hjartarson & Andreas Melvær"

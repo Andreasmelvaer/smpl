@@ -1,5 +1,6 @@
 import { getAllPostsData } from '@/lib/markdown'
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -30,42 +31,56 @@ export default async function Blog() {
         {featured && (
           <Link
             href={`/blog/${featured.slug}`}
-            className="group block bg-offwhite rounded-2xl p-8 md:p-10 mb-12 hover:bg-gray-100 transition-colors"
+            className="group block bg-offwhite rounded-2xl overflow-hidden mb-12 hover:bg-gray-100 transition-colors"
           >
-            <div className="max-w-3xl">
-              {featured.tags && featured.tags[0] && (
-                <span className="text-xs font-medium text-gray-500 mb-3 block">
-                  {featured.tags[0]}
-                </span>
+            <div className="grid md:grid-cols-2 gap-0">
+              {featured.hero_image && (
+                <div className="aspect-[16/10] md:aspect-auto overflow-hidden relative">
+                  <Image
+                    src={featured.hero_image}
+                    alt={featured.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    priority
+                  />
+                </div>
               )}
-              <h2 className="text-2xl md:text-3xl font-bold mb-3 leading-tight group-hover:text-gray-700 transition-colors">
-                {featured.title}
-              </h2>
-              {featured.excerpt && (
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {featured.excerpt}
-                </p>
-              )}
-              <div className="flex items-center gap-3 text-sm text-gray-500">
-                {featured.author && <span>{featured.author}</span>}
-                {featured.date && (
-                  <>
-                    <span className="text-gray-300">·</span>
-                    <time dateTime={featured.date}>
-                      {new Date(featured.date).toLocaleDateString('en-GB', {
-                        day: 'numeric',
-                        month: 'long',
-                        year: 'numeric',
-                      })}
-                    </time>
-                  </>
+              <div className="p-8 md:p-10 flex flex-col justify-center">
+                {featured.tags && featured.tags[0] && (
+                  <span className="text-xs font-medium text-gray-500 mb-3 block">
+                    {featured.tags[0]}
+                  </span>
                 )}
-                {featured.readTime && (
-                  <>
-                    <span className="text-gray-300">·</span>
-                    <span>{featured.readTime}</span>
-                  </>
+                <h2 className="text-2xl md:text-3xl font-bold mb-3 leading-tight group-hover:text-gray-700 transition-colors">
+                  {featured.title}
+                </h2>
+                {featured.excerpt && (
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    {featured.excerpt}
+                  </p>
                 )}
+                <div className="flex items-center gap-3 text-sm text-gray-500">
+                  {featured.author && <span>{featured.author}</span>}
+                  {featured.date && (
+                    <>
+                      <span className="text-gray-300">·</span>
+                      <time dateTime={featured.date}>
+                        {new Date(featured.date).toLocaleDateString('en-GB', {
+                          day: 'numeric',
+                          month: 'long',
+                          year: 'numeric',
+                        })}
+                      </time>
+                    </>
+                  )}
+                  {featured.readTime && (
+                    <>
+                      <span className="text-gray-300">·</span>
+                      <span>{featured.readTime}</span>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           </Link>
@@ -77,35 +92,48 @@ export default async function Blog() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group block bg-offwhite rounded-2xl p-6 hover:bg-gray-100 transition-colors"
+              className="group block bg-offwhite rounded-2xl overflow-hidden hover:bg-gray-100 transition-colors"
             >
-              {post.tags && post.tags[0] && (
-                <span className="text-xs font-medium text-gray-500 mb-3 block">
-                  {post.tags[0]}
-                </span>
+              {post.hero_image && (
+                <div className="aspect-[16/10] overflow-hidden relative">
+                  <Image
+                    src={post.hero_image}
+                    alt={post.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  />
+                </div>
               )}
-              <h3 className="text-base font-semibold text-gray-900 mb-2 leading-snug group-hover:text-gray-700 transition-colors">
-                {post.title}
-              </h3>
-              {post.excerpt && (
-                <p className="text-sm text-gray-600 mb-3 line-clamp-2">
-                  {post.excerpt}
-                </p>
-              )}
-              <div className="flex items-center gap-3 text-xs text-gray-500">
-                {post.author && <span>{post.author}</span>}
-                {post.date && (
-                  <>
-                    {post.author && <span className="text-gray-300">·</span>}
-                    <time dateTime={post.date}>
-                      {new Date(post.date).toLocaleDateString('en-GB', {
-                        day: 'numeric',
-                        month: 'short',
-                        year: 'numeric',
-                      })}
-                    </time>
-                  </>
+              <div className="p-6">
+                {post.tags && post.tags[0] && (
+                  <span className="text-xs font-medium text-gray-500 mb-3 block">
+                    {post.tags[0]}
+                  </span>
                 )}
+                <h3 className="text-base font-semibold text-gray-900 mb-2 leading-snug group-hover:text-gray-700 transition-colors">
+                  {post.title}
+                </h3>
+                {post.excerpt && (
+                  <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                )}
+                <div className="flex items-center gap-3 text-xs text-gray-500">
+                  {post.author && <span>{post.author}</span>}
+                  {post.date && (
+                    <>
+                      {post.author && <span className="text-gray-300">·</span>}
+                      <time dateTime={post.date}>
+                        {new Date(post.date).toLocaleDateString('en-GB', {
+                          day: 'numeric',
+                          month: 'short',
+                          year: 'numeric',
+                        })}
+                      </time>
+                    </>
+                  )}
+                </div>
               </div>
             </Link>
           ))}

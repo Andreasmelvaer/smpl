@@ -1,5 +1,6 @@
 ---
 title: "The Case for Disciplined Vibecoding"
+hero_image: "/images/blog/vibecoding-how-we-actually-ship-products.png"
 slug: "vibecoding-how-we-actually-ship-products"
 date: "2025-02-01"
 author: "Andreas Melvaer"

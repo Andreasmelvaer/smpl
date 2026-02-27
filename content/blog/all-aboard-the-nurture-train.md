@@ -1,5 +1,6 @@
 ---
 title: "Land your first customers using the Nurture Train"
+hero_image: "/images/blog/all-aboard-the-nurture-train.jpg"
 slug: "all-aboard-the-nurture-train"
 date: "2024-06-01"
 author: "SmplCo Team"

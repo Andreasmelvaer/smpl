@@ -1,5 +1,6 @@
 ---
 title: "Lovable buildathon winners!"
+hero_image: "/images/blog/lovable-shebuilds-win.png"
 slug: "lovable-shebuilds-win"
 date: "2024-12-01"
 author: "SmplCo Team"

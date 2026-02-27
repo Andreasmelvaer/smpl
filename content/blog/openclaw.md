@@ -1,5 +1,6 @@
 ---
 title: "Testing OpenClaw at SmplCo: Nothing this fun is risk free..."
+hero_image: "/images/blog/openclaw.jpg"
 slug: "openclaw"
 date: "2025-02-11"
 author: "SmplCo"

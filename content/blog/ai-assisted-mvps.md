@@ -1,5 +1,6 @@
 ---
 title: "SmplCo: 'world-class' AI development"
+hero_image: "/images/blog/ai-assisted-mvps.jpg"
 slug: "ai-assisted-mvps"
 date: "2024-12-15"
 author: "Michael Millar"

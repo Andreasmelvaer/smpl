@@ -1,5 +1,6 @@
 ---
 title: "The big companies adopting an ancient art to win customers"
+hero_image: "/images/blog/how-to-build-a-brand-with-stories.jpg"
 slug: "how-to-build-a-brand-with-stories"
 date: "2025-01-15"
 author: "Michael Millar"

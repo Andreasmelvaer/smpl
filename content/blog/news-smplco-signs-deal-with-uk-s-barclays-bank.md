@@ -1,5 +1,6 @@
 ---
 title: "News! SmplCo signs deal with UK's Barclays bank"
+hero_image: "/images/blog/news-smplco-signs-deal-with-uk-s-barclays-bank.png"
 slug: "news-smplco-signs-deal-with-uk-s-barclays-bank"
 date: "2024-08-01"
 author: "Michael Millar"

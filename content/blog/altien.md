@@ -1,5 +1,6 @@
 ---
 title: "Altien: the app we'll all wish we had, one day"
+hero_image: "/images/blog/altien.webp"
 slug: "altien"
 date: "2024-11-15"
 author: "SmplCo Team"

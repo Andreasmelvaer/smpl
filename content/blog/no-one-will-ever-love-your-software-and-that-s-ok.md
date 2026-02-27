@@ -1,5 +1,6 @@
 ---
 title: "No one will ever love your software… and that's OK"
+hero_image: "/images/blog/no-one-will-ever-love-your-software-and-that-s-ok.png"
 slug: "no-one-will-ever-love-your-software-and-that-s-ok"
 date: "2024-10-15"
 author: "Michael Millar"

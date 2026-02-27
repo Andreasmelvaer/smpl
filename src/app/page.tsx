@@ -238,25 +238,38 @@ export default async function HomePage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block bg-offwhite rounded-2xl p-6 hover:bg-gray-100 transition-colors"
+                className="group block bg-offwhite rounded-2xl overflow-hidden hover:bg-gray-100 transition-colors"
               >
-                {post.tags && post.tags[0] && (
-                  <span className="text-xs font-medium text-gray-500 mb-3 block">
-                    {post.tags[0]}
-                  </span>
+                {post.hero_image && (
+                  <div className="aspect-[16/10] overflow-hidden relative">
+                    <Image
+                      src={post.hero_image}
+                      alt={post.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    />
+                  </div>
                 )}
-                <h3 className="text-base font-semibold text-gray-900 mb-2 leading-snug group-hover:text-gray-700 transition-colors">
-                  {post.title}
-                </h3>
-                {post.date && (
-                  <p className="text-xs text-gray-500">
-                    {new Date(post.date).toLocaleDateString('en-GB', {
-                      day: 'numeric',
-                      month: 'short',
-                      year: 'numeric',
-                    })}
-                  </p>
-                )}
+                <div className="p-6">
+                  {post.tags && post.tags[0] && (
+                    <span className="text-xs font-medium text-gray-500 mb-3 block">
+                      {post.tags[0]}
+                    </span>
+                  )}
+                  <h3 className="text-base font-semibold text-gray-900 mb-2 leading-snug group-hover:text-gray-700 transition-colors">
+                    {post.title}
+                  </h3>
+                  {post.date && (
+                    <p className="text-xs text-gray-500">
+                      {new Date(post.date).toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric',
+                      })}
+                    </p>
+                  )}
+                </div>
               </Link>
             ))}
           </div>

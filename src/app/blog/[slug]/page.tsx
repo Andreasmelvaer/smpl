@@ -3,6 +3,7 @@ import { generateBlogMetadata } from '@/lib/metadata'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -78,10 +79,13 @@ export default async function BlogPost({ params }: Props) {
           {/* Hero image */}
           {post.hero_image && (
             <div className="mb-12 rounded-2xl overflow-hidden max-w-4xl">
-              <img
+              <Image
                 src={post.hero_image}
                 alt={post.title}
+                width={1200}
+                height={750}
                 className="w-full h-auto"
+                priority
               />
             </div>
           )}
