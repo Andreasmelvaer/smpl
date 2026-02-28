@@ -2,7 +2,7 @@
 title: "Lovable buildathon winners!"
 hero_image: "/images/blog/lovable-shebuilds-win.png"
 slug: "lovable-shebuilds-win"
-date: "2024-12-01"
+date: "2026-12-01"
 author: "SmplCo Team"
 excerpt: "In 48 hours, surrounded by 200+ inspiring women, that idea became something tangible. It was also validated."
 tags: ["Lovable", "SheBuilds", "Buildathon", "AI Development", "Get to Give"]

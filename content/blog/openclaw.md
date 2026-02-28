@@ -2,7 +2,7 @@
 title: "Testing OpenClaw at SmplCo: Nothing this fun is risk free..."
 hero_image: "/images/blog/openclaw.jpg"
 slug: "openclaw"
-date: "2025-02-11"
+date: "2026-02-11"
 author: "SmplCo"
 excerpt: "Over the past week, we've been experimenting with something called OpenClaw. Not as a 'we replaced our team with AI' story. But as a serious test of what autonomous AI agents can realistically do inside a small company."
 tags: ["AI", "OpenClaw", "Agents", "Automation"]

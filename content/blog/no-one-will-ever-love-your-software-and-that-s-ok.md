@@ -2,7 +2,7 @@
 title: "No one will ever love your software… and that's OK"
 hero_image: "/images/blog/no-one-will-ever-love-your-software-and-that-s-ok.png"
 slug: "no-one-will-ever-love-your-software-and-that-s-ok"
-date: "2024-10-15"
+date: "2026-10-15"
 author: "Michael Millar"
 excerpt: "The inspiring and deeply personal story of how our serial entrepreneur and co-founder at SmplCo conceived, built, and sold his own SaaS company."
 tags: ["Entrepreneurs", "SaaS", "Startup", "QuickLog", "ABAX", "Customer Focus"]

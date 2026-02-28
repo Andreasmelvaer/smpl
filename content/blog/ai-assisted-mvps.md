@@ -2,7 +2,7 @@
 title: "SmplCo: 'world-class' AI development"
 hero_image: "/images/blog/ai-assisted-mvps.jpg"
 slug: "ai-assisted-mvps"
-date: "2024-12-15"
+date: "2026-12-15"
 author: "Michael Millar"
 excerpt: "Apparently, SmplCo is world-class now. Figma just published a case study on how we took our client Saddle from a rough idea to a live product in 2 weeks."
 tags: ["AI Development", "MVP", "Vibecoding", "Case Study", "Figma"]

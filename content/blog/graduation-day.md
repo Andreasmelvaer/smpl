@@ -2,7 +2,7 @@
 title: "Graduation day at SmplAcademy!"
 hero_image: "/images/blog/graduation-day.jpg"
 slug: "graduation-day"
-date: "2024-05-01"
+date: "2026-05-01"
 author: "SmplCo Team"
 excerpt: "Congratulations to the first graduates of SmplAcademy! After a month of learning about, and contributing to, our 5-Day Prototyping Service, we're releasing our inaugural cohort back into wilds of education."
 tags: ["Digital Development", "SmplAcademy", "Education", "Noroff", "Graduates"]

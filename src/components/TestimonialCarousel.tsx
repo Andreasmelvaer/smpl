@@ -1,27 +1,32 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 const testimonials = [
   {
     quote: 'SmplCo is my go-to partner for everything — from product design and development to branding and collateral.',
     name: 'Tom Harris',
     title: 'CEO, Saddle',
+    photo: '/images/testimonials/testimonial-young-man-polo.png',
   },
   {
     quote: 'Smpl has done for us as the name implies — taken something complex and made it beautifully simple, helping us raise and helping us sell.',
     name: 'Kitty Harris',
     title: 'Enquip Energy',
+    photo: '/images/testimonials/testimonial-blonde-woman.png',
   },
   {
     quote: 'The 5-day prototype with SmplCo played a key role in shaping the core value of the company. The visual effects kick started a new journey for us.',
     name: 'Kine Norland',
     title: 'Resani, Head of Growth',
+    photo: '/images/testimonials/testimonial-young-woman-dark-hair.png',
   },
   {
     quote: 'I have never seen anything like this level of speed and quality. SmplCo understood exactly what we needed and delivered beyond expectations.',
     name: 'Christian Bjerke',
     title: 'TWENTY40, CEO',
+    photo: '/images/testimonials/testimonial-young-man-garden.png',
   },
   {
     quote: 'The team at SmplCo brought clarity to a complex problem. Their prototype helped us secure our seed round within weeks.',
@@ -84,9 +89,14 @@ export default function TestimonialCarousel() {
                 <p className="text-gray-700 mb-6 leading-relaxed font-satoshi text-sm">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <div>
-                  <p className="font-semibold text-sm text-gray-900">{t.name}</p>
-                  <p className="text-xs text-gray-500">{t.title}</p>
+                <div className="flex items-center gap-3">
+                  {t.photo && (
+                    <Image src={t.photo} alt={t.name} width={40} height={40} className="rounded-full" />
+                  )}
+                  <div>
+                    <p className="font-semibold text-sm text-gray-900">{t.name}</p>
+                    <p className="text-xs text-gray-500">{t.title}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -121,9 +131,14 @@ export default function TestimonialCarousel() {
             <p className="text-gray-700 mb-4 leading-relaxed font-satoshi text-sm">
               &ldquo;{t.quote}&rdquo;
             </p>
-            <div>
-              <p className="font-semibold text-sm text-gray-900">{t.name}</p>
-              <p className="text-xs text-gray-500">{t.title}</p>
+            <div className="flex items-center gap-3">
+              {t.photo && (
+                <Image src={t.photo} alt={t.name} width={36} height={36} className="rounded-full" />
+              )}
+              <div>
+                <p className="font-semibold text-sm text-gray-900">{t.name}</p>
+                <p className="text-xs text-gray-500">{t.title}</p>
+              </div>
             </div>
           </div>
         ))}

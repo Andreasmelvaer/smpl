@@ -2,7 +2,7 @@
 title: "Land your first customers using the Nurture Train"
 hero_image: "/images/blog/all-aboard-the-nurture-train.jpg"
 slug: "all-aboard-the-nurture-train"
-date: "2024-06-01"
+date: "2026-06-01"
 author: "SmplCo Team"
 excerpt: "Imagine going to market, not only knowing people want what you're selling, but also having customers willing to pay right away… If this sounds too good to be true, then we've got news for you: it ain't."
 tags: ["Market Fit", "Customer Development", "Nurturing", "Lunos", "MVP"]

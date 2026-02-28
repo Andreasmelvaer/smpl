@@ -2,7 +2,7 @@
 title: "5 Must-Know Truths Before You Dive Into AI"
 hero_image: "/images/blog/ai-strategy-5-must-knows-truths.webp"
 slug: "ai-strategy-5-must-knows-truths"
-date: "2024-09-15"
+date: "2026-09-15"
 author: "SmplCo Team"
 excerpt: "The great AI gold rush is on. It has become an indispensable part of new tech, while those with existing products and services are rushing to integrate. But there are many traps for the unwary."
 tags: ["AI Strategy", "Business Strategy", "AI Implementation", "Fabriq AI"]

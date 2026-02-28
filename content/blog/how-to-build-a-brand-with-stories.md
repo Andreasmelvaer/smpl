@@ -2,7 +2,7 @@
 title: "The big companies adopting an ancient art to win customers"
 hero_image: "/images/blog/how-to-build-a-brand-with-stories.jpg"
 slug: "how-to-build-a-brand-with-stories"
-date: "2025-01-15"
+date: "2026-01-15"
 author: "Michael Millar"
 excerpt: "In 2026 there is something more valuable than gold. More valuable than rare earth metals. More valuable even than goddamned printer ink. That thing? Attention."
 tags: ["Brand Strategy", "Storytelling", "Marketing", "Customer Engagement"]

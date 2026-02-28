@@ -2,7 +2,7 @@
 title: "News! SmplCo signs deal with UK's Barclays bank"
 hero_image: "/images/blog/news-smplco-signs-deal-with-uk-s-barclays-bank.png"
 slug: "news-smplco-signs-deal-with-uk-s-barclays-bank"
-date: "2024-08-01"
+date: "2026-08-01"
 author: "Michael Millar"
 excerpt: "We're delighted to announce SmplCo has signed a partnership with Barclays, one of the UK's biggest banks. SmplCo will deliver its services through the bank's incubator, Barclays Eagles Labs."
 tags: ["News", "Partnership", "Barclays", "Eagles Labs", "Entrepreneurs"]

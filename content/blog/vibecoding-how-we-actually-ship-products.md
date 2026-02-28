@@ -2,7 +2,7 @@
 title: "The Case for Disciplined Vibecoding"
 hero_image: "/images/blog/vibecoding-how-we-actually-ship-products.png"
 slug: "vibecoding-how-we-actually-ship-products"
-date: "2025-02-01"
+date: "2026-02-01"
 author: "Andreas Melvaer"
 excerpt: "When SmplCo founder and serial entrepreneur Bjorn Ivar and I started building the mini SaaS - Wallogo, we didn't want to spend months debating wireframes and user flows in a vacuum. We wanted to feel what we were building."
 tags: ["Vibecoding", "Product Development", "Lovable", "AI", "Development"]

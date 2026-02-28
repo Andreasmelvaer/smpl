@@ -2,7 +2,7 @@
 title: "Altien: the app we'll all wish we had, one day"
 hero_image: "/images/blog/altien.webp"
 slug: "altien"
-date: "2024-11-15"
+date: "2026-11-15"
 author: "SmplCo Team"
 excerpt: "Altien is bringing power to those we care for, and care about. Across Europe's residential care homes, the same problems repeat themselves every day: information is scattered across sticky notes and shift books."
 tags: ["Healthcare", "Care Homes", "Communication", "SaaS", "Altien"]

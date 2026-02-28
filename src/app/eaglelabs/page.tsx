@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Barclays Eagle Labs',
@@ -13,6 +14,9 @@ export default function EagleLabs() {
         <div className="max-w-3xl mx-auto">
           {/* Header */}
           <div className="mb-12 text-center">
+            <div className="flex justify-center mb-6">
+              <Image src="/images/logos/partners/barclays-eagle-labs-logo-blue.png" alt="Barclays Eagle Labs" width={250} height={50} />
+            </div>
             <p className="text-sm font-medium text-gray-500 mb-3">
               Exclusive Partnership
             </p>
@@ -23,6 +27,11 @@ export default function EagleLabs() {
               SmplCo has partnered with Barclays Eagle Labs to offer exclusive
               member discounts on prototyping and product development.
             </p>
+          </div>
+
+          {/* Eagle Labs illustration */}
+          <div className="flex justify-center mb-12">
+            <Image src="/images/illustrations/smplco-illustration-eagle-labs-member-reward.png" alt="Exclusive Eagle Labs member reward — SmplCo partnership" width={500} height={400} />
           </div>
 
           {/* Offer card */}

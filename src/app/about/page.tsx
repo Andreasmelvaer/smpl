@@ -2,6 +2,8 @@ import { getPostData } from '@/lib/markdown'
 import { generatePageMetadata } from '@/lib/metadata'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
+import AnimateOnScroll from '@/components/AnimateOnScroll'
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
@@ -126,6 +128,31 @@ export default async function About() {
                     </li>
                   ))}
                 </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Team */}
+        <div className="mb-24">
+          <AnimateOnScroll>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12">
+              Meet the <span className="font-editorial">team</span>
+            </h2>
+          </AnimateOnScroll>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { src: '/images/team/team-fullbody-man-cap-glasses.jpg', name: 'Andreas', role: 'Founder & CEO' },
+              { src: '/images/team/team-woman-dark-hair-bw.jpg', name: 'Team Member', role: 'Design' },
+              { src: '/images/team/team-man-glasses-bw.jpg', name: 'Team Member', role: 'Development' },
+              { src: '/images/team/team-woman-business-outdoor.jpg', name: 'Team Member', role: 'Strategy' },
+            ].map((member) => (
+              <div key={member.name + member.role} className="text-center">
+                <div className="aspect-square rounded-2xl overflow-hidden mb-4 bg-gray-100 relative">
+                  <Image src={member.src} alt={`${member.name} — ${member.role} at SmplCo`} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
+                </div>
+                <p className="font-semibold text-sm">{member.name}</p>
+                <p className="text-gray-500 text-xs font-satoshi">{member.role}</p>
               </div>
             ))}
           </div>

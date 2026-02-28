@@ -2,7 +2,7 @@
 title: "How to win an AI hackathon / buildathon"
 hero_image: "/images/blog/how-to-win-ai-hackathon-buildathon.jpg"
 slug: "how-to-win-ai-hackathon-buildathon"
-date: "2025-01-20"
+date: "2026-01-20"
 author: "Line Hjartarson & Andreas Melvær"
 excerpt: "Taking part in an AI hackathon - or buildathon - can be an awesome opportunity for entrepreneurs and innovators. These sprints - often over 48-hours - help you validate your idea, advance your product, get access to money and expertise."
 tags: ["AI", "Hackathon", "Buildathon", "Innovation", "Strategy"]
