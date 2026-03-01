@@ -89,6 +89,28 @@ export default function ContactPage() {
           </div>
         </div>
 
+        {/* Office Locations */}
+        <div className="mt-24">
+          <h2 className="text-3xl md:text-4xl font-bold mb-10">
+            Our <span className="font-editorial italic">offices</span>
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+            {[
+              { city: 'Stavanger', country: 'Norway', emoji: '🇳🇴' },
+              { city: 'London', country: 'United Kingdom', emoji: '🇬🇧' },
+              { city: 'San Francisco', country: 'United States', emoji: '🇺🇸' },
+              { city: 'Budapest', country: 'Hungary', emoji: '🇭🇺' },
+              { city: 'Zürich', country: 'Switzerland', emoji: '🇨🇭' },
+            ].map((loc) => (
+              <div key={loc.city} className="bg-offwhite rounded-2xl p-6 text-center">
+                <div className="text-3xl mb-3">{loc.emoji}</div>
+                <p className="font-bold text-gray-900">{loc.city}</p>
+                <p className="text-sm text-gray-500 font-satoshi">{loc.country}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Eagle Labs banner */}
         <AnimateOnScroll>
           <div className="mt-24 bg-gray-900 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 text-white">

@@ -23,10 +23,19 @@ export default async function HomePage() {
         />
         <div className="container-main text-center relative z-10">
             <div className="relative inline-block">
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-[1.05] mb-8 tracking-tight">
+              <h1 className="text-7xl md:text-9xl lg:text-[11rem] font-bold leading-[1.0] mb-8 tracking-tight">
                 {/* Line 1: Prototype fast */}
                 <span className="relative">
-                  <span className="font-editorial" style={{ color: '#c8e600', WebkitTextStroke: '1.5px rgba(0,0,0,0.2)' }}>Prototype</span>
+                  <span
+                    className="font-editorial"
+                    style={{
+                      color: '#c8e600',
+                      WebkitTextStroke: '1.5px rgba(0,0,0,0.2)',
+                      backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 4px)',
+                      WebkitBackgroundClip: 'text',
+                      backgroundClip: 'text',
+                    }}
+                  >Prototype</span>
                   {' '}
                   <span className="relative inline-block">
                     <span className="relative z-10 font-bold">fast</span>
@@ -61,10 +70,11 @@ export default async function HomePage() {
                 {/* Line 3: Launch in Weeks */}
                 <span className="font-editorial italic">Launch in Weeks</span>
               </h1>
-              {/* Decorative bezier curve (SVG) */}
-              <svg className="hidden md:block absolute -top-4 right-[15%] w-48 h-32 pointer-events-none" viewBox="0 0 200 130" fill="none">
-                <path d="M10 120 C 60 120, 80 10, 150 10 C 180 10, 195 30, 190 50" stroke="#60a5fa" strokeWidth="2" fill="none" />
-                <circle cx="10" cy="120" r="4" stroke="#60a5fa" strokeWidth="2" fill="none" />
+              {/* Decorative bezier curve — full loop */}
+              <svg className="hidden md:block absolute -top-12 right-[10%] w-64 h-56 pointer-events-none" viewBox="0 0 260 220" fill="none">
+                <path d="M20 200 C 20 200, 20 20, 130 20 C 240 20, 240 200, 130 200 C 80 200, 60 160, 60 140" stroke="#60a5fa" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                <circle cx="20" cy="200" r="5" stroke="#60a5fa" strokeWidth="2" fill="none" />
+                <polygon points="55,140 65,140 60,150" fill="#60a5fa" />
               </svg>
             </div>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-satoshi">
@@ -92,27 +102,25 @@ export default async function HomePage() {
       {/* ============ RECOGNISED BY ============ */}
       <section className="py-16 md:py-20 bg-offwhite border-y border-gray-200">
         <div className="container-main">
-          <p className="text-xs font-medium text-gray-500 text-center mb-10 uppercase tracking-wider">
+          <p className="text-xs font-medium text-gray-500 text-center mb-8 tracking-wider">
             Recognised by
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-14">
             {[
-              { label: 'Global Exemplar', org: 'Figma', desc: 'Recognised for world-class AI-assisted development', logo: '/images/logos/recognition/figma-logo.png' },
-              { label: 'SheBuilds Winner', org: 'Lovable', desc: 'First place at the SheBuilds hackathon', logo: '/images/logos/recognition/lovable-logo.png' },
-              { label: 'Global Runner-Up', org: 'DIA', desc: 'Design Intelligence Award global runner-up', logo: '/images/logos/recognition/design-intelligence-award-dia-badge.png' },
-              { label: 'Digital Design Winner', org: 'Stern Reklame', desc: 'Award-winning digital design work', logo: null },
+              { label: 'Global Exemplar', logo: '/images/logos/recognition/figma-logo.png' },
+              { label: 'SheBuilds Winner', logo: '/images/logos/recognition/lovable-logo.png' },
+              { label: 'Global Runner-Up', logo: '/images/logos/recognition/design-intelligence-award-dia-badge.png' },
+              { label: 'Digital Design Winner', logo: null, text: 'STÆRK\nREKLAME' },
             ].map((award) => (
-              <div key={award.label} className="bg-white rounded-2xl p-6 text-center border border-gray-100">
-                <div className="h-12 flex items-center justify-center mb-4">
+              <div key={award.label} className="flex flex-col items-center gap-2">
+                <div className="h-10 flex items-center justify-center">
                   {award.logo ? (
-                    <Image src={award.logo} alt={award.org} width={100} height={48} className="object-contain h-10 w-auto" />
+                    <Image src={award.logo} alt={award.label} width={80} height={40} className="object-contain h-8 w-auto" />
                   ) : (
-                    <span className="text-xl font-black tracking-wider text-gray-900">{award.org.toUpperCase()}</span>
+                    <span className="text-sm font-black tracking-[0.2em] text-gray-900 leading-tight text-center whitespace-pre-line" style={{ fontStyle: 'italic' }}>{award.text}</span>
                   )}
                 </div>
-                <p className="font-bold text-gray-900 text-base mb-1">{award.label}</p>
-                <p className="text-sm font-medium text-gray-500 mb-2">{award.org}</p>
-                <p className="text-xs text-gray-400 font-satoshi">{award.desc}</p>
+                <p className="text-xs text-gray-500 font-satoshi">{award.label}</p>
               </div>
             ))}
           </div>
@@ -320,9 +328,9 @@ export default async function HomePage() {
       </section>
 
       {/* ============ HOME OF THE 5-DAY PROTOTYPE ============ */}
-      <section className="relative py-32 md:py-48 bg-gray-900 overflow-hidden">
+      <section className="relative py-32 md:py-48 overflow-hidden">
         {/* Background office photo */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gray-900">
           <Image
             src="/images/illustrations/smplco-illustration-design-frame.png"
             alt="SmplCo office"
@@ -340,21 +348,23 @@ export default async function HomePage() {
       </section>
 
       {/* ============ CTA ============ */}
-      <section className="py-24 md:py-32 bg-gray-900 text-white">
-        <div className="container-main text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
-            Ready to build?
-          </h2>
-          <p className="text-lg text-gray-400 max-w-xl mx-auto mb-10 font-satoshi">
-            Every great product starts with a conversation. Get in touch for a
-            free consultation with our digital innovation experts.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-3.5 bg-lime text-gray-900 text-sm font-semibold rounded-full hover:bg-lime-bright transition-colors"
-          >
-            Build With Us
-          </Link>
+      <section className="py-24 md:py-32 bg-offwhite">
+        <div className="container-main">
+          <div className="bg-gray-900 rounded-2xl p-12 md:p-16 text-center text-white">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
+              Ready to build?
+            </h2>
+            <p className="text-lg text-gray-400 max-w-xl mx-auto mb-10 font-satoshi">
+              Every great product starts with a conversation. Get in touch for a
+              free consultation with our digital innovation experts.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-3.5 bg-lime text-gray-900 text-sm font-semibold rounded-full hover:bg-lime-bright transition-colors"
+            >
+              Build With Us
+            </Link>
+          </div>
         </div>
       </section>
     </div>
