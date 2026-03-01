@@ -1,5 +1,5 @@
-import { getPostData, getAllPosts } from '@/lib/markdown'
-import { generateWorkMetadata } from '@/lib/metadata'
+import { getPostData, getAllSlugs } from '@/lib/markdown'
+import { generatePageMetadata } from '@/lib/metadata'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   try {
     const project = await getPostData('work', slug)
-    return generateWorkMetadata(project)
+    return generatePageMetadata(project)
   } catch {
     return { title: 'Project Not Found' }
   }
@@ -23,6 +23,10 @@ export default async function WorkProject({ params }: Props) {
   const { slug } = await params
   try {
     const project = await getPostData('work', slug)
+    const category = project.category as string | undefined
+    const services = project.services as string[] | undefined
+    const website = project.website as string | undefined
+    const description = project.description as string | undefined
 
     return (
       <article className="py-16 md:py-24">
@@ -40,21 +44,21 @@ export default async function WorkProject({ params }: Props) {
 
           {/* Header */}
           <header className="mb-12 max-w-3xl">
-            {project.category && (
-              <p className="text-sm font-medium text-gray-500 mb-3">{project.category}</p>
+            {category && (
+              <p className="text-sm font-medium text-gray-500 mb-3">{category}</p>
             )}
             <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
               {project.title}
             </h1>
-            {project.description && (
+            {description && (
               <p className="text-lg text-gray-600 leading-relaxed mt-4">
-                {project.description}
+                {description}
               </p>
             )}
             <div className="flex flex-wrap items-center gap-4 mt-6">
-              {project.services && project.services.length > 0 && (
+              {services && services.length > 0 && (
                 <div className="flex flex-wrap gap-2">
-                  {project.services.map((service: string) => (
+                  {services.map((service: string) => (
                     <span
                       key={service}
                       className="text-xs font-medium px-3 py-1 bg-gray-100 rounded-full text-gray-700"
@@ -64,9 +68,9 @@ export default async function WorkProject({ params }: Props) {
                   ))}
                 </div>
               )}
-              {project.website && (
+              {website && (
                 <a
-                  href={project.website}
+                  href={website}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors"
@@ -123,6 +127,6 @@ export default async function WorkProject({ params }: Props) {
 }
 
 export async function generateStaticParams() {
-  const projects = getAllPosts('work')
-  return projects.map((slug) => ({ slug }))
+  const slugs = await getAllSlugs('work')
+  return slugs.map((slug) => ({ slug }))
 }
