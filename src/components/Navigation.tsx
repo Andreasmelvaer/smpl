@@ -61,9 +61,9 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors duration-200 font-satoshi px-3 py-1.5 rounded-full ${
+                className={`text-sm font-medium transition-all duration-200 font-satoshi px-4 py-2 rounded-full ${
                   isActive(item.href)
-                    ? 'text-gray-900 bg-gray-100'
+                    ? 'text-white bg-gray-900'
                     : 'text-gray-500 hover:text-gray-900'
                 }`}
               >

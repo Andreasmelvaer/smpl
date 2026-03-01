@@ -23,19 +23,58 @@ export default async function HomePage() {
         />
         <div className="container-main text-center relative z-10">
           <AnimateOnScroll>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] mb-8 tracking-tight">
-              Prototype <span className="highlight">fast</span>
-              <br />
-              build(<span className="font-editorial">&ldquo;smart&rdquo;</span>);
-              <br />
-              Launch in <span className="highlight">Weeks</span>
-            </h1>
+            <div className="relative inline-block">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-8 tracking-tight">
+                {/* Line 1: Prototype fast */}
+                <span className="relative">
+                  <span className="text-lime-bright font-editorial" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.15)' }}>Prototype</span>
+                  {' '}
+                  <span className="relative inline-block">
+                    <span className="relative z-10 font-bold">fast</span>
+                    {/* Figma selection box around "fast" */}
+                    <span className="hidden md:block absolute -inset-2 border-2 border-blue-400 pointer-events-none" style={{ borderRadius: '2px' }}>
+                      <span className="absolute -top-[4px] -left-[4px] w-[8px] h-[8px] bg-white border-2 border-blue-400" />
+                      <span className="absolute -top-[4px] -right-[4px] w-[8px] h-[8px] bg-white border-2 border-blue-400" />
+                      <span className="absolute -bottom-[4px] -left-[4px] w-[8px] h-[8px] bg-white border-2 border-blue-400" />
+                      <span className="absolute -bottom-[4px] -right-[4px] w-[8px] h-[8px] bg-white border-2 border-blue-400" />
+                      {/* Play button */}
+                      <span className="absolute -top-[4px] right-[calc(50%-12px)] -translate-y-full mb-1 w-6 h-6 bg-blue-500 rounded flex items-center justify-center">
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="white"><polygon points="2,0 10,5 2,10" /></svg>
+                      </span>
+                    </span>
+                  </span>
+                </span>
+                <br />
+                {/* Line 2: build("smart"); as code terminal */}
+                <span className="relative inline-block my-2">
+                  <span className="relative z-10 inline-block bg-white rounded-lg shadow-[4px_4px_0_rgba(0,0,0,0.9)] border border-gray-200 px-6 md:px-8 py-3 md:py-4 transform -rotate-2">
+                    <span className="absolute top-2.5 left-3 flex gap-1">
+                      <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                    </span>
+                    <span className="font-mono text-2xl md:text-4xl lg:text-5xl font-normal tracking-normal">
+                      build(<span className="text-gray-900">&quot;smart&quot;</span>);
+                    </span>
+                  </span>
+                </span>
+                <br />
+                {/* Line 3: Launch in Weeks */}
+                <span className="font-editorial">Launch in </span>
+                <span className="font-bold">Weeks</span>
+              </h1>
+              {/* Decorative bezier curve (SVG) */}
+              <svg className="hidden md:block absolute -top-4 right-[15%] w-48 h-32 pointer-events-none" viewBox="0 0 200 130" fill="none">
+                <path d="M10 120 C 60 120, 80 10, 150 10 C 180 10, 195 30, 190 50" stroke="#60a5fa" strokeWidth="2" fill="none" />
+                <circle cx="10" cy="120" r="4" stroke="#60a5fa" strokeWidth="2" fill="none" />
+              </svg>
+            </div>
           </AnimateOnScroll>
           <AnimateOnScroll delay={200}>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-satoshi">
-              We work with ambitious innovators and entrepreneurs to design and
-              develop amazing digital products and services — fast. Whether
-              you&apos;re a start-up or an established leader.
+              Join 125+ start-ups, scale-ups, and global brands who&apos;ve brought big ideas to
+              life, backed by a team that has built and sold digital companies, including a $3bn
+              tech unicorn. Recognised as a world-leader in AI-assisted development by Figma.
             </p>
           </AnimateOnScroll>
           <AnimateOnScroll delay={400}>
@@ -54,13 +93,6 @@ export default async function HomePage() {
               </Link>
             </div>
           </AnimateOnScroll>
-        </div>
-        {/* Decorative illustrations */}
-        <div className="hidden lg:block absolute top-16 left-[5%] xl:left-[10%]">
-          <Image src="/images/illustrations/smplco-illustration-notebook.png" alt="" width={150} height={150} className="opacity-80" />
-        </div>
-        <div className="hidden lg:block absolute bottom-16 right-[5%] xl:right-[10%]">
-          <Image src="/images/illustrations/smplco-illustration-prototype.png" alt="" width={150} height={150} className="opacity-80" />
         </div>
       </section>
 
