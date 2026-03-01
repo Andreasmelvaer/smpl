@@ -120,12 +120,12 @@ export default function WorkPage() {
                 </span>
               </h1>
               {/* Illustration overlapping the heading */}
-              <div className="hidden md:block absolute -bottom-16 left-1/2 -translate-x-1/2">
+              <div className="hidden md:block absolute -bottom-8 left-1/2 -translate-x-1/2">
                 <Image
                   src="/images/illustrations/smplco-illustration-design-frame.png"
                   alt=""
-                  width={240}
-                  height={240}
+                  width={200}
+                  height={200}
                   className="opacity-90"
                 />
               </div>

@@ -22,12 +22,11 @@ export default async function HomePage() {
           }}
         />
         <div className="container-main text-center relative z-10">
-          <AnimateOnScroll>
             <div className="relative inline-block">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-8 tracking-tight">
                 {/* Line 1: Prototype fast */}
                 <span className="relative">
-                  <span className="text-lime-bright font-editorial" style={{ WebkitTextStroke: '1px rgba(0,0,0,0.15)' }}>Prototype</span>
+                  <span className="font-editorial" style={{ color: '#c8e600', WebkitTextStroke: '1.5px rgba(0,0,0,0.2)' }}>Prototype</span>
                   {' '}
                   <span className="relative inline-block">
                     <span className="relative z-10 font-bold">fast</span>
@@ -69,15 +68,11 @@ export default async function HomePage() {
                 <circle cx="10" cy="120" r="4" stroke="#60a5fa" strokeWidth="2" fill="none" />
               </svg>
             </div>
-          </AnimateOnScroll>
-          <AnimateOnScroll delay={200}>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-satoshi">
               Join 125+ start-ups, scale-ups, and global brands who&apos;ve brought big ideas to
               life, backed by a team that has built and sold digital companies, including a $3bn
               tech unicorn. Recognised as a world-leader in AI-assisted development by Figma.
             </p>
-          </AnimateOnScroll>
-          <AnimateOnScroll delay={400}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/work"
@@ -92,7 +87,6 @@ export default async function HomePage() {
                 Build With Us
               </Link>
             </div>
-          </AnimateOnScroll>
         </div>
       </section>
 

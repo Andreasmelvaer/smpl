@@ -17,7 +17,6 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-2 gap-16 md:gap-20">
           {/* Left column — info */}
           <div>
-            <AnimateOnScroll>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                 Let&apos;s <span className="font-editorial">build</span>{' '}
                 something great
@@ -26,7 +25,6 @@ export default function ContactPage() {
                 Every great product starts with a conversation. Tell us about
                 your idea and we&apos;ll get back to you within 24 hours.
               </p>
-            </AnimateOnScroll>
 
             <AnimateOnScroll delay={200}>
               <div className="space-y-8 mb-12">
@@ -86,9 +84,9 @@ export default function ContactPage() {
           </div>
 
           {/* Right column — form */}
-          <AnimateOnScroll delay={100}>
+          <div>
             <ContactForm />
-          </AnimateOnScroll>
+          </div>
         </div>
 
         {/* Eagle Labs banner */}

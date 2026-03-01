@@ -29,11 +29,9 @@ export default async function About() {
         <div className="container-main relative z-10">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1">
-              <AnimateOnScroll>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   This is <span className="font-editorial">us</span>
                 </h1>
-              </AnimateOnScroll>
               <p className="text-lg text-gray-600 leading-relaxed font-satoshi max-w-lg">
                 &ldquo;Let&apos;s have the right conversations after 5 days, not 5 months...&rdquo;
               </p>
