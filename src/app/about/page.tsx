@@ -163,27 +163,37 @@ export default async function About() {
         {/* Team */}
         <div className="mb-24">
           <AnimateOnScroll>
-            <h2 className="text-3xl md:text-4xl font-bold mb-12">
-              Meet the <span className="font-editorial">team</span>
-            </h2>
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <Image src="/images/illustrations/smplco-illustration-high-five.png" alt="" width={80} height={80} />
+              <h2 className="text-3xl md:text-4xl font-bold">
+                <span className="font-editorial italic">Our</span><br />Team
+              </h2>
+            </div>
+            <p className="text-center text-gray-600 font-satoshi max-w-xl mx-auto mb-12">
+              We&apos;re a group of digital experts from the four corners of the globe, who are
+              deeply passionate about bringing Big Ideas to life and making magic happen
+            </p>
           </AnimateOnScroll>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { src: '/images/team/team-fullbody-man-cap-glasses.jpg', name: 'Andreas Melvær', role: 'Founder & CEO' },
-              { src: '/images/team/team-fullbody-man-blazer.png', name: 'Lasse Andresen', role: 'Partner & Advisor' },
-              { src: '/images/team/team-woman-dark-hair-bw.jpg', name: 'Jingjing Li', role: 'UI/UX Design & Data Science' },
-              { src: '/images/team/team-man-glasses-bw.jpg', name: 'Michael Millar', role: 'Partner & Brand Strategist' },
-              { src: '/images/team/team-woman-business-outdoor.jpg', name: 'Giorgiana Mihaela Bejan', role: 'UI/UX Design' },
-              { src: '/images/team/team-portrait-man-beard-suit.png', name: 'Bjørn Ivar Knudsen', role: 'Partner & SaaS Expert' },
-              { src: '/images/team/team-fullbody-man-navy-sweater.png', name: 'Leonardo Hernandez', role: 'Development' },
-              { src: '/images/team/team-portrait-man-dark-studio.png', name: 'Andras Toth', role: 'Development' },
+              { src: '/images/team/team-fullbody-man-cap-glasses.jpg', name: 'Andreas Melvær', role: 'Managing Director', bg: '#d1d5db' },
+              { src: '/images/team/team-fullbody-man-blazer.png', name: 'Lasse Andresen', role: 'Partner & Unicorn Tech Developer', bg: '#bfdbfe' },
+              { src: '/images/team/team-woman-dark-hair-bw.jpg', name: 'Jingjing Li', role: 'UI/ UX Design & Data Science', bg: '#fde68a' },
+              { src: '/images/team/team-man-glasses-bw.jpg', name: 'Michael Millar', role: 'Partner & Brand Strategist', bg: '#fecaca' },
+              { src: '/images/team/team-woman-business-outdoor.jpg', name: 'Giorgiana Mihaela Bejan', role: 'UI/ UX Design', bg: '#bbf7d0' },
+              { src: '/images/team/team-portrait-man-beard-suit.png', name: 'Bjørn Ivar Knudsen', role: 'Partner & SaaS Expert', bg: '#d1d5db' },
+              { src: '/images/team/team-fullbody-man-navy-sweater.png', name: 'Leonardo Hernandez', role: 'UI/ UX Design Lead', bg: '#bbf7d0' },
+              { src: '/images/team/team-portrait-man-dark-studio.png', name: 'Andras Toth', role: 'Partner & Head of Development', bg: '#cbd5e1' },
+              { src: '/images/team/team-portrait-woman-blonde.png', name: 'Jeanne Irina Knudsen', role: 'UI/ UX Design & Game Design', bg: '#e9d5ff' },
+              { src: '/images/team/team-portrait-man-web-summit.png', name: 'Stian Selland', role: 'Partner & Martech Expert', bg: '#fde68a' },
+              { src: '/images/team/team-woman-red-hair.jpg', name: 'Dag Andreas Olsen', role: 'Business expert', bg: '#e9d5ff' },
             ].map((member) => (
-              <div key={member.name + member.role} className="text-center">
-                <div className="aspect-square rounded-2xl overflow-hidden mb-4 bg-gray-100 relative">
-                  <Image src={member.src} alt={`${member.name} — ${member.role} at SmplCo`} fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover" />
+              <div key={member.name + member.role}>
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-4 relative" style={{ backgroundColor: member.bg }}>
+                  <Image src={member.src} alt={`${member.name} — ${member.role} at SmplCo`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover object-top" />
                 </div>
-                <p className="font-semibold text-sm">{member.name}</p>
-                <p className="text-gray-500 text-xs font-satoshi">{member.role}</p>
+                <p className="font-bold text-lg">{member.name}</p>
+                <p className="text-gray-500 text-sm font-satoshi">{member.role}</p>
               </div>
             ))}
           </div>

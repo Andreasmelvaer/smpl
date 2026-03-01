@@ -7,30 +7,42 @@ import Image from 'next/image'
 const tabs = [
   {
     id: 'startup',
-    label: 'Start-ups & Scale-ups',
-    headline: 'Go from idea to product in weeks',
+    label: 'Start-Up',
+    headline: 'Reveal your vision',
     description:
       'You have an idea, a napkin sketch, or a rough deck. We turn it into a stunning, clickable prototype in just 5 days — then help you build and launch your MVP fast.',
-    features: [
-      '5 Day Prototype — investor-ready in a single sprint',
-      'Design as a Service — a full design team for the cost of one designer',
-      'AI-assisted development — high quality, high speed',
-      'Go-to-market materials — website, video, pitch deck',
+    cards: [
+      { subtitle: 'Reveal your vision', title: '5-Day Prototype', description: 'Go from idea to high-fidelity, clickable prototype in just 5 days.' },
+      { subtitle: 'Build & launch fast', title: 'AI-assisted MVP', description: 'We build your MVP at speed using AI-assisted development and lean UX.' },
+      { subtitle: 'Raise funding', title: 'Get investor-ready', description: 'Pitch decks, demo videos, and go-to-market materials that win investment.' },
     ],
     cta: { label: 'See Start-up Success Stories', href: '/work' },
     illustration: '/images/illustrations/smplco-illustration-prototype.png',
   },
   {
-    id: 'enterprise',
-    label: 'Enterprise & Corporate',
+    id: 'scaleup',
+    label: 'Scale-Up',
+    headline: 'Accelerate your growth',
+    description:
+      'You have traction and need to scale fast. We provide the design and development firepower to iterate, grow, and ship at speed.',
+    cards: [
+      { subtitle: 'Design at scale', title: 'Design as a Service', description: 'A full design team for the cost of one designer. UI/UX, branding, and more.' },
+      { subtitle: 'Ship faster', title: 'Product Development', description: 'AI-powered development that ships production-ready features fast.' },
+      { subtitle: 'Grow your brand', title: 'Marketing & Launch', description: 'Websites, videos, and marketing materials to fuel your next growth phase.' },
+    ],
+    cta: { label: 'See Scale-up Case Studies', href: '/work' },
+    illustration: '/images/illustrations/smplco-illustration-mobile-app.png',
+  },
+  {
+    id: 'corporate',
+    label: 'Corporate Innovator',
     headline: 'Innovate like a start-up, at enterprise scale',
     description:
       'You need a digital innovation partner who moves fast without cutting corners. We help corporates prototype, test, and launch new digital products and services.',
-    features: [
-      'Rapid prototyping & concept validation workshops',
-      'Internal tools & customer-facing digital products',
-      'Innovation sprints embedded in your existing teams',
-      'Full design, development, and launch support',
+    cards: [
+      { subtitle: 'Validate fast', title: 'Innovation Sprints', description: 'Rapid prototyping and concept validation workshops embedded in your teams.' },
+      { subtitle: 'Build internal tools', title: 'Digital Products', description: 'Customer-facing apps and internal tools designed for enterprise scale.' },
+      { subtitle: 'Full support', title: 'End-to-end Delivery', description: 'From discovery to launch — design, development, and go-to-market in one team.' },
     ],
     cta: { label: 'See Enterprise Case Studies', href: '/work' },
     illustration: '/images/illustrations/smplco-illustration-innovation-forum.png',
@@ -60,42 +72,23 @@ export default function TailoredTabs() {
         ))}
       </div>
 
-      {/* Tab content */}
-      <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
-        <div>
-          <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-snug">
-            {current.headline}
-          </h3>
-          <p className="text-gray-600 mb-8 leading-relaxed font-satoshi">
-            {current.description}
-          </p>
-          <ul className="space-y-3 mb-8">
-            {current.features.map((feature) => (
-              <li
-                key={feature}
-                className="flex items-start gap-3 text-sm text-gray-700 font-satoshi"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-lime mt-1.5 shrink-0" />
-                {feature}
-              </li>
-            ))}
-          </ul>
-          <Link
-            href={current.cta.href}
-            className="inline-flex items-center justify-center px-7 py-3 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
-          >
-            {current.cta.label}
-          </Link>
-        </div>
-        <div className="flex justify-center">
-          <Image
-            src={current.illustration}
-            alt=""
-            width={360}
-            height={360}
-            className="opacity-90"
-          />
-        </div>
+      {/* Tab content: 3 service cards */}
+      <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {current.cards.map((card) => (
+          <div key={card.title} className="bg-white rounded-2xl p-8 border border-gray-100 hover:shadow-md transition-shadow">
+            <p className="text-sm text-gray-500 font-satoshi mb-3">{card.subtitle}</p>
+            <h3 className="text-xl md:text-2xl font-bold mb-4 leading-snug">{card.title}</h3>
+            <p className="text-gray-600 text-sm leading-relaxed font-satoshi mb-6">{card.description}</p>
+          </div>
+        ))}
+      </div>
+      <div className="text-center mt-10">
+        <Link
+          href={current.cta.href}
+          className="inline-flex items-center justify-center px-7 py-3 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
+        >
+          {current.cta.label}
+        </Link>
       </div>
     </div>
   )

@@ -125,13 +125,12 @@ export default async function HomePage() {
           <AnimateOnScroll>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                From <span className="highlight">Post-it</span> to{' '}
+                From <span className="highlight">Post-it</span> ...to{' '}
                 <span className="font-editorial">product</span>
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto font-satoshi">
-                Join 125+ start-ups, scale-ups, and global brands who&apos;ve
-                brought big ideas to life, backed by a team that has built and sold
-                digital companies, including a $3bn tech unicorn.
+                Put a rocket under your innovation plans with our 5-Day Prototype,
+                Design as a Service, AI-assisted development, and go-to-market expertise.
               </p>
             </div>
           </AnimateOnScroll>
@@ -249,12 +248,12 @@ export default async function HomePage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-60">
             {[
+              { src: '/images/logos/partners/compera-logo.png', alt: 'Compera', w: 100 },
+              { src: '/images/logos/clients/barclays-eagle-labs-logo-cyan.png', alt: 'Eagle Labs', w: 140 },
+              { src: '/images/logos/partners/w3-schools-logo.png', alt: 'W3Schools', w: 100 },
+              { src: '/images/logos/partners/sparebank1-sor-norge-logo.png', alt: 'SpareBank 1', w: 120 },
+              { src: '/images/logos/partners/thre360-energy-logo.png', alt: 'Three Energy', w: 100 },
               { src: '/images/logos/clients/shoosmiths-logo.png', alt: 'Shoosmiths', w: 120 },
-              { src: '/images/logos/clients/scale-logo.png', alt: 'Scale', w: 80 },
-              { src: '/images/logos/clients/lunos-logo.png', alt: 'Lunos', w: 80 },
-              { src: '/images/logos/clients/experis-manpowergroup-logo.png', alt: 'Experis ManpowerGroup', w: 120 },
-              { src: '/images/logos/clients/codebase-logo.png', alt: 'CodeBase', w: 100 },
-              { src: '/images/logos/clients/fabriq-logo.png', alt: 'Fabriq', w: 80 },
             ].map((logo) => (
               <Image key={logo.alt} src={logo.src} alt={logo.alt} width={logo.w} height={40} className="h-8 w-auto object-contain grayscale" />
             ))}
@@ -267,7 +266,7 @@ export default async function HomePage() {
         <div className="container-main">
           <AnimateOnScroll>
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">SmplInsights</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Smpl <span className="font-editorial italic">Insights</span></h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto font-satoshi">
                 Browse our thoughts on key industry trends, tales of success and
                 disaster, and tips for getting ahead in a digital world.
@@ -317,6 +316,26 @@ export default async function HomePage() {
               Get Knowledge
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ============ HOME OF THE 5-DAY PROTOTYPE ============ */}
+      <section className="relative py-32 md:py-48 bg-gray-900 overflow-hidden">
+        {/* Background office photo */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/illustrations/smplco-illustration-design-frame.png"
+            alt="SmplCo office"
+            fill
+            className="object-cover opacity-20"
+          />
+        </div>
+        <div className="container-main relative z-10 text-center">
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.1]">
+            Home of the<br />
+            <span className="font-editorial italic text-lime">5-Day</span>{' '}
+            prototype
+          </h2>
         </div>
       </section>
 
