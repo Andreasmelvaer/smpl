@@ -80,21 +80,38 @@ const projects = [
 
 export default function WorkPage() {
   return (
-    <div className="py-16 md:py-24">
-      <div className="container-main">
-        {/* Header */}
-        <AnimateOnScroll>
-          <div className="mb-20 max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Success <span className="font-editorial">stories</span>
-            </h1>
-            <p className="text-lg text-gray-600 leading-relaxed font-satoshi">
-              From napkin sketches to live products — see how we help ambitious
-              innovators bring big ideas to life, fast. Start-ups, scale-ups,
-              and global brands.
-            </p>
+    <div>
+      {/* Hero */}
+      <section className="py-20 md:py-28 bg-offwhite relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.12]"
+          style={{
+            backgroundImage: 'radial-gradient(circle, #999 1px, transparent 1px)',
+            backgroundSize: '24px 24px',
+          }}
+        />
+        <div className="container-main relative z-10">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-1">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                Our <span className="font-editorial">Work</span>
+              </h1>
+              <p className="text-lg text-gray-600 leading-relaxed font-satoshi max-w-lg">
+                Here are some examples from the 100+ digital products and services
+                we&apos;ve brought to life for clients ranging from early stage start-ups
+                to corporate innovation departments at global leaders.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <Image src="/images/illustrations/smplco-illustration-design-frame.png" alt="Our Work" width={280} height={280} className="opacity-90" />
+            </div>
           </div>
-        </AnimateOnScroll>
+        </div>
+      </section>
+
+      <div className="py-16 md:py-24">
+      <div className="container-main">
+        {/* Header - now hidden since hero above covers it */}
 
         {/* Stats */}
         <AnimateOnScroll>
@@ -223,6 +240,7 @@ export default function WorkPage() {
           </Link>
         </div>
       </div>
+    </div>
     </div>
   )
 }

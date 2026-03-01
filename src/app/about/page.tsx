@@ -16,7 +16,36 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function About() {
   return (
-    <div className="py-16 md:py-24">
+    <div>
+      {/* Hero */}
+      <section className="py-20 md:py-28 bg-offwhite relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.12]"
+          style={{
+            backgroundImage: 'radial-gradient(circle, #999 1px, transparent 1px)',
+            backgroundSize: '24px 24px',
+          }}
+        />
+        <div className="container-main relative z-10">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-1">
+              <AnimateOnScroll>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                  This is <span className="font-editorial">us</span>
+                </h1>
+              </AnimateOnScroll>
+              <p className="text-lg text-gray-600 leading-relaxed font-satoshi max-w-lg">
+                &ldquo;Let&apos;s have the right conversations after 5 days, not 5 months...&rdquo;
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <Image src="/images/illustrations/smplco-illustration-speech-bubbles.png" alt="This is us" width={240} height={240} className="opacity-90" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="py-16 md:py-24">
       <div className="container-main">
         {/* Header */}
         <div className="mb-20 max-w-3xl">
@@ -143,9 +172,13 @@ export default async function About() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { src: '/images/team/team-fullbody-man-cap-glasses.jpg', name: 'Andreas Melvær', role: 'Founder & CEO' },
-              { src: '/images/team/team-woman-dark-hair-bw.jpg', name: 'Line Hjartarson', role: 'Design' },
-              { src: '/images/team/team-man-glasses-bw.jpg', name: 'Michael Millar', role: 'Content & Growth' },
-              { src: '/images/team/team-woman-business-outdoor.jpg', name: 'Team Member', role: 'Strategy' },
+              { src: '/images/team/team-fullbody-man-blazer.png', name: 'Lasse Andresen', role: 'Partner & Advisor' },
+              { src: '/images/team/team-woman-dark-hair-bw.jpg', name: 'Jingjing Li', role: 'UI/UX Design & Data Science' },
+              { src: '/images/team/team-man-glasses-bw.jpg', name: 'Michael Millar', role: 'Partner & Brand Strategist' },
+              { src: '/images/team/team-woman-business-outdoor.jpg', name: 'Giorgiana Mihaela Bejan', role: 'UI/UX Design' },
+              { src: '/images/team/team-portrait-man-beard-suit.png', name: 'Bjørn Ivar Knudsen', role: 'Partner & SaaS Expert' },
+              { src: '/images/team/team-fullbody-man-navy-sweater.png', name: 'Leonardo Hernandez', role: 'Development' },
+              { src: '/images/team/team-portrait-man-dark-studio.png', name: 'Andras Toth', role: 'Development' },
             ].map((member) => (
               <div key={member.name + member.role} className="text-center">
                 <div className="aspect-square rounded-2xl overflow-hidden mb-4 bg-gray-100 relative">
@@ -175,6 +208,7 @@ export default async function About() {
           </Link>
         </div>
       </div>
+    </div>
     </div>
   )
 }

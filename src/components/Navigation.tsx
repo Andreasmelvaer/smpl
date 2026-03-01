@@ -47,9 +47,13 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-[60px] md:h-[56px]">
           <Link
             href="/"
-            className="text-xl font-bold tracking-tight text-gray-900 hover:opacity-80 transition-opacity"
+            className="flex items-baseline gap-0 text-xl font-bold tracking-tight text-gray-900 hover:opacity-80 transition-opacity"
           >
-            Smpl Co
+            <span>Smpl</span>
+            <span className="inline-flex items-end gap-[2px] ml-[1px] mb-[2px]">
+              <span className="w-[5px] h-[5px] bg-gray-900 rounded-full inline-block" />
+              <span className="w-[7px] h-[7px] bg-gray-900 rounded-full inline-block" />
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">

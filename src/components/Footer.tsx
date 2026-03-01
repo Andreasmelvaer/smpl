@@ -16,8 +16,12 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-12 mb-16">
           {/* Brand */}
           <div className="max-w-xs">
-            <Link href="/" className="text-2xl font-bold tracking-tight">
-              Smpl Co
+            <Link href="/" className="inline-flex items-baseline text-2xl font-bold tracking-tight">
+              <span>Smpl</span>
+              <span className="inline-flex items-end gap-[2px] ml-[1px] mb-[2px]">
+                <span className="w-[6px] h-[6px] bg-white rounded-full inline-block" />
+                <span className="w-[8px] h-[8px] bg-white rounded-full inline-block" />
+              </span>
             </Link>
             <p className="mt-4 text-gray-400 text-sm leading-relaxed font-satoshi">
               We work with ambitious innovators and entrepreneurs to design and

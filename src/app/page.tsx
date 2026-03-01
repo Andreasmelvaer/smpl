@@ -12,7 +12,15 @@ export default async function HomePage() {
   return (
     <div className="min-h-screen">
       {/* ============ HERO ============ */}
-      <section className="py-24 md:py-32 lg:py-40 relative overflow-hidden">
+      <section className="py-24 md:py-32 lg:py-40 relative overflow-hidden bg-offwhite">
+        {/* Dotted background pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.15]"
+          style={{
+            backgroundImage: 'radial-gradient(circle, #999 1px, transparent 1px)',
+            backgroundSize: '24px 24px',
+          }}
+        />
         <div className="container-main text-center relative z-10">
           <AnimateOnScroll>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] mb-8 tracking-tight">
@@ -48,11 +56,11 @@ export default async function HomePage() {
           </AnimateOnScroll>
         </div>
         {/* Decorative illustrations */}
-        <div className="hidden lg:block absolute top-20 left-8 opacity-60">
-          <Image src="/images/illustrations/smplco-illustration-notebook.png" alt="" width={120} height={120} />
+        <div className="hidden lg:block absolute top-16 left-[5%] xl:left-[10%]">
+          <Image src="/images/illustrations/smplco-illustration-notebook.png" alt="" width={150} height={150} className="opacity-80" />
         </div>
-        <div className="hidden lg:block absolute bottom-20 right-8 opacity-60">
-          <Image src="/images/illustrations/smplco-illustration-prototype.png" alt="" width={120} height={120} />
+        <div className="hidden lg:block absolute bottom-16 right-[5%] xl:right-[10%]">
+          <Image src="/images/illustrations/smplco-illustration-prototype.png" alt="" width={150} height={150} className="opacity-80" />
         </div>
       </section>
 

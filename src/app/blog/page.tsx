@@ -38,7 +38,7 @@ export default async function BlogPage() {
             >
               <div className="grid md:grid-cols-2">
                 {posts[0].hero_image && (
-                  <div className="aspect-[16/10] md:aspect-auto overflow-hidden relative">
+                  <div className="aspect-[16/10] md:aspect-auto md:min-h-[320px] overflow-hidden relative">
                     <Image
                       src={posts[0].hero_image}
                       alt={posts[0].title}
