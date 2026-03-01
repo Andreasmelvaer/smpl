@@ -23,7 +23,7 @@ export default async function HomePage() {
         />
         <div className="container-main text-center relative z-10">
             <div className="relative inline-block">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-8 tracking-tight">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold leading-[1.05] mb-8 tracking-tight">
                 {/* Line 1: Prototype fast */}
                 <span className="relative">
                   <span className="font-editorial" style={{ color: '#c8e600', WebkitTextStroke: '1.5px rgba(0,0,0,0.2)' }}>Prototype</span>
@@ -59,8 +59,7 @@ export default async function HomePage() {
                 </span>
                 <br />
                 {/* Line 3: Launch in Weeks */}
-                <span className="font-editorial">Launch in </span>
-                <span className="font-bold">Weeks</span>
+                <span className="font-editorial italic">Launch in Weeks</span>
               </h1>
               {/* Decorative bezier curve (SVG) */}
               <svg className="hidden md:block absolute -top-4 right-[15%] w-48 h-32 pointer-events-none" viewBox="0 0 200 130" fill="none">
@@ -100,12 +99,16 @@ export default async function HomePage() {
             {[
               { label: 'Global Exemplar', org: 'Figma', desc: 'Recognised for world-class AI-assisted development', logo: '/images/logos/recognition/figma-logo.png' },
               { label: 'SheBuilds Winner', org: 'Lovable', desc: 'First place at the SheBuilds hackathon', logo: '/images/logos/recognition/lovable-logo.png' },
-              { label: 'Global Runner-Up', org: 'Lovable', desc: 'Runner-up in global buildathon competition', logo: '/images/logos/recognition/lovable-logo.png' },
-              { label: 'Digital Design Winner', org: 'DIA', desc: 'Award-winning digital design work', logo: '/images/logos/recognition/design-intelligence-award-dia-badge.png' },
+              { label: 'Global Runner-Up', org: 'DIA', desc: 'Design Intelligence Award global runner-up', logo: '/images/logos/recognition/design-intelligence-award-dia-badge.png' },
+              { label: 'Digital Design Winner', org: 'Stern Reklame', desc: 'Award-winning digital design work', logo: null },
             ].map((award) => (
               <div key={award.label} className="bg-white rounded-2xl p-6 text-center border border-gray-100">
                 <div className="h-12 flex items-center justify-center mb-4">
-                  <Image src={award.logo} alt={award.org} width={100} height={48} className="object-contain h-10 w-auto" />
+                  {award.logo ? (
+                    <Image src={award.logo} alt={award.org} width={100} height={48} className="object-contain h-10 w-auto" />
+                  ) : (
+                    <span className="text-xl font-black tracking-wider text-gray-900">{award.org.toUpperCase()}</span>
+                  )}
                 </div>
                 <p className="font-bold text-gray-900 text-base mb-1">{award.label}</p>
                 <p className="text-sm font-medium text-gray-500 mb-2">{award.org}</p>
@@ -132,9 +135,36 @@ export default async function HomePage() {
               </p>
             </div>
           </AnimateOnScroll>
-          {/* Illustration */}
-          <div className="flex justify-center mb-12">
-            <Image src="/images/illustrations/smplco-illustration-ideas-investors.png" alt="From ideas to investors — SmplCo design and development process" width={400} height={400} className="opacity-90" />
+          {/* Project preview grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+            {[
+              { name: 'Compera', slug: 'compera', image: '/images/work/work-screenshot-8MPdzvcM.png', bgColor: '#E8E5E0' },
+              { name: 'Nucase', slug: 'nucase', image: '/images/work/work-screenshot-K8urYIj7.png', bgColor: '#9BE36B' },
+              { name: 'Share50', slug: 'share50', image: '/images/work/work-screenshot-WylA8iGQ.png', bgColor: '#FF6B4A' },
+              { name: 'Enquip', slug: 'enquip', image: '/images/work/work-screenshot-GClb3SRB.png', bgColor: '#7EECDA' },
+              { name: '2040', slug: '2040', image: '/images/work/work-screenshot-5dXnzIIn.jpg', bgColor: '#D4E857' },
+              { name: 'Altien', slug: 'altien', image: '/images/work/work-screenshot-7zbdZUNv.jpg', bgColor: '#C5DAF0' },
+            ].map((project) => (
+              <Link
+                key={project.slug}
+                href={`/work/${project.slug}`}
+                className="group block rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden" style={{ backgroundColor: project.bgColor }}>
+                  <div className="absolute inset-0 flex items-end justify-center p-4 pt-10">
+                    <div className="relative w-full max-w-[90%] aspect-[16/10] rounded-t-lg overflow-hidden shadow-lg">
+                      <Image
+                        src={project.image}
+                        alt={project.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
           <div className="text-center">
             <Link
