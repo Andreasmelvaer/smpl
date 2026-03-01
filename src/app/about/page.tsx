@@ -142,9 +142,9 @@ export default async function About() {
           </AnimateOnScroll>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { src: '/images/team/team-fullbody-man-cap-glasses.jpg', name: 'Andreas', role: 'Founder & CEO' },
-              { src: '/images/team/team-woman-dark-hair-bw.jpg', name: 'Team Member', role: 'Design' },
-              { src: '/images/team/team-man-glasses-bw.jpg', name: 'Team Member', role: 'Development' },
+              { src: '/images/team/team-fullbody-man-cap-glasses.jpg', name: 'Andreas Melvær', role: 'Founder & CEO' },
+              { src: '/images/team/team-woman-dark-hair-bw.jpg', name: 'Line Hjartarson', role: 'Design' },
+              { src: '/images/team/team-man-glasses-bw.jpg', name: 'Michael Millar', role: 'Content & Growth' },
               { src: '/images/team/team-woman-business-outdoor.jpg', name: 'Team Member', role: 'Strategy' },
             ].map((member) => (
               <div key={member.name + member.role} className="text-center">

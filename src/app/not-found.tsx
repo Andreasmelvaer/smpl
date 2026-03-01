@@ -1,33 +1,36 @@
 import Link from 'next/link'
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: '404 – Page Not Found',
-}
+import Image from 'next/image'
 
 export default function NotFound() {
   return (
-    <div className="min-h-[60vh] flex items-center justify-center py-16">
-      <div className="text-center max-w-lg px-6">
-        <p className="text-sm font-mono text-gray-400 mb-4">404</p>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          Page not found
-        </h1>
-        <p className="text-lg text-gray-600 mb-8">
-          The page you&apos;re looking for doesn&apos;t exist or has been moved.
+    <div className="min-h-[70vh] flex items-center justify-center py-24">
+      <div className="container-main text-center">
+        <div className="flex justify-center mb-8">
+          <Image
+            src="/images/illustrations/smplco-illustration-signpost.png"
+            alt=""
+            width={160}
+            height={160}
+            className="opacity-80"
+          />
+        </div>
+        <h1 className="text-5xl md:text-6xl font-bold mb-4">404</h1>
+        <p className="text-lg text-gray-600 mb-8 max-w-md mx-auto font-satoshi">
+          This page doesn&apos;t exist — but your next big idea might. Let&apos;s get you
+          back on track.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/"
-            className="inline-block px-6 py-3 bg-gray-900 text-white rounded-full text-sm font-medium hover:bg-gray-800 transition-colors"
+            className="inline-flex items-center justify-center px-8 py-3.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
           >
-            Go home
+            Back to Home
           </Link>
           <Link
-            href="/work"
-            className="inline-block px-6 py-3 bg-lime text-gray-900 rounded-full text-sm font-medium hover:bg-lime-bright transition-colors"
+            href="/contact"
+            className="inline-flex items-center justify-center px-8 py-3.5 bg-white text-gray-900 text-sm font-medium rounded-full border border-gray-200 hover:bg-gray-50 transition-colors"
           >
-            View our work
+            Get in Touch
           </Link>
         </div>
       </div>

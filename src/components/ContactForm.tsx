@@ -1,134 +1,169 @@
 'use client'
 
-import { useState, FormEvent } from 'react'
+import { useState, type FormEvent } from 'react'
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>(
+    'idle'
+  )
 
-  // Google Apps Script endpoint for sending emails
-  // Set NEXT_PUBLIC_CONTACT_FORM_URL in your .env.local or Vercel env vars
-  // See google-apps-script.js for the Apps Script to deploy
-  const FORM_ENDPOINT = process.env.NEXT_PUBLIC_CONTACT_FORM_URL || ''
+  const [errorMsg, setErrorMsg] = useState('')
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setStatus('submitting')
+    setStatus('sending')
+    setErrorMsg('')
 
-    const form = e.currentTarget
-    const formData = new FormData(form)
+    const formData = new FormData(e.currentTarget)
     const data = {
       name: formData.get('name'),
       email: formData.get('email'),
       company: formData.get('company'),
+      interest: formData.get('interest'),
       message: formData.get('message'),
     }
 
     try {
-      await fetch(FORM_ENDPOINT, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        body: JSON.stringify(data),
         headers: { 'Content-Type': 'application/json' },
-        mode: 'no-cors',
+        body: JSON.stringify(data),
       })
 
-      // Google Apps Script with no-cors returns opaque response,
-      // so we treat any non-thrown as success
-      setStatus('success')
-      form.reset()
-    } catch {
+      if (!res.ok) {
+        const err = await res.json()
+        throw new Error(err.error || 'Something went wrong')
+      }
+
+      setStatus('sent')
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : 'Something went wrong')
       setStatus('error')
     }
   }
 
-  if (status === 'success') {
+  if (status === 'sent') {
     return (
-      <div className="bg-lime rounded-2xl p-8 md:p-10 text-center">
-        <div className="text-4xl mb-4">✓</div>
-        <h3 className="text-xl font-semibold mb-2">Message sent!</h3>
-        <p className="text-gray-700">
+      <div className="bg-offwhite rounded-2xl p-12 text-center">
+        <div className="text-4xl mb-4">🎉</div>
+        <h3 className="text-xl font-bold mb-2">Message sent!</h3>
+        <p className="text-gray-600 font-satoshi">
           Thanks for reaching out. We&apos;ll get back to you within 24 hours.
         </p>
-        <button
-          onClick={() => setStatus('idle')}
-          className="mt-6 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
-        >
-          Send another message
-        </button>
       </div>
     )
   }
 
   return (
-    <div className="bg-offwhite rounded-2xl p-8 md:p-10">
-      <h3 className="text-xl font-semibold mb-6">Get in touch</h3>
-      <form onSubmit={handleSubmit} className="space-y-5">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent"
-            placeholder="Your name"
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent"
-            placeholder="you@company.com"
-          />
-        </div>
-        <div>
-          <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1.5">
-            Company
-          </label>
-          <input
-            type="text"
-            id="company"
-            name="company"
-            className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent"
-            placeholder="Company name"
-          />
-        </div>
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
-            Tell us about your project
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={5}
-            required
-            className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent resize-none"
-            placeholder="What are you building? What stage are you at?"
-          />
-        </div>
-        <button
-          type="submit"
-          disabled={status === 'submitting'}
-          className="w-full py-3.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div>
+        <label
+          htmlFor="name"
+          className="block text-sm font-medium text-gray-900 mb-2"
         >
-          {status === 'submitting' ? 'Sending...' : 'Send message'}
-        </button>
-        {status === 'error' && (
-          <p className="text-sm text-red-500 text-center">
-            Something went wrong. Please try again or email us directly.
-          </p>
-        )}
-        <p className="text-xs text-gray-400 text-center">
-          We&apos;ll respond within 24 hours. No sales pitch — promise.
+          Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm font-satoshi focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-shadow"
+          placeholder="Your name"
+        />
+      </div>
+
+      <div>
+        <label
+          htmlFor="email"
+          className="block text-sm font-medium text-gray-900 mb-2"
+        >
+          Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm font-satoshi focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-shadow"
+          placeholder="you@company.com"
+        />
+      </div>
+
+      <div>
+        <label
+          htmlFor="company"
+          className="block text-sm font-medium text-gray-900 mb-2"
+        >
+          Company{' '}
+          <span className="text-gray-400 font-normal">(optional)</span>
+        </label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm font-satoshi focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-shadow"
+          placeholder="Your company"
+        />
+      </div>
+
+      <div>
+        <label
+          htmlFor="interest"
+          className="block text-sm font-medium text-gray-900 mb-2"
+        >
+          What are you interested in?
+        </label>
+        <select
+          id="interest"
+          name="interest"
+          required
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm font-satoshi focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-shadow appearance-none"
+        >
+          <option value="">Select an option</option>
+          <option value="5-day-prototype">5 Day Prototype</option>
+          <option value="design-service">Design as a Service</option>
+          <option value="mvp-development">MVP Development</option>
+          <option value="marketing">Marketing &amp; Go-to-Market</option>
+          <option value="consultation">Free Consultation</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
+
+      <div>
+        <label
+          htmlFor="message"
+          className="block text-sm font-medium text-gray-900 mb-2"
+        >
+          Tell us about your idea
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows={5}
+          required
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm font-satoshi focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-shadow resize-none"
+          placeholder="What are you building? Where are you at? How can we help?"
+        />
+      </div>
+
+      <button
+        type="submit"
+        disabled={status === 'sending'}
+        className="w-full px-8 py-3.5 bg-gray-900 text-white text-sm font-semibold rounded-full hover:bg-gray-800 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+      >
+        {status === 'sending' ? 'Sending...' : 'Send Message'}
+      </button>
+
+      {status === 'error' && (
+        <p className="text-sm text-red-600 text-center font-satoshi">
+          {errorMsg || 'Something went wrong. Please try again.'}
         </p>
-      </form>
-    </div>
+      )}
+
+      <p className="text-xs text-gray-400 text-center font-satoshi">
+        We&apos;ll get back to you within 24 hours. No spam, ever.
+      </p>
+    </form>
   )
 }

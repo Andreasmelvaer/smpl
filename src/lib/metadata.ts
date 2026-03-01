@@ -1,16 +1,14 @@
 import type { Metadata } from 'next'
-import { PostData } from './markdown'
+import type { PostData } from './markdown'
 
-/**
- * Generate metadata for a page from its markdown frontmatter.
- * Handles SEO fields from the content source.
- */
-export function generatePageMetadata(data: PostData): Metadata {
-  const seo = data.seo || {}
+const SITE_NAME = 'SmplCo'
+const SITE_URL = 'https://smpl.co'
+const DEFAULT_DESCRIPTION =
+  'We work with ambitious innovators and entrepreneurs to design and develop amazing digital products and services — fast.'
 
-  const title = seo.metaTitle || data.title
-  const description = seo.metaDescription || data.description || data.excerpt || ''
-  const ogImage = seo.ogImage || data.og_image || data.hero_image || '/images/og-default.png'
+export function generatePageMetadata(data: Partial<PostData>): Metadata {
+  const title = data.title ? `${data.title} — ${SITE_NAME}` : SITE_NAME
+  const description = data.excerpt || DEFAULT_DESCRIPTION
 
   return {
     title,
@@ -18,66 +16,47 @@ export function generatePageMetadata(data: PostData): Metadata {
     openGraph: {
       title,
       description,
-      images: [{ url: ogImage }],
+      siteName: SITE_NAME,
+      url: SITE_URL,
       type: 'website',
-    },
-    twitter: {
-      card: (seo.twitterCard as 'summary_large_image' | 'summary') || 'summary_large_image',
-      title,
-      description,
-    },
-  }
-}
-
-/**
- * Generate metadata for a blog post.
- */
-export function generateBlogMetadata(data: PostData): Metadata {
-  const title = data.title
-  const description = data.excerpt || data.description || ''
-  const ogImage = data.og_image || data.hero_image || '/images/og-default.png'
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      type: 'article',
-      publishedTime: data.date,
-      authors: data.author ? [data.author] : undefined,
-      tags: data.tags,
-      images: [{ url: ogImage }],
+      ...(data.hero_image && {
+        images: [{ url: data.hero_image, width: 1200, height: 630 }],
+      }),
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      ...(data.hero_image && { images: [data.hero_image] }),
     },
   }
 }
 
-/**
- * Generate metadata for a work case study.
- */
-export function generateWorkMetadata(data: PostData): Metadata {
-  const title = data.title
-  const description = data.description || `${data.client || ''} – ${data.category || 'Case Study'}`
-  const ogImage = data.og_image || data.hero_image || '/images/og-default.png'
+export function generateBlogPostMetadata(data: Partial<PostData>): Metadata {
+  const title = data.title ? `${data.title} — ${SITE_NAME}` : SITE_NAME
+  const description = data.excerpt || DEFAULT_DESCRIPTION
 
   return {
     title,
     description,
+    authors: data.author ? [{ name: data.author }] : undefined,
     openGraph: {
       title,
       description,
+      siteName: SITE_NAME,
+      url: data.slug ? `${SITE_URL}/blog/${data.slug}` : SITE_URL,
       type: 'article',
-      images: [{ url: ogImage }],
+      ...(data.date && { publishedTime: data.date }),
+      ...(data.author && { authors: [data.author] }),
+      ...(data.hero_image && {
+        images: [{ url: data.hero_image, width: 1200, height: 630 }],
+      }),
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      ...(data.hero_image && { images: [data.hero_image] }),
     },
   }
 }

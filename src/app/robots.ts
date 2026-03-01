@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://smpl.as/sitemap.xml',
+    sitemap: 'https://smpl.co/sitemap.xml',
   }
 }
