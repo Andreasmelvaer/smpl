@@ -29,9 +29,9 @@ export default async function HomePage() {
                   <span
                     className="font-editorial"
                     style={{
-                      color: '#c8e600',
-                      WebkitTextStroke: '1.5px rgba(0,0,0,0.2)',
-                      backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 4px)',
+                      color: '#e5ff21',
+                      WebkitTextStroke: '1.5px rgba(0,0,0,0.15)',
+                      backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 3px, rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 5px)',
                       WebkitBackgroundClip: 'text',
                       backgroundClip: 'text',
                     }}
@@ -131,15 +131,19 @@ export default async function HomePage() {
       <section className="py-24 md:py-32">
         <div className="container-main">
           <AnimateOnScroll>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                From <span className="highlight">Post-it</span> ...to{' '}
-                <span className="font-editorial">product</span>
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto font-satoshi">
-                Put a rocket under your innovation plans with our 5-Day Prototype,
-                Design as a Service, AI-assisted development, and go-to-market expertise.
-              </p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-16">
+              <Image src="/images/illustrations/smplco-illustration-notebook.png" alt="" width={120} height={120} className="shrink-0" />
+              <div className="text-center md:text-left">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                  <span className="font-editorial italic">From Post-it</span>
+                  <br />
+                  ...to product
+                </h2>
+                <p className="text-lg text-gray-600 max-w-xl font-satoshi">
+                  Put a rocket under your innovation plans. Our unique process and unbeatable
+                  experience puts you ahead of the game, while slashing risk, time, and cost.
+                </p>
+              </div>
             </div>
           </AnimateOnScroll>
           {/* Project preview grid */}
@@ -158,6 +162,9 @@ export default async function HomePage() {
                 className="group block rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
               >
                 <div className="relative aspect-[4/3] overflow-hidden" style={{ backgroundColor: project.bgColor }}>
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="text-lg font-bold text-gray-900 drop-shadow-sm">{project.name}</span>
+                  </div>
                   <div className="absolute inset-0 flex items-end justify-center p-4 pt-10">
                     <div className="relative w-full max-w-[90%] aspect-[16/10] rounded-t-lg overflow-hidden shadow-lg">
                       <Image
@@ -188,15 +195,17 @@ export default async function HomePage() {
       <section className="py-24 md:py-32 bg-offwhite">
         <div className="container-main">
           <AnimateOnScroll>
-            <div className="text-center mb-12">
-              <div className="flex justify-center mb-6">
-                <Image src="/images/illustrations/smplco-illustration-speech-bubbles.png" alt="" width={80} height={80} />
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-12">
+              <Image src="/images/illustrations/smplco-illustration-speech-bubbles.png" alt="" width={120} height={120} className="shrink-0" />
+              <div className="text-center md:text-left">
+                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                  <span className="font-editorial italic">Don&apos;t</span>
+                  <br />
+                  just take our
+                  <br />
+                  word for it
+                </h2>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                Don&apos;t just take
-                <br />
-                our word for it
-              </h2>
             </div>
           </AnimateOnScroll>
           <TestimonialCarousel />
@@ -234,14 +243,19 @@ export default async function HomePage() {
       <section className="py-24 md:py-32">
         <div className="container-main">
           <AnimateOnScroll>
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                <span className="highlight-pink">Tailored</span> to you
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto font-satoshi">
-                Whether you&apos;re a start-up with a napkin sketch or an enterprise
-                with a complex digital challenge, our process adapts to you.
-              </p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-12">
+              <Image src="/images/illustrations/smplco-illustration-signpost.png" alt="" width={120} height={120} className="shrink-0" />
+              <div className="text-center md:text-left">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                  <span className="font-editorial italic">Tailored</span>
+                  <br />
+                  to you
+                </h2>
+                <p className="text-lg text-gray-600 max-w-xl font-satoshi">
+                  Whether you&apos;re a start-up with a napkin sketch or an enterprise
+                  with a complex digital challenge, our process adapts to you.
+                </p>
+              </div>
             </div>
           </AnimateOnScroll>
           <TailoredTabs />

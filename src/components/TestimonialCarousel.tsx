@@ -70,31 +70,6 @@ export default function TestimonialCarousel() {
 
   return (
     <div>
-      {/* Stats bar */}
-      <div className="grid grid-cols-3 gap-6 mb-16 max-w-3xl mx-auto">
-        <div className="text-center">
-          <div className="flex justify-center mb-3">
-            <Image src="/images/illustrations/smplco-illustration-prototype.png" alt="" width={48} height={48} />
-          </div>
-          <p className="text-2xl md:text-3xl font-bold text-gray-900">125+</p>
-          <p className="text-xs uppercase tracking-wider text-gray-500 font-medium mt-1">Prototypes &amp; MVPs</p>
-        </div>
-        <div className="text-center">
-          <div className="flex justify-center mb-3">
-            <Image src="/images/illustrations/smplco-illustration-space-astronaut.png" alt="" width={48} height={48} />
-          </div>
-          <p className="text-2xl md:text-3xl font-bold text-gray-900">&euro;10M+</p>
-          <p className="text-xs uppercase tracking-wider text-gray-500 font-medium mt-1">Raised by clients</p>
-        </div>
-        <div className="text-center">
-          <div className="flex justify-center mb-3">
-            <Image src="/images/illustrations/smplco-illustration-notebook.png" alt="" width={48} height={48} />
-          </div>
-          <p className="text-2xl md:text-3xl font-bold text-gray-900">61%</p>
-          <p className="text-xs uppercase tracking-wider text-gray-500 font-medium mt-1">Ave time/cost saving</p>
-        </div>
-      </div>
-
       {/* Single large testimonial card with side arrows */}
       <div className="relative max-w-3xl mx-auto">
         {/* Left arrow */}
@@ -109,15 +84,15 @@ export default function TestimonialCarousel() {
         </button>
 
         {/* Testimonial card */}
-        <div className="bg-white rounded-2xl p-10 md:p-14 border border-gray-100 text-center min-h-[280px] flex flex-col justify-center">
+        <div className="bg-white rounded-2xl p-10 md:p-14 border border-gray-100 min-h-[280px] flex flex-col justify-between">
           <p className="text-xl md:text-2xl text-gray-800 mb-8 leading-relaxed font-satoshi">
             &ldquo;{t.quote}&rdquo;
           </p>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center gap-4">
             {t.photo && (
               <Image src={t.photo} alt={t.name} width={48} height={48} className="rounded-full" />
             )}
-            <div className="text-left">
+            <div>
               <p className="font-semibold text-gray-900">{t.name}</p>
               <p className="text-sm text-gray-500">{t.title}</p>
             </div>
@@ -169,6 +144,31 @@ export default function TestimonialCarousel() {
               aria-label={`Go to testimonial ${i + 1}`}
             />
           ))}
+        </div>
+      </div>
+
+      {/* Stats bar — below carousel */}
+      <div className="grid grid-cols-3 gap-6 mt-16 max-w-3xl mx-auto">
+        <div className="flex items-center gap-4">
+          <Image src="/images/illustrations/smplco-illustration-prototype.png" alt="" width={56} height={56} className="shrink-0" />
+          <div>
+            <p className="text-2xl md:text-3xl font-bold text-gray-900">125+</p>
+            <p className="text-xs uppercase tracking-wider text-gray-500 font-medium">Prototypes &amp; MVPs</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-4">
+          <Image src="/images/illustrations/smplco-illustration-space-astronaut.png" alt="" width={56} height={56} className="shrink-0" />
+          <div>
+            <p className="text-2xl md:text-3xl font-bold text-gray-900">&euro;10M+</p>
+            <p className="text-xs uppercase tracking-wider text-gray-500 font-medium">Raised by clients</p>
+          </div>
+        </div>
+        <div className="flex items-center gap-4">
+          <Image src="/images/illustrations/smplco-illustration-high-five.png" alt="" width={56} height={56} className="shrink-0" />
+          <div>
+            <p className="text-2xl md:text-3xl font-bold text-gray-900">61% <span className="text-lg">↓</span></p>
+            <p className="text-xs uppercase tracking-wider text-gray-500 font-medium">Ave time/cost</p>
+          </div>
         </div>
       </div>
     </div>
