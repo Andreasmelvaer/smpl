@@ -26,7 +26,7 @@ export default async function HomePage() {
           <div className="relative inline-block mb-8">
             <Image
               src="/images/illustrations/Hero Section.png"
-              alt=""
+              alt="SmplCo — prototype fast, build smart, launch in weeks"
               width={900}
               height={500}
               className="w-full max-w-[550px] md:max-w-[650px] lg:max-w-[750px] h-auto mx-auto mix-blend-multiply"
@@ -85,7 +85,7 @@ export default async function HomePage() {
         <div className="container-main">
           <AnimateOnScroll>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-16">
-              <Image src="/images/illustrations/smplco-illustration-notebook.png" alt="" width={120} height={120} className="shrink-0" />
+              <Image src="/images/illustrations/smplco-illustration-notebook.png" alt="From post-it to product" width={120} height={120} className="shrink-0" />
               <div className="text-center md:text-left">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
                   <span className="font-editorial italic">From Post-it</span>
@@ -145,7 +145,7 @@ export default async function HomePage() {
         <div className="container-main">
           <AnimateOnScroll>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-12">
-              <Image src="/images/illustrations/smplco-illustration-speech-bubbles.png" alt="" width={120} height={120} className="shrink-0" />
+              <Image src="/images/illustrations/smplco-illustration-speech-bubbles.png" alt="Client testimonials" width={120} height={120} className="shrink-0" />
               <div className="text-center md:text-left">
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight">
                   <span className="font-editorial italic">Don&apos;t</span>
@@ -166,21 +166,21 @@ export default async function HomePage() {
         <div className="container-main">
           <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
             <div className="flex items-center gap-4">
-              <Image src="/images/illustrations/smplco-illustration-high-five.png" alt="" width={64} height={64} />
+              <Image src="/images/illustrations/smplco-illustration-high-five.png" alt="125+ prototypes and MVPs built" width={64} height={64} />
               <div>
                 <p className="text-3xl md:text-4xl font-bold">125+</p>
                 <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Prototypes &amp; MVPs</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <Image src="/images/illustrations/smplco-illustration-fist-bump.png" alt="" width={64} height={64} />
+              <Image src="/images/illustrations/smplco-illustration-fist-bump.png" alt="Over 10 million euros raised by clients" width={64} height={64} />
               <div>
                 <p className="text-3xl md:text-4xl font-bold">&euro;10M+</p>
                 <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Raised by clients</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <Image src="/images/illustrations/smplco-illustration-prototype.png" alt="" width={64} height={64} />
+              <Image src="/images/illustrations/smplco-illustration-prototype.png" alt="61% average time and cost reduction" width={64} height={64} />
               <div>
                 <p className="text-3xl md:text-4xl font-bold">61% <span className="text-lime-bright">↓</span></p>
                 <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Ave time/cost</p>
@@ -218,7 +218,7 @@ export default async function HomePage() {
         <div className="container-main">
           <AnimateOnScroll>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-12">
-              <Image src="/images/illustrations/smplco-illustration-signpost.png" alt="" width={120} height={120} className="shrink-0" />
+              <Image src="/images/illustrations/smplco-illustration-signpost.png" alt="Tailored to your needs" width={120} height={120} className="shrink-0" />
               <div className="text-center md:text-left">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
                   <span className="font-editorial italic">Tailored</span>
@@ -243,7 +243,7 @@ export default async function HomePage() {
         <div className="container-main">
           <AnimateOnScroll>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-6">
-              <Image src="/images/illustrations/smplco-illustration-smpl-insights.png" alt="" width={120} height={120} className="shrink-0" />
+              <Image src="/images/illustrations/smplco-illustration-smpl-insights.png" alt="Smpl Insights blog" width={120} height={120} className="shrink-0" />
               <div className="text-center md:text-left">
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight">
                   <span className="font-editorial italic">Smpl</span>

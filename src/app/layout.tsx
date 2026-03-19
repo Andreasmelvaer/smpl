@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | SmplCo",
   },
   description:
-    "SmplCo helps startups and enterprises prototype and build smart digital products in weeks using AI and no‑code tools, reducing risk and cost while accelerating growth.",
+    "SmplCo helps startups and enterprises prototype and build smart digital products in weeks using AI and no-code tools.",
   keywords:
     "prototype, digital products, AI development, no-code, startup, enterprise, MVP, vibecoding",
   authors: [{ name: "SmplCo" }],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SmplCo – 5-Day Prototypes & AI-Powered Product Development",
     description:
-      "SmplCo helps startups and enterprises prototype and build smart digital products in weeks using AI and no‑code tools, reducing risk and cost while accelerating growth.",
+      "SmplCo helps startups and enterprises prototype and build smart digital products in weeks using AI and no-code tools.",
     images: [
       {
         url: "/images/og-default.png",
@@ -48,6 +48,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
+    apple: "/apple-touch-icon.png",
   },
   robots: {
     index: true,
