@@ -2,7 +2,7 @@
 title: "No one will ever love your software… and that's OK"
 hero_image: "/images/blog/no-one-will-ever-love-your-software-and-that-s-ok.png"
 slug: "no-one-will-ever-love-your-software-and-that-s-ok"
-date: "2026-10-15"
+date: "2025-10-15"
 author: "Michael Millar"
 excerpt: "The inspiring and deeply personal story of how our serial entrepreneur and co-founder at SmplCo conceived, built, and sold his own SaaS company."
 tags: ["Entrepreneurs", "SaaS", "Startup", "QuickLog", "ABAX", "Customer Focus"]
@@ -24,6 +24,8 @@ How he got on the radar of the market-leading software firm, then persuaded them
 Those traits have served him very well in the past. They helped BIK (as he's fondly known 'round these parts) to design, build, and finally sell his telematics software, QuickLog, to market-leader ABAX, contributing to the evolution of Europe's second-largest asset tracking platform.
 
 His focus is now on helping entrepreneurs and innovators to bring their own digital dreams to life.
+
+![Bjørn Ivar Knudsen](/images/blog/inline/love-software-inline.jpg)
 
 ### A euphoric, defining moment
 
@@ -55,6 +57,8 @@ BIK's programming skills were a bit outdated, so he got a book called "Learn PHP
 
 'This eventually became QuickLog,' he explains. 'When we sold that company to telematics leader ABAX ten years later, my little start-up had grown into the largest app- and SaaS-based service of its kind in the country.'
 
+![Bjørn Ivar early days](/images/blog/inline/love-software-inline-2.jpg)
+
 ### Help people walk on the grass
 
 That growth was driven by a genuine desire to understand his customers and put his ego to one side.
@@ -74,6 +78,8 @@ To make your solution work, you've got to solve your customers' problems in ways
 'People don't keep to the path, they want to walk on the grass if it's easier and quicker for them.'
 
 'So, you've got to fit in with them. That's what we did with the mileage claim software and why it was a success.'
+
+![QuickLog software](/images/blog/inline/love-software-inline-3.jpg)
 
 ### It's good to talk
 
@@ -122,6 +128,8 @@ He went in with one goal: to give his suitors the impression he was fierce compe
 'You should never go into these meetings with your cap in your hand,' Bjorn Ivar says. 'Go in proud and confident. You should never give the impression that you need them, even if you probably do.'
 
 'If a rival is looking at you, give the impression you are standing on your own two feet and – even if you aren't a threat now – at some point they are going to have become scared of you.'
+
+![Bjørn Ivar presenting](/images/blog/inline/love-software-inline-4.jpg)
 
 ### Everlasting truths
 

@@ -24,10 +24,11 @@ export async function getPostData(folder: string, slug: string): Promise<PostDat
   const contentHtml = processedContent.toString()
 
   return {
+    ...data,
     slug,
     content: contentHtml,
-    ...data,
-  } as PostData
+    rawContent: content,
+  } as unknown as PostData
 }
 
 export function getAllPosts(folder: string): string[] {

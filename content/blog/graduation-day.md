@@ -2,7 +2,7 @@
 title: "Graduation day at SmplAcademy!"
 hero_image: "/images/blog/graduation-day.jpg"
 slug: "graduation-day"
-date: "2026-05-01"
+date: "2025-05-01"
 author: "SmplCo Team"
 excerpt: "Congratulations to the first graduates of SmplAcademy! After a month of learning about, and contributing to, our 5-Day Prototyping Service, we're releasing our inaugural cohort back into wilds of education."
 tags: ["Digital Development", "SmplAcademy", "Education", "Noroff", "Graduates"]
@@ -42,3 +42,5 @@ Well done to everyone involved, including everyone who acted as mentors along th
 [Giorgiana](https://www.linkedin.com/in/giorgiana-mihaela-bejan/).
 
 The SmplAcademy will reopen its doors in the new year for more advice, prototypes, and cake…
+
+![SmplAcademy graduation](/images/blog/inline/graduation-inline.jpg)

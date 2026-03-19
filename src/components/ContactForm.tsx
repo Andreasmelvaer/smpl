@@ -5,11 +5,6 @@ import { useState, FormEvent } from 'react'
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
-  // Google Apps Script endpoint for sending emails
-  // Set NEXT_PUBLIC_CONTACT_FORM_URL in your .env.local or Vercel env vars
-  // See google-apps-script.js for the Apps Script to deploy
-  const FORM_ENDPOINT = process.env.NEXT_PUBLIC_CONTACT_FORM_URL || ''
-
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setStatus('submitting')
@@ -24,15 +19,16 @@ export default function ContactForm() {
     }
 
     try {
-      await fetch(FORM_ENDPOINT, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: { 'Content-Type': 'application/json' },
-        mode: 'no-cors',
       })
 
-      // Google Apps Script with no-cors returns opaque response,
-      // so we treat any non-thrown as success
+      if (!res.ok) {
+        throw new Error('Failed to send')
+      }
+
       setStatus('success')
       form.reset()
     } catch {

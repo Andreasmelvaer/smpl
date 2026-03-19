@@ -2,7 +2,7 @@
 title: "News! SmplCo signs deal with UK's Barclays bank"
 hero_image: "/images/blog/news-smplco-signs-deal-with-uk-s-barclays-bank.png"
 slug: "news-smplco-signs-deal-with-uk-s-barclays-bank"
-date: "2026-08-01"
+date: "2025-08-01"
 author: "Michael Millar"
 excerpt: "We're delighted to announce SmplCo has signed a partnership with Barclays, one of the UK's biggest banks. SmplCo will deliver its services through the bank's incubator, Barclays Eagles Labs."
 tags: ["News", "Partnership", "Barclays", "Eagles Labs", "Entrepreneurs"]
@@ -16,6 +16,8 @@ SmplCo will deliver its services through the bank's incubator,[Barclays Eagles L
 
 We will offer our unique, 5-Day Prototype service to firms across Eagle Labs' UK-wide network, helping start-ups and scale-up businesses to test their ideas, land investment, and win customers. And we're in good company… We join the likes of Microsoft as one of only 10 companies taking part in Eagle Labs' Deals & Offers' service.
 
+![SmplCo team with Barclays Eagle Labs](/images/blog/inline/barclays-inline.png)
+
 ### Huge validation
 
 Andreas Melvær, SmplCo's managing partner, said too many start-ups and scale-ups struggle with delays, costs and risks, and this partnership was a huge validation our efforts to change that.
@@ -23,6 +25,8 @@ Andreas Melvær, SmplCo's managing partner, said too many start-ups and scale-up
 "A lot of the problems come from a product design industry that is often incentivised by the hour, while lacking the expertise to support entrepreneurs," he said.
 
 "We created the 5-Day Prototype so innovators could bring their ideas to life in a week, with support from a team of entrepreneurs who have built and sold their own businesses," Andreas added.
+
+![Barclays Eagle Labs x SmplCo](/images/blog/inline/barclays-inline-2.jpg)
 
 Barclays Eagle Labs' mission to support the UK's entrepreneurial community goes to the heart of SmplCo's own mission to make it as easy as possible for innovators to bring great digital products and services to life.
 

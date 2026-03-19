@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { PostData } from './markdown'
 
+const BASE_URL = 'https://smpl.as'
+
 /**
  * Generate metadata for a page from its markdown frontmatter.
  * Handles SEO fields from the content source.
  */
-export function generatePageMetadata(data: PostData): Metadata {
+export function generatePageMetadata(data: PostData, path?: string): Metadata {
   const seo = data.seo || {}
 
   const title = seo.metaTitle || data.title
@@ -15,6 +17,7 @@ export function generatePageMetadata(data: PostData): Metadata {
   return {
     title,
     description,
+    alternates: path ? { canonical: `${BASE_URL}${path}` } : undefined,
     openGraph: {
       title,
       description,
@@ -40,6 +43,7 @@ export function generateBlogMetadata(data: PostData): Metadata {
   return {
     title,
     description,
+    alternates: { canonical: `${BASE_URL}/blog/${data.slug}` },
     openGraph: {
       title,
       description,
@@ -68,6 +72,7 @@ export function generateWorkMetadata(data: PostData): Metadata {
   return {
     title,
     description,
+    alternates: { canonical: `${BASE_URL}/work/${data.slug}` },
     openGraph: {
       title,
       description,

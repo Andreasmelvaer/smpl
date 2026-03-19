@@ -5,7 +5,7 @@ category: "Real Estate / FinTech"
 services: ["UI/UX Design", "Prototype", "Illustrations", "Energy", "Landing Page"]
 year: 2025
 featured: true
-hero_image: "/images/enquip/enquip-hero.jpg"
+hero_image: "/work/enquip-hero-branded.jpg"
 ---
 
 # Enquip – Real Estate / FS

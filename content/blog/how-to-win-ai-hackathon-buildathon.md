@@ -26,7 +26,8 @@ We recently helped the fantastic team at [Get to Give](https://gettogive.co/) wi
 
 If you want to find out how we did it - and how to give yourself the best chance of success - then here's our step-by-step guide.
 
-Press coverage of Get to Give's buildathon win
+![Press coverage of Get to Give's buildathon win](/images/blog/inline/hackathon-inline.png)
+*Press coverage of Get to Give's buildathon win*
 
 ## Day One is not Day One
 
@@ -40,7 +41,8 @@ A buildathon isn't a sprint; it's a heist.
 
 You need a plan, a map, and the right tools packed before you even step in the building (all of which we'll cover below).
 
-Don't be looking for ideas when the clock is running
+![Don't be looking for ideas when the clock is running](/images/blog/inline/hackathon-inline-2.png)
+*Don't be looking for ideas when the clock is running*
 
 ## 2. Make sure you're solving a real problem (not just a cool one)
 
@@ -64,7 +66,8 @@ Hackathon judges are looking for utility, not just a tech demo.
 
 Validate the problem before you write a single line of code.
 
-Problem solvers: Get to Give helps children develop empathy and generosity
+![Problem solvers: Get to Give helps children develop empathy and generosity](/images/blog/inline/hackathon-inline-3.png)
+*Problem solvers: Get to Give helps children develop empathy and generosity*
 
 ## 3. Mise-en-place: pre-cook your ingredients
 
@@ -93,7 +96,8 @@ The judges are tired of the same sci-fi tropes.
 
 Give them something that feels real and engaging and …human.
 
-AI Aesthetic, featuring SmplCo MD (and article author), Andreas
+![AI Aesthetic, featuring SmplCo MD (and article author), Andreas](/images/blog/inline/hackathon-inline-4.png)
+*AI Aesthetic, featuring SmplCo MD (and article author), Andreas*
 
 ## Dry Run Your Prompts
 
@@ -111,7 +115,8 @@ Test them until they deliver exactly what you envision, every single time.
 
 When the pressure is on, you need reliable outputs, not hallucinations.
 
-You could put anything in that prompt box. But you shouldn't.
+![You could put anything in that prompt box. But you shouldn't.](/images/blog/inline/hackathon-inline-5.png)
+*You could put anything in that prompt box. But you shouldn't.*
 
 ## The "Friend of a Friend" Test
 

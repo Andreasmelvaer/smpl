@@ -2,7 +2,7 @@
 title: "SmplCo: 'world-class' AI development"
 hero_image: "/images/blog/ai-assisted-mvps.jpg"
 slug: "ai-assisted-mvps"
-date: "2026-12-15"
+date: "2026-01-08"
 author: "Michael Millar"
 excerpt: "Apparently, SmplCo is world-class now. Figma just published a case study on how we took our client Saddle from a rough idea to a live product in 2 weeks."
 tags: ["AI Development", "MVP", "Vibecoding", "Case Study", "Figma"]
@@ -22,6 +22,8 @@ This is like being a local carpenter, and Black & Decker (the biggest tool compa
 
 What made this project stand out wasn't just speed, though.
 
+![SmplCo AI development](/images/blog/inline/mvps-inline.png)
+
 ### Saddle is a software platform that helps companies make faster, better decisions and drive innovation, particularly in crucial periods in mergers and acquisitions (M&A).
 
 By working with us, Saddle dramatically shortened the time it took to create the software, while slashing costs.
@@ -29,6 +31,8 @@ By working with us, Saddle dramatically shortened the time it took to create the
 "Before, the equivalent process to create a working MVP like the one we have for Saddle took us six months and eight times the money," says Simen Sanna, CEO and founder of [Saddle](https://www.saddle.no/).
 
 Simen (pictured below, L, with co-founder Johan Steen) is a Norwegian SaaS entrepreneur and former energy engineer who exited his last company in 2021 after developing the world's leading software for decarbonising offshore vessels.
+
+![Saddle founders](/images/blog/inline/mvps-inline-2.jpeg)
 
 To achieve these amazing results we used AI-assisted "vibecoding" that didn't result in a bowl of code spaghetti.
 

@@ -4,78 +4,73 @@ import { getAllPostsData } from '@/lib/markdown'
 import TestimonialCarousel from '@/components/TestimonialCarousel'
 import TailoredTabs from '@/components/TailoredTabs'
 import AnimateOnScroll from '@/components/AnimateOnScroll'
+import LogoMarquee from '@/components/LogoMarquee'
+import ParallaxImage from '@/components/ParallaxImage'
+import ShimmerGrid from '@/components/ShimmerGrid'
 
 export default async function HomePage() {
   const blogPosts = await getAllPostsData('blog')
-  const latestPosts = blogPosts.slice(0, 2)
+  const latestPosts = blogPosts.slice(0, 3)
 
   return (
     <div className="min-h-screen">
       {/* ============ HERO ============ */}
-      <section className="py-24 md:py-32 lg:py-40 relative overflow-hidden">
+      <section className="py-24 md:py-32 lg:py-44 relative overflow-hidden bg-offwhite">
+        <ShimmerGrid />
         <div className="container-main text-center relative z-10">
-          <AnimateOnScroll>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.08] mb-8 tracking-tight">
-              Prototype <span className="highlight">fast</span>
-              <br />
-              build(<span className="font-editorial">&ldquo;smart&rdquo;</span>);
-              <br />
-              Launch in <span className="highlight">Weeks</span>
-            </h1>
-          </AnimateOnScroll>
-          <AnimateOnScroll delay={200}>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-satoshi">
-              We work with ambitious innovators and entrepreneurs to design and
-              develop amazing digital products and services — fast. Whether
-              you&apos;re a start-up or an established leader.
-            </p>
-          </AnimateOnScroll>
-          <AnimateOnScroll delay={400}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/work"
-                className="inline-flex items-center justify-center px-8 py-3.5 bg-white text-gray-900 text-sm font-medium rounded-full border border-gray-200 hover:bg-gray-50 transition-colors"
-              >
-                Success Stories
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-3.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
-              >
-                Build With Us
-              </Link>
-            </div>
-          </AnimateOnScroll>
-        </div>
-        {/* Decorative illustrations */}
-        <div className="hidden lg:block absolute top-20 left-8 opacity-60">
-          <Image src="/images/illustrations/smplco-illustration-notebook.png" alt="" width={120} height={120} />
-        </div>
-        <div className="hidden lg:block absolute bottom-20 right-8 opacity-60">
-          <Image src="/images/illustrations/smplco-illustration-prototype.png" alt="" width={120} height={120} />
+          {/* Hero illustration — the full composition from Figma */}
+          <div className="relative inline-block mb-8">
+            <Image
+              src="/images/illustrations/Hero Section.png"
+              alt=""
+              width={900}
+              height={500}
+              className="w-full max-w-[550px] md:max-w-[650px] lg:max-w-[750px] h-auto mx-auto mix-blend-multiply"
+              priority
+            />
+            {/* SR-only text for SEO */}
+            <h1 className="sr-only">Prototype fast, build smart, Launch in Weeks — SmplCo digital product studio</h1>
+          </div>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-satoshi">
+            Join 125+ start-ups, scale-ups, and global brands who&apos;ve brought big ideas to
+            life, backed by a team that has built and sold digital companies, including a $3bn
+            tech unicorn. Recognised as a world-leader in AI-assisted development by Figma.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/work"
+              className="inline-flex items-center justify-center px-8 py-3.5 bg-white text-gray-900 text-sm font-medium rounded-full border border-gray-200 hover:bg-gray-50 transition-colors"
+            >
+              Success Stories
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-3.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
+            >
+              Build With Us
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* ============ RECOGNISED BY ============ */}
-      <section className="py-16 md:py-20 bg-offwhite border-y border-gray-200">
+      <section className="py-16 md:py-20 bg-offwhite">
         <div className="container-main">
-          <p className="text-xs font-medium text-gray-500 text-center mb-10 uppercase tracking-wider">
+          <p className="text-sm text-gray-500 text-center mb-10">
             Recognised by
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { label: 'Global Exemplar', org: 'Figma', desc: 'Recognised for world-class AI-assisted development', logo: '/images/logos/recognition/figma-logo.png' },
-              { label: 'SheBuilds Winner', org: 'Lovable', desc: 'First place at the SheBuilds hackathon', logo: '/images/logos/recognition/lovable-logo.png' },
-              { label: 'Global Runner-Up', org: 'Lovable', desc: 'Runner-up in global buildathon competition', logo: '/images/logos/recognition/lovable-logo.png' },
-              { label: 'Digital Design Winner', org: 'DIA', desc: 'Award-winning digital design work', logo: '/images/logos/recognition/design-intelligence-award-dia-badge.png' },
+              { label: 'Global Exemplar', logo: '/images/logos/recognition/figma-logo.png' },
+              { label: 'SheBuilds winner', logo: '/images/logos/recognition/lovable-logo.png' },
+              { label: 'Global Runner-Up', logo: '/images/logos/recognition/design-intelligence-award-dia-badge.png' },
+              { label: 'Digital Design Winner', logo: '/images/logos/partners/staerk-reklame-logo.png' },
             ].map((award) => (
-              <div key={award.label} className="bg-white rounded-2xl p-6 text-center border border-gray-100">
-                <div className="h-12 flex items-center justify-center mb-4">
-                  <Image src={award.logo} alt={award.org} width={100} height={48} className="object-contain h-10 w-auto" />
+              <div key={award.label} className="bg-gray-100 rounded-2xl p-8 flex flex-col items-center justify-center gap-4">
+                <div className="h-12 flex items-center justify-center">
+                  <Image src={award.logo} alt={award.label} width={120} height={48} className="object-contain h-10 w-auto" />
                 </div>
-                <p className="font-bold text-gray-900 text-base mb-1">{award.label}</p>
-                <p className="text-sm font-medium text-gray-500 mb-2">{award.org}</p>
-                <p className="text-xs text-gray-400 font-satoshi">{award.desc}</p>
+                <p className="text-sm text-gray-500 font-satoshi">{award.label}</p>
               </div>
             ))}
           </div>
@@ -86,21 +81,47 @@ export default async function HomePage() {
       <section className="py-24 md:py-32">
         <div className="container-main">
           <AnimateOnScroll>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                From <span className="highlight">Post-it</span> to{' '}
-                <span className="font-editorial">product</span>
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto font-satoshi">
-                Join 125+ start-ups, scale-ups, and global brands who&apos;ve
-                brought big ideas to life, backed by a team that has built and sold
-                digital companies, including a $3bn tech unicorn.
-              </p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-16">
+              <Image src="/images/illustrations/smplco-illustration-notebook.png" alt="" width={120} height={120} className="shrink-0" />
+              <div className="text-center md:text-left">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                  <span className="font-editorial italic">From Post-it</span>
+                  <br />
+                  ...to product
+                </h2>
+                <p className="text-lg text-gray-600 max-w-xl font-satoshi">
+                  Put a rocket under your innovation plans. Our unique process and unbeatable
+                  experience puts you ahead of the game, while slashing risk, time, and cost.
+                </p>
+              </div>
             </div>
           </AnimateOnScroll>
-          {/* Illustration */}
-          <div className="flex justify-center mb-12">
-            <Image src="/images/illustrations/smplco-illustration-ideas-investors.png" alt="From ideas to investors — SmplCo design and development process" width={400} height={400} className="opacity-90" />
+          {/* Project preview grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+            {[
+              { name: 'Compera', slug: 'compera', image: '/images/cases/compera-card.jpg' },
+              { name: 'nucase', slug: 'nucase', image: '/images/cases/nucase-card.jpg' },
+              { name: 'Share50', slug: 'share50', image: '/images/cases/share50-card.jpg' },
+              { name: 'ENQUIP', slug: 'enquip', image: '/images/cases/enquip-card.jpg' },
+              { name: '2040', slug: '2040', image: '/images/cases/2040-card.jpg' },
+              { name: 'altien', slug: 'altien', image: '/images/cases/altien-card.jpg' },
+            ].map((project) => (
+              <Link
+                key={project.slug}
+                href={`/work/${project.slug}`}
+                className="group block rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  />
+                </div>
+              </Link>
+            ))}
           </div>
           <div className="text-center">
             <Link
@@ -113,22 +134,56 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ============ SOCIAL PROOF / TESTIMONIALS ============ */}
+      {/* ============ CLIENT LOGOS ============ */}
+      <LogoMarquee />
+
+      {/* ============ TESTIMONIALS ============ */}
       <section className="py-24 md:py-32 bg-offwhite">
         <div className="container-main">
           <AnimateOnScroll>
-            <div className="text-center mb-12">
-              <div className="flex justify-center mb-6">
-                <Image src="/images/illustrations/smplco-illustration-speech-bubbles.png" alt="" width={80} height={80} />
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-12">
+              <Image src="/images/illustrations/smplco-illustration-speech-bubbles.png" alt="" width={120} height={120} className="shrink-0" />
+              <div className="text-center md:text-left">
+                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                  <span className="font-editorial italic">Don&apos;t</span>
+                  <br />
+                  <span className="font-bold">just take our</span>
+                  <br />
+                  <span className="font-bold">word for it</span>
+                </h2>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                Don&apos;t just take
-                <br />
-                our word for it
-              </h2>
             </div>
           </AnimateOnScroll>
           <TestimonialCarousel />
+        </div>
+      </section>
+
+      {/* ============ STATS BAR ============ */}
+      <section className="py-16 md:py-20">
+        <div className="container-main">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
+            <div className="flex items-center gap-4">
+              <Image src="/images/illustrations/smplco-illustration-high-five.png" alt="" width={64} height={64} />
+              <div>
+                <p className="text-3xl md:text-4xl font-bold">125+</p>
+                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Prototypes &amp; MVPs</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <Image src="/images/illustrations/smplco-illustration-fist-bump.png" alt="" width={64} height={64} />
+              <div>
+                <p className="text-3xl md:text-4xl font-bold">&euro;10M+</p>
+                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Raised by clients</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4">
+              <Image src="/images/illustrations/smplco-illustration-prototype.png" alt="" width={64} height={64} />
+              <div>
+                <p className="text-3xl md:text-4xl font-bold">61% <span className="text-lime-bright">↓</span></p>
+                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Ave time/cost</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -137,21 +192,17 @@ export default async function HomePage() {
         <div className="container-main">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex justify-center mb-6">
-              <Image src="/images/logos/partners/barclays-eagle-labs-logo-blue.png" alt="Barclays Eagle Labs" width={200} height={40} className="brightness-0 invert opacity-70" />
+              <Image src="/images/logos/partners/barclays-eagle-labs-logo-blue.png" alt="Barclays Eagle Labs" width={280} height={50} className="h-10 w-auto" />
             </div>
-            <p className="text-sm font-medium text-gray-400 mb-3 uppercase tracking-wider">
-              Partnership
-            </p>
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+            <p className="text-gray-400 mb-2 font-satoshi">
               Barclays Eagle Labs member?
-            </h3>
+            </p>
             <p className="text-gray-400 mb-8 max-w-lg mx-auto font-satoshi">
-              Grab your discount using our exclusive offer with Eagle Labs member
-              rewards.
+              Grab your discount using our exclusive offer with Eagle Labs member rewards
             </p>
             <Link
               href="/eaglelabs"
-              className="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-900 text-sm font-medium rounded-full border border-gray-200 hover:bg-gray-100 transition-colors uppercase tracking-wider"
+              className="inline-flex items-center justify-center px-6 py-3 bg-lime-bright text-gray-900 text-sm font-medium rounded-full hover:bg-lime transition-colors uppercase tracking-wider"
             >
               Eagle Labs Deals &amp; Offers Page
             </Link>
@@ -163,115 +214,88 @@ export default async function HomePage() {
       <section className="py-24 md:py-32">
         <div className="container-main">
           <AnimateOnScroll>
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                <span className="highlight-pink">Tailored</span> to you
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto font-satoshi">
-                Whether you&apos;re a start-up with a napkin sketch or an enterprise
-                with a complex digital challenge, our process adapts to you.
-              </p>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-12">
+              <Image src="/images/illustrations/smplco-illustration-signpost.png" alt="" width={120} height={120} className="shrink-0" />
+              <div className="text-center md:text-left">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                  <span className="font-editorial italic">Tailored</span>
+                  <br />
+                  to you
+                </h2>
+              </div>
             </div>
           </AnimateOnScroll>
           <TailoredTabs />
         </div>
       </section>
 
-      {/* ============ CLIENT LOGOS ============ */}
-      <section className="py-12 border-y border-gray-200">
-        <div className="container-main">
-          <p className="text-xs font-medium text-gray-500 text-center mb-8 uppercase tracking-wider">
-            Trusted by innovative companies
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-60">
-            {[
-              { src: '/images/logos/clients/shoosmiths-logo.png', alt: 'Shoosmiths', w: 120 },
-              { src: '/images/logos/clients/scale-logo.png', alt: 'Scale', w: 80 },
-              { src: '/images/logos/clients/lunos-logo.png', alt: 'Lunos', w: 80 },
-              { src: '/images/logos/clients/experis-manpowergroup-logo.png', alt: 'Experis ManpowerGroup', w: 120 },
-              { src: '/images/logos/clients/codebase-logo.png', alt: 'CodeBase', w: 100 },
-              { src: '/images/logos/clients/fabriq-logo.png', alt: 'Fabriq', w: 80 },
-            ].map((logo) => (
-              <Image key={logo.alt} src={logo.src} alt={logo.alt} width={logo.w} height={40} className="h-8 w-auto object-contain grayscale" />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ============ HOME OF THE 5-DAY PROTOTYPE ============ */}
+      <ParallaxImage
+        src="/images/work/office-5day-prototype.jpg"
+        alt="Home of the 5-Day prototype — SmplCo office"
+      />
 
-      {/* ============ SMPLINSIGHTS ============ */}
+      {/* ============ SMPL INSIGHTS (BLOG) ============ */}
       <section className="py-24 md:py-32 bg-offwhite">
         <div className="container-main">
           <AnimateOnScroll>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-6">
+              <Image src="/images/illustrations/smplco-illustration-smpl-insights.png" alt="" width={120} height={120} className="shrink-0" />
+              <div className="text-center md:text-left">
+                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                  <span className="font-editorial italic">Smpl</span>
+                  <br />
+                  <span className="font-bold">Insights</span>
+                </h2>
+              </div>
+            </div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-4 text-center font-satoshi">
+              Browse our thoughts on key industry trends, tales of success and disaster, and tips
+              for getting ahead in a digital world. All courtesy of innovators who have seen it
+              and done it all themselves.
+            </p>
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">SmplInsights</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto font-satoshi">
-                Browse our thoughts on key industry trends, tales of success and
-                disaster, and tips for getting ahead in a digital world.
-              </p>
+              <Link
+                href="/blog"
+                className="inline-flex items-center justify-center px-8 py-3.5 bg-white text-gray-900 text-sm font-medium rounded-full border border-gray-200 hover:bg-gray-50 transition-colors uppercase tracking-wider"
+              >
+                Get Knowledge
+              </Link>
             </div>
           </AnimateOnScroll>
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
             {latestPosts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow"
+                className="group block"
               >
                 {post.hero_image && (
-                  <div className="aspect-[16/10] overflow-hidden relative">
+                  <div className="aspect-[4/3] overflow-hidden relative rounded-2xl mb-4">
                     <Image
                       src={post.hero_image}
                       alt={post.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
                     />
                   </div>
                 )}
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 leading-snug group-hover:text-gray-700 transition-colors">
-                    {post.title}
-                  </h3>
-                  {post.date && (
-                    <p className="text-sm text-gray-500 font-satoshi">
-                      {new Date(post.date).toLocaleDateString('en-GB', {
-                        day: 'numeric',
-                        month: 'long',
-                        year: 'numeric',
-                      })}
-                    </p>
-                  )}
-                </div>
+                <h3 className="text-base font-semibold text-gray-900 mb-1 leading-snug group-hover:text-gray-700 transition-colors line-clamp-1">
+                  {post.title}
+                </h3>
+                {post.date && (
+                  <p className="text-sm text-gray-400 font-satoshi">
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}
+                  </p>
+                )}
               </Link>
             ))}
           </div>
-          <div className="mt-10 text-center">
-            <Link
-              href="/blog"
-              className="inline-flex items-center justify-center px-8 py-3.5 bg-white text-gray-900 text-sm font-medium rounded-full border border-gray-200 hover:bg-gray-50 transition-colors uppercase tracking-wider"
-            >
-              Get Knowledge
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ============ CTA ============ */}
-      <section className="py-24 md:py-32 bg-gray-900 text-white">
-        <div className="container-main text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
-            Ready to build?
-          </h2>
-          <p className="text-lg text-gray-400 max-w-xl mx-auto mb-10 font-satoshi">
-            Every great product starts with a conversation. Get in touch for a
-            free consultation with our digital innovation experts.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-3.5 bg-lime text-gray-900 text-sm font-semibold rounded-full hover:bg-lime-bright transition-colors"
-          >
-            Build With Us
-          </Link>
         </div>
       </section>
     </div>

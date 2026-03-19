@@ -1,7 +1,7 @@
 ---
 title: "Altien - Healthcare"
 description: "Altien is developing a digital tool for nursing homes and healthcare institutions. The goal is to improve everyday life for staff, residents, and relatives by digitising routines and creating a more meaningful daily experience."
-hero_image: "/work/altien-hero.jpg"
+hero_image: "/work/altien-hero-branded.jpg"
 heroAlt: "Altien Healthcare Platform"
 services:
   - "UI/UX Design"
@@ -27,6 +27,16 @@ Our **UX,UI and Brand Design Experts** went to work, designing a streamlined, us
 - Branding
 - Illustrations
 - 5 day-prototype
+
+## Gallery
+
+![Altien App Screen](/images/altien/altien-app-1.jpg)
+
+![Altien App Detail](/images/altien/altien-app-2.jpg)
+
+![Altien Mockup](/images/altien/altien-mockup.png)
+
+![Altien App Overview](/images/altien/altien-app-3.jpg)
 
 ## Related Work
 

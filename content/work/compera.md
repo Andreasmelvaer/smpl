@@ -1,7 +1,7 @@
 ---
 title: "Compera – Supply Chain Reporting"
 description: "Compera helps tens of thousands of companies meet regulatory requirements, enhance transparency, and reduce their reporting burden."
-hero_image: "/work/compera-hero.jpg"
+hero_image: "/work/compera-hero-branded.jpg"
 heroAlt: "Woman Lips"
 services:
   - "UI/UX Design"
@@ -34,15 +34,21 @@ The platform began as a **5-Day Prototype** to simplify sustainability data shar
 
 ## Gallery
 
-![Woman](/work/compera-woman.jpg)
+![Compera Dashboard](/images/compera/compera-dashboard-1.jpg)
 
-![Woman Side Pose](/work/compera-woman-side.jpg)
+![Compera Logo](/images/compera/compera-logo-light.jpg)
 
-![Woman Look Into Camera](/work/compera-woman-camera.jpg)
+![Compera Charts](/images/compera/compera-charts.jpg)
 
-![Man Ground Shot](/work/compera-man-ground.jpg)
+![Compera Dashboard Detail](/images/compera/compera-dashboard-2.jpg)
 
-![Man Back Pose](/work/compera-man-back.jpg)
+![Compera Dashboard Overview](/images/compera/compera-dashboard-3.jpg)
+
+![Compera Scope Analysis](/images/compera/compera-scope.jpg)
+
+![Compera Brand](/images/compera/compera-brand-1.jpg)
+
+![Compera Brand Detail](/images/compera/compera-brand-2.jpg)
 
 ## Review
 

@@ -17,3 +17,5 @@ Yes, the same Andreas who spends his weekdays leading SmplCo's international pro
 Says Andreas
 
 We're proud of you, Andreas, and of Gnu, the slightly drunk claymation mascot who's clearly struck a nerve. Check out the Gnu on [Linkedin](https://www.linkedin.com/company/gnu-bar).
+
+![Andreas at the Marketing Awards](/images/blog/inline/marketing-awards-inline.jpg)

@@ -1,15 +1,12 @@
-import { generatePageMetadata } from '@/lib/metadata'
-import { getPostData } from '@/lib/markdown'
 import ContactForm from '@/components/ContactForm'
+import Image from 'next/image'
 import type { Metadata } from 'next'
+import ShimmerGrid from '@/components/ShimmerGrid'
 
-export async function generateMetadata(): Promise<Metadata> {
-  try {
-    const data = await getPostData('pages', 'contact')
-    return generatePageMetadata(data)
-  } catch {
-    return { title: 'Contact Us' }
-  }
+export const metadata: Metadata = {
+  title: 'Contact Us | Smpl Co – Let\'s Build Together',
+  description: 'Get a free consultation with our digital innovation experts. One hour of advice, absolutely free.',
+  alternates: { canonical: 'https://smpl.as/contact' },
 }
 
 const offices = [
@@ -22,38 +19,57 @@ const offices = [
 
 export default function Contact() {
   return (
-    <div className="py-16 md:py-24">
-      <div className="container-main">
-        {/* Header */}
-        <div className="mb-16 max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Let&apos;s build together
-          </h1>
-          <p className="text-lg text-gray-600 leading-relaxed font-satoshi">
-            We&apos;ve been in your shoes. We&apos;ve lived it. That&apos;s why
-            we start by offering{' '}
-            <span className="font-semibold text-gray-900">
-              one hour of advice — absolutely free
-            </span>
-            . The kind of advice that has already helped our clients build
-            products & services that have won millions in investment.
-          </p>
+    <div className="min-h-screen">
+      {/* ============ HERO ============ */}
+      <section className="py-24 md:py-32 lg:py-44 relative overflow-hidden bg-offwhite">
+        <ShimmerGrid />
+        <div className="container-main text-center relative z-10">
+          <Image
+            src="/images/illustrations/Contact.png"
+            alt=""
+            width={700}
+            height={400}
+            className="w-full max-w-[400px] md:max-w-[480px] lg:max-w-[560px] h-auto mx-auto"
+            priority
+          />
         </div>
+      </section>
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left: Info */}
-          <div>
-            <div className="bg-lime rounded-2xl p-8 md:p-10 mb-10">
-              <h2 className="text-2xl font-bold mb-3">Free advice from experts</h2>
-              <p className="text-gray-700 leading-relaxed font-satoshi">
-                Send us as much or as little detail as you like. We&apos;ll get
-                in touch for your free consultation with our digital innovation
-                experts. And there&apos;ll be no sales pitch either.
+      {/* ============ CONTACT SECTION ============ */}
+      <section className="py-24 md:py-32">
+        <div className="container-main">
+          <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold">Contact us</h2>
+            <div>
+              <p className="text-gray-600 font-satoshi leading-relaxed mb-4">
+                Send us as much or as little detail as you like. We&apos;ll get in touch
+                for your free consultation with our digital innovation experts. (And
+                there&apos;ll be no sales pitch either.)
               </p>
             </div>
+          </div>
 
-            {/* What to expect */}
-            <div className="mb-10">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Left: Form */}
+            <div>
+              <ContactForm />
+            </div>
+
+            {/* Right: Info */}
+            <div>
+              {/* Offices */}
+              <h3 className="text-xl font-semibold mb-6">Connect &amp; Engage</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                {offices.map((office) => (
+                  <div key={office.city} className="bg-offwhite rounded-xl p-4">
+                    <p className="font-medium text-sm text-gray-900">{office.city}</p>
+                    <p className="text-xs text-gray-500">{office.country}</p>
+                    <p className="text-xs text-gray-400 mt-1">{office.address}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* What to expect */}
               <h3 className="text-xl font-semibold mb-6">What to expect</h3>
               <div className="space-y-4">
                 {[
@@ -71,28 +87,9 @@ export default function Contact() {
                 ))}
               </div>
             </div>
-
-            {/* Offices */}
-            <div>
-              <h3 className="text-xl font-semibold mb-6">Global offices</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {offices.map((office) => (
-                  <div key={office.city} className="bg-offwhite rounded-xl p-4">
-                    <p className="font-medium text-sm text-gray-900">{office.city}</p>
-                    <p className="text-xs text-gray-500">{office.country}</p>
-                    <p className="text-xs text-gray-400 mt-1">{office.address}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Right: Contact form */}
-          <div>
-            <ContactForm />
           </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }

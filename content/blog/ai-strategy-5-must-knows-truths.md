@@ -2,7 +2,7 @@
 title: "5 Must-Know Truths Before You Dive Into AI"
 hero_image: "/images/blog/ai-strategy-5-must-knows-truths.webp"
 slug: "ai-strategy-5-must-knows-truths"
-date: "2026-09-15"
+date: "2025-09-15"
 author: "SmplCo Team"
 excerpt: "The great AI gold rush is on. It has become an indispensable part of new tech, while those with existing products and services are rushing to integrate. But there are many traps for the unwary."
 tags: ["AI Strategy", "Business Strategy", "AI Implementation", "Fabriq AI"]
@@ -24,6 +24,8 @@ Will this move the needle for your goals, your customers, or your bottom line?
 
 If it won't, AI is not for you (right now at least).
 
+![AI strategy team](/images/blog/inline/ai-strategy-inline.jpg)
+
 ### Ask the Only Question That Matters
 
 If you're considering AI, start here:
@@ -41,6 +43,8 @@ Open AI has a lot to answer for here. Yes, it is very impressive, but it has mad
 This model type - Generative AI - has amazing applications. Staff at call centres, for example, used to spend so much time summarising what was said on their calls. All that can now be easily automated using AI, providing loads of value to those businesses.
 
 But, in most cases, the AI solution you'll need will not just come out-of-the-box if you're going beyond the most basic tasks. Even OpenAI's market-leading – and extremely user-friendly – product won't give you what you need to go to market with a truly valuable solution of your own.
+
+![AI strategy meeting](/images/blog/inline/ai-strategy-inline-2.jpg)
 
 ### Interesting times
 

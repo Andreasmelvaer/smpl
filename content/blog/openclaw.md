@@ -33,13 +33,17 @@ That's powerful.
 
 And that's exactly why you need to be careful and not just install it on your personal computer.
 
-The Cron-automations we have set up, including dinner recommendations.
+![The Cron-automations we have set up, including dinner recommendations](/images/blog/inline/openclaw-inline.jpg)
+*The Cron-automations we have set up, including dinner recommendations.*
 
 ## What We've Actually Built So Far
 
 Within this isolated environment, we've designed and deployed a small agent ecosystem. Along with lots of automated jobs, visual dashboards that shows whats going on and even a tiny CRM based on our figjam kanban board.
 
 Here's what currently exists inside the dedicated OpenClaw machine:
+
+![Claw made a CRM that links to our Figjam kanban-board that we use for planning](/images/blog/inline/openclaw-inline-2.jpg)
+*Claw made a CRM that links to our Figjam kanban-board that we use for planning.*
 
 ## Meet the System (As It Actually Runs)
 
@@ -83,6 +87,9 @@ Website audits, keyword clustering, prioritized improvement lists.
 ### ClawExpert
 
 Continuously optimizes the OpenClaw setup itself. And is supposed to read everything about OpenClaw
+
+![Making sure we are not spending too many tokens](/images/blog/inline/openclaw-inline-3.jpg)
+*Making sure we are not spending too many tokens*
 
 ## Infrastructure Behind It
 

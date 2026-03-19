@@ -1,12 +1,14 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useLayoutEffect, useCallback } from 'react'
 
 const navigationItems = [
   { name: 'Home', href: '/' },
   { name: 'Work', href: '/work' },
+  { name: 'Academy', href: '/academy' },
   { name: 'About', href: '/about' },
   { name: 'Partners', href: '/partners' },
   { name: 'Blog', href: '/blog' },
@@ -37,6 +39,38 @@ export default function Navigation() {
     return pathname.startsWith(href)
   }
 
+  const navRef = useRef<HTMLElement>(null)
+  const itemRefs = useRef<(HTMLAnchorElement | null)[]>([])
+  const [pillStyle, setPillStyle] = useState({ left: 0, width: 0, opacity: 0 })
+
+  const isContactActive = pathname === '/contact'
+
+  const updatePill = useCallback(() => {
+    const activeIndex = navigationItems.findIndex((item) => isActive(item.href))
+    const activeEl = itemRefs.current[activeIndex]
+    const navEl = navRef.current
+    if (activeEl && navEl && !isContactActive) {
+      const navRect = navEl.getBoundingClientRect()
+      const itemRect = activeEl.getBoundingClientRect()
+      setPillStyle({
+        left: itemRect.left - navRect.left,
+        width: itemRect.width,
+        opacity: 1,
+      })
+    } else {
+      setPillStyle((prev) => ({ ...prev, opacity: 0 }))
+    }
+  }, [pathname])
+
+  useLayoutEffect(() => {
+    updatePill()
+  }, [updatePill])
+
+  useEffect(() => {
+    window.addEventListener('resize', updatePill)
+    return () => window.removeEventListener('resize', updatePill)
+  }, [updatePill])
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-200 ${
@@ -49,17 +83,26 @@ export default function Navigation() {
             href="/"
             className="text-xl font-bold tracking-tight text-gray-900 hover:opacity-80 transition-opacity"
           >
-            Smpl Co
+            <Image src="/images/smpl-logo.svg" alt="Smpl Co" width={80} height={26} className="h-6 w-auto" />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6">
-            {navigationItems.map((item) => (
+          <nav ref={navRef} className="hidden md:flex items-center gap-6 relative">
+            <div
+              className="absolute top-0 h-full rounded-full bg-gray-900 transition-all duration-300 ease-in-out"
+              style={{
+                left: pillStyle.left,
+                width: pillStyle.width,
+                opacity: pillStyle.opacity,
+              }}
+            />
+            {navigationItems.map((item, i) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors duration-200 font-satoshi px-3 py-1.5 rounded-full ${
+                ref={(el) => { itemRefs.current[i] = el }}
+                className={`relative z-10 text-sm font-medium transition-colors duration-200 font-satoshi px-3 py-1.5 rounded-full ${
                   isActive(item.href)
-                    ? 'text-gray-900 bg-gray-100'
+                    ? 'text-white'
                     : 'text-gray-500 hover:text-gray-900'
                 }`}
               >
@@ -68,9 +111,13 @@ export default function Navigation() {
             ))}
             <Link
               href="/contact"
-              className="ml-2 inline-flex items-center justify-center px-5 py-2 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors font-satoshi"
+              className={`relative z-10 ml-2 inline-flex items-center justify-center px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 font-satoshi ${
+                isContactActive
+                  ? 'bg-gray-900 text-white ring-2 ring-gray-900 ring-offset-2'
+                  : 'bg-gray-900 text-white hover:bg-gray-800'
+              }`}
             >
-              Build With Us
+              Contact Us
             </Link>
           </nav>
 
@@ -93,29 +140,43 @@ export default function Navigation() {
         </div>
       </div>
 
-      {mobileOpen && (
-        <div className="md:hidden fixed inset-0 top-[60px] bg-white z-40">
-          <nav className="flex flex-col px-6 py-8 gap-1">
-            {navigationItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`text-2xl font-medium py-3 transition-colors ${
-                  isActive(item.href) ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
+      <div
+        className={`md:hidden fixed inset-0 top-[60px] bg-white z-40 transition-all duration-300 ease-in-out ${
+          mobileOpen
+            ? 'opacity-100 translate-y-0 pointer-events-auto'
+            : 'opacity-0 -translate-y-4 pointer-events-none'
+        }`}
+      >
+        <nav className="flex flex-col px-6 py-8 gap-1">
+          {navigationItems.map((item, i) => (
             <Link
-              href="/contact"
-              className="mt-4 inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white text-lg font-medium rounded-full"
+              key={item.name}
+              href={item.href}
+              className={`text-2xl font-medium py-3 transition-all duration-300 ${
+                isActive(item.href) ? 'text-gray-900' : 'text-gray-500 hover:text-gray-900'
+              }`}
+              style={{
+                transitionDelay: mobileOpen ? `${i * 50}ms` : '0ms',
+                opacity: mobileOpen ? 1 : 0,
+                transform: mobileOpen ? 'translateY(0)' : 'translateY(8px)',
+              }}
             >
-              Build With Us
+              {item.name}
             </Link>
-          </nav>
-        </div>
-      )}
+          ))}
+          <Link
+            href="/contact"
+            className="mt-4 inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white text-lg font-medium rounded-full transition-all duration-300"
+            style={{
+              transitionDelay: mobileOpen ? `${navigationItems.length * 50}ms` : '0ms',
+              opacity: mobileOpen ? 1 : 0,
+              transform: mobileOpen ? 'translateY(0)' : 'translateY(8px)',
+            }}
+          >
+            Contact Us
+          </Link>
+        </nav>
+      </div>
     </header>
   )
 }

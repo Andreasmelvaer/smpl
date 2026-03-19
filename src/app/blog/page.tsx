@@ -2,143 +2,82 @@ import { getAllPostsData } from '@/lib/markdown'
 import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
+import ShimmerGrid from '@/components/ShimmerGrid'
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: 'Smpl Minds | Blog – Insights & Articles',
   description: 'Insights on AI development, digital products, vibecoding, and building startups from the Smpl Co team.',
+  alternates: { canonical: 'https://smpl.as/blog' },
 }
 
 export default async function Blog() {
   const blogPosts = await getAllPostsData('blog')
-  const [featured, ...rest] = blogPosts
 
   return (
-    <div className="py-16 md:py-24">
-      <div className="container-main">
-        {/* Header */}
-        <div className="mb-16 max-w-2xl">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            Brain Fuel
-          </h1>
-          <p className="text-lg text-gray-600 leading-relaxed font-satoshi">
-            Find out what&apos;s happening at SmplCo, dive into our thoughts on
-            key industry trends, read tales of success and disaster, and get
-            tips on getting ahead in a digital world.
-          </p>
+    <div className="min-h-screen">
+      {/* ============ HERO ============ */}
+      <section className="py-24 md:py-32 lg:py-44 relative overflow-hidden bg-offwhite">
+        <ShimmerGrid />
+        <div className="container-main text-center relative z-10">
+          <Image
+            src="/images/illustrations/Blog.png"
+            alt=""
+            width={700}
+            height={400}
+            className="w-full max-w-[400px] md:max-w-[480px] lg:max-w-[560px] h-auto mx-auto"
+            priority
+          />
         </div>
+      </section>
 
-        {/* Featured post */}
-        {featured && (
-          <Link
-            href={`/blog/${featured.slug}`}
-            className="group block bg-offwhite rounded-2xl overflow-hidden mb-12 hover:bg-gray-100 transition-colors"
-          >
-            <div className="grid md:grid-cols-2 gap-0">
-              {featured.hero_image && (
-                <div className="aspect-[16/10] md:aspect-auto overflow-hidden relative">
-                  <Image
-                    src={featured.hero_image}
-                    alt={featured.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                    priority
-                  />
-                </div>
-              )}
-              <div className="p-8 md:p-10 flex flex-col justify-center">
-                {featured.tags && featured.tags[0] && (
-                  <span className="text-xs font-medium text-gray-500 mb-3 block">
-                    {featured.tags[0]}
-                  </span>
-                )}
-                <h2 className="text-2xl md:text-3xl font-bold mb-3 leading-tight group-hover:text-gray-700 transition-colors">
-                  {featured.title}
-                </h2>
-                {featured.excerpt && (
-                  <p className="text-gray-600 mb-4 leading-relaxed font-satoshi">
-                    {featured.excerpt}
-                  </p>
-                )}
-                <div className="flex items-center gap-3 text-sm text-gray-500">
-                  {featured.author && <span>{featured.author}</span>}
-                  {featured.date && (
-                    <>
-                      <span className="text-gray-300">·</span>
-                      <time dateTime={featured.date}>
-                        {new Date(featured.date).toLocaleDateString('en-GB', {
-                          day: 'numeric',
-                          month: 'long',
-                          year: 'numeric',
-                        })}
-                      </time>
-                    </>
-                  )}
-                  {featured.readTime && (
-                    <>
-                      <span className="text-gray-300">·</span>
-                      <span>{featured.readTime}</span>
-                    </>
-                  )}
-                </div>
-              </div>
-            </div>
-          </Link>
-        )}
+      {/* ============ INTRO ============ */}
+      <section className="py-24 md:py-32">
+        <div className="container-main">
+          <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold">Smpl Insights</h2>
+            <p className="text-gray-600 font-satoshi leading-relaxed">
+              Browse our thoughts on key industry trends, tales of success and disaster,
+              and tips for getting ahead in a digital world. All courtesy of innovators
+              who have seen it and done it all themselves.
+            </p>
+          </div>
 
-        {/* Post grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {rest.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="group block bg-offwhite rounded-2xl overflow-hidden hover:bg-gray-100 transition-colors"
-            >
-              {post.hero_image && (
-                <div className="aspect-[16/10] overflow-hidden relative">
-                  <Image
-                    src={post.hero_image}
-                    alt={post.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                  />
-                </div>
-              )}
-              <div className="p-6">
-                {post.tags && post.tags[0] && (
-                  <span className="text-xs font-medium text-gray-500 mb-3 block">
-                    {post.tags[0]}
-                  </span>
+          {/* ============ POST GRID ============ */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group block"
+              >
+                {post.hero_image && (
+                  <div className="aspect-[4/3] overflow-hidden relative rounded-2xl mb-4">
+                    <Image
+                      src={post.hero_image}
+                      alt={post.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                    />
+                  </div>
                 )}
-                <h3 className="text-base font-semibold text-gray-900 mb-2 leading-snug group-hover:text-gray-700 transition-colors">
+                <h3 className="text-base font-semibold text-gray-900 mb-1 leading-snug group-hover:text-gray-700 transition-colors line-clamp-2">
                   {post.title}
                 </h3>
-                {post.excerpt && (
-                  <p className="text-sm text-gray-600 mb-3 line-clamp-2 font-satoshi">
-                    {post.excerpt}
+                {post.date && (
+                  <p className="text-sm text-gray-400 font-satoshi">
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
+                    })}
                   </p>
                 )}
-                <div className="flex items-center gap-3 text-xs text-gray-500">
-                  {post.author && <span>{post.author}</span>}
-                  {post.date && (
-                    <>
-                      {post.author && <span className="text-gray-300">·</span>}
-                      <time dateTime={post.date}>
-                        {new Date(post.date).toLocaleDateString('en-GB', {
-                          day: 'numeric',
-                          month: 'short',
-                          year: 'numeric',
-                        })}
-                      </time>
-                    </>
-                  )}
-                </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }

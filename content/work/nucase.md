@@ -1,7 +1,7 @@
 ---
 title: "Nucase – Home Renovation"
 description: "NuCase takes the surprises out of planning home renovations, making the process fast and effortless."
-hero_image: "/images/nucase/soda-can-hero.jpg"
+hero_image: "/work/nucase-hero-branded.jpg"
 heroAlt: "Nucase Hero"
 services:
   - "UI/UX Design"

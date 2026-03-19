@@ -22,7 +22,8 @@ That's why the world's biggest brands are racing to rediscover an ancient craft 
 
 That craft? Storytelling.
 
-The author, telling stories back in the day
+![The author, telling stories back in the day](/images/blog/inline/brand-stories-inline.png)
+*The author, telling stories back in the day*
 
 ## 'Desperately seeking…'
 
@@ -152,7 +153,8 @@ If you can follow these rules then you will tell stories that will give people a
 
 Trust me, it won't take long for your customers to thank and reward you for it.
 
-An inspiring, vaguely primeval image to get your creative juices flowing
+![An inspiring, vaguely primeval image to get your creative juices flowing](/images/blog/inline/brand-stories-inline-3.jpg)
+*An inspiring, vaguely primeval image to get your creative juices flowing*
 
 ## Where are your stories?
 
@@ -256,5 +258,8 @@ Research by Google found:
 … and the quickest way to take advantage of all that is to use a skill we've practised for millennia. Storytelling.
 
 Which just leaves us with one question: what's your story?
+
+![Free no-strings-attached advice available here](/images/blog/inline/brand-stories-inline-2.png)
+*Free no-strings-attached advice available here*
 
 ## If you want to free advice on discovering & telling your story, drop me a line on [email](mailto:mike@smpl.as), or via our [contact page](../contact). Good luck! Michael

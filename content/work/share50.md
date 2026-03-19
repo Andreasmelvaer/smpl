@@ -1,7 +1,7 @@
 ---
 title: "Share50 – Ad Revenue"
 description: "Share50 makes it easy for local organisations to raise money without selling anything, asking for donations, or asking more from their volunteers."
-hero_image: "/images/share50/man-running-hero.jpg"
+hero_image: "/work/share50-hero-branded.jpg"
 heroAlt: "Share50 Hero - Man Running"
 services:
   - "UI/UX Design"

@@ -2,7 +2,7 @@
 title: "Altien: the app we'll all wish we had, one day"
 hero_image: "/images/blog/altien.webp"
 slug: "altien"
-date: "2026-11-15"
+date: "2025-11-20"
 author: "SmplCo Team"
 excerpt: "Altien is bringing power to those we care for, and care about. Across Europe's residential care homes, the same problems repeat themselves every day: information is scattered across sticky notes and shift books."
 tags: ["Healthcare", "Care Homes", "Communication", "SaaS", "Altien"]
@@ -35,6 +35,8 @@ Instead of relying on calls, corridor conversations and paper notes, Altien brin
 The aim is simple: reduce noise, save time, build trust and make more room for care.
 
 The result is a virtuous circle of residents who are better cared for, families who know their loved ones are in good hands, and businesses and staff that thrive and deliver the best possible care.
+
+![Altien team](/images/blog/inline/altien-inline.jpg)
 
 "Altien can make everyday life easier, save time on routines and give us more time for the residents."
 Svein Petter, Business Manager, Sparekassen Sykehjem

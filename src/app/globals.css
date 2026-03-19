@@ -40,8 +40,24 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url("https://cdn.fontshare.com/wf/EKRUUX5SC5LVJBNOLEKH554CLIIXNYOG/HHD4WG6WWEFYDOVMKBSCNBV7YRSJUUAI/SDMYF42NJLJ25YEO44IT64S5RFWUQHZC.woff2") format("woff2");
-  font-weight: 400 900;
+  src: url("https://cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://cdn.fontshare.com/wf/P2LQKHE6KA6ZP4AAGN72KDWMHH6ZH3TA/ZC32TK2P7FPS5GFTL46EU6KQJA24ZYDB/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("https://cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2") format("woff2");
+  font-weight: 700;
   font-display: swap;
   font-style: normal;
 }
@@ -78,7 +94,6 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -105,12 +120,13 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
 h2 { font-size: clamp(2rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+/* h3 size controlled by Tailwind classes per-component */
 p { line-height: 1.6; }
 
 .font-editorial {
   font-family: "PP Editorial New", Georgia, serif;
   font-style: italic;
+  font-weight: 400;
 }
 
 .font-satoshi { font-family: "Satoshi", sans-serif; }
@@ -243,6 +259,19 @@ p { line-height: 1.6; }
 
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
 
 /* ============================================

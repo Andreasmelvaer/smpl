@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import { BlogPostJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -26,6 +27,12 @@ export default async function BlogPost({ params }: Props) {
 
     return (
       <article className="py-16 md:py-24">
+        <BlogPostJsonLd post={post} />
+        <BreadcrumbJsonLd items={[
+          { name: 'Home', href: '/' },
+          { name: 'Blog', href: '/blog' },
+          { name: post.title, href: `/blog/${slug}` },
+        ]} />
         <div className="container-main">
           {/* Back link */}
           <Link

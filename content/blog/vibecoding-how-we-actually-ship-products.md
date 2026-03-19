@@ -22,7 +22,8 @@ What we discovered is that if you start with what people actually do and see, ev
 
 With [Lovable](https://lovable.dev/), Bjorn Ivar and I could iterate on the actual user experience in hours, not sprints. We'd rebuild entire sections when something didn't feel right. No gatekeeping. No process overhead. Just "does this work better?" Designers, product thinkers, developers - we were all in the same space thinking about the same thing.
 
-wallogo.com is built in Lovable
+![wallogo.com is built in Lovable](/images/blog/inline/vibecoding-inline.png)
+*wallogo.com is built in Lovable*
 
 ## From Feeling to Structure
 
@@ -44,7 +45,8 @@ What actually saves time is having a crystal-clear picture of what you want to b
 
 The other thing: don't underestimate structure. Changing colors or layouts is trivial. Restructuring your data model or rethinking core assumptions halfway through? That's expensive. Getting that right early matters.
 
-Central promps are kept in our own CMS
+![Central prompts are kept in our own CMS](/images/blog/inline/vibecoding-inline-2.png)
+*Central prompts are kept in our own CMS*
 
 ## Building With Purpose
 
@@ -72,4 +74,5 @@ The teams who figure this out early - who treat vibecoding as a real discipline 
 
 That's worth learning.
 
-Get to Give - the She Builds winner.
+![Get to Give - the She Builds winner](/images/blog/inline/vibecoding-inline-3.png)
+*Get to Give - the She Builds winner.*

@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { OrganizationJsonLd } from "@/components/JsonLd";
 import "./globals.css";
 
 const inter = Inter({
@@ -60,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${inter.variable} antialiased`}>
         {/* Google Analytics */}
         <Script
@@ -75,6 +76,7 @@ export default function RootLayout({
             gtag('config', 'G-VZZ9X48SZL');
           `}
         </Script>
+        <OrganizationJsonLd />
         <Navigation />
         <main className="pt-[60px] md:pt-[56px]">{children}</main>
         <Footer />
