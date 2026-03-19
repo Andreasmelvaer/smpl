@@ -31,10 +31,10 @@ export async function POST(request: NextRequest) {
       subject: `New contact from ${name}${company ? ` (${company})` : ''}`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background: #c8ff00; padding: 24px 32px; border-radius: 12px 12px 0 0;">
-            <h1 style="margin: 0; font-size: 20px; color: #1a1a1a;">New Contact Form Submission</h1>
+          <div style="background: #1a1a1a; padding: 24px 32px; border-radius: 12px 12px 0 0;">
+            <h1 style="margin: 0; font-size: 20px; color: #c8ff00;">New Contact Form Submission</h1>
           </div>
-          <div style="background: #f5f5f0; padding: 32px; border-radius: 0 0 12px 12px;">
+          <div style="background: #ffffff; padding: 32px; border-radius: 0 0 12px 12px;">
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
                 <td style="padding: 8px 0; color: #666; font-size: 14px; width: 100px;">Name</td>
@@ -71,10 +71,10 @@ export async function POST(request: NextRequest) {
       subject: `Thanks for reaching out, ${name.split(' ')[0]}!`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background: #c8ff00; padding: 24px 32px; border-radius: 12px 12px 0 0;">
-            <h1 style="margin: 0; font-size: 20px; color: #1a1a1a;">Thanks for getting in touch!</h1>
+          <div style="background: #1a1a1a; padding: 24px 32px; border-radius: 12px 12px 0 0;">
+            <h1 style="margin: 0; font-size: 20px; color: #c8ff00;">Thanks for getting in touch!</h1>
           </div>
-          <div style="background: #f5f5f0; padding: 32px; border-radius: 0 0 12px 12px;">
+          <div style="background: #ffffff; padding: 32px; border-radius: 0 0 12px 12px;">
             <p style="font-size: 14px; line-height: 1.6; margin-top: 0;">
               Hi ${escapeHtml(name.split(' ')[0])},
             </p>
