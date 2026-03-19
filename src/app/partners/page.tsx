@@ -125,40 +125,36 @@ export default function Partners() {
       <section className="py-24 md:py-32 lg:py-44 relative overflow-hidden bg-offwhite">
         <ShimmerGrid />
         <div className="container-main text-center relative z-10">
-          {/* Illustration */}
-          <div className="relative inline-block mb-8">
-            <Image
-              src="/images/illustrations/Partners.png"
-              alt="SmplCo partner network"
-              width={700}
-              height={400}
-              className="w-full max-w-[400px] md:max-w-[480px] lg:max-w-[560px] h-auto mx-auto relative z-10"
-              priority
-            />
-          </div>
-
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Partners</h1>
-
-          {/* Subtitle */}
-          <p className="text-gray-600 font-satoshi leading-relaxed max-w-xl mx-auto mb-8">
-            Our partnerships offer you expertise, access, discounts, investment opportunities,
-            and more. All carefully chosen to give you everything you need to successfully
-            take on the world.
-          </p>
-
-          {/* CTA Button */}
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center px-8 py-3.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
-          >
-            Want Some Intros?
-          </Link>
+          <Image
+            src="/images/illustrations/Partners.png"
+            alt="SmplCo partner network"
+            width={700}
+            height={400}
+            className="w-full max-w-[400px] md:max-w-[480px] lg:max-w-[560px] h-auto mx-auto relative z-10"
+            priority
+          />
         </div>
       </section>
 
-      {/* ============ PARTNER CARDS GRID ============ */}
+      {/* ============ PARTNERS INTRO ============ */}
       <section className="py-24 md:py-32">
         <div className="container-main">
+          <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
+            <h1 className="text-3xl md:text-4xl font-bold">Our Partners</h1>
+            <div>
+              <p className="text-gray-600 font-satoshi leading-relaxed mb-6">
+                Our partnerships offer you expertise, access, discounts, investment opportunities,
+                and more. All carefully chosen to give you everything you need to successfully
+                take on the world.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-3.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
+              >
+                Want Some Intros?
+              </Link>
+            </div>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {partners.map((partner) => (
               <PartnerCard

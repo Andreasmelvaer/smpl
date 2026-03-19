@@ -55,7 +55,7 @@ export default function About() {
       <section className="py-24 md:py-32">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-16 items-start">
-            <h1 className="text-4xl md:text-5xl font-bold">About</h1>
+            <h1 className="text-3xl md:text-4xl font-bold">About</h1>
             <div>
               <p className="text-lg text-gray-600 font-satoshi italic mb-6">
                 &ldquo;Let&apos;s have the right conversations after 5 days, not 5 months…&rdquo;
@@ -78,7 +78,7 @@ export default function About() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-6">
               <Image src="/images/illustrations/smplco-illustration-high-five.png" alt="" width={120} height={120} className="shrink-0" />
               <div className="text-center md:text-left">
-                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight">
                   <span className="font-editorial italic">Our</span>
                   <br />
                   Team
@@ -262,7 +262,7 @@ export default function About() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-12">
               <Image src="/images/illustrations/smplco-illustration-signpost.png" alt="" width={120} height={120} className="shrink-0" />
               <div className="text-center md:text-left">
-                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight">
                   <span className="font-editorial italic">The</span>
                   <br />
                   Plans

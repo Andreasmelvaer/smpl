@@ -34,7 +34,7 @@ export default async function Blog() {
       <section className="py-24 md:py-32">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold">Smpl Insights</h1>
+            <h1 className="text-3xl md:text-4xl font-bold">Smpl Insights</h1>
             <p className="text-gray-600 font-satoshi leading-relaxed">
               Browse our thoughts on key industry trends, tales of success and disaster,
               and tips for getting ahead in a digital world. All courtesy of innovators

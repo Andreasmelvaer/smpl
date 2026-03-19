@@ -87,7 +87,7 @@ export default async function HomePage() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-16">
               <Image src="/images/illustrations/smplco-illustration-notebook.png" alt="" width={120} height={120} className="shrink-0" />
               <div className="text-center md:text-left">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
                   <span className="font-editorial italic">From Post-it</span>
                   <br />
                   ...to product
@@ -147,7 +147,7 @@ export default async function HomePage() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-12">
               <Image src="/images/illustrations/smplco-illustration-speech-bubbles.png" alt="" width={120} height={120} className="shrink-0" />
               <div className="text-center md:text-left">
-                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight">
                   <span className="font-editorial italic">Don&apos;t</span>
                   <br />
                   <span className="font-bold">just take our</span>
@@ -220,7 +220,7 @@ export default async function HomePage() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-12">
               <Image src="/images/illustrations/smplco-illustration-signpost.png" alt="" width={120} height={120} className="shrink-0" />
               <div className="text-center md:text-left">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
                   <span className="font-editorial italic">Tailored</span>
                   <br />
                   to you
@@ -245,7 +245,7 @@ export default async function HomePage() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-6">
               <Image src="/images/illustrations/smplco-illustration-smpl-insights.png" alt="" width={120} height={120} className="shrink-0" />
               <div className="text-center md:text-left">
-                <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight">
                   <span className="font-editorial italic">Smpl</span>
                   <br />
                   <span className="font-bold">Insights</span>

@@ -45,7 +45,7 @@ export default function Contact() {
       <section className="py-24 md:py-32">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold">Contact Us</h1>
+            <h1 className="text-3xl md:text-4xl font-bold">Contact Us</h1>
             <div>
               <p className="text-gray-600 font-satoshi leading-relaxed mb-4">
                 Send us as much or as little detail as you like. We&apos;ll get in touch

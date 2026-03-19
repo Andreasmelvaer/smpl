@@ -59,7 +59,7 @@ export default async function BlogPost({ params }: Props) {
                 ))}
               </div>
             )}
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
               {post.title}
             </h1>
             <div className="flex items-center gap-4 text-gray-500 text-sm">
