@@ -56,9 +56,9 @@ const partners = [
   {
     name: 'Japeto',
     category: 'Product development',
-    logo: null,
+    logo: '/images/logos/clients/japeto-logo.png',
     description: 'Expert product development and engineering support to bring your digital product from concept to launch with speed and quality.',
-    href: 'https://www.japeto.com/',
+    href: 'https://www.japeto.ai/',
   },
   {
     name: 'Codebase',
