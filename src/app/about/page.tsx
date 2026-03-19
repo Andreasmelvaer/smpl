@@ -4,9 +4,10 @@ import Image from 'next/image'
 import AnimateOnScroll from '@/components/AnimateOnScroll'
 import ShimmerGrid from '@/components/ShimmerGrid'
 import TailoredTabs from '@/components/TailoredTabs'
+import { FAQJsonLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
-  title: 'About Us | Smpl Co – Our Mission & Team',
+  title: 'About SmplCo – Digital Product Studio for Startups & Enterprises',
   description: 'We\'re a team of global entrepreneurs who\'ve built, sold, and invested in digital companies. Meet the SmplCo team.',
   alternates: { canonical: 'https://smpl.as/about' },
 }
@@ -29,13 +30,19 @@ const teamMembers = [
 export default function About() {
   return (
     <div className="min-h-screen">
+      <FAQJsonLd faqs={[
+        { question: 'What is SmplCo?', answer: 'SmplCo is a digital product studio that helps startups and enterprises prototype and build smart digital products in weeks using AI and no-code tools. Founded by a team of global entrepreneurs who have built, sold, and invested in digital companies, including a $3bn tech unicorn.' },
+        { question: 'What is the 5-Day Prototype?', answer: 'The 5-Day Prototype is SmplCo\'s signature service that transforms your idea into a high-fidelity, clickable prototype in just five days. It reduces risk, lays foundations for rapid MVP development, saves cost, and aligns all stakeholders with clear visibility.' },
+        { question: 'How does the SmplCo process work?', answer: 'SmplCo\'s process has four stages: (1) Talk to us — a free consultation to understand your vision and goals; (2) 5-Day Prototype — transform your idea into a clickable prototype; (3) Product Development — design and build your MVP with our Design-as-a-Service team and development partners; (4) Launch — go-to-market strategy and rollout support.' },
+        { question: 'How much does the 5-Day Prototype cost?', answer: 'The 5-Day Prototype starts at £8,100. Barclays Eagle Labs members receive an exclusive 25% discount, bringing the price to £6,075. Contact us for a free consultation to discuss your specific needs.' },
+      ]} />
       {/* ============ HERO ============ */}
       <section className="py-24 md:py-32 lg:py-44 relative overflow-hidden bg-offwhite">
         <ShimmerGrid />
         <div className="container-main text-center relative z-10">
           <Image
             src="/images/illustrations/About Us.png"
-            alt=""
+            alt="About SmplCo — digital product studio"
             width={700}
             height={400}
             className="w-full max-w-[400px] md:max-w-[480px] lg:max-w-[560px] h-auto mx-auto"
@@ -48,7 +55,7 @@ export default function About() {
       <section className="py-24 md:py-32">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-16 items-start">
-            <h2 className="text-4xl md:text-5xl font-bold">About</h2>
+            <h1 className="text-4xl md:text-5xl font-bold">About</h1>
             <div>
               <p className="text-lg text-gray-600 font-satoshi italic mb-6">
                 &ldquo;Let&apos;s have the right conversations after 5 days, not 5 months…&rdquo;
@@ -105,7 +112,7 @@ export default function About() {
       </section>
 
       {/* ============ TALK TO US ============ */}
-      <section className="py-16 md:py-24">
+      <section className="pt-16 md:pt-24 pb-0">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -123,19 +130,16 @@ export default function About() {
               </p>
             </div>
             <div className="flex justify-center">
-              <Image src="/images/illustrations/smplco-illustration-ideas-investors.png" alt="" width={400} height={400} className="w-full max-w-[400px]" />
+              <Image src="/images/illustrations/smplco-illustration-ideas-investors.png" alt="" width={600} height={600} className="w-full" />
             </div>
           </div>
         </div>
       </section>
 
       {/* ============ 5 DAY PROTOTYPE ============ */}
-      <section className="py-16 md:py-24 bg-offwhite">
+      <section className="py-0">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="flex justify-center">
-              <Image src="/images/illustrations/smplco-illustration-ui-components.png" alt="" width={400} height={400} className="w-full max-w-[400px]" />
-            </div>
             <div>
               <AnimateOnScroll>
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
@@ -162,14 +166,20 @@ export default function About() {
                 ))}
               </ul>
             </div>
+            <div className="flex justify-center">
+              <Image src="/images/illustrations/smplco-illustration-ui-components.png" alt="" width={600} height={600} className="w-full" />
+            </div>
           </div>
         </div>
       </section>
 
       {/* ============ PRODUCT DEVELOPMENT ============ */}
-      <section className="py-16 md:py-24">
+      <section className="py-0">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="flex justify-center">
+              <Image src="/images/illustrations/smplco-illustration-code-development.png" alt="" width={600} height={600} className="w-full" />
+            </div>
             <div>
               <AnimateOnScroll>
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
@@ -190,19 +200,16 @@ export default function About() {
                 smooth and efficient development process.
               </p>
             </div>
-            <div className="flex justify-center">
-              <Image src="/images/illustrations/smplco-illustration-code-development.png" alt="" width={400} height={400} className="w-full max-w-[400px]" />
-            </div>
           </div>
         </div>
       </section>
 
       {/* ============ READY SET LAUNCH ============ */}
-      <section className="py-16 md:py-24 bg-offwhite">
+      <section className="py-0">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
-              <Image src="/images/illustrations/smplco-illustration-space-astronaut.png" alt="" width={400} height={400} className="w-full max-w-[400px]" />
+              <Image src="/images/illustrations/smplco-illustration-space-astronaut.png" alt="" width={600} height={600} className="w-full" />
             </div>
             <div>
               <AnimateOnScroll>
@@ -223,9 +230,12 @@ export default function About() {
       </section>
 
       {/* ============ PRODUCT MARKETING ============ */}
-      <section className="py-16 md:py-24">
+      <section className="pb-16 md:pb-24 pt-0">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="flex justify-center">
+              <Image src="/images/illustrations/smplco-illustration-mobile-app.png" alt="" width={600} height={600} className="w-full" />
+            </div>
             <div>
               <AnimateOnScroll>
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
@@ -240,9 +250,6 @@ export default function About() {
                 to showcase your product in the best light — whether it&apos;s a simple flyer or an
                 expansive campaign.
               </p>
-            </div>
-            <div className="flex justify-center">
-              <Image src="/images/illustrations/smplco-illustration-mobile-app.png" alt="" width={400} height={400} className="w-full max-w-[400px]" />
             </div>
           </div>
         </div>

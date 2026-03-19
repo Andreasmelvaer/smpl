@@ -17,7 +17,7 @@ export default function Footer() {
         {/* Top row: logo left, nav right */}
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-12">
           <Link href="/" className="block">
-            <Image src="/images/smpl-logo.svg" alt="Smpl Co" width={80} height={26} className="h-6 w-auto brightness-0 invert" />
+            <Image src="/images/smpl-logo.svg" alt="SmplCo" width={80} height={26} className="h-6 w-auto brightness-0 invert" />
           </Link>
 
           <nav className="flex flex-wrap gap-6">
@@ -43,7 +43,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4 mt-4">
               <a
-                href="https://www.linkedin.com/company/smplco"
+                href="https://www.linkedin.com/company/smplcoas/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-white transition-colors"
@@ -54,7 +54,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://dribbble.com/smplco"
+                href="https://dribbble.com/SmplCo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-500 hover:text-white transition-colors"
@@ -71,7 +71,7 @@ export default function Footer() {
             href="/contact"
             className="inline-flex items-center justify-center px-6 py-3 border border-gray-600 text-white text-sm font-medium rounded-full hover:bg-white hover:text-gray-900 transition-colors font-satoshi"
           >
-            Contact Us
+            Build With Us
           </Link>
         </div>
       </div>

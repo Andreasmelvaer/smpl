@@ -83,7 +83,7 @@ export default function Navigation() {
             href="/"
             className="text-xl font-bold tracking-tight text-gray-900 hover:opacity-80 transition-opacity"
           >
-            <Image src="/images/smpl-logo.svg" alt="Smpl Co" width={80} height={26} className="h-6 w-auto" />
+            <Image src="/images/smpl-logo.svg" alt="SmplCo" width={80} height={26} className="h-6 w-auto" />
           </Link>
 
           <nav ref={navRef} className="hidden md:flex items-center gap-6 relative">

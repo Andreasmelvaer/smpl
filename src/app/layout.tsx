@@ -15,35 +15,35 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Smpl Co – Prototype Fast, Build Smart Digital Products, Launch in Weeks",
-    template: "%s | Smpl Co",
+    default: "SmplCo – 5-Day Prototypes & AI-Powered Product Development",
+    template: "%s | SmplCo",
   },
   description:
-    "Smpl Co helps startups and enterprises prototype and build smart digital products in weeks using AI and no‑code tools, reducing risk and cost while accelerating growth.",
+    "SmplCo helps startups and enterprises prototype and build smart digital products in weeks using AI and no‑code tools, reducing risk and cost while accelerating growth.",
   keywords:
     "prototype, digital products, AI development, no-code, startup, enterprise, MVP, vibecoding",
-  authors: [{ name: "Smpl Co" }],
+  authors: [{ name: "SmplCo" }],
   metadataBase: new URL("https://smpl.as"),
   openGraph: {
-    title: "Smpl Co – Prototype Fast, Build Smart Digital Products, Launch in Weeks",
+    title: "SmplCo – 5-Day Prototypes & AI-Powered Product Development",
     description:
-      "Smpl Co helps startups and enterprises prototype and build smart digital products in weeks using AI and no‑code tools, reducing risk and cost while accelerating growth.",
+      "SmplCo helps startups and enterprises prototype and build smart digital products in weeks using AI and no‑code tools, reducing risk and cost while accelerating growth.",
     images: [
       {
         url: "/images/og-default.png",
         width: 1200,
         height: 630,
-        alt: "Smpl Co - Digital Product Development",
+        alt: "SmplCo - Digital Product Development",
       },
     ],
     type: "website",
-    siteName: "Smpl Co",
+    siteName: "SmplCo",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Smpl Co – Prototype Fast, Build Smart Digital Products, Launch in Weeks",
+    title: "SmplCo – 5-Day Prototypes & AI-Powered Product Development",
     description:
-      "Smpl Co helps startups and enterprises prototype and build smart digital products in weeks.",
+      "SmplCo helps startups and enterprises prototype and build smart digital products in weeks.",
   },
   icons: {
     icon: "/favicon.png",

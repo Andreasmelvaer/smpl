@@ -6,13 +6,14 @@ export function OrganizationJsonLd() {
   const data = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Smpl Co',
+    name: 'SmplCo',
     url: BASE_URL,
     logo: `${BASE_URL}/images/smpl-logo.svg`,
     description:
-      'Smpl Co helps startups and enterprises prototype and build smart digital products in weeks using AI and no-code tools.',
+      'SmplCo helps startups and enterprises prototype and build smart digital products in weeks using AI and no-code tools.',
     sameAs: [
-      'https://www.linkedin.com/company/smplco/',
+      'https://www.linkedin.com/company/smplcoas/',
+      'https://dribbble.com/SmplCo',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -37,12 +38,13 @@ export function BlogPostJsonLd({ post }: { post: PostData }) {
     description: post.excerpt || post.description || '',
     image: post.hero_image ? `${BASE_URL}${post.hero_image}` : undefined,
     datePublished: post.date,
+    dateModified: post.dateModified || post.date,
     author: post.author
       ? { '@type': 'Person', name: post.author }
-      : { '@type': 'Organization', name: 'Smpl Co' },
+      : { '@type': 'Organization', name: 'SmplCo' },
     publisher: {
       '@type': 'Organization',
-      name: 'Smpl Co',
+      name: 'SmplCo',
       logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/smpl-logo.svg` },
     },
     mainEntityOfPage: {
@@ -50,6 +52,28 @@ export function BlogPostJsonLd({ post }: { post: PostData }) {
       '@id': `${BASE_URL}/blog/${post.slug}`,
     },
     keywords: post.tags?.join(', '),
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}
+
+export function FAQJsonLd({ faqs }: { faqs: { question: string; answer: string }[] }) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
   }
 
   return (

@@ -8,6 +8,10 @@ import LogoMarquee from '@/components/LogoMarquee'
 import ParallaxImage from '@/components/ParallaxImage'
 import ShimmerGrid from '@/components/ShimmerGrid'
 
+export const metadata = {
+  alternates: { canonical: 'https://smpl.as/' },
+}
+
 export default async function HomePage() {
   const blogPosts = await getAllPostsData('blog')
   const latestPosts = blogPosts.slice(0, 3)
@@ -28,8 +32,7 @@ export default async function HomePage() {
               className="w-full max-w-[550px] md:max-w-[650px] lg:max-w-[750px] h-auto mx-auto mix-blend-multiply"
               priority
             />
-            {/* SR-only text for SEO */}
-            <h1 className="sr-only">Prototype fast, build smart, Launch in Weeks — SmplCo digital product studio</h1>
+            <h1 className="sr-only">Prototype Fast, Build Smart, Launch in Weeks — SmplCo Digital Product Studio</h1>
           </div>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-satoshi">
             Join 125+ start-ups, scale-ups, and global brands who&apos;ve brought big ideas to

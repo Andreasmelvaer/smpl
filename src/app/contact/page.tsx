@@ -2,9 +2,10 @@ import ContactForm from '@/components/ContactForm'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import ShimmerGrid from '@/components/ShimmerGrid'
+import { FAQJsonLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Smpl Co – Let\'s Build Together',
+  title: 'Contact Us | SmplCo – Let\'s Build Together',
   description: 'Get a free consultation with our digital innovation experts. One hour of advice, absolutely free.',
   alternates: { canonical: 'https://smpl.as/contact' },
 }
@@ -20,13 +21,18 @@ const offices = [
 export default function Contact() {
   return (
     <div className="min-h-screen">
+      <FAQJsonLd faqs={[
+        { question: 'How do I contact SmplCo?', answer: 'You can reach SmplCo through the contact form on our website at smpl.as/contact, or email us directly at hello@smpl.as. We have offices in Stavanger (Norway), London (UK), San Francisco (USA), Szeged (Hungary), and St. Gallen (Switzerland).' },
+        { question: 'Does SmplCo offer free consultations?', answer: 'Yes, SmplCo offers a free 1-hour consultation with our digital innovation experts. Share your idea or challenge, we assign the right specialist, and you get a no-obligation advice session. If there is a fit, we provide an optional proposal.' },
+        { question: 'Where are SmplCo offices located?', answer: 'SmplCo has offices in five locations: Stavanger, Norway (Ryfylkegata 9); London, UK (Tottenham Court Road); San Francisco, USA (1 Ferry Building); Szeged, Hungary (Attila utca 11); and St. Gallen, Switzerland (Teufener Str. 3).' },
+      ]} />
       {/* ============ HERO ============ */}
       <section className="py-24 md:py-32 lg:py-44 relative overflow-hidden bg-offwhite">
         <ShimmerGrid />
         <div className="container-main text-center relative z-10">
           <Image
             src="/images/illustrations/Contact.png"
-            alt=""
+            alt="Contact SmplCo"
             width={700}
             height={400}
             className="w-full max-w-[400px] md:max-w-[480px] lg:max-w-[560px] h-auto mx-auto"
@@ -39,7 +45,7 @@ export default function Contact() {
       <section className="py-24 md:py-32">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">Contact us</h2>
+            <h1 className="text-4xl md:text-5xl font-bold">Contact Us</h1>
             <div>
               <p className="text-gray-600 font-satoshi leading-relaxed mb-4">
                 Send us as much or as little detail as you like. We&apos;ll get in touch

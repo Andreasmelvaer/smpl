@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import ShimmerGrid from '@/components/ShimmerGrid'
 
 export const metadata: Metadata = {
-  title: 'Our Work | Smpl Co – Projects & Case Studies',
+  title: 'Our Work | SmplCo – Projects & Case Studies',
   description: 'Explore our portfolio of digital products, prototypes, and case studies for startups and enterprises.',
   alternates: { canonical: 'https://smpl.as/work' },
 }
@@ -36,7 +36,7 @@ export default async function Work() {
         <div className="container-main text-center relative z-10">
           <Image
             src="/images/illustrations/Our work.png"
-            alt=""
+            alt="SmplCo portfolio — projects and case studies"
             width={700}
             height={400}
             className="w-full max-w-[400px] md:max-w-[480px] lg:max-w-[560px] h-auto mx-auto"
@@ -49,7 +49,7 @@ export default async function Work() {
       <section className="py-24 md:py-32">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">Portfolio</h2>
+            <h1 className="text-4xl md:text-5xl font-bold">Our Work</h1>
             <p className="text-gray-600 font-satoshi leading-relaxed">
               Here are some examples from the 100+ digital products and services
               we&apos;ve brought to life for clients ranging from early stage start-ups to

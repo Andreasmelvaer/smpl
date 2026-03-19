@@ -5,8 +5,8 @@ import type { Metadata } from 'next'
 import ShimmerGrid from '@/components/ShimmerGrid'
 
 export const metadata: Metadata = {
-  title: 'Smpl Minds | Blog – Insights & Articles',
-  description: 'Insights on AI development, digital products, vibecoding, and building startups from the Smpl Co team.',
+  title: 'Blog – AI Development, Prototyping & Startup Insights',
+  description: 'Insights on AI development, digital products, vibecoding, and building startups from the SmplCo team.',
   alternates: { canonical: 'https://smpl.as/blog' },
 }
 
@@ -21,7 +21,7 @@ export default async function Blog() {
         <div className="container-main text-center relative z-10">
           <Image
             src="/images/illustrations/Blog.png"
-            alt=""
+            alt="Smpl Insights — blog and articles"
             width={700}
             height={400}
             className="w-full max-w-[400px] md:max-w-[480px] lg:max-w-[560px] h-auto mx-auto"
@@ -34,7 +34,7 @@ export default async function Blog() {
       <section className="py-24 md:py-32">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">Smpl Insights</h2>
+            <h1 className="text-4xl md:text-5xl font-bold">Smpl Insights</h1>
             <p className="text-gray-600 font-satoshi leading-relaxed">
               Browse our thoughts on key industry trends, tales of success and disaster,
               and tips for getting ahead in a digital world. All courtesy of innovators

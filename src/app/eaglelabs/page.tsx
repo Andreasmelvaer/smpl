@@ -5,7 +5,7 @@ import ShimmerGrid from '@/components/ShimmerGrid'
 import LogoMarquee from '@/components/LogoMarquee'
 
 export const metadata: Metadata = {
-  title: 'Barclays Eagle Labs | 25% Off 5-Day Prototype | Smpl Co',
+  title: 'Barclays Eagle Labs | 25% Off 5-Day Prototype | SmplCo',
   description: 'Exclusive 25% discount on our 5-Day Prototype service for Barclays Eagle Labs members. See your vision brought to life in just five days.',
   alternates: { canonical: 'https://smpl.as/eaglelabs' },
 }

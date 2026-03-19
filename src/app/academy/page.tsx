@@ -19,7 +19,7 @@ export default function AcademyPage() {
           <div className="relative mb-8 mx-auto w-full max-w-[500px] md:max-w-[580px] lg:max-w-[650px] aspect-[4/3] overflow-hidden">
             <Image
               src="/images/illustrations/Academy.png"
-              alt=""
+              alt="Smpl Academy — AI training and workshops"
               fill
               className="object-contain object-bottom"
               priority
@@ -32,9 +32,9 @@ export default function AcademyPage() {
       <section className="py-24 md:py-32">
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-16 items-start">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              Learning by doing
-            </h2>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+              Learning by Doing
+            </h1>
             <div>
               <p className="text-lg text-gray-900 font-semibold mb-2">
                 For teams who want to get ahead of AI, not just keep up with it.

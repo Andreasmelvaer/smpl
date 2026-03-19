@@ -5,7 +5,7 @@ import ShimmerGrid from '@/components/ShimmerGrid'
 import PartnerCard from '@/components/PartnerCard'
 
 export const metadata: Metadata = {
-  title: 'Partners | Smpl Co – Our Partner Network',
+  title: 'Partners | SmplCo – Our Partner Network',
   description: 'Our partnerships offer you expertise, access, discounts, investment opportunities, and more. All carefully chosen to give you everything you need to successfully take on the world.',
   alternates: { canonical: 'https://smpl.as/partners' },
 }
@@ -125,13 +125,11 @@ export default function Partners() {
       <section className="py-24 md:py-32 lg:py-44 relative overflow-hidden bg-offwhite">
         <ShimmerGrid />
         <div className="container-main text-center relative z-10">
-          <h1 className="sr-only">Partners – SmplCo partner network</h1>
-
           {/* Illustration */}
           <div className="relative inline-block mb-8">
             <Image
               src="/images/illustrations/Partners.png"
-              alt="Partners"
+              alt="SmplCo partner network"
               width={700}
               height={400}
               className="w-full max-w-[400px] md:max-w-[480px] lg:max-w-[560px] h-auto mx-auto relative z-10"
@@ -139,8 +137,10 @@ export default function Partners() {
             />
           </div>
 
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Partners</h1>
+
           {/* Subtitle */}
-          <p className="text-gray-600 font-satoshi leading-relaxed max-w-xl mx-auto mt-8 mb-8">
+          <p className="text-gray-600 font-satoshi leading-relaxed max-w-xl mx-auto mb-8">
             Our partnerships offer you expertise, access, discounts, investment opportunities,
             and more. All carefully chosen to give you everything you need to successfully
             take on the world.
