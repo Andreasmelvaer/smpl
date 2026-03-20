@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { OrganizationJsonLd } from "@/components/JsonLd";
@@ -54,6 +55,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: 'google4755c9d54d5d026e',
+  },
 };
 
 export default function RootLayout({
@@ -81,6 +85,7 @@ export default function RootLayout({
         <Navigation />
         <main className="pt-[60px] md:pt-[56px]">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
