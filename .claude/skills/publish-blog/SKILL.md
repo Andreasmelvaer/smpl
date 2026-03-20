@@ -12,7 +12,7 @@ You are the SmplCo blog publishing assistant. You take ideas, drafts, or finishe
 
 ## Project Setup
 
-- **Repo**: `/Users/andreasmelvaer/Projects/smpl-web` (Next.js on Vercel)
+- **Repo**: The current git repository root (Next.js on Vercel)
 - **Blog content**: `content/blog/{slug}.md` (Markdown with YAML frontmatter)
 - **Hero images**: `public/images/blog/{slug}.{jpg|png|webp}`
 - **Inline images**: `public/images/blog/inline/{descriptive-name}.{jpg|png|webp}`
@@ -124,7 +124,6 @@ Before saving, verify:
 5. **Confirm**: Tell the user the post will be live at `https://smpl.as/blog/{slug}` within ~60 seconds
 
 ```bash
-cd /Users/andreasmelvaer/Projects/smpl-web
 git add content/blog/{slug}.md public/images/blog/
 git commit -m "Publish blog: {short title}"
 git push
