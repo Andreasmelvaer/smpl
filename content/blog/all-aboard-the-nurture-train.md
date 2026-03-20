@@ -1,5 +1,6 @@
 ---
 title: "Land your first customers using the Nurture Train"
+description: "Go to market with customers ready to pay from day one. The Nurture Train method helps you validate real demand and land your very first sales."
 hero_image: "/images/blog/all-aboard-the-nurture-train.jpg"
 slug: "all-aboard-the-nurture-train"
 date: "2025-06-01"
@@ -67,7 +68,7 @@ If you get this right, your 'beta customer' group – as they have now become �
 
 ### Testing City
 
-Now we go from learning to testing. We'd recommend – if you haven't already – that you [develop a prototype](https://smpl.as/how-to-create-a-great-digital-prototype/). This is the ideal way of bringing your vision to life, defining key customer journeys, testing assumptions, and getting in-depth feedback.
+Now we go from learning to testing. We'd recommend – if you haven't already – that you [develop a prototype](/blog/5-day-prototype-custom-software). This is the ideal way of bringing your vision to life, defining key customer journeys, testing assumptions, and getting in-depth feedback.
 
 By bringing the vision you've talked about to life, it will make your little beta community really excited about what they've helped create.
 

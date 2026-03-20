@@ -1,5 +1,6 @@
 ---
 title: "The big companies adopting an ancient art to win customers"
+description: "Big brands are using storytelling to cut through the noise and win customer attention. Learn how narrative-driven marketing builds trust and loyalty."
 hero_image: "/images/blog/how-to-build-a-brand-with-stories.jpg"
 slug: "how-to-build-a-brand-with-stories"
 date: "2026-01-15"

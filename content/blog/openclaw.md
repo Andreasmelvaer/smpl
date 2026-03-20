@@ -1,5 +1,6 @@
 ---
 title: "Testing OpenClaw at SmplCo: Nothing this fun is risk free..."
+description: "We tested OpenClaw, the open-source AI agent framework, inside our small company. Here is what autonomous AI agents can realistically do for you today."
 hero_image: "/images/blog/openclaw.jpg"
 slug: "openclaw"
 date: "2026-02-11"

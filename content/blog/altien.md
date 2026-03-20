@@ -1,5 +1,6 @@
 ---
 title: "Altien: the app we'll all wish we had, one day"
+description: "Altien is transforming communication in residential care homes, replacing scattered notes and missed calls with one clear, connected platform."
 hero_image: "/images/blog/altien.webp"
 slug: "altien"
 date: "2025-11-20"

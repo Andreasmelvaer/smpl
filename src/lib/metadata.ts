@@ -12,7 +12,8 @@ export function generatePageMetadata(data: PostData, path?: string): Metadata {
 
   const title = seo.metaTitle || data.title
   const description = seo.metaDescription || data.description || data.excerpt || ''
-  const ogImage = seo.ogImage || data.og_image || data.hero_image || '/images/og-default.png'
+  const rawOgImage = seo.ogImage || data.og_image || data.hero_image || '/images/og-default.png'
+  const ogImage = rawOgImage.startsWith('/') ? `${BASE_URL}${rawOgImage}` : rawOgImage
 
   return {
     title,
@@ -21,6 +22,8 @@ export function generatePageMetadata(data: PostData, path?: string): Metadata {
     openGraph: {
       title,
       description,
+      url: path ? `${BASE_URL}${path}` : BASE_URL,
+      siteName: 'SmplCo',
       images: [{ url: ogImage }],
       type: 'website',
     },
@@ -28,6 +31,7 @@ export function generatePageMetadata(data: PostData, path?: string): Metadata {
       card: (seo.twitterCard as 'summary_large_image' | 'summary') || 'summary_large_image',
       title,
       description,
+      images: [ogImage],
     },
   }
 }
@@ -38,7 +42,8 @@ export function generatePageMetadata(data: PostData, path?: string): Metadata {
 export function generateBlogMetadata(data: PostData): Metadata {
   const title = data.title
   const description = data.excerpt || data.description || ''
-  const ogImage = data.og_image || data.hero_image || '/images/og-default.png'
+  const rawOgImage = data.og_image || data.hero_image || '/images/og-default.png'
+  const ogImage = rawOgImage.startsWith('/') ? `${BASE_URL}${rawOgImage}` : rawOgImage
 
   return {
     title,
@@ -47,6 +52,8 @@ export function generateBlogMetadata(data: PostData): Metadata {
     openGraph: {
       title,
       description,
+      url: `${BASE_URL}/blog/${data.slug}`,
+      siteName: 'SmplCo',
       type: 'article',
       publishedTime: data.date,
       authors: data.author ? [data.author] : undefined,
@@ -57,6 +64,7 @@ export function generateBlogMetadata(data: PostData): Metadata {
       card: 'summary_large_image',
       title,
       description,
+      images: [ogImage],
     },
   }
 }
@@ -67,7 +75,8 @@ export function generateBlogMetadata(data: PostData): Metadata {
 export function generateWorkMetadata(data: PostData): Metadata {
   const title = data.title
   const description = data.description || `${data.client || ''} – ${data.category || 'Case Study'}`
-  const ogImage = data.og_image || data.hero_image || '/images/og-default.png'
+  const rawOgImage = data.og_image || data.hero_image || '/images/og-default.png'
+  const ogImage = rawOgImage.startsWith('/') ? `${BASE_URL}${rawOgImage}` : rawOgImage
 
   return {
     title,
@@ -76,13 +85,16 @@ export function generateWorkMetadata(data: PostData): Metadata {
     openGraph: {
       title,
       description,
-      type: 'article',
+      url: `${BASE_URL}/work/${data.slug}`,
+      siteName: 'SmplCo',
+      type: 'website',
       images: [{ url: ogImage }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      images: [ogImage],
     },
   }
 }

@@ -1,5 +1,6 @@
 ---
 title: "How one big corporate nailed digital innovation"
+description: "SR-Bank's Innovation Manager Vibeke Lavik Bjaanes shares how the bank cracked digital innovation, a challenge most large corporates struggle with."
 hero_image: "/images/blog/how-one-big-corporate-nailed-digital-innovation.jpg"
 slug: "how-one-big-corporate-nailed-digital-innovation"
 date: "2025-11-01"

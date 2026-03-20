@@ -6,7 +6,7 @@ import PartnerCard from '@/components/PartnerCard'
 
 export const metadata: Metadata = {
   title: 'Partners | SmplCo – Our Partner Network',
-  description: 'Our partnerships offer you expertise, access, discounts, investment opportunities, and more. All carefully chosen to give you everything you need to successfully take on the world.',
+  description: 'Our partnerships offer expertise, access, discounts, and investment opportunities — carefully chosen to give you everything you need to succeed.',
   alternates: { canonical: 'https://smpl.as/partners' },
 }
 

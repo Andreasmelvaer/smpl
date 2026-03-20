@@ -18,6 +18,10 @@ export default async function Work() {
   // Sort to match Framer order
   projects.sort((a, b) => featuredSlugs.indexOf(a.slug) - featuredSlugs.indexOf(b.slug))
 
+  // Additional projects (not featured but still linked for SEO)
+  const moreSlugs = ['orli', 'paperdrop', 'resani', 'tilsig']
+  const moreProjects = allProjects.filter(p => moreSlugs.includes(p.slug))
+
   // Card images for the work grid (different from case study hero images)
   const cardImages: Record<string, string> = {
     compera: '/images/cases/compera-card.jpg',
@@ -93,6 +97,48 @@ export default async function Work() {
               </Link>
             ))}
           </div>
+
+          {/* ============ MORE PROJECTS ============ */}
+          {moreProjects.length > 0 && (
+            <>
+              <h2 className="text-2xl font-bold mt-20 mb-8">More Projects</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                {moreProjects.map((project) => (
+                  <Link
+                    key={project.slug}
+                    href={`/work/${project.slug}`}
+                    className="group block bg-offwhite rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300"
+                  >
+                    {project.hero_image && (
+                      <div className="aspect-[4/3] overflow-hidden bg-gray-100 relative">
+                        <Image
+                          src={project.hero_image}
+                          alt={project.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6">
+                      <h3 className="text-sm font-medium text-gray-900 mb-3 group-hover:text-gray-700 transition-colors" style={{ fontSize: '14px' }}>
+                        {project.title}
+                      </h3>
+                      {project.services && Array.isArray(project.services) && (
+                        <div className="flex flex-wrap gap-2">
+                          {project.services.slice(0, 3).map((s: string) => (
+                            <span key={s} className="text-xs text-gray-500 font-satoshi px-3 py-1 rounded-full border border-gray-200">
+                              {s}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </section>
     </div>

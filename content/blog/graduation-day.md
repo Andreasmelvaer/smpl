@@ -1,5 +1,6 @@
 ---
 title: "Graduation day at SmplAcademy!"
+description: "Congratulations to the first SmplAcademy graduates. After a month contributing to our 5-Day Prototyping Service, they head back to Noroff ready to build."
 hero_image: "/images/blog/graduation-day.jpg"
 slug: "graduation-day"
 date: "2025-05-01"

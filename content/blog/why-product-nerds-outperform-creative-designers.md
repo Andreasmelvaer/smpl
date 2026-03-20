@@ -1,5 +1,6 @@
 ---
 title: "Why Product Nerds Outperform Creative Designers"
+description: "Outsourced designers promise big savings, but the hidden costs add up fast. Here is why product-minded nerds consistently outperform creative designers."
 hero_image: "/images/blog/why-product-nerds-outperform-creative-designers.webp"
 slug: "why-product-nerds-outperform-creative-designers"
 date: "2025-07-15"

@@ -1,5 +1,6 @@
 ---
 title: "Lovable buildathon winners!"
+description: "SmplCo won the Lovable SheBuilds buildathon. In 48 hours our team turned an idea into a validated product alongside 200+ inspiring women builders."
 hero_image: "/images/blog/lovable-shebuilds-win.png"
 slug: "lovable-shebuilds-win"
 date: "2025-12-15"

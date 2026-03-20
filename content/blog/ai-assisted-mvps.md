@@ -1,5 +1,6 @@
 ---
 title: "SmplCo: 'world-class' AI development"
+description: "Figma published a case study on how SmplCo took client Saddle from a rough idea to a live product in two weeks using AI-assisted development."
 hero_image: "/images/blog/ai-assisted-mvps.jpg"
 slug: "ai-assisted-mvps"
 date: "2026-01-08"

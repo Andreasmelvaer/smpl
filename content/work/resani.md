@@ -1,6 +1,6 @@
 ---
 title: "Resani – Hygiene"
-description: "Resani focuses on hand hygiene monitoring in healthcare settings. SmplCo enhanced their system with a 5-Day Prototype, creating more intuitive, data-driven hygiene tracking."
+description: "Resani monitors hand hygiene in healthcare settings. SmplCo enhanced their system with a 5-Day Prototype for intuitive, data-driven tracking."
 hero_image: "/images/resani/woman-lips-hero.jpg"
 heroAlt: "Resani Hero - Woman"
 services:

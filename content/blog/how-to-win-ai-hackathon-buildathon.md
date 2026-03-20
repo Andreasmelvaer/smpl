@@ -1,5 +1,6 @@
 ---
 title: "How to win an AI hackathon / buildathon"
+description: "Practical tips for winning an AI hackathon or buildathon. Validate your idea, advance your product, and unlock access to funding and expert support."
 hero_image: "/images/blog/how-to-win-ai-hackathon-buildathon.jpg"
 slug: "how-to-win-ai-hackathon-buildathon"
 date: "2026-01-20"

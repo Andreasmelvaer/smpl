@@ -1,5 +1,6 @@
 ---
 title: "No one will ever love your software… and that's OK"
+description: "SmplCo co-founder Bjørn Ivar Knudsen shares the deeply personal story of how he conceived, built, and sold his own SaaS company from scratch."
 hero_image: "/images/blog/no-one-will-ever-love-your-software-and-that-s-ok.png"
 slug: "no-one-will-ever-love-your-software-and-that-s-ok"
 date: "2025-10-15"

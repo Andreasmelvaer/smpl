@@ -1,6 +1,6 @@
 ---
 title: "Orli – Mental Health"
-description: "Orli is helping alleviate the UK's mental health crisis, using an AI-driven, emotional support platform that is backed by science and built to unlock children's potential."
+description: "Orli is tackling the UK's mental health crisis with an AI-driven emotional support platform, backed by science and built to unlock children's potential."
 hero_image: "/images/orli/orli-face-cover.jpg"
 heroAlt: "Orli Characters"
 services:

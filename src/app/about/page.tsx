@@ -7,7 +7,7 @@ import TailoredTabs from '@/components/TailoredTabs'
 import { FAQJsonLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
-  title: 'About SmplCo – Digital Product Studio for Startups & Enterprises',
+  title: 'About Us – Digital Product Studio',
   description: 'We\'re a team of global entrepreneurs who\'ve built, sold, and invested in digital companies. Meet the SmplCo team.',
   alternates: { canonical: 'https://smpl.as/about' },
 }

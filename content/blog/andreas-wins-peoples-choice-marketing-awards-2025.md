@@ -1,5 +1,6 @@
 ---
-title: "Our MD Andreas just won \"People's Choice\" at the 2025 Marketing Awards"
+title: "Andreas Wins People's Choice Marketing Award 2025"
+description: "SmplCo's Andreas Melvær won the People's Choice award at the 2025 Marketing Awards for his brutally honest and hilarious Gnu Bar LinkedIn content."
 hero_image: "/images/blog/andreas-wins-peoples-choice-marketing-awards-2025.jpg"
 slug: "andreas-wins-peoples-choice-marketing-awards-2025"
 date: "2026-01-10"

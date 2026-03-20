@@ -1,5 +1,6 @@
 ---
 title: "5 Must-Know Truths Before You Dive Into AI"
+description: "The AI gold rush is on, but there are traps for the unwary. Learn five must-know truths about AI strategy before your business takes the plunge."
 hero_image: "/images/blog/ai-strategy-5-must-knows-truths.webp"
 slug: "ai-strategy-5-must-knows-truths"
 date: "2025-09-15"

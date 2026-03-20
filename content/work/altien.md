@@ -1,6 +1,6 @@
 ---
 title: "Altien - Healthcare"
-description: "Altien is developing a digital tool for nursing homes and healthcare institutions. The goal is to improve everyday life for staff, residents, and relatives by digitising routines and creating a more meaningful daily experience."
+description: "Altien is building a digital platform for nursing homes and healthcare institutions, improving daily life for staff, residents, and relatives."
 hero_image: "/work/altien-hero-branded.jpg"
 heroAlt: "Altien Healthcare Platform"
 services:

@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     title: "SmplCo – 5-Day Prototypes & AI-Powered Product Development",
     description:
       "SmplCo helps startups and enterprises prototype and build smart digital products in weeks using AI and no-code tools.",
+    url: "https://smpl.as",
     images: [
       {
         url: "/images/og-default.png",
@@ -45,6 +46,7 @@ export const metadata: Metadata = {
     title: "SmplCo – 5-Day Prototypes & AI-Powered Product Development",
     description:
       "SmplCo helps startups and enterprises prototype and build smart digital products in weeks.",
+    images: ["/images/og-default.png"],
   },
   icons: {
     icon: "/favicon.png",

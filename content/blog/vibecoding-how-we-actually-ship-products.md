@@ -1,5 +1,6 @@
 ---
 title: "The Case for Disciplined Vibecoding"
+description: "Vibecoding helped us ship a real SaaS product in days, not months. Here is how disciplined vibecoding with Lovable turned ideas into working software."
 hero_image: "/images/blog/vibecoding-how-we-actually-ship-products.png"
 slug: "vibecoding-how-we-actually-ship-products"
 date: "2026-02-01"

@@ -1,5 +1,5 @@
 ---
-title: "From Post-it to Product: How Our 5-Day Prototype Turns Ideas Into Working Software"
+title: "From Post-it to Product in 5 Days"
 description: "SmplCo founders explain the process behind the 5-Day Prototype, how AI tooling has supercharged it, and why seeing really is believing."
 hero_image: "/images/blog/5-day-prototype-custom-software.jpg"
 date: "2026-03-02"

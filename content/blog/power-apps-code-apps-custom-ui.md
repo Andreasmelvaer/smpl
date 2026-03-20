@@ -1,6 +1,6 @@
 ---
 title: "Why no-one is using your Power Apps and how to fix it."
-description: "SmplCo's managing partner Andreas Melvaer sat down with Oliver Lyso from Samsari to talk about Power Apps Code Apps and the shift reshaping enterprise software."
+description: "Power Apps Code Apps are reshaping enterprise software. Andreas Melvaer and Samsari's Oliver Lyso discuss what this shift means for your business."
 hero_image: "/images/blog/power-apps-code-apps-custom-ui.jpg"
 date: "2026-03-03"
 author: "Andreas Melvaer"

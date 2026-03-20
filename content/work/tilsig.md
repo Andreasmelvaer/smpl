@@ -1,6 +1,6 @@
 ---
 title: "Tilsig – Energy / Flow Monitoring"
-description: "Tilsig specialises in real-time water monitoring for the hydropower industry, enabling customers to reliably and accurately capture, then analyse, essential water level data."
+description: "Tilsig specialises in real-time water monitoring for hydropower, enabling customers to reliably capture and analyse essential water level data."
 hero_image: "/images/tilsig/hydropower-plant.jpg"
 heroAlt: "Hydropower Plant Diagram"
 services:

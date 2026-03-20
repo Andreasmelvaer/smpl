@@ -6,6 +6,7 @@ services: ["UI/UX Design", "Prototype", "Illustrations", "Energy", "Landing Page
 year: 2025
 featured: true
 hero_image: "/work/enquip-hero-branded.jpg"
+description: "Enquip helps real estate owners and investors analyse portfolio sustainability, compare clean energy options, and take action to increase property values."
 ---
 
 # Enquip – Real Estate / FS

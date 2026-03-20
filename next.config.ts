@@ -27,6 +27,16 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/how-to-create-a-great-digital-prototype',
+        destination: '/blog/5-day-prototype-custom-software',
+        permanent: true,
+      },
+    ];
+  },
+
   // Ensure trailing slashes match Framer behavior
   trailingSlash: false,
 };
