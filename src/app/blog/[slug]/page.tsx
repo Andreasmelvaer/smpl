@@ -85,7 +85,7 @@ export default async function BlogPost({ params }: Props) {
 
           {/* Hero image */}
           {post.hero_image && (
-            <div className="mb-12 rounded-2xl overflow-hidden max-w-4xl">
+            <div className={`mb-12 rounded-2xl overflow-hidden max-w-4xl${post.hero_border ? ' border border-black' : ''}`}>
               <Image
                 src={post.hero_image}
                 alt={post.title}

@@ -1,7 +1,8 @@
 ---
 title: "Is Your Website AI-Ready? 5 Tips for Maximum AEO"
 description: "Answer Engine Optimisation is the new SEO. Here are 5 tips SmplCo used to make our website highly visible to AI search engines like ChatGPT, Perplexity, and Google AI Overviews."
-hero_image: "/images/blog/openclaw.jpg"
+hero_image: "/images/blog/aeo-hero.png"
+hero_border: true
 slug: "aeo-tips"
 date: "2026-03-20"
 author: "Michael Millar, Partner, SmplCo"
@@ -54,6 +55,14 @@ That's why we put the time and effort into auditing and rebuilding the SmplCo we
 And here’s what we did to resurrect our score from a miserable 4.5 to the 9.6 we're really quite proud of - and how you can do it too.
 
 ---
+
+<div style="border: 1px solid black; border-radius: 12px; overflow: hidden; margin-bottom: 0.5rem;">
+
+![AEO audit score improvement](/images/blog/inline/aeo-blog-image-2.png)
+
+</div>
+
+<p style="font-size: 0.85rem; color: #6b7280; margin-bottom: 2rem; font-style: italic;">Our full audit score ...not great</p>
 
 ## Tip 1: Structure Your Content Around Questions
 
