@@ -50,10 +50,10 @@ export default async function Blog() {
                 href={`/blog/${post.slug}`}
                 className="group block"
               >
-                {post.hero_image && (
+                {(post.thumbnail_image || post.hero_image) && (
                   <div className="aspect-[4/3] overflow-hidden relative rounded-2xl mb-4">
                     <Image
-                      src={post.hero_image}
+                      src={post.thumbnail_image || post.hero_image}
                       alt={post.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

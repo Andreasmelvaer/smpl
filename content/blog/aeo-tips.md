@@ -2,6 +2,7 @@
 title: "Is Your Website AI-Ready? 5 Tips for Maximum AEO"
 description: "Answer Engine Optimisation is the new SEO. Here are 5 tips SmplCo used to make our website highly visible to AI search engines like ChatGPT, Perplexity, and Google AI Overviews."
 hero_image: "/images/blog/aeo-hero.png"
+thumbnail_image: "/images/blog/aeo-hero-thumb.png"
 hero_border: true
 slug: "aeo-tips"
 date: "2026-03-20"
@@ -143,14 +144,19 @@ AEO isn't a replacement for SEO — it's what SEO is becoming. The fundamentals 
 
 The five tips above are exactly what we applied to the SmplCo website. None of them are secret sauce. They're just disciplined execution of things most websites skip.
 
-If you want help auditing your site for AI searchability, or rebuilding pages to be AEO-ready — [get in touch](https://smpl.co/contact) or email me on mike@smpl.as. 
+**If you want help auditing your site for AI searchability, or rebuilding pages to be AEO-ready — [get in touch](https://www.smpl.as/contact) or email me on [mike@smpl.as](mailto:mike@smpl.as).**
 
-It's the kind of thing we do well. And we have a report to prove it...
+**It's the kind of thing we do well. And we have a report to prove it...**
 
 
 
 ---
 
-## About the Author
+<div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+  <div style="width: 56px; height: 56px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
+    <img src="/images/blog/inline/michael-millar.jpeg" alt="Michael Millar" style="width: 100%; height: 100%; object-fit: cover; object-position: center 60%; transform: scale(1.9); transform-origin: center 60%;" />
+  </div>
+  <h2 style="margin: 0;">About the Author</h2>
+</div>
 
-Michael Millar is a partner and founder of SmplCo. Before taking on Go-To-Market responsibilities for both SmplCo and our clients, he was a journalist (BBC, Reuters, Spectator, etc.), political lobbyist and global comms leader.
+<a href="https://www.linkedin.com/in/michaelmillarfrsa/" target="_blank" rel="noopener noreferrer">Michael Millar</a> is a partner and founder of SmplCo. Before taking on Go-To-Market responsibilities for both SmplCo and our clients, he was a journalist (BBC, Reuters, Spectator, etc.), political lobbyist and global comms leader.
