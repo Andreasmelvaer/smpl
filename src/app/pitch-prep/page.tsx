@@ -224,7 +224,7 @@ export default function PitchPrep() {
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold leading-tight">
+              <h2 className="text-2xl md:text-3xl font-bold leading-tight text-white">
                 The road to{' '}
                 <span className="font-editorial italic">investment</span>
               </h2>
@@ -239,8 +239,8 @@ export default function PitchPrep() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {roadmapSteps.map((step) => (
               <div key={step.number} className="border border-gray-700 rounded-2xl p-6">
-                <span className="inline-block w-8 h-8 bg-lime text-gray-900 rounded-full text-sm font-bold flex items-center justify-center mb-4">{step.number}</span>
-                <h3 className="text-base font-semibold mb-2">{step.title}</h3>
+                <span className="flex w-8 h-8 bg-lime text-gray-900 rounded-full text-sm font-bold items-center justify-center mb-4">{step.number}</span>
+                <h3 className="text-base font-semibold mb-2 text-white">{step.title}</h3>
                 <p className="text-sm text-gray-400 font-satoshi leading-relaxed">{step.description}</p>
               </div>
             ))}

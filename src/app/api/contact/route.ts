@@ -185,7 +185,7 @@ export async function POST(request: NextRequest) {
     // Send notification email to SmplCo
     await transporter.sendMail({
       from: `SmplCo Website <${process.env.SMTP_USER}>`,
-      to: 'andreas@smpl.as',
+      to: ['andreas@smpl.as', 'mike@smpl.as'],
       replyTo: email,
       subject: `New contact from ${name}${company ? ` (${company})` : ''}`,
       html: notificationEmailHtml(name, email, company, message),

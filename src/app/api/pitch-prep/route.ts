@@ -180,8 +180,7 @@ export async function POST(request: NextRequest) {
     // Notify the team
     await transporter.sendMail({
       from: `SmplCo Website <${process.env.SMTP_USER}>`,
-      to: 'mike@smpl.as',
-      cc: 'andreas@smpl.as',
+      to: ['andreas@smpl.as', 'mike@smpl.as'],
       replyTo: email,
       subject: `New lead: ${name}${company ? ` (${company})` : ''} downloaded Pitch Prep Guide`,
       html: notificationEmailHtml(name, email, company),
