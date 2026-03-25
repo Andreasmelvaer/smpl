@@ -72,21 +72,25 @@ const testimonials = [
     quote: 'Their ability to listen, communicate and transform complex ideas into reality meant that we came away from our project as very happy bunnies — especially as our prototype played a huge role in us securing investment.',
     name: 'Dr. Mark Cox',
     role: 'Co-founder, Orli',
+    image: '/images/testimonials/testimonial-mark.png',
   },
   {
     quote: 'I can confidently say that SmplCo are the best technical team I have ever worked with. No long briefing meetings, no need to learn jargon, and no question considered silly.',
     name: 'Tahani Carruthers',
     role: 'Founder, Venturleytics',
+    image: '/images/testimonials/testimonial-tahani.png',
   },
   {
     quote: 'Smpl has done for us as the name implies — taken something complex and made it beautifully simple, helping us raise and helping us sell.',
     name: 'Kitty Harris',
     role: 'Enquip Energy',
+    image: '/images/testimonials/testimonial-kitty.png',
   },
   {
     quote: 'Working with SmplCo is a dream start for anyone who wants to innovate.',
     name: 'Lene Koll',
     role: 'Founder, Compera',
+    image: '/images/testimonials/testimonial-lene.jpg',
   },
 ]
 
@@ -209,9 +213,18 @@ export default function PitchPrep() {
                 <p className="text-sm text-gray-600 font-satoshi leading-relaxed mb-6">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <div>
-                  <p className="text-sm font-semibold">{t.name}</p>
-                  <p className="text-xs text-gray-500">{t.role}</p>
+                <div className="flex items-center gap-3">
+                  <Image
+                    src={t.image}
+                    alt={t.name}
+                    width={40}
+                    height={40}
+                    className="rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="text-sm font-semibold">{t.name}</p>
+                    <p className="text-xs text-gray-500">{t.role}</p>
+                  </div>
                 </div>
               </div>
             ))}
