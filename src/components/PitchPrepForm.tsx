@@ -35,16 +35,16 @@ export default function PitchPrepForm() {
     return (
       <div className="bg-lime rounded-2xl p-8 md:p-10 text-center">
         <div className="text-4xl mb-4">&#10003;</div>
-        <h3 className="text-xl font-semibold mb-2">Check your inbox!</h3>
+        <h3 className="text-xl font-semibold mb-2">Your guide is ready!</h3>
         <p className="text-gray-700 mb-6">
-          We&apos;ve sent the Pitch Prep Guide Pack to your email.
+          Click below to download. We&apos;ve also sent a copy to your inbox.
         </p>
         <a
           href="/downloads/pitch-prep-guide.pdf"
           download
           className="inline-block px-8 py-3.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
         >
-          Download now
+          Download Pitch Prep Guide
         </a>
       </div>
     )
