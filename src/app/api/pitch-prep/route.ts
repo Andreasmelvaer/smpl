@@ -117,7 +117,59 @@ const consultationLabels: Record<string, string> = {
   'no-thanks': 'No consultation requested',
 }
 
-function notificationEmailHtml(name: string, email: string, company: string | undefined, consultation?: string) {
+interface QualifyingData {
+  businessStage?: string
+  raiseAmount?: string
+  businessDescription?: string
+  productStage?: string
+  hasPitchDeck?: string
+  keyMessage?: string
+}
+
+const fieldLabels: Record<string, string> = {
+  'pre-revenue': 'Pre-revenue',
+  'some-early-revenue': 'Some early revenue',
+  'generating-revenue': 'Generating revenue',
+  'under-250k': 'Under £250k',
+  '250k-1m': '£250k – £1m',
+  '1m-5m': '£1m – £5m',
+  '5m-plus': '£5m+',
+  'just-an-idea': 'Just an idea',
+  'sketches-or-wireframes': 'Have sketches or wireframes',
+  'have-a-prototype': 'Have a prototype',
+  'mvp-or-live-product': 'Have an MVP or live product',
+  'yes': 'Yes',
+  'working-on-it': 'Working on it',
+  'not-yet': 'Not yet',
+}
+
+function qualifyingHtml(consultation: string, qualifying: QualifyingData): string {
+  const rows: Array<{ label: string; value: string }> = []
+
+  if (consultation === 'investor-ready-audit') {
+    if (qualifying.businessStage) rows.push({ label: 'Business stage', value: fieldLabels[qualifying.businessStage] || qualifying.businessStage })
+    if (qualifying.raiseAmount) rows.push({ label: 'Looking to raise', value: fieldLabels[qualifying.raiseAmount] || qualifying.raiseAmount })
+    if (qualifying.businessDescription) rows.push({ label: 'About the business', value: qualifying.businessDescription })
+  } else if (consultation === 'investment-story-audit') {
+    if (qualifying.productStage) rows.push({ label: 'Product stage', value: fieldLabels[qualifying.productStage] || qualifying.productStage })
+    if (qualifying.hasPitchDeck) rows.push({ label: 'Pitch deck', value: fieldLabels[qualifying.hasPitchDeck] || qualifying.hasPitchDeck })
+    if (qualifying.keyMessage) rows.push({ label: 'Key message for investors', value: qualifying.keyMessage })
+  }
+
+  if (rows.length === 0) return ''
+
+  return `
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 16px;">
+    <tr>
+      <td style="padding: 16px; background-color: #f5f5f0; border-radius: 10px;">
+        <p style="margin: 0 0 8px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #999; font-weight: 600;">Qualifying Info</p>
+        ${rows.map(r => `<p style="margin: 0 0 4px; font-size: 14px; color: #555;"><strong style="color: #141416;">${escapeHtml(r.label)}:</strong> ${escapeHtml(r.value)}</p>`).join('')}
+      </td>
+    </tr>
+  </table>`
+}
+
+function notificationEmailHtml(name: string, email: string, company: string | undefined, consultation?: string, qualifying?: QualifyingData) {
   return `
 <!DOCTYPE html>
 <html>
@@ -155,6 +207,7 @@ function notificationEmailHtml(name: string, email: string, company: string | un
                   </td>
                 </tr>
               </table>` : ''}
+              ${consultation && qualifying ? qualifyingHtml(consultation, qualifying) : ''}
               <p style="margin: 0; font-size: 14px; color: #555;">Downloaded the Pitch Prep Guide Pack from <a href="https://smpl.as/pitch-prep" style="color: #141416;">smpl.as/pitch-prep</a></p>
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top: 24px;">
                 <tr>
@@ -175,7 +228,8 @@ function notificationEmailHtml(name: string, email: string, company: string | un
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, company, consultation } = await request.json()
+    const { name, email, company, consultation, businessStage, raiseAmount, businessDescription, productStage, hasPitchDeck, keyMessage } = await request.json()
+    const qualifying: QualifyingData = { businessStage, raiseAmount, businessDescription, productStage, hasPitchDeck, keyMessage }
 
     if (!name || !email) {
       return NextResponse.json(
@@ -198,7 +252,7 @@ export async function POST(request: NextRequest) {
       to: ['andreas@smpl.as', 'mike@smpl.as'],
       replyTo: email,
       subject: `${consultation && consultation !== 'no-thanks' ? '🔥 ' : ''}New lead: ${name}${company ? ` (${company})` : ''} downloaded Pitch Prep Guide`,
-      html: notificationEmailHtml(name, email, company, consultation),
+      html: notificationEmailHtml(name, email, company, consultation, qualifying),
     })
 
     return NextResponse.json({ success: true })

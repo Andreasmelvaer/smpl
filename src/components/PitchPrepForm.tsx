@@ -2,8 +2,13 @@
 
 import { useState, FormEvent } from 'react'
 
+const selectClass =
+  'w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent appearance-none'
+const inputClass = selectClass
+
 export default function PitchPrepForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [consultation, setConsultation] = useState('no-thanks')
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -11,11 +16,21 @@ export default function PitchPrepForm() {
 
     const form = e.currentTarget
     const formData = new FormData(form)
-    const data = {
+    const data: Record<string, unknown> = {
       name: formData.get('name'),
       email: formData.get('email'),
       company: formData.get('company'),
       consultation: formData.get('consultation'),
+    }
+
+    if (consultation === 'investor-ready-audit') {
+      data.businessStage = formData.get('businessStage')
+      data.raiseAmount = formData.get('raiseAmount')
+      data.businessDescription = formData.get('businessDescription')
+    } else if (consultation === 'investment-story-audit') {
+      data.productStage = formData.get('productStage')
+      data.hasPitchDeck = formData.get('hasPitchDeck')
+      data.keyMessage = formData.get('keyMessage')
     }
 
     try {
@@ -63,7 +78,7 @@ export default function PitchPrepForm() {
             type="text"
             name="name"
             required
-            className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent"
+            className={inputClass}
             placeholder="Your name"
           />
         </div>
@@ -72,7 +87,7 @@ export default function PitchPrepForm() {
             type="email"
             name="email"
             required
-            className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent"
+            className={inputClass}
             placeholder="you@company.com"
           />
         </div>
@@ -80,7 +95,7 @@ export default function PitchPrepForm() {
           <input
             type="text"
             name="company"
-            className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent"
+            className={inputClass}
             placeholder="Company name (optional)"
           />
         </div>
@@ -95,6 +110,7 @@ export default function PitchPrepForm() {
                 name="consultation"
                 value="investor-ready-audit"
                 className="mt-0.5 accent-gray-900"
+                onChange={() => setConsultation('investor-ready-audit')}
               />
               <div>
                 <span className="text-sm font-medium text-gray-900">Investor-Ready Audit</span>
@@ -107,6 +123,7 @@ export default function PitchPrepForm() {
                 name="consultation"
                 value="investment-story-audit"
                 className="mt-0.5 accent-gray-900"
+                onChange={() => setConsultation('investment-story-audit')}
               />
               <div>
                 <span className="text-sm font-medium text-gray-900">Investment Story Audit</span>
@@ -120,11 +137,65 @@ export default function PitchPrepForm() {
                 value="no-thanks"
                 defaultChecked
                 className="mt-0.5 accent-gray-900"
+                onChange={() => setConsultation('no-thanks')}
               />
               <span className="text-sm text-gray-500">Just the guide, thanks</span>
             </label>
           </div>
         </div>
+
+        {/* Investor-Ready Audit questions */}
+        {consultation === 'investor-ready-audit' && (
+          <div className="space-y-3 pt-1">
+            <p className="text-xs font-medium text-gray-700">A few quick questions so we can prepare:</p>
+            <select name="businessStage" className={selectClass} defaultValue="">
+              <option value="" disabled>Where is your business?</option>
+              <option value="pre-revenue">Pre-revenue</option>
+              <option value="some-early-revenue">Some early revenue</option>
+              <option value="generating-revenue">Generating revenue</option>
+            </select>
+            <select name="raiseAmount" className={selectClass} defaultValue="">
+              <option value="" disabled>How much are you looking to raise?</option>
+              <option value="under-250k">Under £250k</option>
+              <option value="250k-1m">£250k – £1m</option>
+              <option value="1m-5m">£1m – £5m</option>
+              <option value="5m-plus">£5m+</option>
+            </select>
+            <textarea
+              name="businessDescription"
+              className={inputClass + ' resize-none'}
+              rows={2}
+              placeholder="Tell us briefly what your business does"
+            />
+          </div>
+        )}
+
+        {/* Investment Story Audit questions */}
+        {consultation === 'investment-story-audit' && (
+          <div className="space-y-3 pt-1">
+            <p className="text-xs font-medium text-gray-700">A few quick questions so we can prepare:</p>
+            <select name="productStage" className={selectClass} defaultValue="">
+              <option value="" disabled>What stage is your product?</option>
+              <option value="just-an-idea">Just an idea</option>
+              <option value="sketches-or-wireframes">Have sketches or wireframes</option>
+              <option value="have-a-prototype">Have a prototype</option>
+              <option value="mvp-or-live-product">Have an MVP or live product</option>
+            </select>
+            <select name="hasPitchDeck" className={selectClass} defaultValue="">
+              <option value="" disabled>Do you have a pitch deck?</option>
+              <option value="yes">Yes</option>
+              <option value="working-on-it">Working on it</option>
+              <option value="not-yet">Not yet</option>
+            </select>
+            <textarea
+              name="keyMessage"
+              className={inputClass + ' resize-none'}
+              rows={2}
+              placeholder="What do you most want investors to understand?"
+            />
+          </div>
+        )}
+
         <button
           type="submit"
           disabled={status === 'submitting'}
