@@ -13,7 +13,12 @@ const transporter = nodemailer.createTransport({
 
 const logoWhite = `<svg width="62" height="20" viewBox="0 0 62 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#c)"><path d="M11.48 5.13H8.82c0-1.98-1.12-2.98-3.14-2.98-1.69 0-2.74.81-2.74 2.08 0 1.43 1.08 1.87 3.58 2.48 2.94.72 5.4 1.49 5.4 4.78 0 2.9-2.33 4.78-5.84 4.78C2.31 16.27 0 14.36 0 10.78h2.7c0 2.24 1.23 3.31 3.4 3.31 1.95 0 3.09-.9 3.09-2.37 0-1.58-1.14-1.93-3.53-2.52C2.7 8.46.24 7.74.24 4.47.24 1.82 2.41 0 5.73 0c3.8 0 5.75 1.78 5.75 5.13Z" fill="#fff"/><path d="M30.17 9.08v6.86h-2.5V9.32c0-1.98-.77-2.77-2.02-2.77-1.47 0-2.35 1.25-2.35 3.38v6.01h-2.5V9.05c0-1.58-.7-2.5-2-2.5-1.49 0-2.35 1.27-2.35 3.42v5.96h-2.5V4.8h2.39v1.34h.04c.79-1.08 1.78-1.6 3.09-1.6 1.54 0 2.72.7 3.29 2.02.81-1.27 1.89-2.02 3.58-2.02 2.37 0 3.82 1.54 3.82 4.54Z" fill="#fff"/><path d="M43.13 10.37c0 3.55-1.8 5.83-4.63 5.83-1.38 0-2.63-.64-3.27-1.71h-.04V20h-2.5V4.8h2.44v1.54h.04c.66-1.14 1.91-1.82 3.31-1.82 2.83 0 4.65 2.3 4.65 5.85Zm-8.08 0c0 2.41 1.08 3.91 2.7 3.91s2.77-1.54 2.77-3.91c0-2.37-1.08-3.91-2.77-3.91s-2.7 1.47-2.7 3.91Z" fill="#fff"/><path d="M47.63.33h-2.5v15.61h2.5V.33Z" fill="#fff"/><path d="M53.25.21c-1.8 0-3.26 1.46-3.26 3.26s1.46 3.26 3.26 3.26V.21Z" fill="#fff"/><path d="M61.25 3.47a3.26 3.26 0 1 0-6.53 0 3.26 3.26 0 0 0 6.53 0Z" fill="#fff"/></g><defs><clipPath id="c"><rect width="61.25" height="20" fill="#fff"/></clipPath></defs></svg>`
 
-function guideEmailHtml(firstName: string) {
+const consultationConfirmations: Record<string, string> = {
+  'investor-ready-audit': 'We\'ve noted your interest in a free <strong>Investor-Ready Audit</strong> with Neil Wood and Michael Millar. One of us will be in touch shortly to arrange a time that works for you.',
+  'investment-story-audit': 'We\'ve noted your interest in a free <strong>Investment Story Audit</strong> with Michael Millar and Andreas Melvær. One of us will be in touch shortly to arrange a time that works for you.',
+}
+
+function guideEmailHtml(firstName: string, consultation?: string) {
   return `
 <!DOCTYPE html>
 <html>
@@ -73,7 +78,18 @@ function guideEmailHtml(firstName: string) {
                   </td>
                 </tr>
               </table>
-              <!-- CTA -->
+              <!-- CTA / Consultation confirmation -->
+              ${consultation && consultationConfirmations[consultation] ? `
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 24px;">
+                <tr>
+                  <td style="padding: 24px; background-color: #c8ff00; border-radius: 12px;">
+                    <p style="margin: 0 0 4px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #555; font-weight: 600;">Consultation confirmed</p>
+                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #141416;">
+                      ${consultationConfirmations[consultation]}
+                    </p>
+                  </td>
+                </tr>
+              </table>` : `
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 24px;">
                 <tr>
                   <td style="padding: 24px; background-color: #f5f5f0; border-radius: 12px;">
@@ -89,7 +105,7 @@ function guideEmailHtml(firstName: string) {
                     </table>
                   </td>
                 </tr>
-              </table>
+              </table>`}
               <p style="margin: 0; font-size: 15px; color: #141416; font-weight: 500;">
                 Good luck with your pitch!<br>The SmplCo Team
               </p>
@@ -243,7 +259,7 @@ export async function POST(request: NextRequest) {
       from: `SmplCo <${process.env.SMTP_USER}>`,
       to: email,
       subject: `Your Pitch Prep Guide Pack is ready, ${name.split(' ')[0]}!`,
-      html: guideEmailHtml(name.split(' ')[0]),
+      html: guideEmailHtml(name.split(' ')[0], consultation),
     })
 
     // Notify the team
