@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { syncToCrm } from '@/lib/crm'
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
@@ -197,6 +198,15 @@ export async function POST(request: NextRequest) {
       to: email,
       subject: `Thanks for reaching out, ${name.split(' ')[0]}!`,
       html: confirmationEmailHtml(name.split(' ')[0]),
+    })
+
+    // Sync to CRM (best-effort, non-blocking)
+    syncToCrm({
+      name,
+      email,
+      company,
+      description: message,
+      source: 'contact-form',
     })
 
     return NextResponse.json({ success: true })

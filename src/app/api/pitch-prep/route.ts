@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { syncToCrm } from '@/lib/crm'
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
@@ -269,6 +270,26 @@ export async function POST(request: NextRequest) {
       replyTo: email,
       subject: `${consultation && consultation !== 'no-thanks' ? '🔥 ' : ''}New lead: ${name}${company ? ` (${company})` : ''} downloaded Pitch Prep Guide`,
       html: notificationEmailHtml(name, email, company, consultation, qualifying),
+    })
+
+    // Sync to CRM (best-effort, non-blocking)
+    const descParts = []
+    if (consultation && consultation !== 'no-thanks') {
+      descParts.push(`Consultation: ${consultationLabels[consultation] || consultation}`)
+    }
+    if (qualifying?.businessStage) descParts.push(`Stage: ${qualifying.businessStage}`)
+    if (qualifying?.raiseAmount) descParts.push(`Raise: ${qualifying.raiseAmount}`)
+    if (qualifying?.businessDescription) descParts.push(qualifying.businessDescription)
+    if (qualifying?.productStage) descParts.push(`Product: ${qualifying.productStage}`)
+    if (qualifying?.hasPitchDeck) descParts.push(`Deck: ${qualifying.hasPitchDeck}`)
+    if (qualifying?.keyMessage) descParts.push(qualifying.keyMessage)
+
+    syncToCrm({
+      name,
+      email,
+      company,
+      description: descParts.length > 0 ? descParts.join('. ') : 'Downloaded Pitch Prep Guide',
+      source: 'pitch-prep-guide',
     })
 
     return NextResponse.json({ success: true })
