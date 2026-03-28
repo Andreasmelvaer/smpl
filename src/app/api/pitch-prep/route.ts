@@ -111,7 +111,13 @@ function guideEmailHtml(firstName: string) {
 </html>`
 }
 
-function notificationEmailHtml(name: string, email: string, company: string | undefined) {
+const consultationLabels: Record<string, string> = {
+  'investor-ready-audit': 'Investor-Ready Audit (Neil Wood & Michael Millar)',
+  'investment-story-audit': 'Investment Story Audit (Michael Millar & Andreas Melvær)',
+  'no-thanks': 'No consultation requested',
+}
+
+function notificationEmailHtml(name: string, email: string, company: string | undefined, consultation?: string) {
   return `
 <!DOCTYPE html>
 <html>
@@ -140,6 +146,15 @@ function notificationEmailHtml(name: string, email: string, company: string | un
                   </td>
                 </tr>
               </table>
+              ${consultation && consultation !== 'no-thanks' ? `
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 16px;">
+                <tr>
+                  <td style="padding: 12px 16px; background-color: #c8ff00; border-radius: 10px;">
+                    <p style="margin: 0 0 2px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #555; font-weight: 600;">Consultation Requested</p>
+                    <p style="margin: 0; font-size: 15px; color: #141416; font-weight: 500;">${escapeHtml(consultationLabels[consultation] || consultation)}</p>
+                  </td>
+                </tr>
+              </table>` : ''}
               <p style="margin: 0; font-size: 14px; color: #555;">Downloaded the Pitch Prep Guide Pack from <a href="https://smpl.as/pitch-prep" style="color: #141416;">smpl.as/pitch-prep</a></p>
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top: 24px;">
                 <tr>
@@ -160,7 +175,7 @@ function notificationEmailHtml(name: string, email: string, company: string | un
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, company } = await request.json()
+    const { name, email, company, consultation } = await request.json()
 
     if (!name || !email) {
       return NextResponse.json(
@@ -182,8 +197,8 @@ export async function POST(request: NextRequest) {
       from: `SmplCo Website <${process.env.SMTP_USER}>`,
       to: ['andreas@smpl.as', 'mike@smpl.as'],
       replyTo: email,
-      subject: `New lead: ${name}${company ? ` (${company})` : ''} downloaded Pitch Prep Guide`,
-      html: notificationEmailHtml(name, email, company),
+      subject: `${consultation && consultation !== 'no-thanks' ? '🔥 ' : ''}New lead: ${name}${company ? ` (${company})` : ''} downloaded Pitch Prep Guide`,
+      html: notificationEmailHtml(name, email, company, consultation),
     })
 
     return NextResponse.json({ success: true })

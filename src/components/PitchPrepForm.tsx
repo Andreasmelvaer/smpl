@@ -15,6 +15,7 @@ export default function PitchPrepForm() {
       name: formData.get('name'),
       email: formData.get('email'),
       company: formData.get('company'),
+      consultation: formData.get('consultation'),
     }
 
     try {
@@ -82,6 +83,47 @@ export default function PitchPrepForm() {
             className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent"
             placeholder="Company name (optional)"
           />
+        </div>
+        <div>
+          <label className="block text-xs font-medium text-gray-700 mb-2">
+            Want a free 30-min consultation?
+          </label>
+          <div className="space-y-2">
+            <label className="flex items-start gap-3 bg-white border border-gray-200 rounded-xl p-3 cursor-pointer hover:border-gray-300 transition-colors has-[:checked]:border-lime has-[:checked]:bg-lime/10">
+              <input
+                type="radio"
+                name="consultation"
+                value="investor-ready-audit"
+                className="mt-0.5 accent-gray-900"
+              />
+              <div>
+                <span className="text-sm font-medium text-gray-900">Investor-Ready Audit</span>
+                <span className="block text-xs text-gray-500">With Neil Wood &amp; Michael Millar. Focus: your journey to landing investment.</span>
+              </div>
+            </label>
+            <label className="flex items-start gap-3 bg-white border border-gray-200 rounded-xl p-3 cursor-pointer hover:border-gray-300 transition-colors has-[:checked]:border-lime has-[:checked]:bg-lime/10">
+              <input
+                type="radio"
+                name="consultation"
+                value="investment-story-audit"
+                className="mt-0.5 accent-gray-900"
+              />
+              <div>
+                <span className="text-sm font-medium text-gray-900">Investment Story Audit</span>
+                <span className="block text-xs text-gray-500">With Michael Millar &amp; Andreas Melvær. Focus: how to best tell your story to investors.</span>
+              </div>
+            </label>
+            <label className="flex items-start gap-3 bg-white border border-gray-200 rounded-xl p-3 cursor-pointer hover:border-gray-300 transition-colors has-[:checked]:border-lime has-[:checked]:bg-lime/10">
+              <input
+                type="radio"
+                name="consultation"
+                value="no-thanks"
+                defaultChecked
+                className="mt-0.5 accent-gray-900"
+              />
+              <span className="text-sm text-gray-500">Just the guide, thanks</span>
+            </label>
+          </div>
         </div>
         <button
           type="submit"
