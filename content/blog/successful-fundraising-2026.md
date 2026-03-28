@@ -149,3 +149,7 @@ We're offering free half-hour investor-readiness consultations. No strings attac
 A massive thank you to the [Barclays Eagle Labs](https://labs.uk.barclays/) team — and Lily Chatwin in particular — for hosting this session. Eagle Labs is a genuinely brilliant resource for founders at any stage. They've got 42 locations across the UK, everything they offer is completely free, and you don't need to bank with Barclays to benefit.
 
 If you're raising or thinking about raising, their [Demo Directory](https://labs.uk.barclays/demo-directory/) is well worth a look — it's a great way to get your product in front of the right people. And their Female Founders Rise programme is doing important work to close the gender gap in funding. Check them out.
+
+## Watch the full webinar
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/jJzeJmunyUg" title="Successful Fundraising in 2026 — Barclays Eagle Labs Webinar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
