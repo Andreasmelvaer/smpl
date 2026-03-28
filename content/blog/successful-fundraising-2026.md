@@ -61,8 +61,17 @@ And the thing that's become increasingly important in 2026? **Traction.** Proof 
 
 Investors are no longer willing to go on a wing and a prayer.
 
-![The Pitch Prep Guide Pack, our free fundraising toolkit](/images/blog/inline/pitch-prep-guide-cover.jpg)
-*Our free [Pitch Prep Guide](/pitch-prep) covers all of this and more*
+<div style="background-color: #141416; border-radius: 16px; padding: 32px; margin: 32px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 24px;">
+  <div style="flex: 1; min-width: 200px;">
+    <p style="margin: 0 0 4px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #c8ff00; font-weight: 600;">Free guide</p>
+    <p style="margin: 0 0 8px; font-size: 20px; font-weight: 700; color: #ffffff; line-height: 1.3;">Get the Pitch Prep Guide Pack</p>
+    <p style="margin: 0 0 20px; font-size: 14px; color: #999; line-height: 1.6;">10 pages of practical frameworks to nail your investor pitch. Designed by a team that's helped 125+ startups raise millions.</p>
+    <a href="/pitch-prep" style="display: inline-block; padding: 12px 28px; background-color: #c8ff00; color: #141416; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 100px;">Download for free</a>
+  </div>
+  <div style="flex: 0 0 auto;">
+    <img src="/images/blog/inline/pitch-prep-guide-cover.jpg" alt="The Pitch Prep Guide Pack" style="width: 160px; border-radius: 12px; display: block;" />
+  </div>
+</div>
 
 ## Why a prototype changes everything
 
