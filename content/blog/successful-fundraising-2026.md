@@ -180,7 +180,7 @@ No strings attached. Because the founders who prepare properly are the ones who 
 
 ## A word on Barclays Eagle Labs
 
-A massive thank you to the [Barclays Eagle Labs](https://labs.uk.barclays/) team — and [Lily Chatwin](https://www.linkedin.com/in/lilly-chatwin-782762194/) in particular — for hosting this session. Eagle Labs is a genuinely brilliant resource for founders at any stage. They've got 42 locations across the UK, everything they offer is completely free, and you don't need to bank with Barclays to benefit.
+A massive thank you to the [Barclays Eagle Labs](https://labs.uk.barclays/) team — and [Lilly Chatwin](https://www.linkedin.com/in/lilly-chatwin-782762194/) in particular — for hosting this session. Eagle Labs is a genuinely brilliant resource for founders at any stage. They've got 42 locations across the UK, everything they offer is completely free, and you don't need to bank with Barclays to benefit.
 
 If you're raising or thinking about raising, their [Demo Directory](https://labs.uk.barclays/demo-directory/) is well worth a look. It's a great way to get your product in front of the right people. And their Female Founders Rise programme is doing important work to close the gender gap in funding. Check them out.
 
