@@ -53,6 +53,11 @@ For earlier-stage raises, it's different. Angels buy into people. Is the founder
 
 Then comes the market. How big is the problem? What's your TAM (total addressable market)? Can you capture enough of it to deliver a meaningful return? For tech businesses, investors are typically looking for 10–15x their initial capital over five years. Your market needs to be big enough to make that plausible.
 
+<figure style="margin: 32px 0; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; line-height: 0;">
+  <img src="/images/blog/inline/pitch-deck-challenge.jpg" alt="Pitch deck challenge slide from the Pitch Prep Pack" style="width: 100%; display: block;" />
+  <figcaption style="padding: 10px 14px; font-size: 13px; color: #666; line-height: 1.5; background: #fafafa;">One of the practical exercises in our free Pitch Prep Pack</figcaption>
+</figure>
+
 ## What collateral do you need to pitch to investors?
 
 This is where a lot of founders overthink it. Or underthink it. The essential documents, according to Neil, are:
