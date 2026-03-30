@@ -21,7 +21,7 @@ You can [watch the full webinar on YouTube](https://www.youtube.com/watch?v=jJze
 
 Mixed. That's the honest answer.
 
-Neil, who set up [Wood Associates London](https://www.woodassociateslondon.net/) 14 years ago after spinning out of some of the major banks, said that contrary to all the doom and gloom the market is "cautiously optimistic", with investors prioritising profitability and robust business plans over inflated valuations.
+Neil, who set up [Wood Associates (London)](https://www.woodassociateslondon.net/) 14 years ago after spinning out of some of the major banks, said that contrary to all the doom and gloom the market is "cautiously optimistic", with investors prioritising profitability and robust business plans over inflated valuations.
 
 The sectors getting the most attention? AI (obviously), health tech, energy, and fintech. But here's the crucial nuance: investors are done with AI for the sake of AI. 
 
