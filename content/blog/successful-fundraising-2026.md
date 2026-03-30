@@ -5,13 +5,13 @@ excerpt: "We joined forces with Neil Wood of Wood Associates London for a packed
 hero_image: "/images/blog/successful-fundraising-2026.jpg"
 date: "2026-03-28"
 author: "Andreas Melvær"
-readTime: "8 min read"
+readTime: "6 min read"
 tags: ["Fundraising", "Eagle Labs", "Prototyping", "Product Development"]
 published: true
 slug: "successful-fundraising-2026"
 ---
 
-## I recently watched our very own [Michael Millar] (https://www.linkedin.com/in/michaelmillarfrsa/) and [Neil Wood] (https://www.linkedin.com/in/neil-wood-85410286/) of Wood Associates (London) deliver a webinar for [Barclays Eagle Labs](https://labs.uk.barclays/) on successful fundraising in 2026. Over 300 founders showed up. The questions didn't stop. And the advice was worth every minute.
+## I recently watched our very own [Michael Millar](https://www.linkedin.com/in/michaelmillarfrsa/) and [Neil Wood](https://www.linkedin.com/in/neil-wood-85410286/) of Wood Associates (London) deliver a webinar for [Barclays Eagle Labs](https://labs.uk.barclays/) on successful fundraising in 2026. Over 300 founders showed up. The questions didn't stop. And the advice was worth every minute.
 
 Here's what I took away, and what every founder thinking about raising should know right now.
 
@@ -49,7 +49,7 @@ Neil was refreshingly direct about this. When someone arrives on his doorstep, t
 
 For earlier-stage raises, it's different. Angels buy into people. Is the founder enthusiastic? Can they articulate the problem? Do they have the passion to stand in front of investors and make them believe?
 
-(One instructive guide comes from [Y Combinator] (https://www.ycombinator.com/) co-founder, Paul Graham, who says investors are looking for a ‘formidable’ founder, who is a domain expert, believes deeply in their idea, and has the ability to overcome obstacles as and when they arise.)
+(One instructive guide comes from [Y Combinator](https://www.ycombinator.com/) co-founder, Paul Graham, who says investors are looking for a ‘formidable’ founder, who is a domain expert, believes deeply in their idea, and has the ability to overcome obstacles as and when they arise.)
 
 Then comes the market. How big is the problem? What's your TAM (total addressable market)? Can you capture enough of it to deliver a meaningful return? For tech businesses, investors are typically looking for 10–15x their initial capital over five years. Your market needs to be big enough to make that plausible.
 
