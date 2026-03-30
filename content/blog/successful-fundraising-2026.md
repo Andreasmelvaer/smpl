@@ -60,6 +60,7 @@ This is where a lot of founders overthink it. Or underthink it. The essential do
 - **An investor deck** (10–12 slides max. 40-page decks get binned)
 - **A financial model**
 - **A one-page executive summary** for initial approaches
+- **MEGA BONUS: and interactive prototype** that brings your product to life
 
 Business plans and information memoranda? Neil rarely sees them these days. The deck and model do the heavy lifting.
 
@@ -81,15 +82,21 @@ Investors are no longer willing to go on a wing and a prayer.
   </div>
 </div>
 
-## Why a prototype changes everything
+## Do you need a prototype?
 
-This is something we see at SmplCo every single day. Mike quoted Chris Tortman, a well-known VC investor:
+The short answer is an emphatic 'yes'. A protoype can change everything.
 
-> "Investors are pattern-matching machines. We've seen thousands of pitch decks. When you put a working prototype in front of us, even if it's held together with duct tape, everything changes."
+This is something we've seen at SmplCo **SO** many times. In the webinar, Michael quoted Chris Tottman, a well-known VC investor from [Notion Capital](https://www.notioncapital.com/):
 
-A simple, interactive, clickable prototype that you can demonstrate live elevates you above the crowd. It turns your pitch from "let me tell you about my idea" into "let me show you." We [spin these up in five days](/pitch-prep), and we've seen founders raise tens of thousands, even hundreds of thousands, off the back of them.
+> "Investors are pattern-matching machines. We've seen thousands of pitch decks. When you put a working prototype in front of us, everything changes."
 
-It's the old adage: show, don't tell. Decks simply can't bring what's in your head to life the way a prototype will.
+A simple, interactive, clickable prototype that you can demonstrate live elevates you above the crowd. It turns your pitch from "let me tell you about my idea" into "let me show you." 
+
+We create these, with Silicon Valley levels of UX and UI quality, [in five days](/5-day-prototype-custom-software), and we've seen founders raise tens of thousands, even hundreds of thousands, off the back of them.
+
+It's the old adage: 'show, don't tell'. Decks simply can't bring what's in your head to life the way a prototype will.
+
+[Drop us a line](/contact) if you want us to explain further.
 
 ## How should you approach investors?
 
@@ -97,7 +104,7 @@ Not with a blanket email blast. Please.
 
 Neil outlined four channels, and each requires a different approach:
 
-1. **Warm introductions.** The gold standard. A founder they've already backed, or an angel whose judgement they trust, passes your details along. You're not making the approach; someone credible is doing it for you.
+1. **Warm introductions.** The gold standard. A founder they've already backed, or an angel whose judgement they trust, passes your details along. You're not making the approach; someone credible is doing it for you. This is what Neil does for a living.
 
 2. **Back-channel networks.** A co-investor forwards your deck to another investor. Again, the recommendation comes from inside the ecosystem.
 
@@ -112,29 +119,29 @@ Quick primer for those who need it:
 - **Angels**: High-net-worth individuals, sometimes investing alone, sometimes in syndicates to share risk
 - **Super angels / UHNW syndicates**: Larger individual cheques, typically up to a couple of million across a syndicate
 - **VCs (venture capitalists)**: Raise funds from limited partners (LPs), often structured as EIS funds. If your business is EIS-eligible, you're more attractive to them
-- **Family offices**: Start at around half a billion in wealth. They invest their own money, move faster than VCs, are less risk-averse, and typically take a 20–25% stake
+- **Family offices**: Start at around half a billion in total wealth. They invest their own money, move faster than VCs, are less risk-averse, and typically take a 20–25% stake
 - **PE houses**: Later-stage, profitable businesses. Usually take a 60%+ controlling stake
 
 The chronology matters: friends and family first, then angels, then Series A. Don't try to skip stages. If you haven't raised £500k, you're unlikely to raise £2.5m. You'll be too early-stage for the investors at that level.
 
 ## How do you nail the pitch itself?
 
-Mike's colleague Lassa (who sold his last company for $3 billion) always says: **"You've got three minutes to make or break your pitch."** Three minutes. If you don't capture attention at the start, you're done.
+Mike's colleague Lasse (who sold his last company for $2.8 billion) always says: **"You've got three minutes to make or break your pitch."** Three minutes. If you don't capture attention at the start, you're done.
 
 Neil's pitch essentials:
 
-- Keep to time. Learn it by heart. No cue cards.
-- Lots of eye contact.
-- Tell a passionate, compelling story. You might be one of ten pitches that evening.
-- Cover anticipated investor questions in the deck itself so they're not left wondering.
-- Don't be overconfident or defensive. If you've got this far, the investor is looking to invest. Go in with a positive attitude.
-- **Know your numbers.** They will spot anomalies. If growth looks too steep or there's an unexplained cost spike, have an explanation ready.
+- Keep to time. Learn it by heart. No cue cards
+- Lots of eye contact
+- Tell a passionate, compelling story. You might be one of ten pitches that day
+- Cover anticipated investor questions in the deck itself so they're not left wondering
+- Don't be overconfident or defensive. If you've got this far, the investor is looking to invest. Go in with a positive attitude
+- **Know your numbers.** They will spot anomalies. If growth looks too steep or there's an unexplained cost spike, have an explanation ready
 
 ## The "Gina" technique: storytelling that sticks
 
 This was one of my favourite moments from the webinar. Mike shared a brilliantly simple storytelling exercise from our [Pitch Prep Guide](/pitch-prep) that helps founders open their pitch in a way that actually makes investors sit up:
 
-Create a character. Give them a name. Say, Gina. Gina has a problem. Describe her day, her frustrations, the pain she's dealing with. Now show what happens when Gina uses your solution. A, B, C and boom. Gina's day is transformed. She gets these specific benefits. And they matter to her because of this.
+Create a character. Give them a name. Say, 'Gina'. Gina has a problem. Describe who she is and what she does, her day, her frustrations, and the pain she's dealing with. Now show what happens when Gina uses your solution. A, B, C and - boom! - Gina's day is transformed. She gets XYZ specific benefits and they matter to her for [the following reasons...]
 
 It's simple. It's human. And it works because without Gina, you're just another faceless product. With Gina, you're telling a story investors can see, feel, and remember.
 
@@ -144,7 +151,7 @@ Our guide walks you through the whole exercise. [Grab it free here](/pitch-prep)
 
 The hard work doesn't stop. Neil walked through the post-pitch journey:
 
-1. **Due diligence.** They interrogate everything in your data room. This process is getting deeper and more thorough every year.
+1. **Due diligence.** They interrogate everything in your data room (i.e. a secure, centralised place where you've stored all your important, confidential documents). This process is getting deeper and more thorough every year.
 2. **Term sheet.** A negotiating document outlining how much they'll invest, at what valuation, and under what conditions.
 3. **Pre-conditions.** They might want you to hire a finance director, strengthen the management team, or hit certain milestones before the money flows.
 4. **Contract and close.** Negotiate the term sheet, sign the contract, receive the investment.
@@ -159,14 +166,20 @@ The formula hasn't changed: solve a real problem, prove people want it, tell a c
 
 If you want to go deeper, [watch the full webinar](https://www.youtube.com/watch?v=jJzeJmunyUg). And if you want hands-on help getting investor-ready, from prototypes to pitch decks to introductions, [download our free Pitch Prep Guide](/pitch-prep) or [get in touch](/contact).
 
-We're offering free half-hour investor-readiness consultations. No strings attached. Because the founders who prepare properly are the ones who raise successfully.
+We're offering free half-hour investor-readiness consultations. Choose from:
+
+- **An Investor-Ready Audit** with Neil and Michael - focus: your journey to landing investment; AND/OR
+- **An Investment Story Audit** with Michael and Andreas (MD of SmplCo) - focus: how to best tell investors your story (including the specific collateral you will need to win them over)
+
+No strings attached. Because the founders who prepare properly are the ones who raise successfully. And that's what we want to see.
 
 ## A word on Barclays Eagle Labs
 
-A massive thank you to the [Barclays Eagle Labs](https://labs.uk.barclays/) team — and Lily Chatwin in particular — for hosting this session. Eagle Labs is a genuinely brilliant resource for founders at any stage. They've got 42 locations across the UK, everything they offer is completely free, and you don't need to bank with Barclays to benefit.
+A massive thank you to the [Barclays Eagle Labs](https://labs.uk.barclays/) team — and [Lily Chatwin](https://www.linkedin.com/in/lilly-chatwin-782762194/) in particular — for hosting this session. Eagle Labs is a genuinely brilliant resource for founders at any stage. They've got 42 locations across the UK, everything they offer is completely free, and you don't need to bank with Barclays to benefit.
 
 If you're raising or thinking about raising, their [Demo Directory](https://labs.uk.barclays/demo-directory/) is well worth a look. It's a great way to get your product in front of the right people. And their Female Founders Rise programme is doing important work to close the gender gap in funding. Check them out.
 
 ## Watch the full webinar
 
 <iframe width="100%" height="450" src="https://www.youtube.com/embed/jJzeJmunyUg" title="Successful Fundraising in 2026 - Barclays Eagle Labs Webinar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
