@@ -60,7 +60,7 @@ This is where a lot of founders overthink it. Or underthink it. The essential do
 - **An investor deck** (10–12 slides max. 40-page decks get binned)
 - **A financial model**
 - **A one-page executive summary** for initial approaches
-- **MEGA BONUS: and interactive prototype** that brings your product to life
+- **MEGA BONUS: an interactive prototype** that brings your product to life
 
 Business plans and information memoranda? Neil rarely sees them these days. The deck and model do the heavy lifting.
 
