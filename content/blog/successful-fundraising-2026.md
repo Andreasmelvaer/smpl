@@ -11,7 +11,7 @@ published: true
 slug: "successful-fundraising-2026"
 ---
 
-## I recently watched our very own Michael Millar and Neil Wood of [Wood Associates London](https://www.woodassociateslondon.net/) deliver a webinar for [Barclays Eagle Labs](https://labs.uk.barclays/) on successful fundraising in 2026. Over 300 founders showed up. The questions didn't stop. And the advice was worth every minute.
+## I recently watched our very own [Michael Millar and Neil Wood of [Wood Associates London](https://www.woodassociateslondon.net/) deliver a webinar for [Barclays Eagle Labs](https://labs.uk.barclays/) on successful fundraising in 2026. Over 300 founders showed up. The questions didn't stop. And the advice was worth every minute.
 
 Here's what I took away, and what every founder thinking about raising should know right now.
 
@@ -28,6 +28,10 @@ The sectors getting the most attention? AI (obviously), health tech, energy, and
 As Mike put it: "AI that adds value of some sort is really high on investors' minds right now. AI for the sake of AI is a waste of time."
 
 The same lesson applied to blockchain a few years ago. Founders were bolting it into their decks because they thought investors expected it. Investors saw right through it. Don't make the same mistake with AI.
+
+## Watch the full webinar
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/jJzeJmunyUg" title="Successful Fundraising in 2026 - Barclays Eagle Labs Webinar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Are investors writing bigger cheques?
 
