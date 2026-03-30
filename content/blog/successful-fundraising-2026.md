@@ -21,11 +21,11 @@ You can [watch the full webinar on YouTube](https://www.youtube.com/watch?v=jJze
 
 Mixed. That's the honest answer.
 
-Neil, who set up [Wood Associates London](https://www.woodassociateslondon.net/) 14 years ago after spinning out of some of the major banks, broke it down by investor type. There are roughly 15,000 angel investors in the UK, investing about a billion pounds a year, mostly in early-stage, pre-revenue ventures taking advantage of SEIS and EIS tax relief. The market is "cautiously optimistic," as Neil put it, with investors prioritising profitability and robust business plans over inflated valuations.
+Neil, who set up [Wood Associates London](https://www.woodassociateslondon.net/) 14 years ago after spinning out of some of the major banks, said that contrary to all the doom and gloom the market is "cautiously optimistic", with investors prioritising profitability and robust business plans over inflated valuations.
 
-The sectors getting the most attention? AI (obviously), health tech, energy, and fintech. But here's the crucial nuance: investors are done with AI for the sake of AI. What they want is AI that adds genuine value. The kind that gives you defensibility, gets you to market faster, or solves a problem no one else can solve quite like you.
+The sectors getting the most attention? AI (obviously), health tech, energy, and fintech. But here's the crucial nuance: investors are done with AI for the sake of AI. 
 
-As Mike put it: "AI that adds value of some sort is really high on investors' minds right now. AI for the sake of AI is a waste of time."
+As SmplCo's Mchael put it: "AI that adds genuine value is really high on investors' minds right now. AI for the sake of AI is a waste of time. The kind that gives you defensibility, gets you to market faster, or solves a problem no one else can solve quite like you."
 
 The same lesson applied to blockchain a few years ago. Founders were bolting it into their decks because they thought investors expected it. Investors saw right through it. Don't make the same mistake with AI.
 
@@ -41,11 +41,15 @@ That's the paradox of the current market. Larger, more substantial cheques are b
 
 Which means the founders who do their homework are the ones who win.
 
+This is as true for Angel investors - of whom there are roughly 15,000 in the UK, investing about a billion pounds a year, mostly in early-stage ventures and taking advantage of SEIS and EIS tax relief - as it is for VCs looking to invest subtantially bigger sums.
+
 ## What do investors look at first?
 
 Neil was refreshingly direct about this. When someone arrives on his doorstep, the first thing he looks at is where they are on the revenue and traction journey. For Wood Associates, who focus on raises between £1m and £10m, the benchmark is around £200,000–£250,000 in actual revenue. Cash in the bank, not projections.
 
 For earlier-stage raises, it's different. Angels buy into people. Is the founder enthusiastic? Can they articulate the problem? Do they have the passion to stand in front of investors and make them believe?
+
+(One instructive guide comes from [Y Combinator] (https://www.ycombinator.com/) co-founder, Paul Graham, who says investors are looking for a ‘formidable’ founder, who is a domain expert, believes deeply in their idea, and has the ability to overcome obstacles as and when they arise.)
 
 Then comes the market. How big is the problem? What's your TAM (total addressable market)? Can you capture enough of it to deliver a meaningful return? For tech businesses, investors are typically looking for 10–15x their initial capital over five years. Your market needs to be big enough to make that plausible.
 
