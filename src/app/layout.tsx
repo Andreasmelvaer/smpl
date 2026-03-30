@@ -72,7 +72,7 @@ export default function RootLayout({
       <body className={`${inter.variable} antialiased`}>
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-VZZ9X48SZL"
+          src="https://www.googletagmanager.com/gtag/js?id=G-YCGPE1WTNN"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -86,7 +86,7 @@ export default function RootLayout({
               'ad_personalization': 'denied'
             });
             gtag('js', new Date());
-            gtag('config', 'G-VZZ9X48SZL');
+            gtag('config', 'G-YCGPE1WTNN');
           `}
         </Script>
         <OrganizationJsonLd />
