@@ -11,7 +11,7 @@ published: true
 slug: "successful-fundraising-2026"
 ---
 
-## I recently watched our very own [Michael Millar and Neil Wood of [Wood Associates London](https://www.woodassociateslondon.net/) deliver a webinar for [Barclays Eagle Labs](https://labs.uk.barclays/) on successful fundraising in 2026. Over 300 founders showed up. The questions didn't stop. And the advice was worth every minute.
+## I recently watched our very own [Michael Millar] (https://www.linkedin.com/in/michaelmillarfrsa/) and [Neil Wood] (https://www.linkedin.com/in/neil-wood-85410286/) of Wood Associates (London) deliver a webinar for [Barclays Eagle Labs](https://labs.uk.barclays/) on successful fundraising in 2026. Over 300 founders showed up. The questions didn't stop. And the advice was worth every minute.
 
 Here's what I took away, and what every founder thinking about raising should know right now.
 
