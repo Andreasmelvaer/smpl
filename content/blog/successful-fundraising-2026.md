@@ -97,7 +97,7 @@ This is something we've seen at SmplCo **SO** many times. In the webinar, Michae
 
 A simple, interactive, clickable prototype that you can demonstrate live elevates you above the crowd. It turns your pitch from "let me tell you about my idea" into "let me show you." 
 
-We create these, with Silicon Valley levels of UX and UI quality, [in five days](/5-day-prototype-custom-software), and we've seen founders raise tens of thousands, even hundreds of thousands, off the back of them.
+We create these, with Silicon Valley levels of UX and UI quality, [in five days](/blog/5-day-prototype-custom-software), and we've seen founders raise tens of thousands, even hundreds of thousands, off the back of them.
 
 It's the old adage: 'show, don't tell'. Decks simply can't bring what's in your head to life the way a prototype will.
 
