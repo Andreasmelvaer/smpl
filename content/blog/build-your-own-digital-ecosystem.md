@@ -21,6 +21,8 @@ We were in the same spot. We had a Framer site that was getting harder to mainta
 
 So we built our own stuff. A CRM, a newsletter tool, a task planner, and a Meta Ads integration. We moved [the website](/) off Framer and onto Next.js. The Ahrefs health score went from patchy to 100%, but more importantly the site just became easier to work with — we can change things without fighting the platform.
 
+![Ahrefs site audit showing 100% health score after moving off the CMS.](/images/blog/inline/ahrefs.jpg)
+
 The CRM has three stages. Prospect, active client, complete. That's it. Not seventeen pipeline steps named by someone who's never spoken to a client. The planner is linked to the CRM so we can see what work is happening for who. The newsletter tool sits in the same system, same database.
 
 ![Our suite of tools — CRM, Email, Planner, Strategy, Landing Pages, and Meta Ads — all connected as one system.](/images/blog/inline/oursuiteoftools.png)
