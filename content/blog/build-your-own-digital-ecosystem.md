@@ -46,6 +46,9 @@ A lot of businesses are stuck with too many tools, too much manual work, and sys
     <p style="margin: 0 0 20px; font-size: 14px; color: #999; line-height: 1.6;">8 pages of practical advice on replacing SaaS bloat with tools that fit. Covers Claude Code, Figma, and a modern web stack.</p>
     <a href="/build-guide" style="display: inline-block; padding: 12px 28px; background-color: #c8ff00; color: #141416; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 100px;">Download for free</a>
   </div>
+  <div style="flex: 0 0 auto;">
+    <img src="/images/smpl_buil_your_own_promo.jpg" alt="Build Your Own Internal Tools guide" style="width: 160px; border-radius: 8px;" />
+  </div>
 </div>
 
 ## What this means for companies

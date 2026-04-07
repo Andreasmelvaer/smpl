@@ -78,6 +78,11 @@ export default function BuildGuide() {
             <p className="text-base md:text-lg text-gray-500 font-satoshi leading-relaxed max-w-xl mx-auto mb-10">
               A practical guide to replacing SaaS bloat with tools that actually fit how you work. Using Claude Code, Figma, and a modern web stack.
             </p>
+            <img
+              src="/images/smpl_buil_your_own_promo.jpg"
+              alt="Build Your Own Internal Tools guide"
+              className="w-48 md:w-56 mx-auto rounded-xl shadow-2xl mb-10"
+            />
             <a
               href="#download"
               className="inline-flex items-center justify-center px-8 py-3.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"

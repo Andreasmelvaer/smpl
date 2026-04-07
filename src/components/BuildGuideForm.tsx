@@ -38,7 +38,11 @@ export default function BuildGuideForm() {
   if (status === 'success') {
     return (
       <div className="bg-lime rounded-2xl p-8 md:p-10 text-center">
-        <div className="text-4xl mb-4">&#10003;</div>
+        <img
+          src="/images/smpl_buil_your_own_promo.jpg"
+          alt="Build Your Own Internal Tools guide"
+          className="w-40 mx-auto rounded-lg mb-6"
+        />
         <h3 className="text-xl font-semibold mb-2">Your guide is ready!</h3>
         <p className="text-gray-700 mb-6">
           Click below to download. We&apos;ve also sent a copy to your inbox.
