@@ -15,34 +15,30 @@ Most companies run their business across a stack of tools they didn't choose —
 
 You end up paying for a thousand features and using forty. Nothing connects properly. You switch tabs more than you do actual work. And every time you want to change something, the answer is an upgrade, a plugin, or a workaround.
 
-This isn't a technology problem. It's a dependency problem.
+We were in the same spot. We had a Framer site that was getting harder to maintain, a CRM workflow spread across spreadsheets and memory, and campaign reporting that meant logging into three different dashboards to figure out what was going on.
 
 ## What we actually built
 
-We built a CRM, a newsletter tool, a task planner, and a Meta Ads integration for SmplCo. We moved our website off the CMS, got to a 100% health score on Ahrefs, and made the whole thing easier and cheaper to run.
+So we built our own stuff. A CRM, a newsletter tool, a task planner, and a Meta Ads integration. We moved the website off Framer and onto Next.js. The Ahrefs health score went from patchy to 100%, but more importantly the site just became easier to work with — we can change things without fighting the platform.
 
-The CRM tracks contacts from first conversation to completed project. Three stages. Not seventeen pipeline steps we'll never use. The planner lets us schedule work per team member, linked directly to the clients in the CRM. The newsletter tool sits in the same system, same database, same logic.
+The CRM has three stages. Prospect, active client, complete. That's it. Not seventeen pipeline steps named by someone who's never spoken to a client. The planner is linked to the CRM so we can see what work is happening for who. The newsletter tool sits in the same system, same database.
 
 ![Our suite of tools — CRM, Email, Planner, Strategy, Landing Pages, and Meta Ads — all connected as one system.](/images/blog/inline/oursuiteoftools.png)
 
-We built a strategy pipeline — a set of AI agents that handle positioning, landing pages, ad copy, and campaign deployment. Each step feeds into the next. No copy-pasting between tools, no midnight sync jobs. The campaign tool integrates directly with Meta's ad platform, so we can deploy and monitor our campaigns from the same dashboard where we manage everything else. No switching to Ads Manager, no exporting reports, no reconciling data between systems.
+We also built a strategy pipeline where AI agents handle positioning, landing pages, ad copy, and campaign deployment. Each step feeds context into the next one. The campaign tool talks directly to Meta's API, so we can deploy and monitor ads from the same place we manage everything else.
 
-Everything connects because it's one system. Not twelve integrations held together by one person who left last year.
+It's not perfect. There's no dedicated support team to call when something breaks — that's us. And there's a real discipline required to not keep adding features nobody asked for. But the tradeoff is that when we need to change something, we just change it. Last week we needed a new flag on contacts. Took an hour. No ticket, no vendor, no quarterly roadmap.
 
 ## This isn't really about us
 
-What's interesting isn't that we did this for ourselves. It's that this kind of work is suddenly within reach for normal companies.
+What's interesting isn't that we did this. It's that the barrier to doing it has dropped enough that most companies could build at least some of their own tools — the ones where off-the-shelf platforms are either overkill or just don't fit.
 
-Two years ago, building your own CRM was a six-month project that required a development team. Today it's a database, a frontend, and an AI model. The cost of building something custom has dropped dramatically. The cost of not building — staying locked into platforms that don't fit — keeps going up.
+That doesn't mean it's trivial. You still need to think about what you're building and why. Scope creep is real. Maintenance is real. But the gap between what generic platforms offer and what your business actually needs is getting easier to close.
 
-A lot of businesses are stuck with too many tools, too much manual work, and systems that are more annoying than helpful. Same goes for websites. They often become harder and more expensive to manage than they need to be.
+A lot of businesses are stuck with too many tools, too much manual work, and systems that are more annoying than helpful. Same goes for websites — they often become harder and more expensive to manage than they need to be.
 
 ## What this means for companies
 
-You don't need to rip out everything and start from scratch. But you should start asking a different question.
+You don't have to rip out everything and start from scratch. But next time you need a new capability, it's worth asking: do we actually need another platform, or can we just build this one thing?
 
-Instead of "which platform should we buy" — ask "what do we actually need, and can we build just that?"
-
-The answer is increasingly yes. Not because everyone should become a software company. But because the gap between what off-the-shelf tools offer and what your business actually needs has never been easier to close.
-
-Build what fits. Skip what doesn't. Own the thing.
+More often than you'd expect, the answer is yes.
