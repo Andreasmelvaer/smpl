@@ -39,6 +39,15 @@ That doesn't mean it's trivial. You still need to think about what you're buildi
 
 A lot of businesses are stuck with too many tools, too much manual work, and systems that are more annoying than helpful. Same goes for websites — they often become [harder and more expensive to manage](/blog/power-apps-code-apps-custom-ui) than they need to be.
 
+<div style="background-color: #141416; border-radius: 16px; padding: 32px; margin: 32px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 24px;">
+  <div style="flex: 1; min-width: 200px;">
+    <p style="margin: 0 0 4px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #c8ff00; font-weight: 600;">Free guide</p>
+    <p style="margin: 0 0 8px; font-size: 20px; font-weight: 700; color: #ffffff; line-height: 1.3;">Build Your Own Internal Tools</p>
+    <p style="margin: 0 0 20px; font-size: 14px; color: #999; line-height: 1.6;">8 pages of practical advice on replacing SaaS bloat with tools that fit. Covers Claude Code, Figma, and a modern web stack.</p>
+    <a href="/build-guide" style="display: inline-block; padding: 12px 28px; background-color: #c8ff00; color: #141416; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 100px;">Download for free</a>
+  </div>
+</div>
+
 ## What this means for companies
 
 You don't have to rip out everything and start from scratch. But next time you need a new capability, it's worth asking: do we actually need another platform, or can we just build this one thing?
