@@ -19,26 +19,26 @@ We were in the same spot. We had a Framer site that was getting harder to mainta
 
 ## What we actually built
 
-So we built our own stuff. A CRM, a newsletter tool, a task planner, and a Meta Ads integration. We moved the website off Framer and onto Next.js. The Ahrefs health score went from patchy to 100%, but more importantly the site just became easier to work with — we can change things without fighting the platform.
+So we built our own stuff. A CRM, a newsletter tool, a task planner, and a Meta Ads integration. We moved [the website](/) off Framer and onto Next.js. The Ahrefs health score went from patchy to 100%, but more importantly the site just became easier to work with — we can change things without fighting the platform.
 
 The CRM has three stages. Prospect, active client, complete. That's it. Not seventeen pipeline steps named by someone who's never spoken to a client. The planner is linked to the CRM so we can see what work is happening for who. The newsletter tool sits in the same system, same database.
 
 ![Our suite of tools — CRM, Email, Planner, Strategy, Landing Pages, and Meta Ads — all connected as one system.](/images/blog/inline/oursuiteoftools.png)
 
-We also built a strategy pipeline where AI agents handle positioning, landing pages, ad copy, and campaign deployment. Each step feeds context into the next one. The campaign tool talks directly to Meta's API, so we can deploy and monitor ads from the same place we manage everything else.
+We also built a strategy pipeline where [AI agents](/blog/vibecoding-how-we-actually-ship-products) handle positioning, landing pages, ad copy, and campaign deployment. Each step feeds context into the next one. The campaign tool talks directly to Meta's API, so we can deploy and monitor ads from the same place we manage everything else.
 
 It's not perfect. There's no dedicated support team to call when something breaks — that's us. And there's a real discipline required to not keep adding features nobody asked for. But the tradeoff is that when we need to change something, we just change it. Last week we needed a new flag on contacts. Took an hour. No ticket, no vendor, no quarterly roadmap.
 
 ## This isn't really about us
 
-What's interesting isn't that we did this. It's that the barrier to doing it has dropped enough that most companies could build at least some of their own tools — the ones where off-the-shelf platforms are either overkill or just don't fit.
+What's interesting isn't that we did this. It's that the barrier to doing it has dropped enough that [most companies could build at least some of their own tools](/blog/what-is-vibe-coding) — the ones where off-the-shelf platforms are either overkill or just don't fit.
 
 That doesn't mean it's trivial. You still need to think about what you're building and why. Scope creep is real. Maintenance is real. But the gap between what generic platforms offer and what your business actually needs is getting easier to close.
 
-A lot of businesses are stuck with too many tools, too much manual work, and systems that are more annoying than helpful. Same goes for websites — they often become harder and more expensive to manage than they need to be.
+A lot of businesses are stuck with too many tools, too much manual work, and systems that are more annoying than helpful. Same goes for websites — they often become [harder and more expensive to manage](/blog/power-apps-code-apps-custom-ui) than they need to be.
 
 ## What this means for companies
 
 You don't have to rip out everything and start from scratch. But next time you need a new capability, it's worth asking: do we actually need another platform, or can we just build this one thing?
 
-More often than you'd expect, the answer is yes.
+More often than you'd expect, the answer is yes. If you want to talk about it, [get in touch](/contact).
