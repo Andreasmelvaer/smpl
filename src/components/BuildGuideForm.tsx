@@ -19,6 +19,7 @@ export default function BuildGuideForm() {
       email: formData.get('email'),
       company: formData.get('company'),
       currentTools: formData.get('currentTools'),
+      wantsConsultation: formData.get('wantsConsultation') === 'on',
     }
 
     try {
@@ -99,6 +100,16 @@ export default function BuildGuideForm() {
             placeholder="What tools are you frustrated with? (optional)"
           />
         </div>
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            name="wantsConsultation"
+            className="mt-0.5 w-4 h-4 rounded border-gray-300 text-lime accent-lime cursor-pointer"
+          />
+          <span className="text-sm text-gray-600 font-satoshi">
+            I&apos;d also like a <strong>free consultation</strong> on building internal tools
+          </span>
+        </label>
         <button
           type="submit"
           disabled={status === 'submitting'}

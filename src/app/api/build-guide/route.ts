@@ -98,7 +98,7 @@ function guideEmailHtml(firstName: string) {
 </html>`
 }
 
-function notificationEmailHtml(name: string, email: string, company: string | undefined, currentTools: string | undefined) {
+function notificationEmailHtml(name: string, email: string, company: string | undefined, currentTools: string | undefined, wantsConsultation?: boolean) {
   return `
 <!DOCTYPE html>
 <html>
@@ -136,6 +136,14 @@ function notificationEmailHtml(name: string, email: string, company: string | un
                   </td>
                 </tr>
               </table>` : ''}
+              ${wantsConsultation ? `
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 16px;">
+                <tr>
+                  <td style="padding: 12px 16px; background-color: #c8ff00; border-radius: 10px;">
+                    <p style="margin: 0; font-size: 14px; font-weight: 600; color: #141416;">&#9889; Wants a free consultation</p>
+                  </td>
+                </tr>
+              </table>` : ''}
               <p style="margin: 0; font-size: 14px; color: #555;">Downloaded the Build Your Own Tools Guide from <a href="https://smpl.as/build-guide" style="color: #141416;">smpl.as/build-guide</a></p>
               <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top: 24px;">
                 <tr>
@@ -156,7 +164,7 @@ function notificationEmailHtml(name: string, email: string, company: string | un
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, company, currentTools } = await request.json()
+    const { name, email, company, currentTools, wantsConsultation } = await request.json()
 
     if (!name || !email) {
       return NextResponse.json(
@@ -178,12 +186,13 @@ export async function POST(request: NextRequest) {
       from: `SmplCo Website <${process.env.SMTP_USER}>`,
       to: ['andreas@smpl.as'],
       replyTo: email,
-      subject: `New lead: ${name}${company ? ` (${company})` : ''} downloaded Build Guide`,
-      html: notificationEmailHtml(name, email, company, currentTools),
+      subject: `${wantsConsultation ? '🔥 ' : ''}New lead: ${name}${company ? ` (${company})` : ''} downloaded Build Guide${wantsConsultation ? ' — WANTS CONSULTATION' : ''}`,
+      html: notificationEmailHtml(name, email, company, currentTools, wantsConsultation),
     })
 
     // Sync to CRM
     const descParts = ['Downloaded Build Your Own Tools Guide']
+    if (wantsConsultation) descParts.push('Wants a free consultation')
     if (currentTools) descParts.push(`Frustrated with: ${currentTools}`)
 
     syncToCrm({
