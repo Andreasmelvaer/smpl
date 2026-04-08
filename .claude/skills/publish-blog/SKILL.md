@@ -94,7 +94,7 @@ slug: "{slug}"
 
 **Frontmatter rules:**
 - `date`: Use today's date unless specified otherwise
-- `author`: Ask the user. Default to "SmplCo Team" if unspecified
+- `author`: Ask the user. Use "Andreas Melvaer" or "Michael Millar" for known authors. Default to "SmplCo Team" if unspecified. An author bio section is automatically added at the bottom of every blog post for known authors (Andreas and Michael) — no need to add it manually in the markdown.
 - `readTime`: Calculate based on ~200 words per minute
 - `tags`: Choose 2-5 relevant tags from existing ones or create new ones. Existing tags in use: `Prototyping`, `AI Development`, `MVP`, `Vibecoding`, `Product Development`, `Lovable`, `AI`, `Development`, `Brand Strategy`, `Digital Innovation`, `Marketing`, `Custom Software`, `No-Code`, `Hackathon`, `Power Apps`, `SaaS`, `News`, `Awards`, `Eagle Labs`
 - `slug`: Lowercase, hyphenated, max 6-8 words. Must match the filename.

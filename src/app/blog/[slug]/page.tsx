@@ -1,9 +1,11 @@
 import { getPostData, getAllPosts } from '@/lib/markdown'
 import { generateBlogMetadata } from '@/lib/metadata'
+import { getAuthor } from '@/lib/authors'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import AuthorBio from '@/components/AuthorBio'
 import { BlogPostJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 
 interface Props {
@@ -102,6 +104,12 @@ export default async function BlogPost({ params }: Props) {
             className="prose max-w-3xl"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+
+          {/* Author bio */}
+          {(() => {
+            const author = getAuthor(post.author)
+            return author ? <AuthorBio author={author} /> : null
+          })()}
         </div>
       </article>
     )
