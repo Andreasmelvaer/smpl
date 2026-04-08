@@ -71,7 +71,23 @@ A lot of businesses are stuck with too many tools, too much manual work, and sys
   </div>
 </div>
 
-## Build vs Buy: How to Decide What's Worth Building In-House
+## Five Things You Can Do This Week to Assess Your Situation
+
+You don't need to commit to anything. But if the SaaS sprawl is starting to feel heavy, these five steps will tell you whether building makes sense for your team.
+
+**1. Audit your tool stack.** List every paid tool your team uses. Next to each one, write the percentage of features you actually use. Anything under 20% is a candidate for replacement.
+
+**2. Find your most expensive workaround.** What's the one thing your team does manually because no tool does it the way you need? That clunky spreadsheet, that copy-paste between platforms, that report someone builds by hand every Monday. That's your first build candidate.
+
+**3. Calculate what you're really paying.** Add up not just the subscription fees, but the time cost — switching between dashboards, re-entering data, waiting for vendor support. Most teams are surprised when they see the real number.
+
+**4. Pick one small thing and prototype it.** Don't start with a CRM. Start with a dashboard, an admin panel, or an internal form that replaces a manual process. Something you could build in a weekend. See how it feels to own the tool.
+
+**5. Talk to your team.** Ask them: "What tool do you dread opening every day?" The answers will tell you where the biggest wins are. People know what's broken — they just assume it can't be fixed.
+
+If you want a structured approach to all of this, our [free Build Guide](/build-guide) walks through the decision process step by step.
+
+## Build vs Buy: The Bottom Line
 
 You don't have to rip out everything and start from scratch. But next time you need a new capability, it's worth asking: do we actually need another platform, or can we just build this one thing?
 
