@@ -1,15 +1,20 @@
 ---
-title: "We Built Our Own Digital Ecosystem. Here's Why That Matters."
-description: "Most companies use ten tools and ten percent of each. We built a CRM, newsletter tool, task planner, and Meta Ads integration that actually fit how we work. Here's why more companies should do the same."
+title: "We Built Custom Internal Tools Instead of SaaS. Here's Why It Worked."
+description: "Most companies pay for 10 tools and use 10% of each. We built our own CRM, newsletter, planner, and ad tools. Here is why custom beats off-the-shelf SaaS."
 hero_image: "/images/blog/wibecoder.jpg"
+thumbnail_image: "/images/blog/wibecoder.jpg"
+slug: "build-your-own-digital-ecosystem"
 date: "2026-04-07"
 author: "Andreas Melvaer"
+excerpt: "We replaced scattered SaaS tools with a custom CRM, newsletter system, task planner, and Meta Ads integration. Here's what we learned about building internal tools."
 readTime: "3 min read"
-tags: ["Digital development", "AI"]
+tags: ["Custom Software", "SaaS", "Digital development", "AI", "CRM"]
 published: true
 ---
 
-## The problem with platforms
+**In short:** If your team spends more time switching between tools than doing actual work, you can probably build something better yourself. Modern frameworks and AI-assisted development have made it realistic for small teams to build custom CRMs, planners, and marketing tools in weeks — and own the result entirely.
+
+## The Problem with Off-the-Shelf SaaS Platforms
 
 Most companies run their business across a stack of tools they didn't choose — they inherited. A CRM here, a newsletter tool there, a project planner somewhere else, a website on a CMS that costs more to manage than it's worth.
 
@@ -17,9 +22,17 @@ You end up paying for a thousand features and using forty. Nothing connects prop
 
 We were in the same spot. We had a Framer site that was getting harder to maintain, a CRM workflow spread across spreadsheets and memory, and campaign reporting that meant logging into three different dashboards to figure out what was going on.
 
-## What we actually built
+## What We Built: CRM, Newsletter, Planner, and Ad Tools
 
-So we built our own stuff. A CRM, a newsletter tool, a task planner, and a Meta Ads integration. We moved [the website](/) off Framer and onto Next.js. The Ahrefs health score went from patchy to 100%, but more importantly the site just became easier to work with — we can change things without fighting the platform.
+So we built our own stuff — five custom tools to replace a handful of paid SaaS platforms:
+
+- **Custom CRM** — three-stage pipeline (Prospect, Active Client, Complete) replacing spreadsheet-based tracking
+- **Newsletter tool** — integrated with the same database as the CRM, no separate email platform needed
+- **Task planner** — connected to client data so we can see what work is happening for whom
+- **Meta Ads integration** — direct API connection for campaign deployment without dashboard-hopping
+- **Next.js website** — replaced the Framer CMS, achieving a 100% Ahrefs site health score
+
+We moved [the website](/) off Framer and onto Next.js. The Ahrefs health score went from patchy to 100%, but more importantly the site just became easier to work with — we can change things without fighting the platform.
 
 ![Ahrefs site audit showing 100% health score after moving off the CMS.](/images/blog/inline/ahrefs.jpg)
 
@@ -29,9 +42,16 @@ The CRM has three stages. Prospect, active client, complete. That's it. Not seve
 
 We also built a strategy pipeline where [AI agents](/blog/vibecoding-how-we-actually-ship-products) handle positioning, landing pages, ad copy, and campaign deployment. Each step feeds context into the next one. The campaign tool talks directly to Meta's API, so we can deploy and monitor ads from the same place we manage everything else.
 
-It's not perfect. There's no dedicated support team to call when something breaks — that's us. And there's a real discipline required to not keep adding features nobody asked for. But the tradeoff is that when we need to change something, we just change it. Last week we needed a new flag on contacts. Took an hour. No ticket, no vendor, no quarterly roadmap.
+**The trade-offs of building your own tools:**
 
-## This isn't really about us
+- No vendor support team — you maintain it yourself
+- Requires discipline to avoid feature creep
+- But: faster iteration — new features ship in hours, not vendor release cycles
+- Full data ownership and no per-seat licensing costs
+
+When we needed a new flag on contacts last week, it took an hour. No ticket, no vendor, no quarterly roadmap.
+
+## Why Any Company Can Build Custom Internal Tools
 
 What's interesting isn't that we did this. It's that the barrier to doing it has dropped enough that [most companies could build at least some of their own tools](/blog/what-is-vibe-coding) — the ones where off-the-shelf platforms are either overkill or just don't fit.
 
@@ -51,8 +71,24 @@ A lot of businesses are stuck with too many tools, too much manual work, and sys
   </div>
 </div>
 
-## What this means for companies
+## Build vs Buy: How to Decide What's Worth Building In-House
 
 You don't have to rip out everything and start from scratch. But next time you need a new capability, it's worth asking: do we actually need another platform, or can we just build this one thing?
 
 More often than you'd expect, the answer is yes. If you want to talk about it, [get in touch](/contact).
+
+---
+
+## Frequently Asked Questions
+
+**Is it realistic for a small team to build their own internal tools?**
+
+Yes. With modern frameworks like Next.js and AI-assisted coding tools like Claude Code, a team of two to three developers can build a functional CRM, task planner, or newsletter tool in a few weeks. The key is scoping tightly and resisting feature creep.
+
+**What are the main risks of building instead of buying?**
+
+You take on maintenance responsibility, you don't get a vendor support team, and you need the discipline to keep scope small. But you gain full ownership, zero per-seat costs, and the ability to ship changes in hours instead of waiting for vendor roadmaps.
+
+**How do you decide what to build vs what to buy?**
+
+Ask yourself: "Are we using less than 20% of this tool's features?" If yes, you are paying for complexity you don't need. Build when your workflow is specific enough that no off-the-shelf tool fits well. Our [free Build Guide](/build-guide) walks through the full decision process.
