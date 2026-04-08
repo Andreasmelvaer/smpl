@@ -122,9 +122,6 @@ export default function BuildGuideForm() {
             Something went wrong. Please try again.
           </p>
         )}
-        <p className="text-xs text-gray-400 text-center">
-          No spam, no sales pitch. Just the guide.
-        </p>
       </form>
     </div>
   )
