@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Book a Discovery Call | SmplCo',
   description:
-    'Schedule a free 30-minute discovery call with the SmplCo team. We'll explore your idea, challenge, or project and see how we can help.',
+    "Schedule a free 30-minute discovery call with the SmplCo team. We'll explore your idea, challenge, or project and see how we can help.",
   alternates: { canonical: 'https://smpl.as/book' },
 }
 
