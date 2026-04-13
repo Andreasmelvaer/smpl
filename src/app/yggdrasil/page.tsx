@@ -4,7 +4,7 @@ import DesignerQuiz from './DesignerQuiz'
 export const metadata: Metadata = {
   title: 'What Kind of Designer Are You?',
   description:
-    'Take this sassy quiz to find your designer archetype. Are you a Pixel Perfectionist, a Vibes-Only Designer, or something worse?',
+    'Ta denne quizen og finn din designer-arketype. E du ein nevrotisk piksel-tellar, ein kaotisk kreativ, eller noko verre? 5 sliders. Full diagnose.',
   alternates: { canonical: 'https://smpl.as/yggdrasil' },
   openGraph: {
     title: 'What Kind of Designer Are You?',
