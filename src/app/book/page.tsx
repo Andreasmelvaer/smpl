@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 const BOOKING_URL =
-  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2dNE4ZRcGeXoTEiwHFiLghkuATnFoBjS0XGzQF-nIRvKgvDjDymlIk4104XK0pHlUGWfaspmNp?gv=true";
+  "https://calendar.app.google/kTDEUizw376ypQ3T9";
 
 const steps = [
   {
