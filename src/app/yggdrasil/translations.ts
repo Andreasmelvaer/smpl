@@ -210,7 +210,7 @@ export interface ArchetypeData {
 export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
   no: {
     neurotic: {
-      name: 'Piksel-Nevrotikaren',
+      name: 'Piksel-Pedanten',
       tagline: 'E den 1px ute? Ja. Ja, det e den.',
       description:
         'Du har zooma inn te 6400% fleire gonger enn du har ringt mora di. Du dør på haugen av optisk justering, og ærlig talt? Den haugen ser fantastisk kerna ut. Figma-filene dine e plettfrie. Fristane dine e ein vits.',
@@ -220,7 +220,7 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       prescription: 'Gå ut. Ta på gras. Pikslane e der når du kjem tilbake.',
     },
     imposter: {
-      name: 'Svindlaren Som Levere',
+      name: 'Lurendreiaren Som Faen Meg Levere',
       tagline: 'Eg aner ikkje ka eg gjer og det funke kver gong.',
       description:
         'Du datt inn i design fordi någen sa \"du har god smak\" og nå e du her, 4 år inn, og krangle om border-radius. Du lærte Figma på YouTube. Det første designsystemet ditt va eit Google Doc. Du e likavel den beste designaren på teamet og du aner ikkje korfor.',
@@ -230,7 +230,7 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       prescription: 'Slutt å samanlikna deg med folk på Dribbble. Dei faker det og.',
     },
     helvetica: {
-      name: 'Helvetica-Fanatikaren',
+      name: 'Pastor Helvetica Nøye',
       tagline: 'Ein font. Ein font løyste alt.',
       description:
         'Du trur typografi nådde toppen i 1957 og alt etterpå e støy. Du har ein t-skjorte med Helvetica på. Du har FLEIRE t-skjorter med Helvetica på. Når någen bruke Comic Sans dør ein liten del av deg. Den delen veks aldri tilbake.',
@@ -250,7 +250,7 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       prescription: 'Flytt ein komponent 3px te venstre. Pust. Du lever fortsatt.',
     },
     chaotic: {
-      name: 'Kaos-Kreansen',
+      name: 'Kaos-Kunstnaren',
       tagline: 'Grid? Aldri høyrt om det.',
       description:
         'Ingen grid. Ingen reglar. Ingen lagra filer. Du designar som du lever — farleg og rotehovud. Moodboarda dine har moodboard. Du har ein gong kalt ein knapp \"emosjonelt utilgjengeleg\". Kundane elske presentasjonane dine. Utviklare vil ha deg arrestert.',
@@ -260,7 +260,7 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       prescription: 'Lagre filen. LAGRE FILEN. Ctrl+S. Gjer det nå.',
     },
     hoarder: {
-      name: 'Komponent-Kongen med Tvangstankår',
+      name: 'Komponent-Kongen med Kontrollbehov',
       tagline: 'Det der e ikkje i komponentbiblioteket.',
       description:
         'Du har 847 komponentar i Figma-biblioteket ditt. 12 av dei e i bruk. Du har variantar av variantar. Auto-layout inni auto-layout inni auto-layout. Filene dine e arkitektoniske meisterverk som ingen tør å røra.',
@@ -270,7 +270,7 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       prescription: 'Slett ein komponent. Berre ein. Sjå ka som skjer. Hint: ingenting.',
     },
     awkward: {
-      name: 'Handverkaren Som Ikkje Snakke',
+      name: 'Den Tause Pikselsnekkaren',
       tagline: 'Eg kommunisere berre gjennom Figma-kommentarar.',
       description:
         'Du seie ikkje eit ord i møter. Du nikke, tar notat, og gjer akkurat det du vil etterpå uansett. Designa dine e fantastiske. Presentasjonane dine e eit krigsområde. Du har sagt \"berre sjå i Figma-fila\" minst 400 gonger.',
