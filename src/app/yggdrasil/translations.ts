@@ -22,9 +22,9 @@ export const ui = {
     title1: 'Ka slags',
     titleHighlight: 'designer',
     title2: 'e du eigentleg?',
-    tagline: '5 spørsmål. Null dømming.\nOk, kanskje litt.',
+    tagline: '5 spørsmål. Null dømmekraft.\nOk, kanskje litt.',
     start: 'Finn ut (om du tør)',
-    disclaimer: 'Resultata dine blir brukt mot deg. Ikkje juridisk. Sosialt.',
+    disclaimer: 'Resultata dine bli brukt mot deg. Ikkje juridisk. Sosialt.',
     next: 'Neste',
     prev: 'Tilbake',
     seeResult: 'Vis meg sannheita',
@@ -36,7 +36,7 @@ export const ui = {
     share: 'Del resultatet',
     copied: 'Kopiert!',
     retake: 'Ta testen på nytt',
-    ctaTitle: 'Vil du sjå ka ekte designarar faktisk lage?',
+    ctaTitle: 'Vil du sjå ka ekte designarar faktisk levere?',
     ctaSubtitle: 'Teamet vårt har designa produkt for 125+ selskap.\nIngen shade. Ok, litt shade.',
     ctaButton: 'Sjå porteføljen →',
     langToggle: 'EN',
@@ -74,11 +74,11 @@ export const ui = {
 export const sliderCommentary = {
   shape: {
     no: [
-      'Skarpe hjørne. Du e typen som stryke skjortene sine. Og kalkulatoren.',
-      'Litt avrunda. Du prøve å virka chill, men du e det ikkje.',
-      'Squircle. Du bruke ein iPhone og du har latt Apple bestemma smaken din.',
+      'Skarpe hjørna. Du e typen som stryke skjortene sine. Og kalkulatoren.',
+      'Litt avrunda. Du prøve å verka chill, men du e det ikkje.',
+      'Squircle. Du bruke iPhone og har latt Apple bestemma smaken din.',
       'Nesten sirkel. Du huske ikkje sist du brukte ein linjal.',
-      'Perfekt sirkel. Du har ikkje grenser. Bokstavelig talt.',
+      'Perfekt sirkel. Du har ikkje grensar. Bokstavelig talt.',
     ],
     en: [
       "Sharp corners. You iron your shirts. And your calculator, la.",
@@ -91,10 +91,10 @@ export const sliderCommentary = {
   typography: {
     no: [
       'Monospace. Du skriv kode i terminalen og kalle det \"design\".',
-      'Sans-serif. Du e trygg. Kjedelig, men trygg. Som Grandiosa.',
-      'Slab serif. Du har ein \"vintage\" sykkel og ein kaffi-kvern frå Japan.',
+      'Sans-serif. Du e trygg. Kjedelig, men trygg. Som ein Grandiosa.',
+      'Slab serif. Du har ein \"vintage\" sykkel og ein kaffikvern frå Japan.',
       'Serif. Du trur du e betre enn alle andre. Og du har kanskje rett.',
-      'Old style. Du har lese minst tre bøker om typografi. Ingen bad deg.',
+      'Old style. Du har lest minst tre bøger om typografi. Ingen ba deg.',
       'Wild West-font. Du har gitt opp. Respekt.',
     ],
     en: [
@@ -108,11 +108,11 @@ export const sliderCommentary = {
   },
   layout: {
     no: [
-      'Ein kolonne. Du les avisa og du like det enkelt. Som bestefar.',
+      'Ein kolonne. Du les avisa og like det enkelt. Som bestefa.',
       'To kolonnar. Du e ein ansvarleg vaksen. Kjedelig, men funksjonell.',
-      'Grid. Du har eit rekneark for alt. Inkludert kjensler.',
-      'Asymmetrisk. Du trur du e kunstnar. Utviklaren din gret.',
-      'Ingen grid. Kaos. Du lagrar ikkje filene dine heller, gjer du?',
+      'Grid. Du har eit regneark for alt. Inkludert følelsår.',
+      'Asymmetrisk. Du trur du e kunstnar. Utviklaren din græt.',
+      'Ingen grid. Kaos. Du lagrar ikkje filene dine heller, gjer du vel?',
     ],
     en: [
       "One column. You read the paper and like it simple. Like your nan.",
@@ -125,10 +125,10 @@ export const sliderCommentary = {
   colour: {
     no: [
       'Svart og kvitt. Du e enten ein minimalist eller ein vampyr.',
-      'Jordtonar. Du kjøpe møbler på Fretex og kalle det \"kuratert\".',
-      'Brand-fargar. Du følgje reglane. HR elske deg. Ingen andre gjer det.',
+      'Jordfargar. Du kjøpe møbler på Fretex og kalle det \"kuratert\".',
+      'Brand-fargar. Du følge reglane. HR elske deg. Ingen andre gjer det.',
       'Neon. Du har ikkje sove på 3 dagar og det SER ut som det.',
-      'Full regnboge. Du e enten 6 år eller ein genial galning.',
+      'Full regnboge. Du e enten 6 år gammal eller ein genial galansen.',
     ],
     en: [
       "Black and white. You're either a minimalist or a vampire.",
@@ -140,10 +140,10 @@ export const sliderCommentary = {
   },
   motion: {
     no: [
-      'Ingen animasjon. Du trur rørsle e ein distraksjon. Du e gøy på festar.',
+      'Ingen animasjon. Du trur bevegelse e ein distraksjon. Du e gøy på festar.',
       'Subtil fade. Du e den typen som seie \"less is more\" uironisk.',
       'Smooth ease. Du e balansert. Mistenkelig balansert.',
-      'Spring/bounce. Du har for mykje energi og alle rundt deg e utslitne.',
+      'Spring/bounce. Du har for mykje energi og alle rundt deg e heilt utslitne.',
       'Total sirkus. Du e eit menneskeleg ADHD-fyrverkeri og eg elske det.',
     ],
     en: [
@@ -166,7 +166,7 @@ export const sliderLabels = {
     en: "What shape are you, la?",
   },
   typography: {
-    no: 'Velg din font-sjel',
+    no: 'Vel din font-sjel',
     en: "Pick your font soul",
   },
   layout: {
@@ -178,7 +178,7 @@ export const sliderLabels = {
     en: "What colour gets you goin'?",
   },
   motion: {
-    no: 'Kor mykje rørsle tåle du?',
+    no: 'Kor mykje bevegelse tåle du?',
     en: "How much motion can you handle?",
   },
 } as const
@@ -213,7 +213,7 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       name: 'Piksel-Pedanten',
       tagline: 'E den 1px ute? Ja. Ja, det e den.',
       description:
-        'Du har zooma inn te 6400% fleire gonger enn du har ringt mora di. Du dør på haugen av optisk justering, og ærlig talt? Den haugen ser fantastisk kerna ut. Figma-filene dine e plettfrie. Fristane dine e ein vits.',
+        'Du har zooma inn te 6400% fleire gonger enn du har ringt mora di. Du dør på haugen av optisk justering, og ærlig talt? Den haugen ser fokkings fantastisk kerna ut. Figma-filene dine e plettfrie. Fristane dine e ein vits.',
       diagnosis: 'Terminal kerning-angst med kronisk piksel-dysmorphi',
       strength: 'Handverk som får andre designarar te å grina i stillheit',
       weakness: 'Har aldri levert noko før universet kollapsar',
@@ -223,7 +223,7 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       name: 'Lurendreiaren Som Faen Meg Levere',
       tagline: 'Eg aner ikkje ka eg gjer og det funke kver gong.',
       description:
-        'Du datt inn i design fordi någen sa \"du har god smak\" og nå e du her, 4 år inn, og krangle om border-radius. Du lærte Figma på YouTube. Det første designsystemet ditt va eit Google Doc. Du e likavel den beste designaren på teamet og du aner ikkje korfor.',
+        'Du datt inn i design fordi någen sa \"du har god smak\" og nå e du her, 4 år seinare, og krangle om border-radius. Du lærte Figma på YouTube. Det første designsystemet ditt va eit Google Doc. Du e likevel den beste designaren på teamet og du aner ikkje korfor.',
       diagnosis: 'Kronisk bedragarsyndrom med paradoksal kompetanse',
       strength: 'Pragmatisme som puristar hemmeleg misunne',
       weakness: 'Har begått synden å designa i nettlesaren',
@@ -234,7 +234,7 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       tagline: 'Ein font. Ein font løyste alt.',
       description:
         'Du trur typografi nådde toppen i 1957 og alt etterpå e støy. Du har ein t-skjorte med Helvetica på. Du har FLEIRE t-skjorter med Helvetica på. Når någen bruke Comic Sans dør ein liten del av deg. Den delen veks aldri tilbake.',
-      diagnosis: 'Monotypografisk tvangsliding med akutt font-intoleranse',
+      diagnosis: 'Monotypografisk tvangsnevrose med akutt font-intoleranse',
       strength: 'Konsistens som ville fått eit sveitsisk tog te å rødma',
       weakness: 'Har avvist eit design fordi fonten \"mangla sjel\" (det va Arial)',
       prescription: 'Prøv ein ny font. Bare ein. Du klare det. Kanskje.',
@@ -243,7 +243,7 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       name: 'Grid-Diktatoren',
       tagline: 'Det der e ikkje på 8px-gridet.',
       description:
-        'Du har namngitt kvar einaste nyanse av grått. To gonger. Du skreiv eit 47-siders dokument om knapp-tilstandar og kjente berre glede. Du ser ein uautorisert border-radius og auget ditt rykke. Du trur på systemet. Systemet e alt.',
+        'Du har gitt namn te kvar einaste nyanse av grått. To gonger. Du skreiv eit 47-siders dokument om knapp-tilstandar og kjente berre glede. Du ser ein uautorisert border-radius og auget ditt ryk. Du trur på systemet. Systemet e alt.',
       diagnosis: 'Obsessiv-kompulsiv grid-forstyrring (OKGF)',
       strength: 'Orden som ville fått Marie Kondo te å føla seg rotete',
       weakness: 'Har nekta eit design fordi \"Coral ikkje e i paletten\"',
@@ -253,9 +253,9 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       name: 'Kaos-Kunstnaren',
       tagline: 'Grid? Aldri høyrt om det.',
       description:
-        'Ingen grid. Ingen reglar. Ingen lagra filer. Du designar som du lever — farleg og rotehovud. Moodboarda dine har moodboard. Du har ein gong kalt ein knapp \"emosjonelt utilgjengeleg\". Kundane elske presentasjonane dine. Utviklare vil ha deg arrestert.',
+        'Ingen grid. Ingen reglar. Ingen lagra filer. Du designar som du lever — farleg og uorganisert. Moodboarda dine har moodboard. Du kalla ein gong ein knapp \"emosjonelt utilgjengelig\". Kundane elske presentasjonane dine. Utviklare vil ha deg arrestert.',
       diagnosis: 'Kreativt kaos-syndrom med anti-autoritær layout-tendens',
-      strength: 'Kan få ein 404-side te å kjennast som ein åndelig opplevelse',
+      strength: 'Kan få ein 404-side te å føles som ein åndelig opplevelse',
       weakness: 'Har brukt \"den treng berre å pusta\" i ein designgjennomgang',
       prescription: 'Lagre filen. LAGRE FILEN. Ctrl+S. Gjer det nå.',
     },
@@ -275,7 +275,7 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       description:
         'Du seie ikkje eit ord i møter. Du nikke, tar notat, og gjer akkurat det du vil etterpå uansett. Designa dine e fantastiske. Presentasjonane dine e eit krigsområde. Du har sagt \"berre sjå i Figma-fila\" minst 400 gonger.',
       diagnosis: 'Sosial designar-angst med selektiv kommunikasjonssvikt',
-      strength: 'Lagar ting som e so bra at folk gløyme at du aldri snakka i møtet',
+      strength: 'Lagar ting som e so bra at folk glemme at du aldri snakka i møtet',
       weakness: 'Har sendt ein Figma-lenke som svar på \"kordan går det?\"',
       prescription: 'Sei ein ting i neste møte. Ka som helst. \"Fin knapp\" tel.',
     },
@@ -283,9 +283,9 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       name: '\"Eg E Eigentleg Ikkje Ein Designar\"',
       tagline: 'Eg sko jo bli utviklar.',
       description:
-        'Du hamna i design ved ein feil og nå e det for seint å snu. Du kan koda. Du kan designa. Du kan ingenting av det ordentleg, men på ein eller annan måte e du betre enn dei fleste. Kollegaene dine trur du e ein genial hybrid. Du veit at du berre e forvirra.',
+        'Du hamna i design ved ein feil og nå e det for seint å snu. Du kan koda. Du kan designa. Du kan ingenting av det ordentleg, men på ein eller annan måte e du betre enn dei fleste. Kollegane dine trur du e ein genial hybrid. Du veit at du berre e forvirra.',
       diagnosis: 'Identitetskrise med tverrfagleg forvirring',
-      strength: 'Kan levera eit heilt produkt åleine (og hata kvar einaste piksel)',
+      strength: 'Kan levera eit heilt produkt åleine (og hate kvar einaste piksel)',
       weakness: 'Har googla \"e det for seint å bli noko anna\" minst 200 gonger',
       prescription: 'Aksepter det. Du e ein designar. Det e for seint. Velkommen.',
     },
