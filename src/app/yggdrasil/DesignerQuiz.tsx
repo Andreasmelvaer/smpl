@@ -287,14 +287,30 @@ export default function DesignerQuiz() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [phase])
 
-  // Language toggle button (shown on all phases)
+  // Language toggle (shown on all phases)
   const LangToggle = (
-    <button
-      onClick={toggleLocale}
-      className="fixed top-20 right-4 z-50 px-3 py-1.5 bg-white/10 backdrop-blur-sm text-white text-xs font-mono rounded-full border border-white/20 hover:bg-white/20 transition-colors cursor-pointer"
-    >
-      {t.langToggle}
-    </button>
+    <div className="fixed top-20 right-4 z-50 flex bg-white/10 backdrop-blur-sm rounded-full border border-white/20 overflow-hidden">
+      <button
+        onClick={() => setLocale('no')}
+        className={`px-3 py-1.5 text-xs font-mono transition-colors cursor-pointer ${
+          locale === 'no'
+            ? 'bg-lime text-gray-900 font-semibold'
+            : 'text-white/60 hover:text-white hover:bg-white/10'
+        }`}
+      >
+        Siddis
+      </button>
+      <button
+        onClick={() => setLocale('en')}
+        className={`px-3 py-1.5 text-xs font-mono transition-colors cursor-pointer ${
+          locale === 'en'
+            ? 'bg-lime text-gray-900 font-semibold'
+            : 'text-white/60 hover:text-white hover:bg-white/10'
+        }`}
+      >
+        Scouse
+      </button>
+    </div>
   )
 
   // ---------------------------------------------------------------------------
