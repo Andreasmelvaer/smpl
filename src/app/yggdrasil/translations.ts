@@ -95,7 +95,7 @@ export const sliderCommentary = {
       'Slab serif. Du har ein \"vintage\" sykkel og ein kaffikvern frå Japan.',
       'Serif. Du trur du e betre enn alle andre. Og du har kanskje rett.',
       'Old style. Du har lest minst tre bøger om typografi. Ingen ba deg.',
-      'Wild West-font. Du har gitt opp. Respekt.',
+      'Papyrus. Du har gitt opp. Som han som lagde Avatar-logoen. Ryan Gosling græt.',
     ],
     en: [
       "Monospace. Yer writin code in the terminal and callin it \"design\". Behave.",
@@ -103,7 +103,7 @@ export const sliderCommentary = {
       "Slab serif. Got a \"vintage\" bike, haven't yer. And a coffee grinder from Japan. Boss that.",
       "Serif. Think yer better than everyone, don't yer. And honest to God, yer might be right.",
       "Old style. Yer've read three books on typography. Nobody asked yer to, la.",
-      "Wild West font. Yer've given up, haven't yer. Fair play. Respect.",
+      "Papyrus. Yer've given up, haven't yer. Like the fella who did the Avatar logo. Ryan Gosling's fumin.",
     ],
   },
   layout: {

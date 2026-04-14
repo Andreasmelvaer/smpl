@@ -36,7 +36,7 @@ const FONT_FAMILIES = [
   '"Rockwell", "Roboto Slab", serif',
   '"Georgia", "Times New Roman", serif',
   '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-  '"Playfair Display", "Rye", fantasy, cursive',
+  'Papyrus, fantasy, cursive',
 ]
 
 function TypographyPreview({ value, locale }: { value: number; locale: Locale }) {
