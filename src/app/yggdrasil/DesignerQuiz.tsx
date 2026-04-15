@@ -234,50 +234,31 @@ function SliderStep({ sliderKey, value, onChange, locale }: SliderStepProps) {
 // ---------------------------------------------------------------------------
 
 function BrowseCarousel({ locale, currentKey }: { locale: Locale; currentKey: ArchetypeKey }) {
-  const scrollRef = useRef<HTMLDivElement>(null)
   const allKeys = Object.keys(archetypes[locale]) as ArchetypeKey[]
-  const [activeIdx, setActiveIdx] = useState(() => {
-    const idx = allKeys.indexOf(currentKey)
-    return idx >= 0 ? idx : 0
-  })
+  const startIdx = Math.max(0, allKeys.indexOf(currentKey))
+  const [activeIdx, setActiveIdx] = useState(startIdx)
+  const touchStartX = useRef(0)
 
-  const scrollTo = useCallback((idx: number) => {
-    if (!scrollRef.current) return
-    const container = scrollRef.current
-    const child = container.children[idx] as HTMLElement
-    if (!child) return
-    const offset = child.offsetLeft - container.offsetWidth / 2 + child.offsetWidth / 2
-    container.scrollTo({ left: offset, behavior: 'smooth' })
+  const goTo = (idx: number) => {
+    if (idx < 0 || idx >= allKeys.length) return
     setActiveIdx(idx)
-  }, [])
+  }
 
-  // Scroll to current result on mount
-  useEffect(() => {
-    const idx = allKeys.indexOf(currentKey)
-    if (idx >= 0) setTimeout(() => scrollTo(idx), 100)
-  }, [currentKey, allKeys, scrollTo])
-
-  // Detect active item on scroll
-  useEffect(() => {
-    const container = scrollRef.current
-    if (!container) return
-    const handleScroll = () => {
-      const center = container.scrollLeft + container.offsetWidth / 2
-      let closest = 0
-      let minDist = Infinity
-      Array.from(container.children).forEach((child, i) => {
-        const el = child as HTMLElement
-        const elCenter = el.offsetLeft + el.offsetWidth / 2
-        const dist = Math.abs(center - elCenter)
-        if (dist < minDist) { minDist = dist; closest = i }
-      })
-      setActiveIdx(closest)
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const diff = touchStartX.current - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 50) {
+      goTo(activeIdx + (diff > 0 ? 1 : -1))
     }
-    container.addEventListener('scroll', handleScroll, { passive: true })
-    return () => container.removeEventListener('scroll', handleScroll)
-  }, [])
+  }
 
   const t = ui[locale]
+  const prevIdx = activeIdx > 0 ? activeIdx - 1 : null
+  const nextIdx = activeIdx < allKeys.length - 1 ? activeIdx + 1 : null
+  const activeArch = archetypes[locale][allKeys[activeIdx]]
+  const activeImg = archetypeImages[allKeys[activeIdx]]
 
   return (
     <div className="border-t border-white/10 pt-10 mb-12 motion-safe:animate-[fadeInUp_0.6s_ease-out_0.7s_both]">
@@ -286,62 +267,66 @@ function BrowseCarousel({ locale, currentKey }: { locale: Locale; currentKey: Ar
       </p>
 
       {/* Carousel */}
-      <div className="relative -mx-5">
-        {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none" />
+      <div
+        className="relative flex items-center justify-center min-h-[220px]"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* Previous (peeking left) */}
+        {prevIdx !== null && (
+          <button
+            onClick={() => goTo(prevIdx)}
+            className="absolute left-0 w-20 md:w-28 opacity-20 scale-75 transition-all duration-500 ease-out cursor-pointer z-0"
+          >
+            {archetypeImages[allKeys[prevIdx]] ? (
+              <Image src={archetypeImages[allKeys[prevIdx]]!} alt="" width={120} height={120} className="w-full object-contain" />
+            ) : (
+              <div className="w-20 h-20 mx-auto rounded-full bg-white/10 flex items-center justify-center"><span className="text-2xl">?</span></div>
+            )}
+          </button>
+        )}
 
-        <div
-          ref={scrollRef}
-          className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-[calc(50%-100px)] pb-4"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
-        >
-          {allKeys.map((key, i) => {
-            const arch = archetypes[locale][key]
-            const img = archetypeImages[key]
-            const isCenter = i === activeIdx
-            return (
-              <button
-                key={key}
-                onClick={() => scrollTo(i)}
-                className={`flex-shrink-0 snap-center w-[200px] rounded-2xl p-5 text-center cursor-pointer transition-all duration-500 ease-out ${
-                  isCenter
-                    ? 'opacity-100 scale-100'
-                    : 'opacity-30 scale-90'
-                }`}
-              >
-                {img ? (
-                  <Image
-                    src={img}
-                    alt={arch.name}
-                    width={160}
-                    height={160}
-                    className="w-32 h-32 mx-auto object-contain mb-3"
-                  />
-                ) : (
-                  <div className="w-32 h-32 mx-auto mb-3 rounded-full bg-white/10 flex items-center justify-center">
-                    <span className="text-3xl">?</span>
-                  </div>
-                )}
-                <p className={`text-xs font-semibold transition-colors duration-500 ${
-                  isCenter ? 'text-lime' : 'text-white'
-                }`}>
-                  {arch.name}
-                </p>
-              </button>
-            )
-          })}
+        {/* Active (center) */}
+        <div className="text-center transition-all duration-500 ease-out z-10">
+          {activeImg ? (
+            <Image
+              src={activeImg}
+              alt={activeArch.name}
+              width={180}
+              height={180}
+              className="w-36 h-36 md:w-44 md:h-44 mx-auto object-contain mb-3"
+            />
+          ) : (
+            <div className="w-36 h-36 md:w-44 md:h-44 mx-auto mb-3 rounded-full bg-white/10 flex items-center justify-center">
+              <span className="text-4xl">?</span>
+            </div>
+          )}
+          <p className="text-sm font-semibold text-lime">{activeArch.name}</p>
         </div>
+
+        {/* Next (peeking right) */}
+        {nextIdx !== null && (
+          <button
+            onClick={() => goTo(nextIdx)}
+            className="absolute right-0 w-20 md:w-28 opacity-20 scale-75 transition-all duration-500 ease-out cursor-pointer z-0"
+          >
+            {archetypeImages[allKeys[nextIdx]] ? (
+              <Image src={archetypeImages[allKeys[nextIdx]]!} alt="" width={120} height={120} className="w-full object-contain" />
+            ) : (
+              <div className="w-20 h-20 mx-auto rounded-full bg-white/10 flex items-center justify-center"><span className="text-2xl">?</span></div>
+            )}
+          </button>
+        )}
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center gap-2 mt-4">
+      <div className="flex justify-center gap-2 mt-6">
         {allKeys.map((_, i) => (
           <button
             key={i}
-            onClick={() => scrollTo(i)}
-            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-              i === activeIdx ? 'bg-lime w-4' : 'bg-white/20'
+            onClick={() => goTo(i)}
+            className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+              i === activeIdx ? 'bg-lime w-4' : 'bg-white/20 w-1.5'
             }`}
           />
         ))}
