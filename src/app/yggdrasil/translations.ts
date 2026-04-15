@@ -46,7 +46,7 @@ export const ui = {
     title1: 'Go ed then, what kind of',
     titleHighlight: 'designer',
     title2: 'are yer?',
-    tagline: "5 questions. No judgment.\nAlright, maybe a bit, la.",
+    tagline: "5 questions. No judgment.\nAlright, maybe a bit.",
     start: "Go ed then, if yer 'ard enough",
     disclaimer: "Yer results will be used against yer. Not legally like. Just socially.",
     next: 'Go ed',
@@ -82,7 +82,7 @@ export const sliderCommentary = {
     ],
     en: [
       "Sharp corners. Yer the type who irons their shirts, aren't yer. And the calculator an all.",
-      "Bit rounded. Tryin to look chill but yer dead not, la. We can all tell.",
+      "Bit rounded. Tryin to look chill but yer dead not. We can all tell.",
       "Squircle. Got an iPhone, haven't yer. Let Apple decide yer whole taste. Sound.",
       "Nearly a circle. Can't remember the last time yer used a ruler, can yer.",
       "Perfect circle. No boundaries whatsoever. Literally none. Are yer alright?",
@@ -102,7 +102,7 @@ export const sliderCommentary = {
       "Sans-serif. Dead safe. Boring, but safe. Like a chippy tea on a Friday.",
       "Slab serif. Got a \"vintage\" bike, haven't yer. And a coffee grinder from Japan. Boss that.",
       "Serif. Think yer better than everyone, don't yer. And honest to God, yer might be right.",
-      "Old style. Yer've read three books on typography. Nobody asked yer to, la.",
+      "Old style. Yer've read three books on typography. Nobody asked yer to.",
       "Papyrus. Yer've given up, haven't yer. Like the fella who did the Avatar logo. Ryan Gosling's fumin.",
     ],
   },
@@ -134,7 +134,7 @@ export const sliderCommentary = {
       "Black and white. Yer either a minimalist or a vampire. Could go either way honestly.",
       "Earth tones. Buyin furniture off Facebook Marketplace and callin it \"curated\". Nice one.",
       "Brand colours. Yer follow the rules, don't yer. HR love yer. Nobody else does.",
-      "Neon. Haven't slept in 3 days and it SHOWS, la. Are yer alright?",
+      "Neon. Haven't slept in 3 days and it SHOWS. Are yer alright?",
       "Full rainbow. Yer either 6 years old or an absolute mad genius. No in-between.",
     ],
   },
@@ -149,7 +149,7 @@ export const sliderCommentary = {
     en: [
       "No animation. Think motion's a distraction, don't yer. Bet yer dead fun at parties an all.",
       "Subtle fade. Yer the type who says \"less is more\" without a shred of irony. Behave.",
-      "Smooth ease. Yer balanced. Suspiciously balanced. What yer hidin, la?",
+      "Smooth ease. Yer balanced. Suspiciously balanced. What yer hidin?",
       "Spring/bounce. Too much energy, yer. Everyone round yer is absolutely knackered.",
       "Total sirkus. Yer a human ADHD firework and honest to God, I love it.",
     ],
@@ -163,7 +163,7 @@ export const sliderCommentary = {
       'MEGA skugge. Du e ein PowerPoint-designer og du har ingen skam.',
     ],
     en: [
-      "No shadow. Yer flat. Literally and personality-wise, la.",
+      "No shadow. Yer flat. Literally and personality-wise.",
       "Bit of shadow. Want depth but yer scared of commitment, aren't yer.",
       "Medium shadow. Balanced. Yer probably read design blogs an all.",
       "Heavy shadow. Yer miss 2012, don't yer. All yer buttons look like they're floatin.",
@@ -183,7 +183,7 @@ export const sliderLabels = {
   },
   typography: {
     no: 'Vel din font-sjel',
-    en: "Pick yer font soul, la",
+    en: "Pick yer font soul",
   },
   layout: {
     no: 'Kor organisert e du, egentlig?',
@@ -195,7 +195,7 @@ export const sliderLabels = {
   },
   motion: {
     no: 'Kor mykje bevegelse tåle du?',
-    en: "How much motion can yer handle, la?",
+    en: "How much motion can yer handle?",
   },
   shadow: {
     no: 'Kor mykje drop shadow tåle du?',
@@ -323,7 +323,7 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
   en: {
     neurotic: {
       name: 'The Pixel Pedant',
-      tagline: "Is that 1px off? Yeah. Yeah it is, la.",
+      tagline: "Is that 1px off? Yeah. Yeah it is.",
       description:
         "Yer've zoomed into 6400% more times than yer've rung yer ma. Yer'll die on the hill of optical alignment, and honestly? That hill looks dead beautifully kerned. Yer Figma files are immaculate. Yer deadlines are an absolute joke.",
       diagnosis: 'Terminal kerning anxiety with chronic pixel dysmorphia',
@@ -353,23 +353,23 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
     },
     gridDictator: {
       name: 'The Grid Dictator',
-      tagline: "That's not on the 8px grid, la. Don't even start.",
+      tagline: "That's not on the 8px grid. Don't even start.",
       description:
         "Yer've named every shade of grey. Twice. Wrote a 47-page document about button states and felt nothin but pure joy. Yer see a rogue border-radius and yer eye goes. Yer believe in the system. The system is everythin. Don't even try it.",
       diagnosis: 'Obsessive-Compulsive Grid Disorder (OCGD)',
       strength: "Order that'd make Marie Kondo feel dead messy",
       weakness: "Rejected a design cos \"Coral isn't in the palette.\" Honest to God.",
-      prescription: "Move a component 3px to the left. Breathe. Yer still alive, la.",
+      prescription: "Move a component 3px to the left. Breathe. Yer still alive.",
     },
     chaotic: {
       name: 'The Chaotic Creative',
-      tagline: "Grid? Never heard of her, la.",
+      tagline: "Grid? Never heard of her.",
       description:
         "No grid. No rules. No saved files. Yer design like yer live — dangerously and all over the gaff. Yer mood boards have mood boards. Once described a button as \"emotionally unavailable.\" Clients love yer presentations. Developers want yer arrested.",
       diagnosis: 'Creative chaos disorder with anti-authoritarian layout tendencies',
       strength: "Can make a 404 page feel like a spiritual experience, honest",
       weakness: "Has used \"it just needs to breathe\" in a design review. Are yer jokin.",
-      prescription: "Save the file. SAVE THE FILE. Ctrl+S. Do it now, la.",
+      prescription: "Save the file. SAVE THE FILE. Ctrl+S. Do it now.",
     },
     hoarder: {
       name: 'The Component King with Control Issues',
@@ -379,7 +379,7 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       diagnosis: 'Component hoarding with chronic over-engineering',
       strength: "Yer design system is a proper work of art",
       weakness: "Spends 4 hours buildin a component nobody asked for. Every. Single. Time.",
-      prescription: "Delete a component. Just the one. See what happens. Hint: nothin, la.",
+      prescription: "Delete a component. Just the one. See what happens. Hint: nothin.",
     },
     awkward: {
       name: 'The Silent Pixel Craftsperson',
@@ -389,7 +389,7 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       diagnosis: 'Social designer anxiety with selective communication disorder',
       strength: "Makes things so good people forget yer never spoke in the meeting",
       weakness: "Has sent a Figma link in response to \"yer alright?\" Are yer havin a laugh.",
-      prescription: "Say one thing in the next meeting. Anythin. \"Nice button\" counts, la.",
+      prescription: "Say one thing in the next meeting. Anythin. \"Nice button\" counts.",
     },
     notDesigner: {
       name: "\"I'm Not Really A Designer, Me\"",
