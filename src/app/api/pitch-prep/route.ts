@@ -93,14 +93,14 @@ function guideEmailHtml(firstName: string, consultation?: string) {
               </table>` : `
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 24px;">
                 <tr>
-                  <td style="padding: 24px; background-color: #f5f5f0; border-radius: 12px;">
-                    <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.6; color: #555;">
-                      Want expert help with your fundraising? We offer free investor-readiness audits.
-                    </p>
+                  <td style="padding: 24px; background-color: #c8ff00; border-radius: 12px;">
+                    <p style="margin: 0 0 4px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #555; font-weight: 600;">Free discovery call</p>
+                    <p style="margin: 0 0 4px; font-size: 15px; font-weight: 600; color: #141416;">Book a 30-min call with Andreas &amp; Mike</p>
+                    <p style="margin: 0 0 16px; font-size: 13px; line-height: 1.6; color: #333;">Want expert help with your fundraising journey? We'll talk through where you are and what makes sense as a next step. No pitch, no pressure.</p>
                     <table role="presentation" cellpadding="0" cellspacing="0">
                       <tr>
                         <td style="background-color: #141416; border-radius: 100px;">
-                          <a href="https://smpl.as/contact" style="display: inline-block; padding: 10px 24px; color: #ffffff; font-size: 13px; font-weight: 600; text-decoration: none;">Book a Free Audit</a>
+                          <a href="https://smpl.as/book" style="display: inline-block; padding: 12px 28px; color: #ffffff; font-size: 14px; font-weight: 600; text-decoration: none;">Pick a time &rarr;</a>
                         </td>
                       </tr>
                     </table>

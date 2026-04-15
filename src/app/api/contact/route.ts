@@ -119,6 +119,23 @@ function confirmationEmailHtml(firstName: string) {
               <p style="margin: 0 0 28px; font-size: 15px; line-height: 1.7; color: #555;">
                 If it's urgent, just reply to this email and it'll come straight to us.
               </p>
+              <!-- Book a call -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
+                <tr>
+                  <td style="padding: 24px; background-color: #c8ff00; border-radius: 12px;">
+                    <p style="margin: 0 0 4px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #555; font-weight: 600;">Free discovery call</p>
+                    <p style="margin: 0 0 4px; font-size: 15px; font-weight: 600; color: #141416;">Book a 30-min call with Andreas &amp; Mike</p>
+                    <p style="margin: 0 0 16px; font-size: 13px; line-height: 1.6; color: #333;">No pitch, no pressure. We'll talk through your idea, challenge, or project and map out what makes sense as a next step.</p>
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="background-color: #141416; border-radius: 100px;">
+                          <a href="https://smpl.as/book" style="display: inline-block; padding: 12px 28px; color: #ffffff; font-size: 14px; font-weight: 600; text-decoration: none;">Pick a time &rarr;</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
               <!-- What we do -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
                 <tr>
