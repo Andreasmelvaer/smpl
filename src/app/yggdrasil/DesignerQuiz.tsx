@@ -546,6 +546,46 @@ export default function DesignerQuiz() {
             </button>
           </div>
 
+          {/* Browse all archetypes */}
+          <div className="border-t border-white/10 pt-10 mb-12 motion-safe:animate-[fadeInUp_0.6s_ease-out_0.7s_both]">
+            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-gray-500 mb-6 text-center">
+              {t.browseAll}
+            </p>
+            <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory -mx-5 px-5 scrollbar-hide">
+              {(Object.keys(archetypes[locale]) as ArchetypeKey[]).map((key) => {
+                const arch = archetypes[locale][key]
+                const img = archetypeImages[key]
+                const isActive = key === resultKey
+                return (
+                  <div
+                    key={key}
+                    className={`flex-shrink-0 snap-center w-48 rounded-2xl p-4 text-center transition-all ${
+                      isActive
+                        ? 'bg-lime/15 border border-lime/30'
+                        : 'bg-white/5 border border-white/10'
+                    }`}
+                  >
+                    {img && (
+                      <Image
+                        src={img}
+                        alt={arch.name}
+                        width={120}
+                        height={120}
+                        className="w-24 h-24 mx-auto object-contain mb-3"
+                      />
+                    )}
+                    <p className={`text-xs font-semibold mb-1 ${isActive ? 'text-lime' : 'text-white'}`}>
+                      {arch.name}
+                    </p>
+                    <p className="text-[10px] text-gray-500 font-satoshi leading-snug">
+                      {arch.tagline}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+
           {/* Portfolio CTA */}
           <div className="border-t border-white/10 pt-10 text-center motion-safe:animate-[fadeInUp_0.6s_ease-out_0.8s_both]">
             <p className="text-xl md:text-2xl font-bold mb-2" style={{ color: '#ffffff' }}>

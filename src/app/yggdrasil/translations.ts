@@ -36,6 +36,7 @@ export const ui = {
     share: 'Del resultatet',
     copied: 'Kopiert!',
     retake: 'Ta testen på nytt',
+    browseAll: 'Sjå alle typane',
     ctaTitle: 'Vil du sjå ka ekte designarar faktisk levere?',
     ctaSubtitle: 'Teamet vårt har designa produkt for 125+ selskap.\nIngen shade. Ok, litt shade.',
     ctaButton: 'Sjå porteføljen →',
@@ -60,6 +61,7 @@ export const ui = {
     share: 'Share it with yer mates',
     copied: 'Sound, copied!',
     retake: 'Have another go',
+    browseAll: 'See all the types',
     ctaTitle: "Wanna see what proper designers actually ship?",
     ctaSubtitle: "Our lot have designed stuff for 125+ companies.\nNo shade. Alright, a bit of shade.",
     ctaButton: 'See the portfolio →',
@@ -178,28 +180,28 @@ export const sliderCommentary = {
 
 export const sliderLabels = {
   shape: {
-    no: 'Vel din favorittform',
-    en: "Pick yer favourite shape",
+    no: 'Vel den formen som snakke te sjelå',
+    en: "Pick the shape that speaks to yer soul",
   },
   typography: {
-    no: 'Vel din favorittfont',
-    en: "Pick yer favourite font",
+    no: 'Vel fonten som ikkje ser heilt idiot ud',
+    en: "Pick the font that doesnae look daft",
   },
   layout: {
-    no: 'Vel din favorittlayout',
-    en: "Pick yer favourite layout",
+    no: 'Vel layouten som faktisk funke',
+    en: "Pick the layout that actually works",
   },
   colour: {
-    no: 'Vel din favorittpalett',
-    en: "Pick yer favourite palette",
+    no: 'Vel paletten som ikkje gir folk migrene',
+    en: "Pick the palette that won't give folks a headache",
   },
   shadow: {
-    no: 'Vel din favoritt drop shadow',
-    en: "Pick yer favourite drop shadow",
+    no: 'Vel skyggen som gir litt drama',
+    en: "Pick the drop shadow with a wee bit o' drama",
   },
   motion: {
-    no: 'Vel din favorittanimasjon',
-    en: "Pick yer favourite animation",
+    no: 'Vel animasjonen som ikkje tar heilt av',
+    en: "Pick the animation that doesnae lose the plot",
   },
 } as const
 

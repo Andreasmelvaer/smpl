@@ -13,6 +13,18 @@ export const metadata: Metadata = {
     url: 'https://smpl.as/yggdrasil',
     type: 'website',
     siteName: 'SmplCo',
+    images: [
+      {
+        url: '/whatdesignerareyou/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'What Kind of Designer Are You? — SmplCo Quiz',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['https://smpl.as/whatdesignerareyou/og-image.png'],
   },
 }
 
