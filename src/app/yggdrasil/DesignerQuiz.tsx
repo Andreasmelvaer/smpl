@@ -289,22 +289,23 @@ export default function DesignerQuiz() {
     setValues((prev) => ({ ...prev, [key]: v }))
   }, [currentSlider])
 
-  const share = useCallback(async () => {
+  const shareLinkedIn = useCallback(() => {
+    if (!result || !resultKey) return
+    const url = `https://smpl.as/yggdrasil`
+    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`
+    window.open(linkedInUrl, '_blank', 'width=600,height=500')
+  }, [result, resultKey])
+
+  const copyLink = useCallback(async () => {
     if (!result || !resultKey) return
     const text = locale === 'no'
       ? `Eg e "${result.name}". Ta testen og finn din designer-arketype:`
       : `I'm "${result.name}". Take the quiz and find your designer archetype:`
-    const url = `https://smpl.as/yggdrasil#${resultKey}`
-    if (navigator.share) {
-      try {
-        await navigator.share({ title: t.title1 + ' ' + t.titleHighlight + ' ' + t.title2, text, url })
-      } catch (_e) { /* user cancelled */ }
-    } else {
-      await navigator.clipboard.writeText(`${text} ${url}`)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    }
-  }, [result, resultKey, locale, t])
+    const url = `https://smpl.as/yggdrasil`
+    await navigator.clipboard.writeText(`${text} ${url}`)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }, [result, resultKey, locale])
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -510,13 +511,20 @@ export default function DesignerQuiz() {
           {/* Actions */}
           <div className="flex flex-col gap-3 mb-12 motion-safe:animate-[fadeInUp_0.6s_ease-out_0.6s_both]">
             <button
-              onClick={share}
-              className="w-full py-3.5 bg-white text-gray-900 font-semibold text-sm rounded-full hover:bg-gray-100 transition-colors cursor-pointer"
+              onClick={shareLinkedIn}
+              className="w-full py-3.5 bg-[#0A66C2] text-white font-semibold text-sm rounded-full hover:bg-[#004182] transition-colors cursor-pointer flex items-center justify-center gap-2"
             >
-              {copied ? t.copied : t.share}
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              {t.share}
             </button>
             <button
-              onClick={startQuiz}
+              onClick={copyLink}
+              className="w-full py-3 text-gray-400 text-sm font-satoshi hover:text-white transition-colors cursor-pointer"
+            >
+              {copied ? t.copied : (locale === 'no' ? 'Kopier lenke' : 'Copy link')}
+            </button>
+            <button
+              onClick={() => setPhase('landing')}
               className="w-full py-3 text-gray-400 text-sm font-satoshi hover:text-white transition-colors cursor-pointer"
             >
               {t.retake}
