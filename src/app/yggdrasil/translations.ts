@@ -230,13 +230,15 @@ export interface ArchetypeData {
 }
 
 // Character illustration paths (shared between locales)
-export const archetypeImages: Partial<Record<ArchetypeKey, string>> = {
+export const archetypeImages: Record<ArchetypeKey, string> = {
   neurotic: '/whatdesignerareyou/Piksel-Pedanten.png',
   imposter: '/whatdesignerareyou/Lurendreiaren Som Faen Meg Levere.png',
   helvetica: '/whatdesignerareyou/Helvetica-Noye.png',
+  gridDictator: '/whatdesignerareyou/gridDictator.png',
   chaotic: '/whatdesignerareyou/Kaos-Kunstnaren.png',
   hoarder: '/whatdesignerareyou/Komponent-Kongen med Kontrollbehov.png',
   awkward: '/whatdesignerareyou/Den Tause Pikselsnekkaren.png',
+  notDesigner: '/whatdesignerareyou/notdsesigner.png',
 }
 
 export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
