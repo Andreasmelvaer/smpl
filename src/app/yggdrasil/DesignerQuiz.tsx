@@ -342,30 +342,45 @@ export default function DesignerQuiz() {
   // ---------------------------------------------------------------------------
   if (phase === 'landing') {
     return (
-      <section className="relative min-h-[calc(100vh-60px)] flex items-center justify-center bg-gray-900 overflow-hidden">
+      <section className="relative min-h-[calc(100vh-60px)] flex flex-col bg-gray-900 overflow-hidden">
         <ShimmerGrid />
         {LangToggle}
-        <div className="relative z-10 text-center px-6 max-w-xl mx-auto">
-          <p className="font-mono text-xs tracking-[0.25em] uppercase text-gray-400 mb-6">
-            {t.subtitle}
-          </p>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4" style={{ color: '#ffffff' }}>
-            {t.title1}
-            <br />
-            <span className="font-editorial italic text-lime">{t.titleHighlight}</span> {t.title2}
-          </h1>
-          <p className="font-satoshi text-gray-400 text-lg md:text-xl mb-10 leading-relaxed whitespace-pre-line">
-            {t.tagline}
-          </p>
-          <button
-            onClick={startQuiz}
-            className="inline-flex items-center gap-2 bg-lime-bright text-gray-900 font-semibold px-8 py-4 rounded-full text-base hover:scale-105 transition-transform duration-300 cursor-pointer"
-          >
-            {t.start}
-          </button>
-          <p className="mt-6 text-xs text-gray-500 font-satoshi">
-            {t.disclaimer}
-          </p>
+        {/* Content — centered vertically in available space */}
+        <div className="relative z-10 flex-1 flex items-center justify-center">
+          <div className="text-center px-6 max-w-xl mx-auto pb-16 md:pb-24">
+            <p className="font-mono text-xs tracking-[0.25em] uppercase text-gray-400 mb-6">
+              {t.subtitle}
+            </p>
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4" style={{ color: '#ffffff' }}>
+              {t.title1}
+              <br />
+              <span className="font-editorial italic text-lime">{t.titleHighlight}</span> {t.title2}
+            </h1>
+            <p className="font-satoshi text-gray-400 text-lg md:text-xl mb-10 leading-relaxed whitespace-pre-line">
+              {t.tagline}
+            </p>
+            <button
+              onClick={startQuiz}
+              className="inline-flex items-center gap-2 bg-lime-bright text-gray-900 font-semibold px-8 py-4 rounded-full text-base hover:scale-105 transition-transform duration-300 cursor-pointer"
+            >
+              {t.start}
+            </button>
+            <p className="mt-6 text-xs text-gray-500 font-satoshi">
+              {t.disclaimer}
+            </p>
+          </div>
+        </div>
+        {/* Characters at the bottom */}
+        <div className="relative z-10 w-full pointer-events-none">
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-900 to-transparent z-10" />
+          <Image
+            src="/whatdesignerareyou/all.png"
+            alt=""
+            width={1200}
+            height={300}
+            className="w-full max-w-3xl mx-auto object-contain opacity-40"
+            priority
+          />
         </div>
       </section>
     )
