@@ -178,28 +178,28 @@ export const sliderCommentary = {
 
 export const sliderLabels = {
   shape: {
-    no: 'Ka form e du?',
-    en: "Go ed, what shape are yer?",
+    no: 'Vel din favorittform',
+    en: "Pick yer favourite shape",
   },
   typography: {
-    no: 'Vel din font-sjel',
-    en: "Pick yer font soul",
+    no: 'Vel din favorittfont',
+    en: "Pick yer favourite font",
   },
   layout: {
-    no: 'Kor organisert e du, egentlig?',
-    en: "How organised are yer, honestly?",
+    no: 'Vel din favorittlayout',
+    en: "Pick yer favourite layout",
   },
   colour: {
-    no: 'Ka farge brenne du for?',
-    en: "What colour gets yer goin?",
-  },
-  motion: {
-    no: 'Kor mykje bevegelse tåle du?',
-    en: "How much motion can yer handle?",
+    no: 'Vel din favorittpalett',
+    en: "Pick yer favourite palette",
   },
   shadow: {
-    no: 'Kor mykje drop shadow tåle du?',
-    en: "How much drop shadow can yer handle?",
+    no: 'Vel din favoritt drop shadow',
+    en: "Pick yer favourite drop shadow",
+  },
+  motion: {
+    no: 'Vel din favorittanimasjon',
+    en: "Pick yer favourite animation",
   },
 } as const
 
