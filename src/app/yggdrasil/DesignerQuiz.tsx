@@ -213,8 +213,8 @@ function SliderStep({ sliderKey, value, onChange, locale }: SliderStepProps) {
             [&::-moz-range-thumb]:bg-lime [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0
             [&::-moz-range-thumb]:cursor-pointer"
         />
-        {/* Tick marks */}
-        <div className="flex justify-between mt-2 px-1">
+        {/* Tick marks — px-3 matches half the 24px (w-6) slider thumb */}
+        <div className="flex justify-between mt-2 px-3">
           {Array.from({ length: config.stops }).map((_, i) => (
             <div
               key={i}
