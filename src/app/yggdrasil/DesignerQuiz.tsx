@@ -378,7 +378,7 @@ export default function DesignerQuiz() {
             alt=""
             width={1200}
             height={300}
-            className="w-full max-w-5xl mx-auto object-contain opacity-60"
+            className="w-full max-w-5xl mx-auto object-contain"
             priority
           />
         </div>
