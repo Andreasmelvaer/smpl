@@ -4,7 +4,7 @@
 
 import type { ArchetypeKey } from './translations'
 
-export type SliderKey = 'shape' | 'typography' | 'layout' | 'colour' | 'motion'
+export type SliderKey = 'shape' | 'typography' | 'layout' | 'colour' | 'motion' | 'shadow'
 
 export interface SliderConfig {
   key: SliderKey
@@ -16,6 +16,7 @@ export const SLIDERS: SliderConfig[] = [
   { key: 'typography', stops: 6 },
   { key: 'layout', stops: 5 },
   { key: 'colour', stops: 5 },
+  { key: 'shadow', stops: 5 },
   { key: 'motion', stops: 5 },
 ]
 
@@ -50,7 +51,7 @@ export const SCORING: Record<SliderKey, ScoreRow[]> = {
     { helvetica: 2, neurotic: 2 },
     // 4: Old-style
     { neurotic: 3, awkward: 1 },
-    // 5: Wild West
+    // 5: Papyrus
     { chaotic: 4, imposter: 1 },
   ],
   layout: [
@@ -76,6 +77,18 @@ export const SCORING: Record<SliderKey, ScoreRow[]> = {
     { chaotic: 2, imposter: 2 },
     // 4: Full rainbow
     { chaotic: 3, notDesigner: 2 },
+  ],
+  shadow: [
+    // 0: No shadow (flat)
+    { helvetica: 2, neurotic: 2, gridDictator: 1 },
+    // 1: Subtle shadow
+    { hoarder: 2, awkward: 1, neurotic: 1 },
+    // 2: Medium shadow
+    { imposter: 2, notDesigner: 1 },
+    // 3: Heavy shadow
+    { chaotic: 2, notDesigner: 2 },
+    // 4: MEGA shadow (PowerPoint)
+    { chaotic: 3, imposter: 2, notDesigner: 1 },
   ],
   motion: [
     // 0: No animation

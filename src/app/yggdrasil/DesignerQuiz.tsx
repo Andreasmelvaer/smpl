@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import ShimmerGrid from '@/components/ShimmerGrid'
 import {
   type Locale,
@@ -11,6 +12,7 @@ import {
   sliderLabels,
   sliderCommentary,
   archetypes,
+  archetypeImages,
 } from './translations'
 import { SLIDERS, type SliderKey, calculateResult } from './sliders'
 
@@ -120,6 +122,26 @@ function ColourPreview({ value }: { value: number }) {
   )
 }
 
+function ShadowPreview({ value }: { value: number }) {
+  const shadows = [
+    'none',
+    '0 2px 8px rgba(0,0,0,0.15)',
+    '0 4px 16px rgba(0,0,0,0.25)',
+    '0 8px 32px rgba(0,0,0,0.4)',
+    '0 16px 64px rgba(0,0,0,0.6), 0 8px 24px rgba(0,0,0,0.4)',
+  ]
+  return (
+    <div className="flex items-center justify-center h-48">
+      <div
+        className="w-40 h-24 bg-white rounded-2xl flex items-center justify-center transition-all duration-500"
+        style={{ boxShadow: shadows[value] }}
+      >
+        <span className="text-gray-900 text-sm font-semibold">Button</span>
+      </div>
+    </div>
+  )
+}
+
 function MotionPreview({ value }: { value: number }) {
   const animations = [
     '', // none
@@ -158,6 +180,7 @@ function SliderStep({ sliderKey, value, onChange, locale }: SliderStepProps) {
   else if (sliderKey === 'typography') Preview = <TypographyPreview value={value} locale={locale} />
   else if (sliderKey === 'layout') Preview = <LayoutPreview value={value} />
   else if (sliderKey === 'colour') Preview = <ColourPreview value={value} />
+  else if (sliderKey === 'shadow') Preview = <ShadowPreview value={value} />
   else if (sliderKey === 'motion') Preview = <MotionPreview value={value} />
 
   return (
@@ -215,7 +238,7 @@ export default function DesignerQuiz() {
   const [phase, setPhase] = useState<'landing' | 'quiz' | 'result'>('landing')
   const [currentSlider, setCurrentSlider] = useState(0)
   const [values, setValues] = useState<Record<SliderKey, number>>({
-    shape: 2, typography: 1, layout: 2, colour: 2, motion: 2,
+    shape: 2, typography: 1, layout: 2, colour: 2, shadow: 2, motion: 2,
   })
   const [visible, setVisible] = useState(true)
   const [copied, setCopied] = useState(false)
@@ -234,7 +257,7 @@ export default function DesignerQuiz() {
   }, [])
 
   const startQuiz = useCallback(() => {
-    setValues({ shape: 2, typography: 1, layout: 2, colour: 2, motion: 2 })
+    setValues({ shape: 2, typography: 1, layout: 2, colour: 2, shadow: 2, motion: 2 })
     setCurrentSlider(0)
     setPhase('quiz')
     setVisible(true)
@@ -419,8 +442,21 @@ export default function DesignerQuiz() {
       <section className="min-h-[calc(100vh-60px)] bg-gray-900 overflow-hidden">
         {LangToggle}
         <div className="max-w-lg mx-auto px-5 py-20 md:py-28">
+          {/* Character illustration */}
+          {archetypeImages[resultKey] && (
+            <div className="flex justify-center mb-6 motion-safe:animate-[fadeInUp_0.6s_ease-out_both]">
+              <Image
+                src={archetypeImages[resultKey]!}
+                alt={result.name}
+                width={240}
+                height={240}
+                className="w-48 h-48 md:w-60 md:h-60 object-contain"
+              />
+            </div>
+          )}
+
           {/* Result heading */}
-          <div className="text-center mb-8 motion-safe:animate-[fadeInUp_0.6s_ease-out_both]">
+          <div className="text-center mb-8 motion-safe:animate-[fadeInUp_0.6s_ease-out_0.1s_both]">
             <p className="font-mono text-xs tracking-[0.25em] uppercase text-gray-400 mb-4">
               {t.youAre}
             </p>

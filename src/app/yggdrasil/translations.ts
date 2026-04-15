@@ -154,6 +154,22 @@ export const sliderCommentary = {
       "Total sirkus. Yer a human ADHD firework and honest to God, I love it.",
     ],
   },
+  shadow: {
+    no: [
+      'Ingen skugge. Du e flat. Bokstavelig og personlegheitsmessig.',
+      'Litt skugge. Du vil ha dybde, men e redd for å forplikta deg.',
+      'Medium skugge. Balansert. Du les sikkert designbloggår og.',
+      'Tung skugge. Du savne 2012. Alle knappane dine ser ut som dei flyg.',
+      'MEGA skugge. Du e ein PowerPoint-designer og du har ingen skam.',
+    ],
+    en: [
+      "No shadow. Yer flat. Literally and personality-wise, la.",
+      "Bit of shadow. Want depth but yer scared of commitment, aren't yer.",
+      "Medium shadow. Balanced. Yer probably read design blogs an all.",
+      "Heavy shadow. Yer miss 2012, don't yer. All yer buttons look like they're floatin.",
+      "MEGA shadow. Yer a PowerPoint designer and yer've got no shame. Respect.",
+    ],
+  },
 } as const
 
 // ---------------------------------------------------------------------------
@@ -181,6 +197,10 @@ export const sliderLabels = {
     no: 'Kor mykje bevegelse tåle du?',
     en: "How much motion can yer handle, la?",
   },
+  shadow: {
+    no: 'Kor mykje drop shadow tåle du?',
+    en: "How much drop shadow can yer handle?",
+  },
 } as const
 
 // ---------------------------------------------------------------------------
@@ -205,6 +225,16 @@ export interface ArchetypeData {
   strength: string
   weakness: string
   prescription: string
+}
+
+// Character illustration paths (shared between locales)
+export const archetypeImages: Partial<Record<ArchetypeKey, string>> = {
+  neurotic: '/whatdesignerareyou/Piksel-Pedanten.png',
+  imposter: '/whatdesignerareyou/Lurendreiaren Som Faen Meg Levere.png',
+  helvetica: '/whatdesignerareyou/Helvetica-Noye.png',
+  chaotic: '/whatdesignerareyou/Kaos-Kunstnaren.png',
+  hoarder: '/whatdesignerareyou/Komponent-Kongen med Kontrollbehov.png',
+  awkward: '/whatdesignerareyou/Den Tause Pikselsnekkaren.png',
 }
 
 export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
