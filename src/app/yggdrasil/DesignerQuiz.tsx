@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ShimmerGrid from '@/components/ShimmerGrid'
@@ -185,11 +185,11 @@ function SliderStep({ sliderKey, value, onChange, locale }: SliderStepProps) {
 
   return (
     <div className="w-full max-w-lg mx-auto">
-      {/* Visual preview */}
-      <div className="mb-8">{Preview}</div>
+      {/* Label — above preview */}
+      <h2 className="text-xl md:text-2xl font-bold text-center mb-6" style={{ color: '#ffffff' }}>{label}</h2>
 
-      {/* Label */}
-      <h2 className="text-xl md:text-2xl font-bold text-white text-center mb-2">{label}</h2>
+      {/* Visual preview */}
+      <div className="mb-6">{Preview}</div>
 
       {/* Commentary */}
       <p className="text-sm md:text-base text-gray-400 font-satoshi text-center min-h-[3rem] mb-8 transition-opacity duration-300">
@@ -224,6 +224,127 @@ function SliderStep({ sliderKey, value, onChange, locale }: SliderStepProps) {
             />
           ))}
         </div>
+      </div>
+    </div>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// Browse All Archetypes Carousel
+// ---------------------------------------------------------------------------
+
+function BrowseCarousel({ locale, currentKey }: { locale: Locale; currentKey: ArchetypeKey }) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const allKeys = Object.keys(archetypes[locale]) as ArchetypeKey[]
+  const [activeIdx, setActiveIdx] = useState(() => {
+    const idx = allKeys.indexOf(currentKey)
+    return idx >= 0 ? idx : 0
+  })
+
+  const scrollTo = useCallback((idx: number) => {
+    if (!scrollRef.current) return
+    const container = scrollRef.current
+    const child = container.children[idx] as HTMLElement
+    if (!child) return
+    const offset = child.offsetLeft - container.offsetWidth / 2 + child.offsetWidth / 2
+    container.scrollTo({ left: offset, behavior: 'smooth' })
+    setActiveIdx(idx)
+  }, [])
+
+  // Scroll to current result on mount
+  useEffect(() => {
+    const idx = allKeys.indexOf(currentKey)
+    if (idx >= 0) setTimeout(() => scrollTo(idx), 100)
+  }, [currentKey, allKeys, scrollTo])
+
+  // Detect active item on scroll
+  useEffect(() => {
+    const container = scrollRef.current
+    if (!container) return
+    const handleScroll = () => {
+      const center = container.scrollLeft + container.offsetWidth / 2
+      let closest = 0
+      let minDist = Infinity
+      Array.from(container.children).forEach((child, i) => {
+        const el = child as HTMLElement
+        const elCenter = el.offsetLeft + el.offsetWidth / 2
+        const dist = Math.abs(center - elCenter)
+        if (dist < minDist) { minDist = dist; closest = i }
+      })
+      setActiveIdx(closest)
+    }
+    container.addEventListener('scroll', handleScroll, { passive: true })
+    return () => container.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const t = ui[locale]
+
+  return (
+    <div className="border-t border-white/10 pt-10 mb-12 motion-safe:animate-[fadeInUp_0.6s_ease-out_0.7s_both]">
+      <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-gray-500 mb-6 text-center">
+        {t.browseAll}
+      </p>
+
+      {/* Carousel */}
+      <div className="relative -mx-5">
+        {/* Fade edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none" />
+
+        <div
+          ref={scrollRef}
+          className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-[calc(50%-100px)] pb-4"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
+        >
+          {allKeys.map((key, i) => {
+            const arch = archetypes[locale][key]
+            const img = archetypeImages[key]
+            const isCenter = i === activeIdx
+            return (
+              <button
+                key={key}
+                onClick={() => scrollTo(i)}
+                className={`flex-shrink-0 snap-center w-[200px] rounded-2xl p-5 text-center cursor-pointer transition-all duration-500 ease-out ${
+                  isCenter
+                    ? 'opacity-100 scale-100'
+                    : 'opacity-30 scale-90'
+                }`}
+              >
+                {img ? (
+                  <Image
+                    src={img}
+                    alt={arch.name}
+                    width={160}
+                    height={160}
+                    className="w-32 h-32 mx-auto object-contain mb-3"
+                  />
+                ) : (
+                  <div className="w-32 h-32 mx-auto mb-3 rounded-full bg-white/10 flex items-center justify-center">
+                    <span className="text-3xl">?</span>
+                  </div>
+                )}
+                <p className={`text-xs font-semibold transition-colors duration-500 ${
+                  isCenter ? 'text-lime' : 'text-white'
+                }`}>
+                  {arch.name}
+                </p>
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* Dots */}
+      <div className="flex justify-center gap-2 mt-4">
+        {allKeys.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => scrollTo(i)}
+            className={`w-1.5 h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+              i === activeIdx ? 'bg-lime w-4' : 'bg-white/20'
+            }`}
+          />
+        ))}
       </div>
     </div>
   )
@@ -546,45 +667,8 @@ export default function DesignerQuiz() {
             </button>
           </div>
 
-          {/* Browse all archetypes */}
-          <div className="border-t border-white/10 pt-10 mb-12 motion-safe:animate-[fadeInUp_0.6s_ease-out_0.7s_both]">
-            <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-gray-500 mb-6 text-center">
-              {t.browseAll}
-            </p>
-            <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory -mx-5 px-5 scrollbar-hide">
-              {(Object.keys(archetypes[locale]) as ArchetypeKey[]).map((key) => {
-                const arch = archetypes[locale][key]
-                const img = archetypeImages[key]
-                const isActive = key === resultKey
-                return (
-                  <div
-                    key={key}
-                    className={`flex-shrink-0 snap-center w-48 rounded-2xl p-4 text-center transition-all ${
-                      isActive
-                        ? 'bg-lime/15 border border-lime/30'
-                        : 'bg-white/5 border border-white/10'
-                    }`}
-                  >
-                    {img && (
-                      <Image
-                        src={img}
-                        alt={arch.name}
-                        width={120}
-                        height={120}
-                        className="w-24 h-24 mx-auto object-contain mb-3"
-                      />
-                    )}
-                    <p className={`text-xs font-semibold mb-1 ${isActive ? 'text-lime' : 'text-white'}`}>
-                      {arch.name}
-                    </p>
-                    <p className="text-[10px] text-gray-500 font-satoshi leading-snug">
-                      {arch.tagline}
-                    </p>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
+          {/* Browse all archetypes — centered carousel */}
+          <BrowseCarousel locale={locale} currentKey={resultKey} />
 
           {/* Portfolio CTA */}
           <div className="border-t border-white/10 pt-10 text-center motion-safe:animate-[fadeInUp_0.6s_ease-out_0.8s_both]">

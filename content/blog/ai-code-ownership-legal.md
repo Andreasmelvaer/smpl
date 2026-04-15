@@ -70,8 +70,6 @@ Here's a scenario we think about: you ship a product. The AI wrote a significant
 
 This isn't actually that different from using Stack Overflow or open-source libraries — you're responsible for what you ship. But it does mean that AI-generated code needs the same (or more) rigorous review as human-written code. The speed gain from AI is real, but it can't come at the cost of testing and review.
 
-![Developer thinking through code architecture at their desk](/images/blog/inline/developer-thinking-desk.jpg)
-
 ## What We Actually Do at SmplCo
 
 We've landed on a practical approach that balances speed with responsibility:
