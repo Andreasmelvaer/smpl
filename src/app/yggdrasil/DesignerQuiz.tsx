@@ -234,21 +234,32 @@ function SliderStep({ sliderKey, value, onChange, locale, comicSans, onComicSans
           step={1}
           value={value}
           onChange={(e) => onChange(Number(e.target.value))}
-          className="w-full h-2 bg-white/10 rounded-full appearance-none cursor-pointer
+          style={{ background: 'none' }}
+          className="w-full h-3 rounded-full appearance-none cursor-pointer
+            [&::-webkit-slider-runnable-track]:h-3 [&::-webkit-slider-runnable-track]:rounded-full
+            [&::-webkit-slider-runnable-track]:bg-[#1a1a1a] [&::-webkit-slider-runnable-track]:shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]
             [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-7 [&::-webkit-slider-thumb]:h-7
             [&::-webkit-slider-thumb]:bg-lime [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer
-            [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(200,255,0,0.4)]
-            [&::-webkit-slider-thumb]:active:scale-110 [&::-webkit-slider-thumb]:transition-transform
+            [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(200,255,0,0.4),0_2px_6px_rgba(0,0,0,0.3)]
+            [&::-webkit-slider-thumb]:-mt-[5px]
+            [&::-webkit-slider-thumb]:transition-all [&::-webkit-slider-thumb]:duration-200
+            [&::-webkit-slider-thumb]:active:scale-125 [&::-webkit-slider-thumb]:active:shadow-[0_0_30px_rgba(200,255,0,0.6)]
+            [&::-moz-range-track]:h-3 [&::-moz-range-track]:rounded-full
+            [&::-moz-range-track]:bg-[#1a1a1a] [&::-moz-range-track]:shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]
             [&::-moz-range-thumb]:w-7 [&::-moz-range-thumb]:h-7
             [&::-moz-range-thumb]:bg-lime [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0
-            [&::-moz-range-thumb]:cursor-pointer"
+            [&::-moz-range-thumb]:cursor-pointer
+            [&::-moz-range-thumb]:shadow-[0_0_20px_rgba(200,255,0,0.4),0_2px_6px_rgba(0,0,0,0.3)]"
         />
-        <div className="flex justify-between mt-1.5 px-3.5">
+        {/* Tick indicators — spaced below slider with animation */}
+        <div className="flex justify-between mt-4 px-3.5">
           {Array.from({ length: config.stops }).map((_, i) => (
             <div
               key={i}
-              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                i === value ? 'bg-lime scale-125' : 'bg-white/20'
+              className={`rounded-full transition-all duration-500 ease-out ${
+                i === value
+                  ? 'w-2.5 h-2.5 bg-lime shadow-[0_0_8px_rgba(200,255,0,0.5)]'
+                  : 'w-1.5 h-1.5 bg-white/15'
               }`}
             />
           ))}
