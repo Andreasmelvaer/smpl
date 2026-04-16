@@ -168,6 +168,39 @@ const CATEGORIES: ServiceCategory[] = [
     ],
   },
   {
+    id: 'video',
+    title: 'Video & Animation',
+    subtitle: 'From screen recordings to full production — tell your story on screen',
+    packages: [
+      {
+        tier: 'Essential',
+        name: 'Video Essentials',
+        tagline: 'A screen recording of your product with a crafted narrative — fast and effective.',
+        bestFor: ['Founders needing a quick explainer', 'Products with a strong visual flow', 'Pitch support & investor follow-ups', 'Social media & landing page content'],
+        sections: [
+          { title: 'What You Get', items: ['Narrative writing & scripting', 'Storyboarding', 'Screen recording of your prototype or product', 'Professional editing & pacing', 'Optimised for under 1 minute (recommended)'] },
+          { title: 'The Upside', items: ['Cheaper and faster than motion graphics', 'Still lets you tell an engaging, visual story', 'Perfect for products with a clear user flow'] },
+          { title: 'The Downside', items: ['Not as dynamic as animation or live footage', 'Works best when the product UI is visually strong'] },
+        ],
+        price: '£2,400 (no VAT if paying Norwegian company)',
+      },
+      {
+        tier: 'Premium',
+        name: 'Oscar Winners',
+        tagline: 'Animation, film, and AI — combined for maximum impact.',
+        bestFor: ['Start-ups raising funding', 'Product launches needing a wow factor', 'Brands wanting premium, polished content', 'Conference & keynote presentations'],
+        sections: [
+          { title: 'We Combine', items: ['Animation (motion graphics)', 'Stock film footage & bespoke shots (filmed by us)', 'Carefully crafted AI film (no AI slop)', 'Screen recordings where appropriate'] },
+          { title: 'The Upside', items: ['Fully polished, dynamic, and engaging', 'High-end look that builds trust', 'Complete creative freedom — the world is your oyster'] },
+          { title: 'The Downside', items: ['Takes longer and requires multiple skillsets', 'More expensive than screen recordings', 'Needs a clear brief and creative direction'] },
+          { title: 'Approaches We\'ve Used', items: ['Benefits-led software explainers (mix of live footage, screenshots & animation)', 'Fully AI-generated film (dystopian metaphor for real-world problems)', 'Purpose-led narratives (motion graphics + stock footage for social impact)', 'Short & punchy product demos (animated graphics + platform shots)', 'Live footage storytelling (real people + screen recordings)', 'Cartoon-style character animation for apps', 'Cut-out / paper craft animation for social media'] },
+        ],
+        price: 'POA — scoped based on creative direction',
+        note: 'We\'ll share examples and discuss approaches in a discovery call.',
+      },
+    ],
+  },
+  {
     id: 'prototype',
     title: '5-Day Prototype',
     subtitle: 'See it. Click it. Believe it. In five days.',
