@@ -517,9 +517,8 @@ export default function DesignerQuiz() {
             </p>
           </div>
         </div>
-        {/* Characters at the bottom — overlaps behind content */}
-        <div className="relative z-0 w-full pointer-events-none -mt-16 md:-mt-8">
-          <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-gray-900 to-transparent z-10" />
+        {/* Characters at the bottom — sits on top of ShimmerGrid, no gradient */}
+        <div className="relative z-10 w-full pointer-events-none -mt-12 md:-mt-4">
           <Image
             src="/whatdesignerareyou/all.png"
             alt=""
