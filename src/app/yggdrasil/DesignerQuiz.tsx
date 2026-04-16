@@ -372,6 +372,7 @@ export default function DesignerQuiz() {
   const [copied, setCopied] = useState(false)
   const [comicSansUnlocked, setComicSansUnlocked] = useState(false)
   const [activeReaction, setActiveReaction] = useState<Reaction | null>(null)
+  const reactionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     setLocale(getDefaultLocale())
@@ -409,25 +410,26 @@ export default function DesignerQuiz() {
     const reaction = reactions[`${key}:${pos}`]
 
     if (reaction) {
-      // Show reaction overlay
       setActiveReaction(reaction)
-      setTimeout(() => {
-        // While overlay is still showing, swap the slider content underneath
-        if (currentSlider + 1 >= SLIDERS.length) {
-          setPhase('result')
-          setActiveReaction(null)
-        } else {
-          setCurrentSlider((c) => c + 1)
-          // Brief delay then remove overlay to reveal new slider
-          setTimeout(() => {
-            setActiveReaction(null)
-          }, 300)
-        }
+      reactionTimerRef.current = setTimeout(() => {
+        dismissReaction()
       }, 3700)
     } else {
       advanceSlider()
     }
   }, [currentSlider, values, advanceSlider])
+
+  const dismissReaction = useCallback(() => {
+    if (!activeReaction) return
+    if (reactionTimerRef.current) clearTimeout(reactionTimerRef.current)
+    if (currentSlider + 1 >= SLIDERS.length) {
+      setPhase('result')
+      setActiveReaction(null)
+    } else {
+      setCurrentSlider((c) => c + 1)
+      setTimeout(() => setActiveReaction(null), 200)
+    }
+  }, [activeReaction, currentSlider])
 
   const goPrev = useCallback(() => {
     if (currentSlider === 0) return
@@ -603,7 +605,10 @@ export default function DesignerQuiz() {
 
         {/* Character reaction overlay */}
         {activeReaction && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/85 backdrop-blur-md">
+          <div
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-900/85 backdrop-blur-md cursor-pointer"
+            onClick={dismissReaction}
+          >
             <div className="text-center px-6 motion-safe:animate-[fadeInUp_0.4s_ease-out_both]">
               <div className="relative bg-white rounded-2xl px-5 py-3.5 mb-3 max-w-[280px] mx-auto shadow-2xl">
                 <p className="text-sm font-satoshi text-gray-900 leading-relaxed">
@@ -619,6 +624,9 @@ export default function DesignerQuiz() {
                 className="w-28 h-28 md:w-36 md:h-36 mx-auto object-contain drop-shadow-2xl"
               />
             </div>
+            <p className="text-[10px] text-gray-600 font-mono mt-6 animate-pulse">
+              {locale === 'no' ? 'trykk for å fortsetta' : 'tap to continue'}
+            </p>
           </div>
         )}
       </section>
