@@ -263,13 +263,12 @@ export default function FounderQuiz() {
 
   const dismissReaction = useCallback(() => {
     if (!activeReaction) return
+    setActiveReaction(null)
     if (reactionTimerRef.current) clearTimeout(reactionTimerRef.current)
     if (currentSlider + 1 >= SLIDERS.length) {
       setPhase('reveal'); setRevealTaps(0)
-      setActiveReaction(null)
     } else {
       setCurrentSlider((c) => c + 1)
-      setTimeout(() => setActiveReaction(null), 200)
     }
   }, [activeReaction, currentSlider])
 
@@ -394,18 +393,19 @@ export default function FounderQuiz() {
     }
 
     return (
-      <section className="min-h-[calc(100vh-60px)] bg-gray-900 flex items-center justify-center cursor-pointer overflow-hidden" onClick={handleRevealTap}>
-        <div className="text-center px-6">
-          <div className="mx-auto mb-6 transition-all duration-700 ease-out" style={{ transform: `scale(${scales[revealTaps]})` }}>
+      <section className="min-h-[calc(100vh-60px)] bg-gray-900 flex items-center justify-center cursor-pointer" onClick={handleRevealTap}>
+        <div className="text-center px-6" key={revealTaps}>
+          <div className="mx-auto mb-6 p-16 overflow-visible animate-[fadeInUp_0.4s_ease-out_both]" style={{ transform: `scale(${scales[revealTaps]})` }}>
             <Image
               src={countdownImages[revealTaps]}
               alt={`${3 - revealTaps}`}
               width={200}
               height={200}
-              className="w-40 h-40 md:w-52 md:h-52 mx-auto object-contain drop-shadow-[0_0_30px_rgba(200,255,0,0.3)]"
+              className="w-40 h-40 md:w-48 md:h-48 mx-auto object-contain overflow-visible"
+              style={{ filter: `drop-shadow(0 0 ${20 + revealTaps * 15}px rgba(200,255,0,${0.2 + revealTaps * 0.15}))` }}
             />
           </div>
-          <p className="text-xl md:text-2xl font-bold mb-4 transition-all duration-500" style={{ color: '#ffffff' }}>{revealMessages[revealTaps]}</p>
+          <p className="text-xl md:text-2xl font-bold mb-4 animate-[fadeInUp_0.4s_ease-out_0.1s_both]" style={{ color: '#ffffff' }}>{revealMessages[revealTaps]}</p>
           <div className="flex justify-center gap-3 mb-8">
             {[0, 1, 2].map((i) => (
               <div key={i} className={`w-3 h-3 rounded-full transition-all duration-500 ${i <= revealTaps ? 'bg-lime scale-125' : 'bg-white/15'}`} />

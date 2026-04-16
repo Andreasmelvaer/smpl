@@ -32,75 +32,75 @@ export const SCORING: Record<SliderKey, ScoreRow[]> = {
     // 0: Sharp square
     { neurotic: 3, gridDictator: 2, helvetica: 1 },
     // 1: Rounded square
-    { hoarder: 2, awkward: 1, neurotic: 1 },
+    { hoarder: 2, awkward: 2 },
     // 2: Squircle (Apple-style)
-    { imposter: 2, notDesigner: 2 },
+    { imposter: 3, notDesigner: 1 },
     // 3: Nearly circle
-    { chaotic: 1, imposter: 1, notDesigner: 1 },
+    { chaotic: 1, imposter: 1, awkward: 1 },
     // 4: Perfect circle
-    { chaotic: 3, imposter: 1 },
+    { chaotic: 2, notDesigner: 1, hoarder: 1 },
   ],
   typography: [
     // 0: Monospace
-    { notDesigner: 3, gridDictator: 1 },
+    { notDesigner: 2, gridDictator: 2 },
     // 1: Sans-serif
-    { helvetica: 3, neurotic: 1, hoarder: 1 },
+    { helvetica: 3, hoarder: 1 },
     // 2: Slab serif
-    { awkward: 2, hoarder: 2 },
+    { awkward: 2, imposter: 1, neurotic: 1 },
     // 3: Serif
     { helvetica: 2, neurotic: 2 },
     // 4: Old-style
     { neurotic: 3, awkward: 1 },
     // 5: Papyrus
-    { chaotic: 4, imposter: 1 },
+    { chaotic: 2, notDesigner: 1, hoarder: 1 },
   ],
   layout: [
     // 0: Single column
-    { imposter: 2, notDesigner: 2, awkward: 1 },
+    { awkward: 2, imposter: 1, notDesigner: 1 },
     // 1: Two columns
-    { hoarder: 1, gridDictator: 1, notDesigner: 1 },
+    { hoarder: 2, notDesigner: 1, gridDictator: 1 },
     // 2: Grid
-    { gridDictator: 3, hoarder: 2, neurotic: 1 },
+    { gridDictator: 3, hoarder: 1 },
     // 3: Asymmetric
-    { chaotic: 2, neurotic: 1, awkward: 1 },
+    { chaotic: 2, neurotic: 1, imposter: 1 },
     // 4: No grid / chaos
-    { chaotic: 4, imposter: 1 },
+    { chaotic: 2, notDesigner: 1, imposter: 1 },
   ],
   colour: [
     // 0: Monochrome B&W
-    { helvetica: 3, neurotic: 2, awkward: 1 },
+    { helvetica: 3, neurotic: 2 },
     // 1: Muted / earth tones
-    { awkward: 2, hoarder: 1, imposter: 1 },
+    { awkward: 2, hoarder: 2 },
     // 2: Brand primary
-    { gridDictator: 3, hoarder: 2 },
+    { gridDictator: 2, imposter: 2 },
     // 3: Neon / vibrant
     { chaotic: 2, imposter: 2 },
     // 4: Full rainbow
-    { chaotic: 3, notDesigner: 2 },
+    { notDesigner: 2, chaotic: 1, imposter: 1 },
   ],
   shadow: [
     // 0: No shadow (flat)
-    { helvetica: 2, neurotic: 2, gridDictator: 1 },
+    { helvetica: 3, gridDictator: 1, neurotic: 1 },
     // 1: Subtle shadow
-    { hoarder: 2, awkward: 1, neurotic: 1 },
+    { hoarder: 2, neurotic: 2 },
     // 2: Medium shadow
-    { imposter: 2, notDesigner: 1 },
+    { awkward: 3, imposter: 1 },
     // 3: Heavy shadow
-    { chaotic: 2, notDesigner: 2 },
+    { notDesigner: 2, chaotic: 1, imposter: 1 },
     // 4: MEGA shadow (PowerPoint)
-    { chaotic: 3, imposter: 2, notDesigner: 1 },
+    { chaotic: 2, notDesigner: 1, awkward: 1 },
   ],
   motion: [
     // 0: No animation
-    { neurotic: 2, gridDictator: 2, helvetica: 1 },
+    { gridDictator: 3, helvetica: 1 },
     // 1: Subtle fade
-    { hoarder: 2, awkward: 2 },
+    { hoarder: 2, awkward: 1, neurotic: 1 },
     // 2: Smooth ease
-    { imposter: 2, notDesigner: 1, hoarder: 1 },
+    { imposter: 2, neurotic: 2 },
     // 3: Spring/bounce
-    { chaotic: 2, notDesigner: 2 },
+    { chaotic: 2, notDesigner: 1, hoarder: 1 },
     // 4: Absolute circus
-    { chaotic: 4, imposter: 1 },
+    { chaotic: 2, imposter: 1, notDesigner: 1 },
   ],
 }
 
@@ -109,8 +109,8 @@ export const SCORING: Record<SliderKey, ScoreRow[]> = {
 // ---------------------------------------------------------------------------
 
 const TIEBREAK_ORDER: ArchetypeKey[] = [
-  'chaotic', 'neurotic', 'imposter', 'gridDictator',
-  'helvetica', 'hoarder', 'awkward', 'notDesigner',
+  'notDesigner', 'awkward', 'helvetica', 'hoarder',
+  'gridDictator', 'imposter', 'neurotic', 'chaotic',
 ]
 
 export function calculateResult(values: Record<SliderKey, number>): ArchetypeKey {
