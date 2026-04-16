@@ -23,7 +23,7 @@ import { SLIDERS, type SliderKey, calculateResult } from './sliders'
 function ShapePreview({ value }: { value: number }) {
   const radii = [0, 12, 24, 40, 999]
   return (
-    <div className="flex items-center justify-center h-48">
+    <div className="flex items-center justify-center h-32 md:h-48">
       <div
         className="w-32 h-32 bg-lime transition-all duration-500 ease-out"
         style={{ borderRadius: radii[value] }}
@@ -41,20 +41,25 @@ const FONT_FAMILIES = [
   'Papyrus, fantasy, cursive',
 ]
 
-function TypographyPreview({ value, locale }: { value: number; locale: Locale }) {
-  const words = locale === 'no' ? 'Eg e ein designar' : "I'm a designer, la"
+function TypographyPreview({ value, locale, comicSans }: { value: number; locale: Locale; comicSans: boolean }) {
+  const words = comicSans
+    ? (locale === 'no' ? 'Å herregud nei...' : 'Oh God no...')
+    : (locale === 'no' ? 'Eg e ein designar' : "I'm a designer")
   return (
-    <div className="flex items-center justify-center h-48">
+    <div className="flex flex-col items-center justify-center h-32 md:h-48">
       <p
-        className="text-3xl md:text-4xl text-center text-white transition-all duration-500"
+        className={`text-3xl md:text-4xl text-center transition-all duration-500 ${comicSans ? 'text-pink' : 'text-white'}`}
         style={{
-          fontFamily: FONT_FAMILIES[value],
-          fontStyle: value === 4 ? 'italic' : 'normal',
-          letterSpacing: value === 4 ? '0.05em' : 'normal',
+          fontFamily: comicSans ? '"Comic Sans MS", "Comic Sans", cursive' : FONT_FAMILIES[value],
+          fontStyle: value === 4 && !comicSans ? 'italic' : 'normal',
+          letterSpacing: value === 4 && !comicSans ? '0.05em' : 'normal',
         }}
       >
         {words}
       </p>
+      {comicSans && (
+        <p className="text-xs text-pink/60 font-mono mt-2 animate-pulse">🚨 Comic Sans unlocked 🚨</p>
+      )}
     </div>
   )
 }
@@ -112,7 +117,7 @@ function ColourPreview({ value }: { value: number }) {
     ['#FF0000', '#FF8800', '#FFEE00', '#00FF00', '#0000FF'],
   ]
   return (
-    <div className="flex items-center justify-center h-48">
+    <div className="flex items-center justify-center h-32 md:h-48">
       <div className="flex gap-3">
         {palettes[value].map((c, i) => (
           <div
@@ -135,7 +140,7 @@ function ShadowPreview({ value }: { value: number }) {
     '0 16px 64px rgba(200,255,0,0.5), 0 8px 24px rgba(200,255,0,0.3)',
   ]
   return (
-    <div className="flex items-center justify-center h-48">
+    <div className="flex items-center justify-center h-32 md:h-48">
       <div
         className="w-40 h-24 bg-white rounded-2xl flex items-center justify-center transition-all duration-500"
         style={{ boxShadow: shadows[value] }}
@@ -155,7 +160,7 @@ function MotionPreview({ value }: { value: number }) {
     'animate-spin',
   ]
   return (
-    <div className="flex items-center justify-center h-48">
+    <div className="flex items-center justify-center h-32 md:h-48">
       <div
         className={`w-20 h-20 bg-lime rounded-2xl transition-all duration-300 ${animations[value]}`}
       />
@@ -178,10 +183,30 @@ function SliderStep({ sliderKey, value, onChange, locale }: SliderStepProps) {
   const config = SLIDERS.find((s) => s.key === sliderKey)!
   const label = sliderLabels[sliderKey][locale]
   const commentary = sliderCommentary[sliderKey][locale]
+  const [comicSans, setComicSans] = useState(false)
+  const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  // Long-press on Papyrus (typography slider, last position) = Comic Sans
+  const isPapyrus = sliderKey === 'typography' && value === config.stops - 1
+  const handlePressStart = () => {
+    if (!isPapyrus) return
+    longPressTimer.current = setTimeout(() => {
+      setComicSans(true)
+      // Vibrate if available
+      navigator.vibrate?.(200)
+    }, 1500)
+  }
+  const handlePressEnd = () => {
+    if (longPressTimer.current) clearTimeout(longPressTimer.current)
+  }
+  // Reset Comic Sans when moving away from Papyrus
+  useEffect(() => {
+    if (!isPapyrus) setComicSans(false)
+  }, [isPapyrus])
 
   let Preview: React.ReactNode = null
   if (sliderKey === 'shape') Preview = <ShapePreview value={value} />
-  else if (sliderKey === 'typography') Preview = <TypographyPreview value={value} locale={locale} />
+  else if (sliderKey === 'typography') Preview = <TypographyPreview value={value} locale={locale} comicSans={comicSans} />
   else if (sliderKey === 'layout') Preview = <LayoutPreview value={value} />
   else if (sliderKey === 'colour') Preview = <ColourPreview value={value} />
   else if (sliderKey === 'shadow') Preview = <ShadowPreview value={value} />
@@ -190,14 +215,26 @@ function SliderStep({ sliderKey, value, onChange, locale }: SliderStepProps) {
   return (
     <div className="w-full max-w-lg mx-auto">
       {/* Label — above preview */}
-      <h2 className="text-xl md:text-2xl font-bold text-center mb-6" style={{ color: '#ffffff' }}>{label}</h2>
+      <h2 className="text-lg md:text-2xl font-bold text-center mb-3 md:mb-6" style={{ color: '#ffffff' }}>{label}</h2>
 
-      {/* Visual preview */}
-      <div className="mb-6">{Preview}</div>
+      {/* Visual preview — long press on Papyrus for Comic Sans easter egg */}
+      <div
+        className="mb-3 md:mb-6"
+        onMouseDown={handlePressStart}
+        onMouseUp={handlePressEnd}
+        onMouseLeave={handlePressEnd}
+        onTouchStart={handlePressStart}
+        onTouchEnd={handlePressEnd}
+      >
+        {Preview}
+      </div>
 
       {/* Commentary */}
-      <p className="text-sm md:text-base text-gray-400 font-satoshi text-center min-h-[3rem] mb-8 transition-opacity duration-300">
-        {commentary[value]}
+      <p className={`text-xs md:text-base font-satoshi text-center min-h-[2.5rem] mb-4 md:mb-8 transition-opacity duration-300 ${comicSans ? 'text-pink' : 'text-gray-400'}`}>
+        {comicSans
+          ? (locale === 'no' ? 'Comic Sans. Du e heilt ute å kjøra. Eg e imponert.' : "Comic Sans. Yer've lost the plot entirely. I'm impressed.")
+          : commentary[value]
+        }
       </p>
 
       {/* Slider */}
@@ -480,9 +517,9 @@ export default function DesignerQuiz() {
             </p>
           </div>
         </div>
-        {/* Characters at the bottom */}
-        <div className="relative z-10 w-full pointer-events-none">
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-900 to-transparent z-10" />
+        {/* Characters at the bottom — overlaps behind content */}
+        <div className="relative z-0 w-full pointer-events-none -mt-16 md:-mt-8">
+          <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-gray-900 to-transparent z-10" />
           <Image
             src="/whatdesignerareyou/all.png"
             alt=""
@@ -519,8 +556,8 @@ export default function DesignerQuiz() {
           />
         </div>
 
-        <div className="flex-1 flex flex-col items-center justify-center px-5 py-10">
-          <p className="font-mono text-xs text-gray-500 mb-8 tracking-wider">
+        <div className="flex-1 flex flex-col items-center justify-center px-5 py-4 md:py-10">
+          <p className="font-mono text-xs text-gray-500 mb-4 md:mb-8 tracking-wider">
             {currentSlider + 1} / {SLIDERS.length}
           </p>
 
@@ -539,7 +576,7 @@ export default function DesignerQuiz() {
           </div>
 
           {/* Navigation */}
-          <div className="flex gap-4 mt-12">
+          <div className="flex gap-4 mt-6 md:mt-12">
             {currentSlider > 0 && (
               <button
                 onClick={goPrev}
