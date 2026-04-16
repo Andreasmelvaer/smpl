@@ -241,6 +241,39 @@ export const archetypeImages: Record<ArchetypeKey, string> = {
   notDesigner: '/whatdesignerareyou/notdsesigner.png',
 }
 
+// ---------------------------------------------------------------------------
+// Character reactions — triggered when clicking "Next" on certain positions
+// Key format: "sliderKey:position" → { character, comment }
+// Only extreme/funny positions get reactions. No reaction = silent approval.
+// ---------------------------------------------------------------------------
+
+export interface Reaction {
+  character: ArchetypeKey
+  no: string
+  en: string
+}
+
+export const reactions: Record<string, Reaction> = {
+  // Shape
+  'shape:0': { character: 'chaotic', no: 'Skarpe hjørna?? Ka e du, ein regneark??', en: "Sharp corners?? What are yer, a spreadsheet??" },
+  'shape:4': { character: 'gridDictator', no: 'Ein sirkel?! Det e IKKJE ein form. Det e ein mangel på avgjørelsår.', en: "A circle?! That's NOT a shape. That's a lack of decisions." },
+  // Typography
+  'typography:0': { character: 'helvetica', no: 'Monospace... Du e ikkje ein designar. Du e ein terminal.', en: "Monospace... Yer not a designer. Yer a terminal." },
+  'typography:5': { character: 'neurotic', no: 'Papyrus. PAPYRUS. Eg treng ein pause. Eg treng luft. Eg treng terapi.', en: "Papyrus. PAPYRUS. I need a break. I need air. I need therapy." },
+  // Layout
+  'layout:0': { character: 'hoarder', no: 'Ein kolonne?? Ka med alle dei andre komponentane mine då?!', en: "One column?? What about all me other components then?!" },
+  'layout:4': { character: 'gridDictator', no: 'Ingen grid... *auget rykke* ...du e arrestert.', en: "No grid... *eye twitches* ...yer under arrest." },
+  // Colour
+  'colour:0': { character: 'chaotic', no: 'Svart og kvitt? Det e ikkje ein palett. Det e ein begravelse.', en: "Black and white? That's not a palette. That's a funeral." },
+  'colour:4': { character: 'helvetica', no: 'Full regnboge. Augo mine. AUGO MINE.', en: "Full rainbow. Me eyes. ME EYES." },
+  // Shadow
+  'shadow:0': { character: 'imposter', no: 'Ingen skugge? Litt drama har aldri skadd noken!', en: "No shadow? A bit of drama never hurt nobody!" },
+  'shadow:4': { character: 'neurotic', no: 'Den der skuggen e so tung at den har sin eigen postnummer.', en: "That shadow's so heavy it's got its own postcode." },
+  // Motion
+  'motion:0': { character: 'chaotic', no: 'Ingen animasjon?! Ka e vitsen med å leva då?!', en: "No animation?! What's the point of livin then?!" },
+  'motion:4': { character: 'awkward', no: '...', en: "..." },
+}
+
 export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
   no: {
     neurotic: {

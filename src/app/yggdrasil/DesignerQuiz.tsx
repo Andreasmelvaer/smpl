@@ -7,12 +7,14 @@ import ShimmerGrid from '@/components/ShimmerGrid'
 import {
   type Locale,
   type ArchetypeKey,
+  type Reaction,
   getDefaultLocale,
   ui,
   sliderLabels,
   sliderCommentary,
   archetypes,
   archetypeImages,
+  reactions,
 } from './translations'
 import { SLIDERS, type SliderKey, calculateResult } from './sliders'
 
@@ -386,6 +388,7 @@ export default function DesignerQuiz() {
   const [visible, setVisible] = useState(true)
   const [copied, setCopied] = useState(false)
   const [comicSansUnlocked, setComicSansUnlocked] = useState(false)
+  const [activeReaction, setActiveReaction] = useState<Reaction | null>(null)
 
   // Detect locale on mount
   useEffect(() => {
@@ -410,7 +413,7 @@ export default function DesignerQuiz() {
     setComicSansUnlocked(false)
   }, [])
 
-  const goNext = useCallback(() => {
+  const advanceSlider = useCallback(() => {
     setVisible(false)
     setTimeout(() => {
       if (currentSlider + 1 >= SLIDERS.length) {
@@ -421,6 +424,24 @@ export default function DesignerQuiz() {
       setVisible(true)
     }, 300)
   }, [currentSlider])
+
+  const goNext = useCallback(() => {
+    // Check if current choice triggers a character reaction
+    const key = SLIDERS[currentSlider].key
+    const pos = values[key]
+    const reaction = reactions[`${key}:${pos}`]
+
+    if (reaction) {
+      // Show reaction overlay, then advance after delay
+      setActiveReaction(reaction)
+      setTimeout(() => {
+        setActiveReaction(null)
+        advanceSlider()
+      }, 2500)
+    } else {
+      advanceSlider()
+    }
+  }, [currentSlider, values, advanceSlider])
 
   const goPrev = useCallback(() => {
     if (currentSlider === 0) return
@@ -581,19 +602,45 @@ export default function DesignerQuiz() {
             {currentSlider > 0 && (
               <button
                 onClick={goPrev}
-                className="px-6 py-3 text-gray-400 text-sm font-satoshi hover:text-white transition-colors cursor-pointer"
+                disabled={!!activeReaction}
+                className="px-6 py-3 text-gray-400 text-sm font-satoshi hover:text-white transition-colors cursor-pointer disabled:opacity-30"
               >
                 {t.prev}
               </button>
             )}
             <button
               onClick={goNext}
-              className="px-8 py-3 bg-lime-bright text-gray-900 font-semibold text-sm rounded-full hover:scale-105 transition-transform duration-300 cursor-pointer"
+              disabled={!!activeReaction}
+              className="px-8 py-3 bg-lime-bright text-gray-900 font-semibold text-sm rounded-full hover:scale-105 transition-transform duration-300 cursor-pointer disabled:opacity-60 disabled:scale-100"
             >
               {isLast ? t.seeResult : t.next}
             </button>
           </div>
         </div>
+
+        {/* Character reaction overlay */}
+        {activeReaction && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/80 backdrop-blur-sm motion-safe:animate-[fadeInUp_0.3s_ease-out_both]">
+            <div className="text-center px-6 motion-safe:animate-[fadeInUp_0.4s_ease-out_both]">
+              {/* Speech bubble */}
+              <div className="relative bg-white rounded-2xl px-6 py-4 mb-4 max-w-xs mx-auto shadow-xl">
+                <p className="text-sm font-satoshi text-gray-900 leading-relaxed">
+                  {activeReaction[locale]}
+                </p>
+                {/* Bubble tail */}
+                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45" />
+              </div>
+              {/* Character */}
+              <Image
+                src={archetypeImages[activeReaction.character]}
+                alt=""
+                width={160}
+                height={160}
+                className="w-32 h-32 md:w-40 md:h-40 mx-auto object-contain"
+              />
+            </div>
+          </div>
+        )}
       </section>
     )
   }
