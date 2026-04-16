@@ -239,20 +239,26 @@ function SliderStep({ sliderKey, value, onChange, locale, comicSans, onComicSans
             [&::-webkit-slider-runnable-track]:h-3 [&::-webkit-slider-runnable-track]:rounded-full
             [&::-webkit-slider-runnable-track]:bg-[#1a1a1a] [&::-webkit-slider-runnable-track]:shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]
             [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-11 [&::-webkit-slider-thumb]:h-11
-            [&::-webkit-slider-thumb]:bg-lime [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer
-            [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(200,255,0,0.4),0_2px_6px_rgba(0,0,0,0.3)]
+            [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer
+            [&::-webkit-slider-thumb]:bg-[linear-gradient(145deg,rgba(240,255,180,0.85)_0%,rgba(200,240,60,0.7)_50%,rgba(170,210,40,0.55)_100%)]
+            [&::-webkit-slider-thumb]:backdrop-blur-md
+            [&::-webkit-slider-thumb]:border [&::-webkit-slider-thumb]:border-[rgba(255,255,255,0.6)]
+            [&::-webkit-slider-thumb]:shadow-[inset_0_1px_1px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(255,255,255,0.15),inset_0_0_12px_rgba(255,255,255,0.2),0_2px_8px_rgba(0,0,0,0.25),0_0_18px_rgba(200,255,0,0.3)]
             [&::-webkit-slider-thumb]:-mt-[14px]
             [&::-webkit-slider-thumb]:transition-all [&::-webkit-slider-thumb]:duration-200
-            [&::-webkit-slider-thumb]:active:scale-110 [&::-webkit-slider-thumb]:active:shadow-[0_0_30px_rgba(200,255,0,0.6)]
+            [&::-webkit-slider-thumb]:active:scale-110 [&::-webkit-slider-thumb]:active:shadow-[inset_0_1px_1px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(255,255,255,0.15),inset_0_0_12px_rgba(255,255,255,0.25),0_2px_8px_rgba(0,0,0,0.25),0_0_28px_rgba(200,255,0,0.5)]
             [&::-moz-range-track]:h-3 [&::-moz-range-track]:rounded-full
             [&::-moz-range-track]:bg-[#1a1a1a] [&::-moz-range-track]:shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]
             [&::-moz-range-thumb]:w-11 [&::-moz-range-thumb]:h-11
-            [&::-moz-range-thumb]:bg-lime [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0
+            [&::-moz-range-thumb]:rounded-full
+            [&::-moz-range-thumb]:border [&::-moz-range-thumb]:border-[rgba(255,255,255,0.6)]
+            [&::-moz-range-thumb]:bg-[linear-gradient(145deg,rgba(240,255,180,0.85)_0%,rgba(200,240,60,0.7)_50%,rgba(170,210,40,0.55)_100%)]
+            [&::-moz-range-thumb]:backdrop-blur-md
             [&::-moz-range-thumb]:cursor-pointer
-            [&::-moz-range-thumb]:shadow-[0_0_20px_rgba(200,255,0,0.4),0_2px_6px_rgba(0,0,0,0.3)]"
+            [&::-moz-range-thumb]:shadow-[inset_0_1px_1px_rgba(255,255,255,0.9),inset_0_-2px_4px_rgba(255,255,255,0.15),inset_0_0_12px_rgba(255,255,255,0.2),0_2px_8px_rgba(0,0,0,0.25),0_0_18px_rgba(200,255,0,0.3)]"
         />
         {/* Tick indicators — spaced below slider with animation */}
-        <div className="flex justify-between mt-4 px-3.5">
+        <div className="flex justify-between mt-7 px-3.5">
           {Array.from({ length: config.stops }).map((_, i) => (
             <div
               key={i}
