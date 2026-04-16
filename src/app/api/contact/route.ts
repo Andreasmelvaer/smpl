@@ -217,8 +217,8 @@ export async function POST(request: NextRequest) {
       html: confirmationEmailHtml(name.split(' ')[0]),
     })
 
-    // Sync to CRM (best-effort, non-blocking)
-    syncToCrm({
+    // Sync to CRM — must await to prevent Vercel killing it
+    await syncToCrm({
       name,
       email,
       company,

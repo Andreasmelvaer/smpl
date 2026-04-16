@@ -272,7 +272,7 @@ export async function POST(request: NextRequest) {
       html: notificationEmailHtml(name, email, company, consultation, qualifying),
     })
 
-    // Sync to CRM (best-effort, non-blocking)
+    // Sync to CRM — MUST await to prevent Vercel killing it before completion
     const descParts = []
     if (consultation && consultation !== 'no-thanks') {
       descParts.push(`Consultation: ${consultationLabels[consultation] || consultation}`)
@@ -284,7 +284,7 @@ export async function POST(request: NextRequest) {
     if (qualifying?.hasPitchDeck) descParts.push(`Deck: ${qualifying.hasPitchDeck}`)
     if (qualifying?.keyMessage) descParts.push(qualifying.keyMessage)
 
-    syncToCrm({
+    await syncToCrm({
       name,
       email,
       company,

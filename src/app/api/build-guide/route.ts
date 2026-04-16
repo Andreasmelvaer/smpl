@@ -195,7 +195,7 @@ export async function POST(request: NextRequest) {
     if (wantsConsultation) descParts.push('Wants a free consultation')
     if (currentTools) descParts.push(`Frustrated with: ${currentTools}`)
 
-    syncToCrm({
+    await syncToCrm({
       name,
       email,
       company,
