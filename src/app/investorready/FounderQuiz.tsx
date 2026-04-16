@@ -230,7 +230,8 @@ function BrowseCarousel({ currentKey }: { currentKey: ArchetypeKey }) {
 // ---------------------------------------------------------------------------
 
 export default function FounderQuiz() {
-  const [phase, setPhase] = useState<'landing' | 'quiz' | 'result'>('landing')
+  const [phase, setPhase] = useState<'landing' | 'quiz' | 'reveal' | 'result'>('landing')
+  const [revealTaps, setRevealTaps] = useState(0)
   const [currentSlider, setCurrentSlider] = useState(0)
   const [values, setValues] = useState<Record<SliderKey, number>>({
     runway: 2, pitchStyle: 2, teamSize: 1, pivotCount: 1, riskAppetite: 2, investorType: 2,
@@ -241,7 +242,7 @@ export default function FounderQuiz() {
   const reactionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const t = ui
-  const resultKey: ArchetypeKey | null = phase === 'result' ? calculateResult(values) : null
+  const resultKey: ArchetypeKey | null = (phase === 'result' || phase === 'reveal') ? calculateResult(values) : null
   const result = resultKey ? archetypes[resultKey] : null
 
   const startQuiz = useCallback(() => {
@@ -254,7 +255,7 @@ export default function FounderQuiz() {
   const advanceSlider = useCallback(() => {
     setVisible(false)
     setTimeout(() => {
-      if (currentSlider + 1 >= SLIDERS.length) setPhase('result')
+      if (currentSlider + 1 >= SLIDERS.length) setPhase('reveal'); setRevealTaps(0)
       else setCurrentSlider((c) => c + 1)
       setVisible(true)
     }, 350)
@@ -264,7 +265,7 @@ export default function FounderQuiz() {
     if (!activeReaction) return
     if (reactionTimerRef.current) clearTimeout(reactionTimerRef.current)
     if (currentSlider + 1 >= SLIDERS.length) {
-      setPhase('result')
+      setPhase('reveal'); setRevealTaps(0)
       setActiveReaction(null)
     } else {
       setCurrentSlider((c) => c + 1)
@@ -369,6 +370,45 @@ export default function FounderQuiz() {
             <p className="text-[10px] text-gray-600 font-mono mt-6 animate-pulse">tap to continue</p>
           </div>
         )}
+      </section>
+    )
+  }
+
+  // ---- Reveal ----
+  if (phase === 'reveal') {
+    const revealMessages = ['Your result is ready...', 'Are you sure you want to know?', 'Alright, here it comes...']
+    const scales = [1, 1.15, 1.4]
+    const glows = ['rgba(200,255,0,0)', 'rgba(200,255,0,0.2)', 'rgba(200,255,0,0.5)']
+
+    const handleRevealTap = () => {
+      if (revealTaps < 2) {
+        setRevealTaps((t) => t + 1)
+        navigator.vibrate?.(50 + revealTaps * 50)
+      } else {
+        navigator.vibrate?.(200)
+        setPhase('result')
+      }
+    }
+
+    return (
+      <section className="min-h-[calc(100vh-60px)] bg-gray-900 flex items-center justify-center cursor-pointer overflow-hidden" onClick={handleRevealTap}>
+        <div className="text-center px-6">
+          <div
+            className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full bg-lime/10 flex items-center justify-center transition-all duration-700 ease-out"
+            style={{ transform: `scale(${scales[revealTaps]})`, boxShadow: `0 0 ${40 + revealTaps * 30}px ${glows[revealTaps]}` }}
+          >
+            <span className="text-4xl md:text-5xl transition-all duration-500" style={{ transform: `scale(${0.8 + revealTaps * 0.3})` }}>
+              {revealTaps === 0 ? '🔮' : revealTaps === 1 ? '👀' : '🎯'}
+            </span>
+          </div>
+          <p className="text-xl md:text-2xl font-bold mb-4 transition-all duration-500" style={{ color: '#ffffff' }}>{revealMessages[revealTaps]}</p>
+          <div className="flex justify-center gap-3 mb-8">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className={`w-3 h-3 rounded-full transition-all duration-500 ${i <= revealTaps ? 'bg-lime scale-125' : 'bg-white/15'}`} />
+            ))}
+          </div>
+          <p className="text-sm text-gray-600 font-satoshi animate-pulse">Tap to reveal</p>
+        </div>
       </section>
     )
   }

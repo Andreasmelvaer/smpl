@@ -363,7 +363,8 @@ function BrowseCarousel({ locale, currentKey }: { locale: Locale; currentKey: Ar
 
 export default function DesignerQuiz() {
   const [locale, setLocale] = useState<Locale>('no')
-  const [phase, setPhase] = useState<'landing' | 'quiz' | 'result'>('landing')
+  const [phase, setPhase] = useState<'landing' | 'quiz' | 'reveal' | 'result'>('landing')
+  const [revealTaps, setRevealTaps] = useState(0)
   const [currentSlider, setCurrentSlider] = useState(0)
   const [values, setValues] = useState<Record<SliderKey, number>>({
     shape: 2, typography: 1, layout: 2, colour: 2, shadow: 2, motion: 2,
@@ -379,7 +380,7 @@ export default function DesignerQuiz() {
   }, [])
 
   const t = ui[locale]
-  const resultKey: ArchetypeKey | null = phase === 'result'
+  const resultKey: ArchetypeKey | null = (phase === 'result' || phase === 'reveal')
     ? (comicSansUnlocked ? 'notDesigner' : calculateResult(values))
     : null
   const result = resultKey ? archetypes[locale][resultKey] : null
@@ -396,7 +397,7 @@ export default function DesignerQuiz() {
     setVisible(false)
     setTimeout(() => {
       if (currentSlider + 1 >= SLIDERS.length) {
-        setPhase('result')
+        setPhase('reveal'); setRevealTaps(0)
       } else {
         setCurrentSlider((c) => c + 1)
       }
@@ -423,7 +424,7 @@ export default function DesignerQuiz() {
     if (!activeReaction) return
     if (reactionTimerRef.current) clearTimeout(reactionTimerRef.current)
     if (currentSlider + 1 >= SLIDERS.length) {
-      setPhase('result')
+      setPhase('reveal'); setRevealTaps(0)
       setActiveReaction(null)
     } else {
       setCurrentSlider((c) => c + 1)
@@ -629,6 +630,74 @@ export default function DesignerQuiz() {
             </p>
           </div>
         )}
+      </section>
+    )
+  }
+
+  // ---------------------------------------------------------------------------
+  // Reveal — tap 3 times to see your result
+  // ---------------------------------------------------------------------------
+  if (phase === 'reveal') {
+    const revealMessages = locale === 'no'
+      ? ['Resultatet ditt e klart...', 'E du sikker på at du vil vita?', 'Ok då, her kjem det...']
+      : ['Your result is ready...', 'Are you sure you want to know?', 'Alright, here it comes...']
+    const scales = [1, 1.15, 1.4]
+    const glows = ['rgba(200,255,0,0)', 'rgba(200,255,0,0.2)', 'rgba(200,255,0,0.5)']
+
+    const handleRevealTap = () => {
+      if (revealTaps < 2) {
+        setRevealTaps((t) => t + 1)
+        navigator.vibrate?.(50 + revealTaps * 50)
+      } else {
+        navigator.vibrate?.(200)
+        setPhase('result')
+      }
+    }
+
+    return (
+      <section
+        className="min-h-[calc(100vh-60px)] bg-gray-900 flex items-center justify-center cursor-pointer overflow-hidden"
+        onClick={handleRevealTap}
+      >
+        {LangToggle}
+        <div className="text-center px-6">
+          {/* Pulsing circle */}
+          <div
+            className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full bg-lime/10 flex items-center justify-center transition-all duration-700 ease-out"
+            style={{
+              transform: `scale(${scales[revealTaps]})`,
+              boxShadow: `0 0 ${40 + revealTaps * 30}px ${glows[revealTaps]}`,
+            }}
+          >
+            <span className="text-4xl md:text-5xl transition-all duration-500" style={{ transform: `scale(${0.8 + revealTaps * 0.3})` }}>
+              {revealTaps === 0 ? '🔮' : revealTaps === 1 ? '👀' : '🎯'}
+            </span>
+          </div>
+
+          {/* Message */}
+          <p
+            className="text-xl md:text-2xl font-bold mb-4 transition-all duration-500"
+            style={{ color: '#ffffff' }}
+          >
+            {revealMessages[revealTaps]}
+          </p>
+
+          {/* Tap counter */}
+          <div className="flex justify-center gap-3 mb-8">
+            {[0, 1, 2].map((i) => (
+              <div
+                key={i}
+                className={`w-3 h-3 rounded-full transition-all duration-500 ${
+                  i <= revealTaps ? 'bg-lime scale-125' : 'bg-white/15'
+                }`}
+              />
+            ))}
+          </div>
+
+          <p className="text-sm text-gray-600 font-satoshi animate-pulse">
+            {locale === 'no' ? 'Trykk for å avslørå' : 'Tap to reveal'}
+          </p>
+        </div>
       </section>
     )
   }
