@@ -623,7 +623,7 @@ export default function DesignerQuiz() {
               />
             </div>
             <p className="text-xs text-gray-400 font-mono mt-6 animate-pulse">
-              {locale === 'no' ? '👆 trykk for å fortsetta' : '👆 tap to continue'}
+              {locale === 'no' ? 'trykk for å fortsetta' : 'tap to continue'}
             </p>
           </div>
         )}
@@ -638,8 +638,12 @@ export default function DesignerQuiz() {
     const revealMessages = locale === 'no'
       ? ['Resultatet ditt e klart...', 'E du sikker på at du vil vita?', 'Ok då, her kjem det...']
       : ['Your result is ready...', 'Are you sure you want to know?', 'Alright, here it comes...']
-    const scales = [1, 1.15, 1.4]
-    const glows = ['rgba(200,255,0,0)', 'rgba(200,255,0,0.2)', 'rgba(200,255,0,0.5)']
+    const countdownImages = [
+      '/whatdesignerareyou/3.png',
+      '/whatdesignerareyou/2.png',
+      '/whatdesignerareyou/1.png',
+    ]
+    const scales = [1, 1.1, 1.25]
 
     const handleRevealTap = () => {
       if (revealTaps < 2) {
@@ -658,20 +662,19 @@ export default function DesignerQuiz() {
       >
         {LangToggle}
         <div className="text-center px-6">
-          {/* Pulsing circle */}
           <div
-            className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full bg-lime/10 flex items-center justify-center transition-all duration-700 ease-out"
-            style={{
-              transform: `scale(${scales[revealTaps]})`,
-              boxShadow: `0 0 ${40 + revealTaps * 30}px ${glows[revealTaps]}`,
-            }}
+            className="mx-auto mb-6 transition-all duration-700 ease-out"
+            style={{ transform: `scale(${scales[revealTaps]})` }}
           >
-            <span className="text-4xl md:text-5xl transition-all duration-500" style={{ transform: `scale(${0.8 + revealTaps * 0.3})` }}>
-              {revealTaps === 0 ? '🔮' : revealTaps === 1 ? '👀' : '🎯'}
-            </span>
+            <Image
+              src={countdownImages[revealTaps]}
+              alt={`${3 - revealTaps}`}
+              width={200}
+              height={200}
+              className="w-40 h-40 md:w-52 md:h-52 mx-auto object-contain drop-shadow-[0_0_30px_rgba(200,255,0,0.3)]"
+            />
           </div>
 
-          {/* Message */}
           <p
             className="text-xl md:text-2xl font-bold mb-4 transition-all duration-500"
             style={{ color: '#ffffff' }}
@@ -679,7 +682,6 @@ export default function DesignerQuiz() {
             {revealMessages[revealTaps]}
           </p>
 
-          {/* Tap counter */}
           <div className="flex justify-center gap-3 mb-8">
             {[0, 1, 2].map((i) => (
               <div
@@ -691,8 +693,8 @@ export default function DesignerQuiz() {
             ))}
           </div>
 
-          <p className="text-sm text-gray-600 font-satoshi animate-pulse">
-            {locale === 'no' ? 'Trykk for å avslørå' : 'Tap to reveal'}
+          <p className="text-xs text-gray-400 font-satoshi animate-pulse">
+            {locale === 'no' ? 'trykk for å avslørå' : 'tap to reveal'}
           </p>
         </div>
       </section>

@@ -366,7 +366,7 @@ export default function FounderQuiz() {
               </div>
               <Image src={archetypeImages[activeReaction.character]} alt="" width={160} height={160} className="w-28 h-28 md:w-36 md:h-36 mx-auto object-contain drop-shadow-2xl" />
             </div>
-            <p className="text-xs text-gray-400 font-mono mt-6 animate-pulse">👆 tap to continue</p>
+            <p className="text-xs text-gray-400 font-mono mt-6 animate-pulse">tap to continue</p>
           </div>
         )}
       </section>
@@ -376,8 +376,12 @@ export default function FounderQuiz() {
   // ---- Reveal ----
   if (phase === 'reveal') {
     const revealMessages = ['Your result is ready...', 'Are you sure you want to know?', 'Alright, here it comes...']
-    const scales = [1, 1.15, 1.4]
-    const glows = ['rgba(200,255,0,0)', 'rgba(200,255,0,0.2)', 'rgba(200,255,0,0.5)']
+    const countdownImages = [
+      '/whatdesignerareyou/3.png',
+      '/whatdesignerareyou/2.png',
+      '/whatdesignerareyou/1.png',
+    ]
+    const scales = [1, 1.1, 1.25]
 
     const handleRevealTap = () => {
       if (revealTaps < 2) {
@@ -392,13 +396,14 @@ export default function FounderQuiz() {
     return (
       <section className="min-h-[calc(100vh-60px)] bg-gray-900 flex items-center justify-center cursor-pointer overflow-hidden" onClick={handleRevealTap}>
         <div className="text-center px-6">
-          <div
-            className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full bg-lime/10 flex items-center justify-center transition-all duration-700 ease-out"
-            style={{ transform: `scale(${scales[revealTaps]})`, boxShadow: `0 0 ${40 + revealTaps * 30}px ${glows[revealTaps]}` }}
-          >
-            <span className="text-4xl md:text-5xl transition-all duration-500" style={{ transform: `scale(${0.8 + revealTaps * 0.3})` }}>
-              {revealTaps === 0 ? '🔮' : revealTaps === 1 ? '👀' : '🎯'}
-            </span>
+          <div className="mx-auto mb-6 transition-all duration-700 ease-out" style={{ transform: `scale(${scales[revealTaps]})` }}>
+            <Image
+              src={countdownImages[revealTaps]}
+              alt={`${3 - revealTaps}`}
+              width={200}
+              height={200}
+              className="w-40 h-40 md:w-52 md:h-52 mx-auto object-contain drop-shadow-[0_0_30px_rgba(200,255,0,0.3)]"
+            />
           </div>
           <p className="text-xl md:text-2xl font-bold mb-4 transition-all duration-500" style={{ color: '#ffffff' }}>{revealMessages[revealTaps]}</p>
           <div className="flex justify-center gap-3 mb-8">
@@ -406,7 +411,7 @@ export default function FounderQuiz() {
               <div key={i} className={`w-3 h-3 rounded-full transition-all duration-500 ${i <= revealTaps ? 'bg-lime scale-125' : 'bg-white/15'}`} />
             ))}
           </div>
-          <p className="text-sm text-gray-600 font-satoshi animate-pulse">Tap to reveal</p>
+          <p className="text-xs text-gray-400 font-satoshi animate-pulse">tap to reveal</p>
         </div>
       </section>
     )
