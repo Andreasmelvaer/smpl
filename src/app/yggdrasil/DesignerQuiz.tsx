@@ -518,7 +518,7 @@ export default function DesignerQuiz() {
             >
               {t.start}
             </button>
-            <p className="mt-5 text-[11px] text-gray-600 font-satoshi">
+            <p className="mt-5 text-[11px] text-gray-400 font-satoshi">
               {t.disclaimer}
             </p>
           </div>
@@ -708,11 +708,11 @@ export default function DesignerQuiz() {
   // ---------------------------------------------------------------------------
   if (phase === 'result' && result && resultKey) {
     return (
-      <section className="min-h-[calc(100vh-60px)] bg-gray-900 overflow-hidden">
+      <section className="min-h-[calc(100vh-60px)] bg-gray-900">
         {LangToggle}
         <div className="max-w-lg mx-auto px-5 py-16 md:py-24">
           {/* Character illustration */}
-          <div className="flex justify-center mb-4 motion-safe:animate-[fadeInUp_0.6s_ease-out_both]">
+          <div className="flex justify-center mb-4 p-8 overflow-visible motion-safe:animate-[fadeInUp_0.6s_ease-out_both]">
             <Image
               src={archetypeImages[resultKey]}
               alt={result.name}
