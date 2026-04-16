@@ -502,7 +502,7 @@ export default function DesignerQuiz() {
             </p>
           </div>
         </div>
-        <div className="relative z-10 w-full pointer-events-none -mt-10 md:-mt-4">
+        <div className="relative z-10 w-full pointer-events-none -mt-24 md:-mt-10">
           <Image
             src="/whatdesignerareyou/all.png"
             alt=""
@@ -539,8 +539,8 @@ export default function DesignerQuiz() {
           />
         </div>
 
-        <div className="flex-1 flex flex-col items-center justify-center px-5 py-3 md:py-8">
-          <p className="font-mono text-[11px] text-gray-600 mb-3 md:mb-6 tracking-wider">
+        <div className="flex-1 flex flex-col items-center justify-start px-5 pt-6 md:pt-12 pb-3">
+          <p className="font-mono text-[11px] text-gray-600 mb-2 md:mb-4 tracking-wider">
             {currentSlider + 1} <span className="text-gray-700">/</span> {SLIDERS.length}
           </p>
 
@@ -560,7 +560,7 @@ export default function DesignerQuiz() {
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center gap-3 mt-5 md:mt-10">
+          <div className="flex items-center gap-3 mt-4 md:mt-8">
             {currentSlider > 0 && (
               <button
                 onClick={goPrev}
