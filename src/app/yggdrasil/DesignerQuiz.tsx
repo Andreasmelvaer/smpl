@@ -437,7 +437,7 @@ export default function DesignerQuiz() {
       setTimeout(() => {
         setActiveReaction(null)
         advanceSlider()
-      }, 2500)
+      }, 4000)
     } else {
       advanceSlider()
     }
