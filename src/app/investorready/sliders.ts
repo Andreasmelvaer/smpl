@@ -68,7 +68,7 @@ const TIEBREAK: ArchetypeKey[] = [
   'bootstrapper', 'deckPolisher', 'reluctantCeo', 'accidentalFounder',
 ]
 
-export function calculateResult(values: Record<SliderKey, number>): ArchetypeKey {
+export function calculateTally(values: Record<SliderKey, number>): Record<ArchetypeKey, number> {
   const tally: Record<ArchetypeKey, number> = {
     visionary: 0, reluctantCeo: 0, serialPivoter: 0, techCofounder: 0,
     hustler: 0, bootstrapper: 0, deckPolisher: 0, accidentalFounder: 0,
@@ -81,6 +81,11 @@ export function calculateResult(values: Record<SliderKey, number>): ArchetypeKey
       }
     }
   }
+  return tally
+}
+
+export function calculateResult(values: Record<SliderKey, number>): ArchetypeKey {
+  const tally = calculateTally(values)
   const max = Math.max(...Object.values(tally))
   return TIEBREAK.find((t) => tally[t] === max)!
 }

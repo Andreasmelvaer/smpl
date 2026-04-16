@@ -16,7 +16,7 @@ import {
   archetypeImages,
   reactions,
 } from './translations'
-import { SLIDERS, type SliderKey, calculateResult } from './sliders'
+import { SLIDERS, type SliderKey, calculateResult, calculateTally } from './sliders'
 
 // ---------------------------------------------------------------------------
 // Visual preview components for each slider
@@ -238,15 +238,15 @@ function SliderStep({ sliderKey, value, onChange, locale, comicSans, onComicSans
           className="w-full h-3 rounded-full appearance-none cursor-pointer
             [&::-webkit-slider-runnable-track]:h-3 [&::-webkit-slider-runnable-track]:rounded-full
             [&::-webkit-slider-runnable-track]:bg-[#1a1a1a] [&::-webkit-slider-runnable-track]:shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]
-            [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-7 [&::-webkit-slider-thumb]:h-7
+            [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-11 [&::-webkit-slider-thumb]:h-11
             [&::-webkit-slider-thumb]:bg-lime [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer
             [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(200,255,0,0.4),0_2px_6px_rgba(0,0,0,0.3)]
-            [&::-webkit-slider-thumb]:-mt-[5px]
+            [&::-webkit-slider-thumb]:-mt-[14px]
             [&::-webkit-slider-thumb]:transition-all [&::-webkit-slider-thumb]:duration-200
-            [&::-webkit-slider-thumb]:active:scale-125 [&::-webkit-slider-thumb]:active:shadow-[0_0_30px_rgba(200,255,0,0.6)]
+            [&::-webkit-slider-thumb]:active:scale-110 [&::-webkit-slider-thumb]:active:shadow-[0_0_30px_rgba(200,255,0,0.6)]
             [&::-moz-range-track]:h-3 [&::-moz-range-track]:rounded-full
             [&::-moz-range-track]:bg-[#1a1a1a] [&::-moz-range-track]:shadow-[inset_0_2px_4px_rgba(0,0,0,0.6)]
-            [&::-moz-range-thumb]:w-7 [&::-moz-range-thumb]:h-7
+            [&::-moz-range-thumb]:w-11 [&::-moz-range-thumb]:h-11
             [&::-moz-range-thumb]:bg-lime [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0
             [&::-moz-range-thumb]:cursor-pointer
             [&::-moz-range-thumb]:shadow-[0_0_20px_rgba(200,255,0,0.4),0_2px_6px_rgba(0,0,0,0.3)]"
@@ -371,6 +371,7 @@ export default function DesignerQuiz() {
   })
   const [visible, setVisible] = useState(true)
   const [copied, setCopied] = useState(false)
+  const [showDna, setShowDna] = useState(false)
   const [comicSansUnlocked, setComicSansUnlocked] = useState(false)
   const [activeReaction, setActiveReaction] = useState<Reaction | null>(null)
   const reactionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -540,9 +541,10 @@ export default function DesignerQuiz() {
   // Quiz (Sliders)
   // ---------------------------------------------------------------------------
   if (phase === 'quiz') {
-    const progress = ((currentSlider + 1) / SLIDERS.length) * 100
-    const slider = SLIDERS[currentSlider]
-    const isLast = currentSlider === SLIDERS.length - 1
+    const safeSlider = Math.min(currentSlider, SLIDERS.length - 1)
+    const progress = ((safeSlider + 1) / SLIDERS.length) * 100
+    const slider = SLIDERS[safeSlider]
+    const isLast = safeSlider === SLIDERS.length - 1
 
     return (
       <section className="min-h-[calc(100vh-60px)] bg-gray-900 flex flex-col">
@@ -553,7 +555,7 @@ export default function DesignerQuiz() {
             className="h-0.5 bg-lime transition-all duration-700 ease-out"
             style={{ width: `${progress}%` }}
             role="progressbar"
-            aria-valuenow={currentSlider + 1}
+            aria-valuenow={safeSlider + 1}
             aria-valuemin={1}
             aria-valuemax={SLIDERS.length}
           />
@@ -561,7 +563,7 @@ export default function DesignerQuiz() {
 
         <div className="flex-1 flex flex-col items-center px-5 pt-[12vh] md:pt-[10vh] pb-6">
           <p className="font-mono text-[11px] text-gray-600 mb-5 md:mb-6 tracking-wider">
-            {currentSlider + 1} <span className="text-gray-700">/</span> {SLIDERS.length}
+            {safeSlider + 1} <span className="text-gray-700">/</span> {SLIDERS.length}
           </p>
 
           <div
@@ -762,6 +764,56 @@ export default function DesignerQuiz() {
               </p>
               <p className="font-satoshi text-xs text-gray-300">{result.weakness}</p>
             </div>
+          </div>
+
+          {/* DNA Breakdown */}
+          <div className="mb-5 motion-safe:animate-[fadeInUp_0.6s_ease-out_0.45s_both]">
+            <button
+              onClick={() => setShowDna(!showDna)}
+              className="w-full flex items-center justify-between bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 cursor-pointer hover:bg-white/[0.05] transition-colors"
+            >
+              <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-gray-500">
+                {locale === 'no' ? 'Ditt designer-DNA' : 'Your designer DNA'}
+              </span>
+              <span className={`text-gray-500 text-xs transition-transform duration-300 ${showDna ? 'rotate-180' : ''}`}>
+                ▼
+              </span>
+            </button>
+            {showDna && (() => {
+              const tally = calculateTally(values)
+              const total = Object.values(tally).reduce((a, b) => a + b, 0)
+              if (total === 0) return null
+              const sorted = (Object.entries(tally) as [ArchetypeKey, number][])
+                .filter(([, v]) => v > 0)
+                .sort((a, b) => b[1] - a[1])
+              return (
+                <div className="mt-2 bg-white/[0.03] border border-white/[0.06] rounded-xl p-4 space-y-2.5 animate-[fadeInUp_0.3s_ease-out_both]">
+                  {sorted.map(([key, score]) => {
+                    const pct = Math.round((score / total) * 100)
+                    const name = archetypes[locale][key].name
+                    const isWinner = key === resultKey
+                    return (
+                      <div key={key}>
+                        <div className="flex justify-between mb-1">
+                          <span className={`font-satoshi text-xs ${isWinner ? 'text-lime font-semibold' : 'text-gray-400'}`}>
+                            {name}
+                          </span>
+                          <span className={`font-mono text-xs ${isWinner ? 'text-lime' : 'text-gray-500'}`}>
+                            {pct}%
+                          </span>
+                        </div>
+                        <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full rounded-full transition-all duration-700 ${isWinner ? 'bg-lime' : 'bg-white/20'}`}
+                            style={{ width: `${pct}%` }}
+                          />
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              )
+            })()}
           </div>
 
           {/* Prescription */}

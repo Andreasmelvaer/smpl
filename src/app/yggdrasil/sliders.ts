@@ -113,7 +113,7 @@ const TIEBREAK_ORDER: ArchetypeKey[] = [
   'gridDictator', 'imposter', 'neurotic', 'chaotic',
 ]
 
-export function calculateResult(values: Record<SliderKey, number>): ArchetypeKey {
+export function calculateTally(values: Record<SliderKey, number>): Record<ArchetypeKey, number> {
   const tally: Record<ArchetypeKey, number> = {
     neurotic: 0, imposter: 0, helvetica: 0, gridDictator: 0,
     chaotic: 0, hoarder: 0, awkward: 0, notDesigner: 0,
@@ -129,6 +129,11 @@ export function calculateResult(values: Record<SliderKey, number>): ArchetypeKey
     }
   }
 
+  return tally
+}
+
+export function calculateResult(values: Record<SliderKey, number>): ArchetypeKey {
+  const tally = calculateTally(values)
   const max = Math.max(...Object.values(tally))
   return TIEBREAK_ORDER.find((t) => tally[t] === max)!
 }
