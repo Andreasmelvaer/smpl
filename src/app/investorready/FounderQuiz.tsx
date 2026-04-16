@@ -255,7 +255,7 @@ export default function FounderQuiz() {
   const advanceSlider = useCallback(() => {
     setVisible(false)
     setTimeout(() => {
-      if (currentSlider + 1 >= SLIDERS.length) setPhase('reveal'); setRevealTaps(0)
+      if (currentSlider + 1 >= SLIDERS.length) { setPhase('reveal'); setRevealTaps(0) }
       else setCurrentSlider((c) => c + 1)
       setVisible(true)
     }, 350)
