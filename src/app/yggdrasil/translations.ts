@@ -23,8 +23,8 @@ export const ui = {
     titleHighlight: 'designer',
     title2: 'e du, egentlig?',
     tagline: '5 spørsmål. Null dømming.\nOk då, kanskje litt.',
-    start: 'Finn det ud, om du tørr då',
-    disclaimer: 'Resultatå dine kan bli brukt mot deg. Ikkje juridisk. Bare sosialt.',
+    start: 'Finn det ut, om du tørr då',
+    disclaimer: 'Resultata dine kan bli brukt mot deg. Ikkje juridisk. Bare sosialt.',
     next: 'Neste',
     prev: 'Tilbake',
     seeResult: 'Vis meg sannheita',
@@ -77,7 +77,7 @@ export const sliderCommentary = {
   shape: {
     no: [
       'Skarpe hjørna. Du e typen som stryke skjortene sine. Og kalkulatoren.',
-      'Litt avrunda. Du prøve å verka chill, men du e det ikkje.',
+      'Litt avrunda. Du prøve å virka chill, men du e det ikkje. Me ser det.',
       'Squircle. Du bruke iPhone og har latt Apple bestemma smaken din.',
       'Nesten sirkel. Du huske ikkje sist du brukte ein linjal.',
       'Perfekt sirkel. Du har ikkje grensar. Bokstavelig talt.',
@@ -97,7 +97,7 @@ export const sliderCommentary = {
       'Slab serif. Du har ein \"vintage\" sykkel og ein kaffikvern frå Japan.',
       'Serif. Du trur du e betre enn alle andre. Og du har kanskje rett.',
       'Old style. Du har lest minst tre bøger om typografi. Ingen ba deg.',
-      'Papyrus. Du har gitt opp. Som han som lagde Avatar-logoen. Ryan Gosling græt.',
+      'Papyrus. Du har gitt opp. Som han som lagde Avatar-logoen. Ryan Gosling grein.',
     ],
     en: [
       "Monospace. Yer writin code in the terminal and callin it \"design\". Behave.",
@@ -110,10 +110,10 @@ export const sliderCommentary = {
   },
   layout: {
     no: [
-      'Ein kolonne. Du les avisa og like det enkelt. Som bestefa.',
-      'To kolonnar. Du e ein ansvarleg vaksen. Kjedelig, men funksjonell.',
-      'Grid. Du har eit regneark for alt. Inkludert følelsår.',
-      'Asymmetrisk. Du trur du e kunstnar. Utviklaren din græt.',
+      'Ein kolonne. Du les avisa og like det enkelt. Som bestefa di. Mangle berre kaffikoppen.',
+      'To kolonnar. Du e ein ansvarleg vaksen. Kjedelig, men funksjonell. Som ein Volvo.',
+      'Grid. Du har eit regneark for alt. Inkludert følelsår. Spesielt følelsår.',
+      'Asymmetrisk. Du trur du e kunstnar. Utviklaren din grein seg te søvns.',
       'Ingen grid. Kaos. Du lagrar ikkje filene dine heller, gjer du vel?',
     ],
     en: [
@@ -126,11 +126,11 @@ export const sliderCommentary = {
   },
   colour: {
     no: [
-      'Svart og kvitt. Du e enten ein minimalist eller ein vampyr.',
-      'Jordfargar. Du kjøpe møbler på Fretex og kalle det \"kuratert\".',
+      'Svart og kvitt. Du e enten ein minimalist eller ein vampyr. Begge lever i mørket.',
+      'Jordfargar. Du kjøpe møbler på Fretex og kalle det \"kuratert\". Innbill deg sjølv.',
       'Brand-fargar. Du følge reglane. HR elske deg. Ingen andre gjer det.',
       'Neon. Du har ikkje sove på 3 dagar og det SER ut som det.',
-      'Full regnboge. Du e enten 6 år gammal eller ein genial galansen.',
+      'Full regnboge. Du e enten 6 år gammal eller ein genial galing. Ingen mellomting.',
     ],
     en: [
       "Black and white. Yer either a minimalist or a vampire. Could go either way honestly.",
@@ -142,11 +142,11 @@ export const sliderCommentary = {
   },
   motion: {
     no: [
-      'Ingen animasjon. Du trur bevegelse e ein distraksjon. Du e gøy på festar.',
+      'Ingen animasjon. Du trur bevegelse e ein distraksjon. Du e sikkert kjempegøy på festar.',
       'Subtil fade. Du e den typen som seie \"less is more\" uironisk.',
       'Smooth ease. Du e balansert. Mistenkelig balansert.',
       'Spring/bounce. Du har for mykje energi og alle rundt deg e heilt utslitne.',
-      'Total sirkus. Du e eit menneskeleg ADHD-fyrverkeri og eg elske det.',
+      'Total sirkus. Du e eit menneskeleg ADHD-fyrverkeri og eg elske det. Aldri forandra deg.',
     ],
     en: [
       "No animation. Think motion's a distraction, don't yer. Bet yer dead fun at parties an all.",
@@ -158,9 +158,9 @@ export const sliderCommentary = {
   },
   shadow: {
     no: [
-      'Ingen skugge. Du e flat. Bokstavelig og personlegheitsmessig.',
-      'Litt skugge. Du vil ha dybde, men e redd for å forplikta deg.',
-      'Medium skugge. Balansert. Du les sikkert designbloggår og.',
+      'Ingen skugge. Du e flat. Bokstavelig og personlegheitsmessig. Beklagar.',
+      'Litt skugge. Du vil ha dybde, men e redd for å forplikta deg. Som i alle relasjonar.',
+      'Medium skugge. Balansert. Du les sikkert designbloggar og. Stolt av deg sjølv?',
       'Tung skugge. Du savne 2012. Alle knappane dine ser ut som dei flyg.',
       'MEGA skugge. Du e ein PowerPoint-designer og du har ingen skam.',
     ],
@@ -180,11 +180,11 @@ export const sliderCommentary = {
 
 export const sliderLabels = {
   shape: {
-    no: 'Vel den formen som snakke te sjelå',
+    no: 'Vel den formen som snakke te sjela di',
     en: "Pick the shape that speaks to yer soul",
   },
   typography: {
-    no: 'Vel fonten som ikkje ser heilt idiot ud',
+    no: 'Vel fonten som ikkje ser heilt idiot ut',
     en: "Pick the font that doesnae look daft",
   },
   layout: {
@@ -196,7 +196,7 @@ export const sliderLabels = {
     en: "Pick the palette that won't give folks a headache",
   },
   shadow: {
-    no: 'Vel skyggen som gir litt drama',
+    no: 'Vel skuggen som gir litt drama',
     en: "Pick the drop shadow with a wee bit o' drama",
   },
   motion: {
@@ -256,10 +256,10 @@ export interface Reaction {
 export const reactions: Record<string, Reaction> = {
   // Shape — ALL positions get a reaction (first slider, sets the tone)
   'shape:0': { character: 'chaotic', no: 'Skarpe hjørna?? Ka e du, ein regneark??', en: "Sharp corners?? What are yer, a spreadsheet??" },
-  'shape:1': { character: 'neurotic', no: 'Avrunda hjørna. Ikkje heilt modig, ikkje heilt feig. Lunkent.', en: "Rounded corners. Not brave, not boring. Lukewarm." },
+  'shape:1': { character: 'neurotic', no: 'Avrunda hjørna. Ikkje modig, ikkje feig. Lunkent. Som ein lunken kaffi.', en: "Rounded corners. Not brave, not boring. Lukewarm." },
   'shape:2': { character: 'imposter', no: 'Squircle. Du lot Apple bestemma smaken din. Respekt for ærligheta.', en: "Squircle. Yer let Apple decide for yer. Fair enough, honestly." },
   'shape:3': { character: 'hoarder', no: 'Nesten ein sirkel?? Bestem deg! Eg har komponentar for begge!', en: "Nearly a circle?? Make yer mind up! I've got components for both!" },
-  'shape:4': { character: 'gridDictator', no: 'Ein sirkel?! Det e IKKJE ein form. Det e ein mangel på avgjørelsår.', en: "A circle?! That's NOT a shape. That's a lack of decisions." },
+  'shape:4': { character: 'gridDictator', no: 'Ein sirkel?! Det e IKKJE ein form. Det e ein mangel på avgjersler.', en: "A circle?! That's NOT a shape. That's a lack of decisions." },
   // Typography — extremes + middle
   'typography:0': { character: 'helvetica', no: 'Monospace... Du e ikkje ein designar. Du e ein terminal.', en: "Monospace... Yer not a designer. Yer a terminal." },
   'typography:1': { character: 'chaotic', no: 'Sans-serif. Trygt. Kjedelig. Men trygt. Som å bestilla vatn på ein bar.', en: "Sans-serif. Safe. Boring. But safe. Like orderin water at a bar." },
@@ -267,15 +267,15 @@ export const reactions: Record<string, Reaction> = {
   'typography:5': { character: 'neurotic', no: 'Papyrus. PAPYRUS. Eg treng ein pause. Eg treng luft. Eg treng terapi.', en: "Papyrus. PAPYRUS. I need a break. I need air. I need therapy." },
   // Layout — extremes + grid
   'layout:0': { character: 'hoarder', no: 'Ein kolonne?? Ka med alle dei andre komponentane mine då?!', en: "One column?? What about all me other components then?!" },
-  'layout:2': { character: 'chaotic', no: 'Grid. Sjølvsagt. Du har sikkert eit regneark for følelsane dine og.', en: "Grid. Of course. Yer've probably got a spreadsheet for yer feelings an all." },
+  'layout:2': { character: 'chaotic', no: 'Grid. Sjølvsagt. Du har sikkert eit regneark for følelsår og. Kolonne A: skuffelse.', en: "Grid. Of course. Yer've probably got a spreadsheet for yer feelings an all." },
   'layout:4': { character: 'gridDictator', no: 'Ingen grid... *auget rykke* ...du e arrestert.', en: "No grid... *eye twitches* ...yer under arrest." },
   // Colour
   'colour:0': { character: 'chaotic', no: 'Svart og kvitt? Det e ikkje ein palett. Det e ein begravelse.', en: "Black and white? That's not a palette. That's a funeral." },
   'colour:2': { character: 'imposter', no: 'Brand-fargar. Du følge reglane. Ingen har nokon gong blitt berømt av å følga reglane.', en: "Brand colours. Yer follow the rules. Nobody ever got famous followin the rules." },
   'colour:4': { character: 'helvetica', no: 'Full regnboge. Augo mine. AUGO MINE.', en: "Full rainbow. Me eyes. ME EYES." },
   // Shadow
-  'shadow:0': { character: 'imposter', no: 'Ingen skugge? Litt drama har aldri skadd noken!', en: "No shadow? A bit of drama never hurt nobody!" },
-  'shadow:4': { character: 'neurotic', no: 'Den der skuggen e so tung at den har sin eigen postnummer.', en: "That shadow's so heavy it's got its own postcode." },
+  'shadow:0': { character: 'imposter', no: 'Ingen skugge? Litt drama har aldri skada nokon!', en: "No shadow? A bit of drama never hurt nobody!" },
+  'shadow:4': { character: 'neurotic', no: 'Den der skuggen e so tung at den har sitt eige postnummer. Eg treng å liggja ned.', en: "That shadow's so heavy it's got its own postcode." },
   // Motion
   'motion:0': { character: 'chaotic', no: 'Ingen animasjon?! Ka e vitsen med å leva då?!', en: "No animation?! What's the point of livin then?!" },
   'motion:2': { character: 'awkward', no: '...ok. Det e greitt. Eg har ingen meining om dette. Eg har aldri meiningar.', en: "...alright. That's fine. I don't have an opinion on this. I never have opinions." },
@@ -339,9 +339,9 @@ export const archetypes: Record<Locale, Record<ArchetypeKey, ArchetypeData>> = {
       tagline: 'Det der e ikkje i komponentbiblioteket.',
       description:
         'Du har 847 komponentar i Figma-biblioteket ditt. 12 av dei e i bruk. Du har variantar av variantar. Auto-layout inni auto-layout inni auto-layout. Filene dine e arkitektoniske meisterverk som ingen tør å røra.',
-      diagnosis: 'Komponent-hamstring med kronisk over-engineering',
-      strength: 'Designsystemet ditt e eit kunstverk',
-      weakness: 'Bruke 4 timar på å laga ein komponent ingen ba om',
+      diagnosis: 'Komponent-hamstring med kronisk over-engineering. Det finst ikkje hjelp.',
+      strength: 'Designsystemet ditt e eit kunstverk. Synd ingen bruke det.',
+      weakness: 'Bruke 4 timar på å laga ein komponent ingen ba om. Kvar. Einaste. Dag.',
       prescription: 'Slett ein komponent. Berre ein. Sjå ka som skjer. Hint: ingenting.',
     },
     awkward: {
