@@ -205,11 +205,11 @@ function SliderStep({ sliderKey, value, onChange, locale, comicSans, onComicSans
   else if (sliderKey === 'motion') Preview = <MotionPreview value={value} />
 
   return (
-    <div className="w-full max-w-lg mx-auto">
-      <h2 className="text-base md:text-xl font-bold text-center mb-3 md:mb-5" style={{ color: '#ffffff' }}>{label}</h2>
+    <div className="w-full max-w-lg mx-auto px-4">
+      <h2 className="text-lg md:text-xl font-bold text-center mb-5 md:mb-6" style={{ color: '#ffffff' }}>{label}</h2>
 
       <div
-        className="mb-2 md:mb-4"
+        className="mb-4 md:mb-5"
         onMouseDown={handlePressStart}
         onMouseUp={handlePressEnd}
         onMouseLeave={handlePressEnd}
@@ -219,7 +219,7 @@ function SliderStep({ sliderKey, value, onChange, locale, comicSans, onComicSans
         {Preview}
       </div>
 
-      <p className={`text-xs md:text-sm font-satoshi text-center min-h-[2rem] md:min-h-[2.5rem] mb-3 md:mb-6 transition-all duration-300 leading-relaxed ${comicSans ? 'text-pink' : 'text-gray-400'}`}>
+      <p className={`text-xs md:text-sm font-satoshi text-center min-h-[2.5rem] mb-5 md:mb-6 transition-all duration-300 leading-relaxed px-2 ${comicSans ? 'text-pink' : 'text-gray-400'}`}>
         {comicSans
           ? (locale === 'no' ? 'Comic Sans. Du e heilt ute å kjøra. Eg e imponert.' : "Comic Sans. Yer've lost the plot entirely. I'm impressed.")
           : commentary[value]
@@ -539,8 +539,8 @@ export default function DesignerQuiz() {
           />
         </div>
 
-        <div className="flex-1 flex flex-col items-center justify-start px-5 pt-6 md:pt-12 pb-3">
-          <p className="font-mono text-[11px] text-gray-600 mb-2 md:mb-4 tracking-wider">
+        <div className="flex-1 flex flex-col items-center px-5 pt-[12vh] md:pt-[10vh] pb-6">
+          <p className="font-mono text-[11px] text-gray-600 mb-5 md:mb-6 tracking-wider">
             {currentSlider + 1} <span className="text-gray-700">/</span> {SLIDERS.length}
           </p>
 
@@ -560,7 +560,7 @@ export default function DesignerQuiz() {
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center gap-3 mt-4 md:mt-8">
+          <div className="flex items-center gap-3 mt-6 md:mt-10">
             {currentSlider > 0 && (
               <button
                 onClick={goPrev}
