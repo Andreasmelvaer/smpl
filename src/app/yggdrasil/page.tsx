@@ -15,16 +15,16 @@ export const metadata: Metadata = {
     siteName: 'SmplCo',
     images: [
       {
-        url: '/whatdesignerareyou/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'What Kind of Designer Are You? — SmplCo Quiz',
+        url: '/whatdesignerareyou/notmyname2.jpg',
+        width: 2486,
+        height: 1906,
+        alt: "That's NOT my name! — What Kind of Designer Are You?",
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['https://smpl.as/whatdesignerareyou/og-image.png'],
+    images: ['https://smpl.as/whatdesignerareyou/notmyname2.jpg'],
   },
 }
 
