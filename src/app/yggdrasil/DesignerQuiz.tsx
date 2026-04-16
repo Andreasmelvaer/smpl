@@ -409,11 +409,21 @@ export default function DesignerQuiz() {
     const reaction = reactions[`${key}:${pos}`]
 
     if (reaction) {
+      // Show reaction overlay
       setActiveReaction(reaction)
       setTimeout(() => {
-        setActiveReaction(null)
-        advanceSlider()
-      }, 4000)
+        // While overlay is still showing, swap the slider content underneath
+        if (currentSlider + 1 >= SLIDERS.length) {
+          setPhase('result')
+          setActiveReaction(null)
+        } else {
+          setCurrentSlider((c) => c + 1)
+          // Brief delay then remove overlay to reveal new slider
+          setTimeout(() => {
+            setActiveReaction(null)
+          }, 300)
+        }
+      }, 3700)
     } else {
       advanceSlider()
     }
