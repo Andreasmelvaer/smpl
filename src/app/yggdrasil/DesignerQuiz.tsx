@@ -37,7 +37,7 @@ const FONT_FAMILIES = [
   '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
   '"Rockwell", "Roboto Slab", serif',
   '"Georgia", "Times New Roman", serif',
-  '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+  '"Didot", "Bodoni MT", "Noto Serif Display", serif',
   'Papyrus, fantasy, cursive',
 ]
 
@@ -47,7 +47,11 @@ function TypographyPreview({ value, locale }: { value: number; locale: Locale })
     <div className="flex items-center justify-center h-48">
       <p
         className="text-3xl md:text-4xl text-center text-white transition-all duration-500"
-        style={{ fontFamily: FONT_FAMILIES[value] }}
+        style={{
+          fontFamily: FONT_FAMILIES[value],
+          fontStyle: value === 4 ? 'italic' : 'normal',
+          letterSpacing: value === 4 ? '0.05em' : 'normal',
+        }}
       >
         {words}
       </p>
