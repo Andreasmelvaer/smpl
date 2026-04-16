@@ -177,32 +177,28 @@ interface SliderStepProps {
   value: number
   onChange: (v: number) => void
   locale: Locale
+  comicSans: boolean
+  onComicSans: () => void
 }
 
-function SliderStep({ sliderKey, value, onChange, locale }: SliderStepProps) {
+function SliderStep({ sliderKey, value, onChange, locale, comicSans, onComicSans }: SliderStepProps) {
   const config = SLIDERS.find((s) => s.key === sliderKey)!
   const label = sliderLabels[sliderKey][locale]
   const commentary = sliderCommentary[sliderKey][locale]
-  const [comicSans, setComicSans] = useState(false)
   const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   // Long-press on Papyrus (typography slider, last position) = Comic Sans
   const isPapyrus = sliderKey === 'typography' && value === config.stops - 1
   const handlePressStart = () => {
-    if (!isPapyrus) return
+    if (!isPapyrus || comicSans) return
     longPressTimer.current = setTimeout(() => {
-      setComicSans(true)
-      // Vibrate if available
+      onComicSans()
       navigator.vibrate?.(200)
     }, 1500)
   }
   const handlePressEnd = () => {
     if (longPressTimer.current) clearTimeout(longPressTimer.current)
   }
-  // Reset Comic Sans when moving away from Papyrus
-  useEffect(() => {
-    if (!isPapyrus) setComicSans(false)
-  }, [isPapyrus])
 
   let Preview: React.ReactNode = null
   if (sliderKey === 'shape') Preview = <ShapePreview value={value} />
@@ -389,6 +385,7 @@ export default function DesignerQuiz() {
   })
   const [visible, setVisible] = useState(true)
   const [copied, setCopied] = useState(false)
+  const [comicSansUnlocked, setComicSansUnlocked] = useState(false)
 
   // Detect locale on mount
   useEffect(() => {
@@ -396,7 +393,9 @@ export default function DesignerQuiz() {
   }, [])
 
   const t = ui[locale]
-  const resultKey: ArchetypeKey | null = phase === 'result' ? calculateResult(values) : null
+  const resultKey: ArchetypeKey | null = phase === 'result'
+    ? (comicSansUnlocked ? 'notDesigner' : calculateResult(values))
+    : null
   const result = resultKey ? archetypes[locale][resultKey] : null
 
   const toggleLocale = useCallback(() => {
@@ -408,6 +407,7 @@ export default function DesignerQuiz() {
     setCurrentSlider(0)
     setPhase('quiz')
     setVisible(true)
+    setComicSansUnlocked(false)
   }, [])
 
   const goNext = useCallback(() => {
@@ -572,6 +572,8 @@ export default function DesignerQuiz() {
               value={values[slider.key]}
               onChange={updateSlider}
               locale={locale}
+              comicSans={comicSansUnlocked}
+              onComicSans={() => setComicSansUnlocked(true)}
             />
           </div>
 
