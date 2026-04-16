@@ -254,23 +254,31 @@ export interface Reaction {
 }
 
 export const reactions: Record<string, Reaction> = {
-  // Shape
+  // Shape — ALL positions get a reaction (first slider, sets the tone)
   'shape:0': { character: 'chaotic', no: 'Skarpe hjørna?? Ka e du, ein regneark??', en: "Sharp corners?? What are yer, a spreadsheet??" },
+  'shape:1': { character: 'neurotic', no: 'Avrunda hjørna. Ikkje heilt modig, ikkje heilt feig. Lunkent.', en: "Rounded corners. Not brave, not boring. Lukewarm." },
+  'shape:2': { character: 'imposter', no: 'Squircle. Du lot Apple bestemma smaken din. Respekt for ærligheta.', en: "Squircle. Yer let Apple decide for yer. Fair enough, honestly." },
+  'shape:3': { character: 'hoarder', no: 'Nesten ein sirkel?? Bestem deg! Eg har komponentar for begge!', en: "Nearly a circle?? Make yer mind up! I've got components for both!" },
   'shape:4': { character: 'gridDictator', no: 'Ein sirkel?! Det e IKKJE ein form. Det e ein mangel på avgjørelsår.', en: "A circle?! That's NOT a shape. That's a lack of decisions." },
-  // Typography
+  // Typography — extremes + middle
   'typography:0': { character: 'helvetica', no: 'Monospace... Du e ikkje ein designar. Du e ein terminal.', en: "Monospace... Yer not a designer. Yer a terminal." },
+  'typography:1': { character: 'chaotic', no: 'Sans-serif. Trygt. Kjedelig. Men trygt. Som å bestilla vatn på ein bar.', en: "Sans-serif. Safe. Boring. But safe. Like orderin water at a bar." },
+  'typography:3': { character: 'imposter', no: 'Serif? Åå, sjå på deg, Mr. Fancy. Lese du New York Times og?', en: "Serif? Ooh, get you, Mr. Fancy. Read the New York Times an all, do yer?" },
   'typography:5': { character: 'neurotic', no: 'Papyrus. PAPYRUS. Eg treng ein pause. Eg treng luft. Eg treng terapi.', en: "Papyrus. PAPYRUS. I need a break. I need air. I need therapy." },
-  // Layout
+  // Layout — extremes + grid
   'layout:0': { character: 'hoarder', no: 'Ein kolonne?? Ka med alle dei andre komponentane mine då?!', en: "One column?? What about all me other components then?!" },
+  'layout:2': { character: 'chaotic', no: 'Grid. Sjølvsagt. Du har sikkert eit regneark for følelsane dine og.', en: "Grid. Of course. Yer've probably got a spreadsheet for yer feelings an all." },
   'layout:4': { character: 'gridDictator', no: 'Ingen grid... *auget rykke* ...du e arrestert.', en: "No grid... *eye twitches* ...yer under arrest." },
   // Colour
   'colour:0': { character: 'chaotic', no: 'Svart og kvitt? Det e ikkje ein palett. Det e ein begravelse.', en: "Black and white? That's not a palette. That's a funeral." },
+  'colour:2': { character: 'imposter', no: 'Brand-fargar. Du følge reglane. Ingen har nokon gong blitt berømt av å følga reglane.', en: "Brand colours. Yer follow the rules. Nobody ever got famous followin the rules." },
   'colour:4': { character: 'helvetica', no: 'Full regnboge. Augo mine. AUGO MINE.', en: "Full rainbow. Me eyes. ME EYES." },
   // Shadow
   'shadow:0': { character: 'imposter', no: 'Ingen skugge? Litt drama har aldri skadd noken!', en: "No shadow? A bit of drama never hurt nobody!" },
   'shadow:4': { character: 'neurotic', no: 'Den der skuggen e so tung at den har sin eigen postnummer.', en: "That shadow's so heavy it's got its own postcode." },
   // Motion
   'motion:0': { character: 'chaotic', no: 'Ingen animasjon?! Ka e vitsen med å leva då?!', en: "No animation?! What's the point of livin then?!" },
+  'motion:2': { character: 'awkward', no: '...ok. Det e greitt. Eg har ingen meining om dette. Eg har aldri meiningar.', en: "...alright. That's fine. I don't have an opinion on this. I never have opinions." },
   'motion:4': { character: 'awkward', no: '...', en: "..." },
 }
 
