@@ -412,9 +412,6 @@ export default function DesignerQuiz() {
 
     if (reaction) {
       setActiveReaction(reaction)
-      reactionTimerRef.current = setTimeout(() => {
-        dismissReaction()
-      }, 3700)
     } else {
       advanceSlider()
     }
@@ -625,8 +622,8 @@ export default function DesignerQuiz() {
                 className="w-28 h-28 md:w-36 md:h-36 mx-auto object-contain drop-shadow-2xl"
               />
             </div>
-            <p className="text-[10px] text-gray-600 font-mono mt-6 animate-pulse">
-              {locale === 'no' ? 'trykk for å fortsetta' : 'tap to continue'}
+            <p className="text-xs text-gray-400 font-mono mt-6 animate-pulse">
+              {locale === 'no' ? '👆 trykk for å fortsetta' : '👆 tap to continue'}
             </p>
           </div>
         )}

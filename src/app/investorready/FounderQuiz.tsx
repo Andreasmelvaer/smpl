@@ -278,7 +278,6 @@ export default function FounderQuiz() {
     const reaction = reactions[`${key}:${values[key]}`]
     if (reaction) {
       setActiveReaction(reaction)
-      reactionTimerRef.current = setTimeout(() => dismissReaction(), 3700)
     } else {
       advanceSlider()
     }
@@ -367,7 +366,7 @@ export default function FounderQuiz() {
               </div>
               <Image src={archetypeImages[activeReaction.character]} alt="" width={160} height={160} className="w-28 h-28 md:w-36 md:h-36 mx-auto object-contain drop-shadow-2xl" />
             </div>
-            <p className="text-[10px] text-gray-600 font-mono mt-6 animate-pulse">tap to continue</p>
+            <p className="text-xs text-gray-400 font-mono mt-6 animate-pulse">👆 tap to continue</p>
           </div>
         )}
       </section>
