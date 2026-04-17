@@ -4,6 +4,7 @@ import { useState, useCallback, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ShimmerGrid from '@/components/ShimmerGrid'
+import Particles from '@/components/Particles'
 import {
   type Locale,
   type ArchetypeKey,
@@ -504,6 +505,7 @@ export default function DesignerQuiz() {
     return (
       <section className="relative min-h-[calc(100vh-60px)] flex flex-col bg-gray-900 overflow-hidden">
         <ShimmerGrid />
+        <Particles count={14} intensity={0.7} variant="drift" />
         {LangToggle}
         <div className="relative z-10 flex-1 flex items-center justify-center">
           <div className="text-center px-6 max-w-xl mx-auto pb-12 md:pb-20">
@@ -611,25 +613,34 @@ export default function DesignerQuiz() {
         {/* Character reaction overlay */}
         {activeReaction && (
           <div
-            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-900/85 backdrop-blur-md cursor-pointer"
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-900/90 backdrop-blur-md cursor-pointer px-6"
             onClick={dismissReaction}
           >
-            <div className="text-center px-6 motion-safe:animate-[fadeInUp_0.4s_ease-out_both]">
-              <div className="relative bg-white rounded-2xl px-5 py-3.5 mb-3 max-w-[280px] mx-auto shadow-2xl">
-                <p className="text-sm font-satoshi text-gray-900 leading-relaxed">
+            <div className="text-center w-full max-w-sm motion-safe:animate-[fadeInUp_0.4s_ease-out_both]">
+              <div className="smpl-speech-tail relative bg-white rounded-3xl px-7 py-6 mb-7 mx-auto shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
+                <p className="text-lg md:text-xl font-satoshi text-gray-900 leading-snug font-medium">
                   {activeReaction[locale]}
                 </p>
-                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45 rounded-sm" />
               </div>
-              <Image
-                src={archetypeImages[activeReaction.character]}
-                alt=""
-                width={160}
-                height={160}
-                className="w-28 h-28 md:w-36 md:h-36 mx-auto object-contain drop-shadow-2xl"
-              />
+              <div className="relative inline-block">
+                <div
+                  className="absolute inset-0 rounded-full blur-2xl opacity-60"
+                  style={{
+                    background: 'radial-gradient(circle, rgba(200,255,0,0.25) 0%, transparent 70%)',
+                    transform: 'scale(1.3)',
+                  }}
+                  aria-hidden="true"
+                />
+                <Image
+                  src={archetypeImages[activeReaction.character]}
+                  alt=""
+                  width={160}
+                  height={160}
+                  className="relative w-32 h-32 md:w-40 md:h-40 mx-auto object-contain"
+                />
+              </div>
             </div>
-            <p className="text-xs text-gray-400 font-mono mt-6 animate-pulse">
+            <p className="text-[11px] text-gray-400 font-mono mt-8 tracking-wider animate-pulse">
               {locale === 'no' ? 'trykk for å fortsetta' : 'tap to continue'}
             </p>
           </div>
@@ -664,22 +675,35 @@ export default function DesignerQuiz() {
 
     return (
       <section
-        className="min-h-[calc(100vh-60px)] bg-gray-900 flex items-center justify-center cursor-pointer"
+        className="relative min-h-[calc(100vh-60px)] bg-gray-900 flex items-center justify-center cursor-pointer overflow-hidden"
         onClick={handleRevealTap}
       >
+        <Particles
+          count={10 + revealTaps * 6}
+          intensity={0.6 + revealTaps * 0.25}
+          variant="drift"
+        />
         {LangToggle}
-        <div className="text-center px-6" key={revealTaps}>
+        <div className="relative z-10 text-center px-6" key={revealTaps}>
           <div
-            className="mx-auto mb-6 p-16 overflow-visible animate-[fadeInUp_0.4s_ease-out_both]"
+            className="relative mx-auto mb-6 w-40 h-40 md:w-48 md:h-48 animate-[fadeInUp_0.4s_ease-out_both]"
             style={{ transform: `scale(${scales[revealTaps]})` }}
           >
+            {/* Radial glow BEHIND the PNG — follows alpha visually, no rectangular halo */}
+            <div
+              className="absolute inset-0 rounded-full blur-2xl transition-all duration-500 pointer-events-none"
+              style={{
+                background: `radial-gradient(circle, rgba(200,255,0,${0.3 + revealTaps * 0.15}) 0%, rgba(200,255,0,${0.15 + revealTaps * 0.08}) 35%, transparent 70%)`,
+                transform: `scale(${1.2 + revealTaps * 0.3})`,
+              }}
+              aria-hidden="true"
+            />
             <Image
               src={countdownImages[revealTaps]}
               alt={`${3 - revealTaps}`}
               width={200}
               height={200}
-              className="w-40 h-40 md:w-48 md:h-48 mx-auto object-contain overflow-visible"
-              style={{ filter: `drop-shadow(0 0 ${20 + revealTaps * 15}px rgba(200,255,0,${0.2 + revealTaps * 0.15}))` }}
+              className="relative w-full h-full object-contain"
             />
           </div>
 
@@ -714,18 +738,32 @@ export default function DesignerQuiz() {
   // ---------------------------------------------------------------------------
   if (phase === 'result' && result && resultKey) {
     return (
-      <section className="min-h-[calc(100vh-60px)] bg-gray-900">
+      <section className="relative min-h-[calc(100vh-60px)] bg-gray-900 overflow-hidden">
         {LangToggle}
-        <div className="max-w-lg mx-auto px-5 py-16 md:py-24">
-          {/* Character illustration */}
-          <div className="flex justify-center mb-4 p-8 overflow-visible motion-safe:animate-[fadeInUp_0.6s_ease-out_both]">
-            <Image
-              src={archetypeImages[resultKey]}
-              alt={result.name}
-              width={240}
-              height={240}
-              className="w-44 h-44 md:w-56 md:h-56 object-contain drop-shadow-[0_0_40px_rgba(200,255,0,0.15)]"
-            />
+        <div className="relative max-w-lg mx-auto px-5 py-16 md:py-24">
+          {/* Character illustration — glow is a separate layer behind so PNG alpha is respected */}
+          <div className="relative flex justify-center mb-4 motion-safe:animate-[fadeInUp_0.6s_ease-out_both]">
+            {/* Celebratory particles around the character */}
+            <div className="absolute inset-0 pointer-events-none">
+              <Particles count={14} intensity={0.85} variant="celebrate" />
+            </div>
+            <div className="relative w-44 h-44 md:w-56 md:h-56">
+              <div
+                className="absolute inset-0 rounded-full blur-3xl pointer-events-none"
+                style={{
+                  background: 'radial-gradient(circle, rgba(200,255,0,0.25) 0%, rgba(200,255,0,0.08) 40%, transparent 70%)',
+                  transform: 'scale(1.2)',
+                }}
+                aria-hidden="true"
+              />
+              <Image
+                src={archetypeImages[resultKey]}
+                alt={result.name}
+                width={240}
+                height={240}
+                className="relative w-full h-full object-contain"
+              />
+            </div>
           </div>
 
           {/* Result heading */}
