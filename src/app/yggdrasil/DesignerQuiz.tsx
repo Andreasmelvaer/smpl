@@ -220,8 +220,8 @@ function SliderStep({ sliderKey, value, onChange, locale, comicSans, onComicSans
         {Preview}
       </div>
 
-      <p className={`text-xs md:text-sm font-satoshi text-center min-h-[2.5rem] mb-5 md:mb-6 transition-all duration-300 leading-relaxed px-2 ${comicSans ? 'text-pink' : 'text-gray-400'}`}>
-        {comicSans
+      <p className={`text-xs md:text-sm font-satoshi text-center min-h-[2.5rem] mb-5 md:mb-6 transition-all duration-300 leading-relaxed px-2 ${comicSans && sliderKey === 'typography' ? 'text-pink' : 'text-gray-400'}`}>
+        {comicSans && sliderKey === 'typography'
           ? (locale === 'no' ? 'Comic Sans. Du e heilt ute å kjøra. Eg e imponert.' : "Comic Sans. Yer've lost the plot entirely. I'm impressed.")
           : commentary[value]
         }
