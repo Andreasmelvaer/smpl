@@ -398,7 +398,7 @@ export default function BingoGame() {
             <span className="font-editorial italic text-lime">Bingo</span>
           </h1>
           <p className="font-satoshi text-gray-300 text-base md:text-lg mb-3 leading-relaxed">
-            Marker orda du høyre under foredraget.
+            Marker orå du hører under foredraget.
           </p>
           <p className="font-satoshi text-gray-400 text-sm mb-8 leading-relaxed">
             Fem på rad = <strong className="text-lime font-semibold">Gnu rabattkort</strong>.
@@ -440,7 +440,7 @@ export default function BingoGame() {
             </p>
             {maxLine >= 3 && (
               <p className={`font-mono text-[10px] font-semibold ${maxLine === 4 ? 'text-lime-bright animate-[pulseHot_0.5s_ease-in-out_infinite]' : 'text-lime-bright animate-pulse'}`}>
-                {maxLine === 4 ? 'ONE TE!' : 'HEATING UP'}
+                {maxLine === 4 ? 'EIN TE!' : 'VARMT!'}
               </p>
             )}
           </div>
@@ -578,7 +578,7 @@ export default function BingoGame() {
                 <span className="font-editorial italic text-lime">BINGO!</span>
               </h2>
               <p className="font-satoshi text-gray-400 text-sm">
-                Du klarte det. Respekt.
+                Du klarte det. Respekt!
               </p>
             </div>
 
@@ -617,7 +617,7 @@ export default function BingoGame() {
             <div className="bg-lime/10 border border-lime/20 rounded-2xl p-5 mb-5">
               <p className="text-base font-semibold text-lime mb-1.5">Vis denne te Andreas!</p>
               <p className="text-sm text-gray-300 font-satoshi leading-relaxed">
-                Vis skjermen (eller bildet) te Andreas så får du eit <strong className="text-lime">Gnu rabattkort</strong>.
+                Vis skjermen (eller bilet) te Andreas, så får du et <strong className="text-lime">Gnu rabattkort</strong>.
               </p>
             </div>
 
@@ -625,7 +625,7 @@ export default function BingoGame() {
               onClick={saveToImage}
               className="w-full py-3.5 bg-white text-gray-900 font-semibold text-sm rounded-full hover:bg-gray-100 active:scale-95 transition-all duration-200 cursor-pointer mb-2.5"
             >
-              {saved ? 'Lagra!' : 'Lagre som bilde'}
+              {saved ? 'Lagra!' : 'Lagre som bilet'}
             </button>
 
             <Link
@@ -660,7 +660,7 @@ export default function BingoGame() {
             Ingen bingo denne gongen!
           </h2>
           <p className="font-satoshi text-gray-400 text-sm md:text-base mb-8">
-            Tiå rann ut. Men det va gøy å prøva, ikkje sant?
+            Tiå gikk ud. Men det va gøy å prøva, ikkje sant?
           </p>
           <div className="flex flex-col gap-3">
             <button
