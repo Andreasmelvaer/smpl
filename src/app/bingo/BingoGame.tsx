@@ -102,17 +102,44 @@ function formatTime(seconds: number): string {
 interface Burst { id: number; x: number; y: number; intensity: number }
 
 function ParticleBurst({ burst }: { burst: Burst }) {
-  const count = 6 + Math.floor(burst.intensity * 2)
+  // More particles at higher intensity
+  const count = 12 + Math.floor(burst.intensity * 6)
   const particles = useMemo(() =>
-    Array.from({ length: count }).map((_, i) => ({
-      angle: (i / count) * Math.PI * 2,
-      distance: 20 + Math.random() * 30 + burst.intensity * 15,
-      size: 3 + Math.random() * 3,
-      delay: Math.random() * 0.05,
-    })), [burst.id, count, burst.intensity])
+    Array.from({ length: count }).map((_, i) => {
+      const angle = (i / count) * Math.PI * 2 + Math.random() * 0.4
+      return {
+        angle,
+        distance: 40 + Math.random() * 50 + burst.intensity * 30,
+        size: 4 + Math.random() * 5,
+        delay: Math.random() * 0.08,
+        duration: 0.7 + Math.random() * 0.4,
+      }
+    }), [burst.id, count, burst.intensity])
 
+  // Add a shockwave ring
   return (
     <div className="fixed pointer-events-none z-40" style={{ left: burst.x, top: burst.y }}>
+      {/* Shockwave ring */}
+      <div
+        className="absolute rounded-full border-2 border-lime"
+        style={{
+          left: 0, top: 0,
+          width: 20, height: 20,
+          transform: 'translate(-50%, -50%)',
+          animation: `shockwave 0.5s ease-out forwards`,
+        }}
+      />
+      {/* Flash */}
+      <div
+        className="absolute rounded-full bg-lime"
+        style={{
+          left: 0, top: 0,
+          width: 30, height: 30,
+          transform: 'translate(-50%, -50%)',
+          animation: `flash 0.3s ease-out forwards`,
+          filter: 'blur(8px)',
+        }}
+      />
       {particles.map((p, i) => (
         <div
           key={i}
@@ -121,8 +148,8 @@ function ParticleBurst({ burst }: { burst: Burst }) {
             width: p.size,
             height: p.size,
             left: 0, top: 0,
-            boxShadow: '0 0 8px rgba(200,255,0,0.8)',
-            animation: `burst 0.7s ease-out ${p.delay}s forwards`,
+            boxShadow: '0 0 12px rgba(200,255,0,0.9), 0 0 20px rgba(200,255,0,0.5)',
+            animation: `burst ${p.duration}s cubic-bezier(0.22, 1, 0.36, 1) ${p.delay}s forwards`,
             // @ts-expect-error custom css var
             '--angle': `${p.angle}rad`,
             '--distance': `${p.distance}px`,
@@ -131,7 +158,8 @@ function ParticleBurst({ burst }: { burst: Burst }) {
       ))}
       <style>{`
         @keyframes burst {
-          0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+          0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+          60% { opacity: 1; }
           100% {
             transform: translate(
               calc(-50% + cos(var(--angle)) * var(--distance)),
@@ -139,6 +167,14 @@ function ParticleBurst({ burst }: { burst: Burst }) {
             ) scale(0);
             opacity: 0;
           }
+        }
+        @keyframes shockwave {
+          0% { width: 20px; height: 20px; opacity: 0.8; border-width: 2px; }
+          100% { width: 120px; height: 120px; opacity: 0; border-width: 0; }
+        }
+        @keyframes flash {
+          0% { opacity: 0.8; transform: translate(-50%, -50%) scale(0.5); }
+          100% { opacity: 0; transform: translate(-50%, -50%) scale(2); }
         }
       `}</style>
     </div>
@@ -219,6 +255,8 @@ export default function BingoGame() {
   const [saved, setSaved] = useState(false)
   const [bursts, setBursts] = useState<Burst[]>([])
   const [winningLine, setWinningLine] = useState<{ type: 'row' | 'col'; index: number } | null>(null)
+  const [shakeLevel, setShakeLevel] = useState(0) // 0, 1, 2 for screen shake
+  const [recentlyMarked, setRecentlyMarked] = useState<string | null>(null) // "r-c" key
   const boardRef = useRef<HTMLDivElement>(null)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
@@ -267,10 +305,26 @@ export default function BingoGame() {
       next[r][c] = !wasMarked
 
       if (!wasMarked) {
-        // Emit burst particles only on marking (not unmarking)
+        // Emit burst particles only on marking
         const currentIntensity = Math.min(countMarked(next) / 20, 3)
         setBursts(b => [...b, { id: Date.now() + Math.random(), x, y, intensity: currentIntensity }])
-        navigator.vibrate?.(30 + Math.floor(currentIntensity * 20))
+        setRecentlyMarked(`${r}-${c}`)
+        setTimeout(() => setRecentlyMarked(null), 600)
+
+        // Check if this mark creates a near-bingo for screen shake
+        const progress = getLineProgress(next)
+        const newMaxLine = Math.max(...progress.rowCounts, ...progress.colCounts)
+        if (newMaxLine === 4) {
+          setShakeLevel(2)
+          navigator.vibrate?.([80, 30, 80])
+          setTimeout(() => setShakeLevel(0), 500)
+        } else if (newMaxLine === 3) {
+          setShakeLevel(1)
+          navigator.vibrate?.(50)
+          setTimeout(() => setShakeLevel(0), 300)
+        } else {
+          navigator.vibrate?.(30 + Math.floor(currentIntensity * 20))
+        }
       }
 
       const result = checkBingo(next)
@@ -370,11 +424,14 @@ export default function BingoGame() {
     const hasBingoWin = !!winningLine
 
     return (
-      <section className="min-h-[calc(100vh-60px)] bg-gray-900 flex flex-col relative overflow-hidden">
+      <section className={`min-h-[calc(100vh-60px)] bg-gray-900 flex flex-col relative overflow-hidden ${
+        shakeLevel === 2 ? 'animate-[shakeStrong_0.5s_ease-in-out]' :
+        shakeLevel === 1 ? 'animate-[shakeLight_0.3s_ease-in-out]' : ''
+      }`}>
         <AmbientGlow intensity={intensity} />
 
         {/* Top bar */}
-        <div className="relative z-10 flex items-center justify-between px-4 py-3">
+        <div className="relative z-10 flex items-center justify-between px-4 py-2.5">
           <div className="flex items-center gap-2">
             <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-gray-500">BINGO</p>
             <span className="font-mono text-[10px] text-gray-700">·</span>
@@ -382,7 +439,7 @@ export default function BingoGame() {
               {totalMarked}<span className="text-gray-700">/25</span>
             </p>
             {maxLine >= 3 && (
-              <p className="font-mono text-[10px] text-lime-bright animate-pulse font-semibold">
+              <p className={`font-mono text-[10px] font-semibold ${maxLine === 4 ? 'text-lime-bright animate-[pulseHot_0.5s_ease-in-out_infinite]' : 'text-lime-bright animate-pulse'}`}>
                 {maxLine === 4 ? 'ONE TE!' : 'HEATING UP'}
               </p>
             )}
@@ -400,8 +457,8 @@ export default function BingoGame() {
           />
         </div>
 
-        {/* Board */}
-        <div className="relative z-10 flex-1 flex items-center justify-center p-3">
+        {/* Board — moved up, less padding */}
+        <div className="relative z-10 flex flex-col items-center pt-3 pb-3 px-3">
           <div className="grid grid-cols-5 gap-1.5 w-full max-w-md aspect-square">
             {board.map((row, r) =>
               row.map((word, c) => {
@@ -411,9 +468,9 @@ export default function BingoGame() {
                   (winningLine.type === 'row' && winningLine.index === r) ||
                   (winningLine.type === 'col' && winningLine.index === c)
                 )
-                // Heat level: how close this row/col is to bingo
                 const lineMax = Math.max(rowCounts[r] || 0, colCounts[c] || 0)
                 const isHeating = !isMarked && lineMax >= 3
+                const isJustMarked = recentlyMarked === `${r}-${c}`
 
                 return (
                   <button
@@ -425,9 +482,10 @@ export default function BingoGame() {
                           ? 'bg-lime-bright text-gray-900 shadow-[0_0_20px_rgba(200,255,0,0.4)]'
                           : 'bg-lime text-gray-900 shadow-[0_0_16px_rgba(200,255,0,0.35)]'
                         : isHeating
-                          ? 'bg-lime/5 border border-lime/25 text-white'
+                          ? 'bg-lime/5 border border-lime/25 text-white animate-[heatPulse_2s_ease-in-out_infinite]'
                           : 'bg-white/[0.04] border border-white/10 text-white hover:bg-white/[0.07] hover:border-white/20'
                       }
+                      ${isJustMarked ? 'animate-[popIn_0.5s_cubic-bezier(0.34,1.56,0.64,1)]' : ''}
                       ${isOnWinningLine ? 'animate-[winPulse_0.5s_ease-in-out_infinite_alternate]' : ''}
                     `}
                   >
@@ -444,6 +502,21 @@ export default function BingoGame() {
               })
             )}
           </div>
+
+          {/* Progress pips below board */}
+          <div className="mt-5 flex items-center gap-1.5">
+            {Array.from({ length: 25 }).map((_, i) => (
+              <div
+                key={i}
+                className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${
+                  i < totalMarked ? 'bg-lime scale-125' : 'bg-white/10'
+                }`}
+                style={{
+                  boxShadow: i < totalMarked ? '0 0 6px rgba(200,255,0,0.6)' : 'none',
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Particle bursts */}
@@ -453,6 +526,36 @@ export default function BingoGame() {
           @keyframes winPulse {
             from { box-shadow: 0 0 20px rgba(200,255,0,0.5); transform: scale(1); }
             to { box-shadow: 0 0 40px rgba(200,255,0,0.9); transform: scale(1.05); }
+          }
+          @keyframes popIn {
+            0% { transform: scale(0.6) rotate(-5deg); box-shadow: 0 0 40px rgba(200,255,0,1); }
+            40% { transform: scale(1.2) rotate(3deg); box-shadow: 0 0 30px rgba(200,255,0,0.8); }
+            70% { transform: scale(0.95) rotate(-1deg); }
+            100% { transform: scale(1) rotate(0deg); box-shadow: 0 0 16px rgba(200,255,0,0.35); }
+          }
+          @keyframes heatPulse {
+            0%, 100% { box-shadow: 0 0 0 rgba(200,255,0,0); border-color: rgba(200,255,0,0.25); }
+            50% { box-shadow: 0 0 10px rgba(200,255,0,0.3); border-color: rgba(200,255,0,0.5); }
+          }
+          @keyframes pulseHot {
+            0%, 100% { transform: scale(1); text-shadow: 0 0 8px rgba(229,255,33,0.8); }
+            50% { transform: scale(1.1); text-shadow: 0 0 16px rgba(229,255,33,1); }
+          }
+          @keyframes shakeLight {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-3px); }
+            75% { transform: translateX(3px); }
+          }
+          @keyframes shakeStrong {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            10% { transform: translate(-4px, -2px) rotate(-0.5deg); }
+            20% { transform: translate(4px, 2px) rotate(0.5deg); }
+            30% { transform: translate(-3px, 3px) rotate(-0.3deg); }
+            40% { transform: translate(3px, -3px) rotate(0.3deg); }
+            50% { transform: translate(-2px, 2px); }
+            60% { transform: translate(2px, -2px); }
+            70% { transform: translate(-1px, 1px); }
+            80% { transform: translate(1px, -1px); }
           }
         `}</style>
       </section>
