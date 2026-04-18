@@ -1,16 +1,15 @@
 'use client'
 
-import { useState, useCallback, useEffect, useRef } from 'react'
+import { useState, useCallback, useEffect, useRef, useMemo } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ShimmerGrid from '@/components/ShimmerGrid'
 
 // ---------------------------------------------------------------------------
-// Word pool (60 words — 25 randomly selected per board)
+// Word pool
 // ---------------------------------------------------------------------------
 
 const WORD_POOL = [
-  // From the talk (specific)
   'Gnu Bar', 'LinkedIn', 'Mora mi', 'Barclays', 'Eagle Labs',
   'Prototype', 'SmplCo', '5 dagar', 'Melvær & Co', 'Kommunikasjon',
   '17. mai', 'Hirtshals', 'Fernet', 'Kebabdressing', 'Pattex',
@@ -18,16 +17,14 @@ const WORD_POOL = [
   'Discord', 'Fortnite', 'Radikalisering', 'Putin', 'Merkevare',
   'Om eg bare kan sei ein ting', 'Love you', 'Fokkings', 'Stavanger', 'Rau',
   'Bitkraft', 'Afterski', 'Bartender', 'QR-kode', 'Figma',
-  // Generic conference words
   'AI', 'Innovasjon', 'Startup', 'Design', 'Brukaroppleving',
   'Kode', 'App', 'Investorar', 'Pitch', 'MVP',
   'Skalering', 'Brukar', 'Data', 'Strategi', 'Produkt',
-  // Gnu-style / funny
   'Hold kjeft', 'Pils', 'Kontoret', 'Sandnes', 'B-menneske',
   'PowerPoint', 'Teams-møte', 'Grønn juice', 'Keto', 'Imposter syndrome',
 ]
 
-const FREE_CELL = '⭐ GRATIS'
+const FREE_CELL = 'GRATIS'
 const TIMER_MINUTES = 30
 
 // ---------------------------------------------------------------------------
@@ -44,17 +41,14 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 function generateBoard(): string[][] {
-  const words = shuffle(WORD_POOL).slice(0, 24) // 24 words + 1 free
+  const words = shuffle(WORD_POOL).slice(0, 24)
   const board: string[][] = []
   let idx = 0
   for (let r = 0; r < 5; r++) {
     const row: string[] = []
     for (let c = 0; c < 5; c++) {
-      if (r === 2 && c === 2) {
-        row.push(FREE_CELL)
-      } else {
-        row.push(words[idx++])
-      }
+      if (r === 2 && c === 2) row.push(FREE_CELL)
+      else row.push(words[idx++])
     }
     board.push(row)
   }
@@ -65,22 +59,34 @@ function generateMarked(): boolean[][] {
   const marked: boolean[][] = []
   for (let r = 0; r < 5; r++) {
     const row: boolean[] = []
-    for (let c = 0; c < 5; c++) {
-      row.push(r === 2 && c === 2) // center is free
-    }
+    for (let c = 0; c < 5; c++) row.push(r === 2 && c === 2)
     marked.push(row)
   }
   return marked
 }
 
-function checkBingo(marked: boolean[][]): boolean {
+function checkBingo(marked: boolean[][]): { won: boolean; line?: { type: 'row' | 'col'; index: number } } {
   for (let r = 0; r < 5; r++) {
-    if (marked[r].every(Boolean)) return true
+    if (marked[r].every(Boolean)) return { won: true, line: { type: 'row', index: r } }
   }
   for (let c = 0; c < 5; c++) {
-    if (marked.every(row => row[c])) return true
+    if (marked.every(row => row[c])) return { won: true, line: { type: 'col', index: c } }
   }
-  return false
+  return { won: false }
+}
+
+// Count how many cells are marked in each row/column (for heat-up effect)
+function getLineProgress(marked: boolean[][]): { rowCounts: number[]; colCounts: number[] } {
+  const rowCounts = marked.map(row => row.filter(Boolean).length)
+  const colCounts: number[] = []
+  for (let c = 0; c < 5; c++) {
+    colCounts.push(marked.reduce((sum, row) => sum + (row[c] ? 1 : 0), 0))
+  }
+  return { rowCounts, colCounts }
+}
+
+function countMarked(marked: boolean[][]): number {
+  return marked.reduce((sum, row) => sum + row.filter(Boolean).length, 0)
 }
 
 function formatTime(seconds: number): string {
@@ -90,45 +96,114 @@ function formatTime(seconds: number): string {
 }
 
 // ---------------------------------------------------------------------------
-// Confetti (pure CSS particles)
+// Particle burst (on cell tap)
+// ---------------------------------------------------------------------------
+
+interface Burst { id: number; x: number; y: number; intensity: number }
+
+function ParticleBurst({ burst }: { burst: Burst }) {
+  const count = 6 + Math.floor(burst.intensity * 2)
+  const particles = useMemo(() =>
+    Array.from({ length: count }).map((_, i) => ({
+      angle: (i / count) * Math.PI * 2,
+      distance: 20 + Math.random() * 30 + burst.intensity * 15,
+      size: 3 + Math.random() * 3,
+      delay: Math.random() * 0.05,
+    })), [burst.id, count, burst.intensity])
+
+  return (
+    <div className="fixed pointer-events-none z-40" style={{ left: burst.x, top: burst.y }}>
+      {particles.map((p, i) => (
+        <div
+          key={i}
+          className="absolute rounded-full bg-lime"
+          style={{
+            width: p.size,
+            height: p.size,
+            left: 0, top: 0,
+            boxShadow: '0 0 8px rgba(200,255,0,0.8)',
+            animation: `burst 0.7s ease-out ${p.delay}s forwards`,
+            // @ts-expect-error custom css var
+            '--angle': `${p.angle}rad`,
+            '--distance': `${p.distance}px`,
+          }}
+        />
+      ))}
+      <style>{`
+        @keyframes burst {
+          0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+          100% {
+            transform: translate(
+              calc(-50% + cos(var(--angle)) * var(--distance)),
+              calc(-50% + sin(var(--angle)) * var(--distance))
+            ) scale(0);
+            opacity: 0;
+          }
+        }
+      `}</style>
+    </div>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// Confetti (winner celebration)
 // ---------------------------------------------------------------------------
 
 function Confetti() {
   const colors = ['#e5ff21', '#ff99e0', '#0d99ff', '#ffffff', '#f0ff83']
-  const particles = Array.from({ length: 50 }).map((_, i) => ({
-    id: i,
-    color: colors[i % colors.length],
-    left: Math.random() * 100,
-    delay: Math.random() * 2,
-    duration: 2 + Math.random() * 2,
-    size: 4 + Math.random() * 8,
-  }))
+  const particles = useMemo(() =>
+    Array.from({ length: 80 }).map((_, i) => ({
+      id: i,
+      color: colors[i % colors.length],
+      left: Math.random() * 100,
+      delay: Math.random() * 2.5,
+      duration: 2.5 + Math.random() * 2,
+      size: 4 + Math.random() * 10,
+      rotate: Math.random() * 360,
+    })), [])
 
   return (
     <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
       {particles.map(p => (
         <div
           key={p.id}
-          className="absolute animate-[confettiFall_linear_forwards]"
+          className="absolute"
           style={{
             left: `${p.left}%`,
-            top: '-10px',
+            top: '-20px',
             width: p.size,
             height: p.size,
             backgroundColor: p.color,
             borderRadius: Math.random() > 0.5 ? '50%' : '2px',
-            animationDelay: `${p.delay}s`,
-            animationDuration: `${p.duration}s`,
+            animation: `confettiFall ${p.duration}s linear ${p.delay}s forwards`,
+            transform: `rotate(${p.rotate}deg)`,
           }}
         />
       ))}
       <style>{`
         @keyframes confettiFall {
           0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-          100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+          100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
         }
       `}</style>
     </div>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// Ambient glow overlay (intensifies as marks increase)
+// ---------------------------------------------------------------------------
+
+function AmbientGlow({ intensity }: { intensity: number }) {
+  // intensity 0-1
+  const opacity = 0.05 + intensity * 0.2
+  return (
+    <div
+      className="fixed inset-0 pointer-events-none transition-opacity duration-1000"
+      style={{
+        background: `radial-gradient(ellipse at center, rgba(200,255,0,${opacity}) 0%, transparent 60%)`,
+      }}
+    />
   )
 }
 
@@ -142,6 +217,8 @@ export default function BingoGame() {
   const [marked, setMarked] = useState<boolean[][]>([])
   const [timeLeft, setTimeLeft] = useState(TIMER_MINUTES * 60)
   const [saved, setSaved] = useState(false)
+  const [bursts, setBursts] = useState<Burst[]>([])
+  const [winningLine, setWinningLine] = useState<{ type: 'row' | 'col'; index: number } | null>(null)
   const boardRef = useRef<HTMLDivElement>(null)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
@@ -150,6 +227,8 @@ export default function BingoGame() {
     setMarked(generateMarked())
     setTimeLeft(TIMER_MINUTES * 60)
     setSaved(false)
+    setBursts([])
+    setWinningLine(null)
     setPhase('playing')
   }, [])
 
@@ -169,22 +248,51 @@ export default function BingoGame() {
     return () => { if (timerRef.current) clearInterval(timerRef.current) }
   }, [phase])
 
-  const toggleCell = useCallback((r: number, c: number) => {
+  const totalMarked = marked.length > 0 ? countMarked(marked) : 0
+  const intensity = Math.min((totalMarked - 1) / 24, 1) // 0 → 1 as board fills
+  const { rowCounts, colCounts } = marked.length > 0 ? getLineProgress(marked) : { rowCounts: [], colCounts: [] }
+  const maxLine = Math.max(...rowCounts, ...colCounts, 0)
+
+  const toggleCell = useCallback((r: number, c: number, event: React.MouseEvent) => {
     if (phase !== 'playing') return
-    if (r === 2 && c === 2) return // can't unmark free cell
+    if (r === 2 && c === 2) return
+
+    const rect = (event.currentTarget as HTMLElement).getBoundingClientRect()
+    const x = rect.left + rect.width / 2
+    const y = rect.top + rect.height / 2
 
     setMarked(prev => {
       const next = prev.map(row => [...row])
-      next[r][c] = !next[r][c]
+      const wasMarked = next[r][c]
+      next[r][c] = !wasMarked
 
-      if (checkBingo(next)) {
+      if (!wasMarked) {
+        // Emit burst particles only on marking (not unmarking)
+        const currentIntensity = Math.min(countMarked(next) / 20, 3)
+        setBursts(b => [...b, { id: Date.now() + Math.random(), x, y, intensity: currentIntensity }])
+        navigator.vibrate?.(30 + Math.floor(currentIntensity * 20))
+      }
+
+      const result = checkBingo(next)
+      if (result.won && result.line) {
+        setWinningLine(result.line)
         if (timerRef.current) clearInterval(timerRef.current)
-        setTimeout(() => setPhase('winner'), 300)
+        navigator.vibrate?.([100, 50, 100, 50, 200])
+        setTimeout(() => setPhase('winner'), 1400)
       }
 
       return next
     })
   }, [phase])
+
+  // Clean up old bursts
+  useEffect(() => {
+    if (bursts.length === 0) return
+    const timer = setTimeout(() => {
+      setBursts(b => b.slice(1))
+    }, 800)
+    return () => clearTimeout(timer)
+  }, [bursts])
 
   const saveToImage = useCallback(async () => {
     if (!boardRef.current) return
@@ -199,14 +307,12 @@ export default function BingoGame() {
       )
       const url = URL.createObjectURL(blob)
 
-      // Try native share first (mobile)
       if (navigator.share && navigator.canShare?.({ files: [new File([blob], 'bingo.png', { type: 'image/png' })] })) {
         await navigator.share({
           files: [new File([blob], 'bingo.png', { type: 'image/png' })],
-          title: 'BINGO! 🎉',
+          title: 'BINGO!',
         })
       } else {
-        // Fallback: download
         const a = document.createElement('a')
         a.href = url
         a.download = 'bingo-winner.png'
@@ -215,12 +321,10 @@ export default function BingoGame() {
       setSaved(true)
       URL.revokeObjectURL(url)
     } catch (_e) {
-      // Last resort: just mark as saved
       setSaved(true)
     }
   }, [])
 
-  // Scroll to top on phase change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [phase])
@@ -233,25 +337,25 @@ export default function BingoGame() {
       <section className="relative min-h-[calc(100vh-60px)] flex items-center justify-center bg-gray-900 overflow-hidden">
         <ShimmerGrid />
         <div className="relative z-10 text-center px-6 max-w-md mx-auto">
-          <p className="font-mono text-xs tracking-[0.25em] uppercase text-gray-400 mb-6">
+          <p className="font-mono text-xs tracking-[0.3em] uppercase text-gray-500 mb-5">
             Yggdrasil 2026
           </p>
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-4" style={{ color: '#ffffff' }}>
-            <span className="font-editorial italic text-lime">Bingo!</span>
+          <h1 className="text-6xl md:text-7xl font-bold leading-none mb-6" style={{ color: '#ffffff' }}>
+            <span className="font-editorial italic text-lime">Bingo</span>
           </h1>
-          <p className="font-satoshi text-gray-400 text-base md:text-lg mb-4 leading-relaxed">
+          <p className="font-satoshi text-gray-300 text-base md:text-lg mb-3 leading-relaxed">
             Marker orda du høyre under foredraget.
-            <br />
-            Fem på rad = <strong className="text-lime">Gnu rabattkort!</strong>
           </p>
-          <p className="font-satoshi text-gray-500 text-sm mb-10">
-            Du har 30 minutt. Brettet e randomisert — ingen har det same.
+          <p className="font-satoshi text-gray-400 text-sm mb-8 leading-relaxed">
+            Fem på rad = <strong className="text-lime font-semibold">Gnu rabattkort</strong>.
+            <br />
+            Du har 30 minutt. Brettet e randomisert.
           </p>
           <button
             onClick={startGame}
-            className="inline-flex items-center gap-2 bg-lime-bright text-gray-900 font-semibold px-8 py-4 rounded-full text-base hover:scale-105 transition-transform duration-300 cursor-pointer"
+            className="inline-flex items-center gap-2 bg-lime-bright text-gray-900 font-semibold px-10 py-4 rounded-full text-base hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer shadow-[0_0_40px_rgba(200,255,0,0.3)]"
           >
-            Start Bingo
+            Start
           </button>
         </div>
       </section>
@@ -262,48 +366,78 @@ export default function BingoGame() {
   // Playing
   // ---------------------------------------------------------------------------
   if (phase === 'playing') {
+    const timeLow = timeLeft < 300
+    const hasBingoWin = !!winningLine
+
     return (
-      <section className="min-h-[calc(100vh-60px)] bg-gray-900 flex flex-col">
-        {/* Timer bar */}
-        <div className="flex items-center justify-between px-4 py-3">
-          <p className="font-mono text-xs text-gray-500">BINGO</p>
-          <p className={`font-mono text-sm font-semibold ${timeLeft < 300 ? 'text-red-400' : 'text-lime'}`}>
+      <section className="min-h-[calc(100vh-60px)] bg-gray-900 flex flex-col relative overflow-hidden">
+        <AmbientGlow intensity={intensity} />
+
+        {/* Top bar */}
+        <div className="relative z-10 flex items-center justify-between px-4 py-3">
+          <div className="flex items-center gap-2">
+            <p className="font-mono text-[10px] tracking-[0.25em] uppercase text-gray-500">BINGO</p>
+            <span className="font-mono text-[10px] text-gray-700">·</span>
+            <p className="font-mono text-[10px] text-lime font-semibold">
+              {totalMarked}<span className="text-gray-700">/25</span>
+            </p>
+            {maxLine >= 3 && (
+              <p className="font-mono text-[10px] text-lime-bright animate-pulse font-semibold">
+                {maxLine === 4 ? 'ONE TE!' : 'HEATING UP'}
+              </p>
+            )}
+          </div>
+          <p className={`font-mono text-sm font-semibold transition-colors ${timeLow ? 'text-red-400 animate-pulse' : 'text-lime'}`}>
             {formatTime(timeLeft)}
           </p>
         </div>
 
         {/* Progress bar */}
-        <div className="w-full bg-white/10 h-0.5">
+        <div className="relative z-10 w-full bg-white/5 h-0.5">
           <div
-            className="h-full bg-lime-bright transition-all duration-1000 ease-linear"
+            className={`h-full transition-all duration-1000 ease-linear ${timeLow ? 'bg-red-400' : 'bg-lime'}`}
             style={{ width: `${(timeLeft / (TIMER_MINUTES * 60)) * 100}%` }}
           />
         </div>
 
         {/* Board */}
-        <div className="flex-1 flex items-center justify-center p-3">
+        <div className="relative z-10 flex-1 flex items-center justify-center p-3">
           <div className="grid grid-cols-5 gap-1.5 w-full max-w-md aspect-square">
             {board.map((row, r) =>
               row.map((word, c) => {
                 const isMarked = marked[r]?.[c]
                 const isFree = r === 2 && c === 2
+                const isOnWinningLine = hasBingoWin && (
+                  (winningLine.type === 'row' && winningLine.index === r) ||
+                  (winningLine.type === 'col' && winningLine.index === c)
+                )
+                // Heat level: how close this row/col is to bingo
+                const lineMax = Math.max(rowCounts[r] || 0, colCounts[c] || 0)
+                const isHeating = !isMarked && lineMax >= 3
+
                 return (
                   <button
                     key={`${r}-${c}`}
-                    onClick={() => toggleCell(r, c)}
-                    className={`relative rounded-lg flex items-center justify-center p-1 text-center transition-all duration-200 cursor-pointer select-none active:scale-95 ${
-                      isMarked
-                        ? 'bg-lime text-gray-900'
-                        : 'bg-white/5 border border-white/10 text-white'
-                    } ${isFree ? 'bg-lime/30 border-lime/40' : ''}`}
+                    onClick={(e) => toggleCell(r, c, e)}
+                    className={`relative rounded-lg flex items-center justify-center p-1 text-center transition-all duration-300 cursor-pointer select-none active:scale-90
+                      ${isMarked
+                        ? isFree
+                          ? 'bg-lime-bright text-gray-900 shadow-[0_0_20px_rgba(200,255,0,0.4)]'
+                          : 'bg-lime text-gray-900 shadow-[0_0_16px_rgba(200,255,0,0.35)]'
+                        : isHeating
+                          ? 'bg-lime/5 border border-lime/25 text-white'
+                          : 'bg-white/[0.04] border border-white/10 text-white hover:bg-white/[0.07] hover:border-white/20'
+                      }
+                      ${isOnWinningLine ? 'animate-[winPulse_0.5s_ease-in-out_infinite_alternate]' : ''}
+                    `}
                   >
-                    <span className={`text-[10px] sm:text-xs font-medium leading-tight ${
-                      isMarked ? 'font-semibold' : ''
+                    <span className={`text-[10px] sm:text-xs leading-tight transition-all duration-300 ${
+                      isMarked ? 'font-bold' : 'font-medium'
                     }`}>
                       {word}
                     </span>
-                    {isMarked && !isFree && (
-                      <span className="absolute top-0.5 right-0.5 text-[8px]">✓</span>
+                    {isFree && (
+                      <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-gray-900/40" />
                     )}
                   </button>
                 )
@@ -311,6 +445,16 @@ export default function BingoGame() {
             )}
           </div>
         </div>
+
+        {/* Particle bursts */}
+        {bursts.map(b => <ParticleBurst key={b.id} burst={b} />)}
+
+        <style>{`
+          @keyframes winPulse {
+            from { box-shadow: 0 0 20px rgba(200,255,0,0.5); transform: scale(1); }
+            to { box-shadow: 0 0 40px rgba(200,255,0,0.9); transform: scale(1.05); }
+          }
+        `}</style>
       </section>
     )
   }
@@ -320,31 +464,39 @@ export default function BingoGame() {
   // ---------------------------------------------------------------------------
   if (phase === 'winner') {
     return (
-      <section className="min-h-[calc(100vh-60px)] bg-gray-900 overflow-hidden">
+      <section className="min-h-[calc(100vh-60px)] bg-gray-900 overflow-hidden relative">
+        <AmbientGlow intensity={1} />
         <Confetti />
-        <div className="max-w-md mx-auto px-5 py-12 md:py-20">
+        <div className="relative z-10 max-w-md mx-auto px-5 py-12 md:py-20">
           {/* Winner card (capturable) */}
           <div ref={boardRef} className="bg-gray-900 rounded-2xl p-6">
             <div className="text-center mb-6 motion-safe:animate-[fadeInUp_0.6s_ease-out_both]">
-              <p className="text-6xl mb-4">🎉</p>
-              <h2 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#ffffff' }}>
+              <h2 className="text-5xl md:text-6xl font-bold mb-3 tracking-tight" style={{ color: '#ffffff' }}>
                 <span className="font-editorial italic text-lime">BINGO!</span>
               </h2>
               <p className="font-satoshi text-gray-400 text-sm">
-                Du klarte det!
+                Du klarte det. Respekt.
               </p>
             </div>
 
-            {/* Mini board showing winning state */}
-            <div className="grid grid-cols-5 gap-1 mb-6 motion-safe:animate-[fadeInUp_0.6s_ease-out_0.2s_both]">
+            {/* Mini board */}
+            <div className="grid grid-cols-5 gap-1 mb-5 motion-safe:animate-[fadeInUp_0.6s_ease-out_0.2s_both]">
               {board.map((row, r) =>
                 row.map((word, c) => {
                   const isMarked = marked[r]?.[c]
+                  const isOnWinningLine = winningLine && (
+                    (winningLine.type === 'row' && winningLine.index === r) ||
+                    (winningLine.type === 'col' && winningLine.index === c)
+                  )
                   return (
                     <div
                       key={`${r}-${c}`}
-                      className={`rounded p-1 flex items-center justify-center text-center ${
-                        isMarked ? 'bg-lime text-gray-900' : 'bg-white/5 text-white/40'
+                      className={`rounded p-1 flex items-center justify-center text-center transition-all ${
+                        isOnWinningLine
+                          ? 'bg-lime-bright text-gray-900 shadow-[0_0_12px_rgba(200,255,0,0.6)]'
+                          : isMarked
+                            ? 'bg-lime text-gray-900'
+                            : 'bg-white/5 text-white/30'
                       }`}
                     >
                       <span className="text-[7px] sm:text-[9px] leading-tight font-medium">{word}</span>
@@ -358,19 +510,19 @@ export default function BingoGame() {
           </div>
 
           {/* Instructions */}
-          <div className="mt-8 text-center motion-safe:animate-[fadeInUp_0.6s_ease-out_0.4s_both]">
-            <div className="bg-lime/10 border border-lime/20 rounded-2xl p-6 mb-6">
-              <p className="text-lg font-semibold text-lime mb-2">🏆 Vis denne te Andreas!</p>
-              <p className="text-sm text-gray-300 font-satoshi">
-                Vis denne sida (eller bildet) te Andreas så får du eit <strong className="text-lime">Gnu rabattkort</strong>!
+          <div className="mt-6 text-center motion-safe:animate-[fadeInUp_0.6s_ease-out_0.4s_both]">
+            <div className="bg-lime/10 border border-lime/20 rounded-2xl p-5 mb-5">
+              <p className="text-base font-semibold text-lime mb-1.5">Vis denne te Andreas!</p>
+              <p className="text-sm text-gray-300 font-satoshi leading-relaxed">
+                Vis skjermen (eller bildet) te Andreas så får du eit <strong className="text-lime">Gnu rabattkort</strong>.
               </p>
             </div>
 
             <button
               onClick={saveToImage}
-              className="w-full py-3.5 bg-white text-gray-900 font-semibold text-sm rounded-full hover:bg-gray-100 transition-colors cursor-pointer mb-3"
+              className="w-full py-3.5 bg-white text-gray-900 font-semibold text-sm rounded-full hover:bg-gray-100 active:scale-95 transition-all duration-200 cursor-pointer mb-2.5"
             >
-              {saved ? '✓ Lagra!' : 'Lagre som bilde'}
+              {saved ? 'Lagra!' : 'Lagre som bilde'}
             </button>
 
             <Link
@@ -395,22 +547,22 @@ export default function BingoGame() {
           <div className="mb-8">
             <Image
               src="/images/404-illustration.png"
-              alt="Sad blob"
+              alt=""
               width={200}
               height={200}
-              className="mx-auto opacity-60"
+              className="mx-auto opacity-50"
             />
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ color: '#ffffff' }}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ color: '#ffffff' }}>
             Ingen bingo denne gongen!
           </h2>
-          <p className="font-satoshi text-gray-400 text-base mb-8">
+          <p className="font-satoshi text-gray-400 text-sm md:text-base mb-8">
             Tiå rann ut. Men det va gøy å prøva, ikkje sant?
           </p>
           <div className="flex flex-col gap-3">
             <button
               onClick={startGame}
-              className="w-full py-3.5 bg-lime-bright text-gray-900 font-semibold text-sm rounded-full hover:scale-105 transition-transform cursor-pointer"
+              className="w-full py-3.5 bg-lime-bright text-gray-900 font-semibold text-sm rounded-full hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer shadow-[0_0_30px_rgba(200,255,0,0.2)]"
             >
               Prøv igjen
             </button>
