@@ -617,7 +617,7 @@ export default function BingoGame() {
             <div className="bg-lime/10 border border-lime/20 rounded-2xl p-5 mb-5">
               <p className="text-base font-semibold text-lime mb-1.5">Vis denne te Andreas!</p>
               <p className="text-sm text-gray-300 font-satoshi leading-relaxed">
-                Vis skjermen (eller bilet) te Andreas, så får du et <strong className="text-lime">Gnu rabattkort</strong>.
+                Vis skjermen (eller bildet) te Andreas, så får du et <strong className="text-lime">Gnu rabattkort</strong>.
               </p>
             </div>
 
@@ -625,7 +625,7 @@ export default function BingoGame() {
               onClick={saveToImage}
               className="w-full py-3.5 bg-white text-gray-900 font-semibold text-sm rounded-full hover:bg-gray-100 active:scale-95 transition-all duration-200 cursor-pointer mb-2.5"
             >
-              {saved ? 'Lagra!' : 'Lagre som bilet'}
+              {saved ? 'Lagra!' : 'Lagre som bilde'}
             </button>
 
             <Link
