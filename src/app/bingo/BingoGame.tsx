@@ -401,7 +401,7 @@ export default function BingoGame() {
             Marker orå du hører under foredraget.
           </p>
           <p className="font-satoshi text-gray-400 text-sm mb-8 leading-relaxed">
-            Fem på rad = <strong className="text-lime font-semibold">bingo!</strong>
+            Fem på rad = <strong className="text-lime font-semibold">fin premie</strong>.
             <br />
             Du har 30 minutt. Brettet e randomisert.
           </p>
