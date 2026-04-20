@@ -401,7 +401,7 @@ export default function BingoGame() {
             Marker orå du hører under foredraget.
           </p>
           <p className="font-satoshi text-gray-400 text-sm mb-8 leading-relaxed">
-            Fem på rad = <strong className="text-lime font-semibold">Gnu rabattkort</strong>.
+            Fem på rad = <strong className="text-lime font-semibold">bingo!</strong>
             <br />
             Du har 30 minutt. Brettet e randomisert.
           </p>
@@ -615,9 +615,9 @@ export default function BingoGame() {
           {/* Instructions */}
           <div className="mt-6 text-center motion-safe:animate-[fadeInUp_0.6s_ease-out_0.4s_both]">
             <div className="bg-lime/10 border border-lime/20 rounded-2xl p-5 mb-5">
-              <p className="text-base font-semibold text-lime mb-1.5">Vis denne te Andreas!</p>
+              <p className="text-base font-semibold text-lime mb-1.5">Gratulerer!</p>
               <p className="text-sm text-gray-300 font-satoshi leading-relaxed">
-                Vis skjermen (eller bildet) te Andreas, så får du et <strong className="text-lime">Gnu rabattkort</strong>.
+                Du klarte det. Skryt gjerne av deg sjøl te Andreas.
               </p>
             </div>
 
