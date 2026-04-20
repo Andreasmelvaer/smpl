@@ -9,7 +9,6 @@ import {
   type Locale,
   type ArchetypeKey,
   type Reaction,
-  getDefaultLocale,
   ui,
   sliderLabels,
   sliderCommentary,
@@ -383,9 +382,7 @@ export default function DesignerQuiz() {
   const [activeReaction, setActiveReaction] = useState<Reaction | null>(null)
   const reactionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  useEffect(() => {
-    setLocale(getDefaultLocale())
-  }, [])
+  // Always default to Siddis (Norwegian) — user can toggle to Scouse
 
   const t = ui[locale]
   const resultKey: ArchetypeKey | null = (phase === 'result' || phase === 'reveal')
