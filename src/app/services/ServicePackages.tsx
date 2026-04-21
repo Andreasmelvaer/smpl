@@ -234,6 +234,25 @@ const CATEGORIES: ServiceCategory[] = [
       },
     ],
   },
+  {
+    id: 'tools',
+    title: 'Custom Business Tools — stop paying for software that does 10% of what you need',
+    subtitle: '',
+    packages: [
+      {
+        tier: 'Custom',
+        name: 'Custom Business Tools',
+        tagline: 'Bespoke CRMs, lead magnets, landing page generators, and internal tools — built for how you actually work.',
+        bestFor: ['Businesses paying for too many SaaS subscriptions', 'Teams with unique workflows no platform fits', 'Companies needing tools that integrate with their website', 'Start-ups wanting to automate go-to-market'],
+        sections: [
+          { title: 'What We Can Build', items: ['Custom CRM connected to your website (leads sync automatically)', 'Lead magnets with automated email delivery & CRM capture', 'Landing page generator — AI-assisted, deployed at custom URLs', 'Gated content systems for newsletters, guides, reports', 'Internal dashboards pulling data from Meta, Google, Stripe, etc.', 'Newsletter tools with templates and subscriber management', 'Admin panels for managing content, users, or settings', 'Task planners linked to clients or projects', 'Client portals for shared project status and files'] },
+          { title: 'How It Works', items: ['Supabase + Next.js + Vercel stack for reliability and scale', 'Claude Code accelerates development (weeks, not months)', 'Design-led approach with Figma components', 'You own the code, the data, and the IP forever', 'Optional: we can host and maintain, or hand over completely'] },
+          { title: 'Why Build vs Buy', items: ['Most SaaS tools are overkill — you use 10% of features', 'Custom tools fit your exact workflow (not someone else\'s)', 'No per-seat pricing or vendor lock-in', 'Easy to change when your business changes', 'Integrates with everything else you\'re already using'] },
+        ],
+        note: 'Scope and timeline defined together. Can start small (single tool) or full ecosystem. Take a look at our free Build Guide for more on the approach.',
+      },
+    ],
+  },
 ]
 
 // ---------------------------------------------------------------------------
