@@ -97,6 +97,15 @@ Here are the eight that matter most:
 
 **The most powerful combination:** loss aversion + social proof + reciprocity. Show what others are gaining that your prospect is currently missing, and give them something useful for free before you ask for anything.
 
+<div style="background-color: #141416; border-radius: 16px; padding: 32px; margin: 32px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 24px;">
+  <div style="flex: 1; min-width: 200px;">
+    <p style="margin: 0 0 4px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #c8ff00; font-weight: 600;">Free guide</p>
+    <p style="margin: 0 0 8px; font-size: 20px; font-weight: 700; color: #ffffff; line-height: 1.3;">Attention Is New Gold</p>
+    <p style="margin: 0 0 20px; font-size: 14px; color: #999; line-height: 1.6;">6 pages of frameworks for making your brand and stories stand out — TRUTH storytelling, behavioural science, and 6 field lessons from real brand-building.</p>
+    <a href="/attention-guide" style="display: inline-block; padding: 12px 28px; background-color: #c8ff00; color: #141416; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 100px;">Download for free</a>
+  </div>
+</div>
+
 ## 6 Field Lessons That Actually Move the Needle
 
 We've distilled years of brand-building into six lessons we find ourselves repeating to founders over and over.
