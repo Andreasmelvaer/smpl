@@ -33,6 +33,8 @@ interface ServiceCategory {
 // Data
 // ---------------------------------------------------------------------------
 
+const PRODUCT_SECTION_IDS = ['prototype', 'pdaas']
+
 const CATEGORIES: ServiceCategory[] = [
   {
     id: 'branding',
@@ -315,6 +317,9 @@ function ExpandablePackage({ pkg }: { pkg: ServicePackage }) {
 // ---------------------------------------------------------------------------
 
 export default function ServicePackages() {
+  const productCategories = CATEGORIES.filter((c) => PRODUCT_SECTION_IDS.includes(c.id))
+  const businessCategories = CATEGORIES.filter((c) => !PRODUCT_SECTION_IDS.includes(c.id))
+
   return (
     <div className="min-h-screen">
       {/* Hero */}
@@ -323,18 +328,33 @@ export default function ServicePackages() {
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-4">Services & Packages</p>
             <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
-              Business{' '}
-              <span className="font-editorial italic">Essentials</span>
+              Bring your product, and business,{' '}
+              <span className="font-editorial italic">to life</span>
             </h1>
             <p className="text-base text-gray-500 font-satoshi leading-relaxed">
-              Everything you need to look credible, pitch with confidence, and launch fast. Branding, websites, pitch decks, prototypes, and ongoing product design — all under one roof.
+              SmplCo has everything you need to bring your product or service to life, and take on the world. We help start-ups and scale-ups nail their idea and build something users will love, while delivering the go-to-market support you need to turn an idea into a business.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Category sections */}
-      {CATEGORIES.map((cat) => (
+      {/* Section 1: Bring your product to life */}
+      <section className="py-16 md:py-20 border-t border-gray-100 bg-gray-900 text-white">
+        <div className="container-main">
+          <div className="mb-12 max-w-2xl">
+            <p className="text-xs uppercase tracking-widest text-lime font-medium mb-3">01 — Product</p>
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: '#ffffff' }}>
+              Bring your product{' '}
+              <span className="font-editorial italic text-lime">to life</span>
+            </h2>
+            <p className="text-base text-gray-400 font-satoshi leading-relaxed">
+              Nail your idea, build something users will love, and prove it works. From five-day prototypes to ongoing product design — we help you go from rough concept to real product.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {productCategories.map((cat) => (
         <section key={cat.id} id={cat.id} className="py-16 md:py-20 border-t border-gray-100">
           <div className="container-main">
             <div className="mb-10">
@@ -342,7 +362,39 @@ export default function ServicePackages() {
                 {cat.title}
               </h2>
             </div>
+            <div className="space-y-4">
+              {cat.packages.map((pkg, i) => (
+                <ExpandablePackage key={i} pkg={pkg} />
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
 
+      {/* Section 2: Bring your business to life */}
+      <section className="py-16 md:py-20 border-t border-gray-100 bg-gray-900 text-white">
+        <div className="container-main">
+          <div className="mb-12 max-w-2xl">
+            <p className="text-xs uppercase tracking-widest text-lime font-medium mb-3">02 — Business</p>
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: '#ffffff' }}>
+              Bring your business{' '}
+              <span className="font-editorial italic text-lime">to life</span>
+            </h2>
+            <p className="text-base text-gray-400 font-satoshi leading-relaxed">
+              Everything you need to look credible, pitch with confidence, and get in front of the right people. Branding, websites, decks, and video — the go-to-market support that turns your idea into a business.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {businessCategories.map((cat) => (
+        <section key={cat.id} id={cat.id} className="py-16 md:py-20 border-t border-gray-100">
+          <div className="container-main">
+            <div className="mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold leading-tight">
+                {cat.title}
+              </h2>
+            </div>
             <div className="space-y-4">
               {cat.packages.map((pkg, i) => (
                 <ExpandablePackage key={i} pkg={pkg} />
