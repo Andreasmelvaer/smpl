@@ -38,8 +38,8 @@ const PRODUCT_SECTION_IDS = ['prototype', 'pdaas']
 const CATEGORIES: ServiceCategory[] = [
   {
     id: 'branding',
-    title: 'Branding — from first logo to full identity systems',
-    subtitle: '',
+    title: 'Branding',
+    subtitle: 'From first logo to full identity systems.',
     packages: [
       {
         tier: 'Essential',
@@ -83,8 +83,8 @@ const CATEGORIES: ServiceCategory[] = [
   },
   {
     id: 'websites',
-    title: 'Websites — designed and built in-house',
-    subtitle: '',
+    title: 'Websites',
+    subtitle: 'Designed and built in-house. No external developer needed.',
     packages: [
       {
         tier: 'Essential',
@@ -132,8 +132,8 @@ const CATEGORIES: ServiceCategory[] = [
   },
   {
     id: 'decks',
-    title: 'Investor Pitch & Sales Decks — designed in Figma, delivered as editable files + PDF',
-    subtitle: '',
+    title: 'Investor Pitch & Sales Decks',
+    subtitle: 'Designed in Figma. Delivered as editable files + PDF.',
     packages: [
       {
         tier: 'Essential',
@@ -167,8 +167,8 @@ const CATEGORIES: ServiceCategory[] = [
   },
   {
     id: 'video',
-    title: 'Video & Animation — bring your story to life',
-    subtitle: '',
+    title: 'Video & Animation',
+    subtitle: 'Bring your story to life on screen.',
     packages: [
       {
         tier: 'Essential',
@@ -199,8 +199,8 @@ const CATEGORIES: ServiceCategory[] = [
   },
   {
     id: 'prototype',
-    title: '5-Day Prototype — nail your vision. Align stakeholders. Land funding.',
-    subtitle: '',
+    title: '5-Day Prototype',
+    subtitle: 'Nail your vision. Align stakeholders. Land funding.',
     packages: [
       {
         tier: 'Flagship',
@@ -217,8 +217,8 @@ const CATEGORIES: ServiceCategory[] = [
   },
   {
     id: 'pdaas',
-    title: 'Product Design as a Service — ongoing, flexible access to a full team',
-    subtitle: '',
+    title: 'Product Design as a Service',
+    subtitle: 'Ongoing, flexible access to a full product team.',
     packages: [
       {
         tier: 'Retainer',
@@ -236,8 +236,8 @@ const CATEGORIES: ServiceCategory[] = [
   },
   {
     id: 'tools',
-    title: 'Custom Business Tools — stop paying for software that does 10% of what you need',
-    subtitle: '',
+    title: 'Custom Business Tools',
+    subtitle: 'Stop paying for software that does 10% of what you need.',
     packages: [
       {
         tier: 'Custom',
@@ -376,10 +376,15 @@ export default function ServicePackages() {
       {productCategories.map((cat) => (
         <section key={cat.id} id={cat.id} className="py-16 md:py-20 border-t border-gray-100">
           <div className="container-main">
-            <div className="mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold leading-tight">
+            <div className="mb-10 max-w-2xl">
+              <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-2">
                 {cat.title}
               </h2>
+              {cat.subtitle && (
+                <p className="text-sm md:text-base text-gray-500 font-satoshi leading-relaxed">
+                  {cat.subtitle}
+                </p>
+              )}
             </div>
             <div className="space-y-4">
               {cat.packages.map((pkg, i) => (
@@ -409,10 +414,15 @@ export default function ServicePackages() {
       {businessCategories.map((cat) => (
         <section key={cat.id} id={cat.id} className="py-16 md:py-20 border-t border-gray-100">
           <div className="container-main">
-            <div className="mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold leading-tight">
+            <div className="mb-10 max-w-2xl">
+              <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-2">
                 {cat.title}
               </h2>
+              {cat.subtitle && (
+                <p className="text-sm md:text-base text-gray-500 font-satoshi leading-relaxed">
+                  {cat.subtitle}
+                </p>
+              )}
             </div>
             <div className="space-y-4">
               {cat.packages.map((pkg, i) => (
