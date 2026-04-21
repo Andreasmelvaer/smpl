@@ -7,6 +7,7 @@ import { useState, useEffect, useRef, useLayoutEffect, useCallback } from 'react
 
 const navigationItems = [
   { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services' },
   { name: 'Work', href: '/work' },
   { name: 'Academy', href: '/academy' },
   { name: 'About', href: '/about' },
