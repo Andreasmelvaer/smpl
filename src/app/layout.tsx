@@ -48,11 +48,7 @@ export const metadata: Metadata = {
       "SmplCo helps startups and enterprises prototype and build smart digital products in weeks.",
     images: ["/images/og-default.png"],
   },
-  icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/apple-touch-icon.png",
-  },
+  // Next.js auto-generates icon tags from src/app/icon.png and apple-icon.png
   robots: {
     index: true,
     follow: true,
