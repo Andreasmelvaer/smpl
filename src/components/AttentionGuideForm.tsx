@@ -39,11 +39,11 @@ export default function AttentionGuideForm() {
   if (status === 'success') {
     return (
       <div className="bg-lime rounded-2xl p-8 md:p-10 text-center">
-        <div className="w-16 h-16 mx-auto mb-5 bg-gray-900 rounded-2xl flex items-center justify-center">
-          <svg className="w-8 h-8 text-lime" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
+        <img
+          src="/images/attention-guide-promo.png"
+          alt="Attention Is New Gold guide"
+          className="w-40 mx-auto rounded-lg mb-6"
+        />
         <h3 className="text-xl font-semibold mb-2">Your guide is ready!</h3>
         <p className="text-gray-700 mb-6">
           Click below to download. We&apos;ve also sent a copy to your inbox.

@@ -2,7 +2,7 @@
 title: "Attention Is the New Gold. Here's How Founders Win It."
 description: "The average person sees 4,000–10,000 brand messages a day. Most are ignored. Here's how founders cut through with TRUTH, behavioural science, and 6 field lessons."
 excerpt: "You don't have an attention problem. You have a relevance problem. Here's what founders get wrong about winning attention — and the frameworks we use every day to help them fix it."
-hero_image: "/images/blog/attention-is-new-gold.jpg"
+hero_image: "/images/attention-guide-promo.png"
 date: "2026-04-21"
 author: "Michael Millar"
 readTime: "8 min read"
@@ -103,6 +103,9 @@ Here are the eight that matter most:
     <p style="margin: 0 0 8px; font-size: 20px; font-weight: 700; color: #ffffff; line-height: 1.3;">Attention Is New Gold</p>
     <p style="margin: 0 0 20px; font-size: 14px; color: #999; line-height: 1.6;">6 pages of frameworks for making your brand and stories stand out — TRUTH storytelling, behavioural science, and 6 field lessons from real brand-building.</p>
     <a href="/attention-guide" style="display: inline-block; padding: 12px 28px; background-color: #c8ff00; color: #141416; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 100px;">Download for free</a>
+  </div>
+  <div style="flex: 0 0 auto;">
+    <img src="/images/attention-guide-promo.png" alt="Attention Is New Gold — the founder's guide to brand & storytelling" style="width: 180px; border-radius: 8px;" />
   </div>
 </div>
 
