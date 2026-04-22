@@ -127,7 +127,7 @@ export const archetypeImages: Record<ArchetypeKey, string> = {
   hustler: '/whatdesignerareyou/Komponent-Kongen med Kontrollbehov.png',
   bootstrapper: '/whatdesignerareyou/Helvetica-Noye.png',
   deckPolisher: '/whatdesignerareyou/Piksel-Pedanten.png',
-  accidentalFounder: '/whatdesignerareyou/gridDictator.png',
+  accidentalFounder: '/whatdesignerareyou/founder/accidental-founder.png',
 }
 
 export const archetypes: Record<ArchetypeKey, ArchetypeData> = {
