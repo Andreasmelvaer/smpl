@@ -144,6 +144,6 @@ AEO isn't a replacement for SEO — it's what SEO is becoming. The fundamentals 
 
 The five tips above are exactly what we applied to the SmplCo website. None of them are secret sauce. They're just disciplined execution of things most websites skip.
 
-**If you want help auditing your site for AI searchability, or rebuilding pages to be AEO-ready — [get in touch](https://www.smpl.as/contact) or email me on [mike@smpl.as](mailto:mike@smpl.as).**
+**If you want help auditing your site for AI searchability, or rebuilding pages to be AEO-ready — [get in touch](/contact) or email me on [mike@smpl.as](mailto:mike@smpl.as).**
 
 **It's the kind of thing we do well. And we have a report to prove it...**
