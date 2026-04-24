@@ -1,6 +1,35 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import BuildGuideForm from '@/components/BuildGuideForm'
+import { FAQJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
+
+const BUILD_GUIDE_FAQS = [
+  {
+    question: 'Why should I build my own internal tools?',
+    answer:
+      'Most SaaS tools offer a hundred features and teams use only ten. Building your own internal tools with Claude Code, Figma, and modern web tech lets you pay for exactly what you use, own your data, and adapt the tool as your process evolves. SmplCo has helped companies replace CRMs, task managers, and dashboards this way.',
+  },
+  {
+    question: 'What kinds of tools are easy to build?',
+    answer:
+      "Simple CRMs, task planners, dashboards, internal email tools, and admin panels are typically days to build rather than weeks. Tools that integrate with a single data source and don't need complex role-based access are the best first candidates.",
+  },
+  {
+    question: 'What tech stack does the Build Guide recommend?',
+    answer:
+      'The guide focuses on Claude Code for code generation, Figma for interface design, Next.js for web apps, and Vercel or Railway for hosting. The tech choices are deliberately boring and well-supported so teams can maintain the tools themselves.',
+  },
+  {
+    question: 'Is the Build Your Own Internal Tools guide free?',
+    answer:
+      'Yes. The guide is a free downloadable PDF covering why to build your own tools, what is easy to build, what tech to use, and how to think about maintenance. Download it at smpl.as/build-guide.',
+  },
+  {
+    question: 'Does SmplCo build internal tools for clients?',
+    answer:
+      'Yes. Custom internal tooling is covered under Product Design as a Service and the 5-Day Prototype packages. Book a call at smpl.as/book to discuss.',
+  },
+]
 
 export const metadata: Metadata = {
   title: 'Build Your Own Internal Tools — Free Guide',
@@ -80,6 +109,13 @@ const watchOuts = [
 export default function BuildGuide() {
   return (
     <div className="min-h-screen">
+      <FAQJsonLd faqs={BUILD_GUIDE_FAQS} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', href: '/' },
+          { name: 'Build Your Own Internal Tools', href: '/build-guide' },
+        ]}
+      />
       {/* ============ HERO ============ */}
       <section className="py-24 md:py-32 lg:py-40 relative overflow-hidden bg-offwhite">
         <div className="container-main relative z-10">

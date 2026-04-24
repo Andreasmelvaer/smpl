@@ -178,7 +178,7 @@ export default function AcademyPage() {
         <div className="container-main text-center">
           <Image
             src="/images/illustrations/smplco-illustration-smpl-insights.png"
-            alt=""
+            alt="Smpl Insights illustration"
             width={100}
             height={100}
             className="mx-auto mb-6"
@@ -212,7 +212,7 @@ export default function AcademyPage() {
         <div className="container-narrow">
           <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm">
             <div className="flex flex-col md:flex-row items-center gap-6 mb-8">
-              <Image src="/images/illustrations/Academy.png" alt="" width={80} height={80} className="shrink-0" />
+              <Image src="/images/illustrations/Academy.png" alt="Smpl Academy" width={80} height={80} className="shrink-0" />
               <div>
                 <h2 className="text-2xl md:text-3xl font-bold leading-tight">
                   <span className="font-editorial italic">Learn AI-workflows</span>

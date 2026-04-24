@@ -196,7 +196,7 @@ export default function EagleLabs() {
                 <div className="shrink-0 w-20 h-20 relative">
                   <Image
                     src={stat.icon}
-                    alt=""
+                    alt={`${stat.number} ${stat.label}`}
                     width={80}
                     height={80}
                     className="w-full h-full object-contain"

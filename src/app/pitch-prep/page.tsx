@@ -2,6 +2,35 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import PitchPrepForm from '@/components/PitchPrepForm'
+import { FAQJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
+
+const PITCH_PREP_FAQS = [
+  {
+    question: 'What is a pitch deck?',
+    answer:
+      'A pitch deck is a short, visual presentation (typically 10–15 slides) that founders use to tell investors the story of their company, the problem they solve, their traction, and why the investor should fund them. SmplCo has helped founders raise over €10 million using the same frameworks in the Pitch Prep Guide.',
+  },
+  {
+    question: 'What should a pitch deck include?',
+    answer:
+      'A strong pitch deck covers six essentials: the problem, the solution, unique value, target customer, traction, and the ask. The Pitch Prep Guide walks through all six plus team, competition, financials, and go-to-market.',
+  },
+  {
+    question: 'How long should an investor pitch be?',
+    answer:
+      'The pitch deck itself should be 10–15 slides. A live pitch meeting is usually 20–30 minutes total: 10 minutes presenting the deck, the rest for Q&A. Teaser decks sent cold should be under 10 slides.',
+  },
+  {
+    question: 'Is the Pitch Prep Guide free?',
+    answer:
+      'Yes. The Pitch Prep Guide is a free downloadable PDF with frameworks for brainstorming key messages, telling an engaging story, thinking like an investor, and preparing for the questions investors actually ask. Download it at smpl.as/pitch-prep.',
+  },
+  {
+    question: 'Does SmplCo design pitch decks?',
+    answer:
+      'Yes. SmplCo offers pitch deck design as one of its six packaged services. The team has raised capital themselves and helped clients raise over €10 million. Book a call at smpl.as/book to discuss a custom engagement.',
+  },
+]
 
 export const metadata: Metadata = {
   title: 'Pitch Prep Guide — Free Fundraising Toolkit',
@@ -122,6 +151,13 @@ const investorChecklist = [
 export default function PitchPrep() {
   return (
     <div className="min-h-screen">
+      <FAQJsonLd faqs={PITCH_PREP_FAQS} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', href: '/' },
+          { name: 'Pitch Prep Guide', href: '/pitch-prep' },
+        ]}
+      />
       {/* ============ HERO ============ */}
       <section className="py-24 md:py-32 lg:py-40 relative overflow-hidden bg-offwhite">
         <div className="container-main relative z-10">

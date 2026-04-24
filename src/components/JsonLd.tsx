@@ -103,3 +103,175 @@ export function BreadcrumbJsonLd({ items }: { items: { name: string; href: strin
     />
   )
 }
+
+export function WebSiteJsonLd() {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'SmplCo',
+    url: BASE_URL,
+    publisher: { '@type': 'Organization', name: 'SmplCo', url: BASE_URL },
+    inLanguage: 'en-GB',
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}
+
+/**
+ * SmplCo's 5 offices. Emitted as a graph of LocalBusiness entries so each
+ * location has its own address and is independently indexable.
+ */
+export function LocalBusinessJsonLd() {
+  const offices = [
+    {
+      id: `${BASE_URL}/#office-stavanger`,
+      name: 'SmplCo — Stavanger',
+      streetAddress: 'Ryfylkegata 9',
+      addressLocality: 'Stavanger',
+      postalCode: '4014',
+      addressCountry: 'NO',
+    },
+    {
+      id: `${BASE_URL}/#office-london`,
+      name: 'SmplCo — London',
+      streetAddress: 'Tottenham Court Road',
+      addressLocality: 'London',
+      addressCountry: 'GB',
+    },
+    {
+      id: `${BASE_URL}/#office-sanfrancisco`,
+      name: 'SmplCo — San Francisco',
+      streetAddress: '1 Ferry Building',
+      addressLocality: 'San Francisco',
+      addressRegion: 'CA',
+      addressCountry: 'US',
+    },
+    {
+      id: `${BASE_URL}/#office-szeged`,
+      name: 'SmplCo — Szeged',
+      streetAddress: 'Attila utca 11',
+      addressLocality: 'Szeged',
+      addressCountry: 'HU',
+    },
+    {
+      id: `${BASE_URL}/#office-stgallen`,
+      name: 'SmplCo — St. Gallen',
+      streetAddress: 'Teufener Str. 3',
+      addressLocality: 'St. Gallen',
+      postalCode: '9000',
+      addressCountry: 'CH',
+    },
+  ]
+
+  const data = {
+    '@context': 'https://schema.org',
+    '@graph': offices.map((o) => ({
+      '@type': 'LocalBusiness',
+      '@id': o.id,
+      name: o.name,
+      url: BASE_URL,
+      image: `${BASE_URL}/images/og-default.png`,
+      telephone: '',
+      email: 'hello@smpl.as',
+      priceRange: '$$-$$$$',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: o.streetAddress,
+        addressLocality: o.addressLocality,
+        ...(o.postalCode ? { postalCode: o.postalCode } : {}),
+        ...(o.addressRegion ? { addressRegion: o.addressRegion } : {}),
+        addressCountry: o.addressCountry,
+      },
+      parentOrganization: {
+        '@type': 'Organization',
+        name: 'SmplCo',
+        url: BASE_URL,
+      },
+    })),
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}
+
+export interface ServiceJsonLdItem {
+  name: string
+  description: string
+  url?: string
+  serviceType?: string
+}
+
+/**
+ * Array of services offered by SmplCo. Each becomes a Service node with
+ * SmplCo as provider. Used on /services to give search engines and AI crawlers
+ * a structured list of what SmplCo sells.
+ */
+export function ServiceListJsonLd({ services }: { services: ServiceJsonLdItem[] }) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@graph': services.map((s) => ({
+      '@type': 'Service',
+      name: s.name,
+      description: s.description,
+      ...(s.serviceType ? { serviceType: s.serviceType } : {}),
+      ...(s.url ? { url: `${BASE_URL}${s.url}` } : {}),
+      provider: {
+        '@type': 'Organization',
+        name: 'SmplCo',
+        url: BASE_URL,
+      },
+      areaServed: {
+        '@type': 'Place',
+        name: 'Worldwide',
+      },
+    })),
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}
+
+export function CreativeWorkJsonLd({ post }: { post: PostData }) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: post.title,
+    headline: post.title,
+    description: post.excerpt || post.description || '',
+    image: post.hero_image ? `${BASE_URL}${post.hero_image}` : undefined,
+    datePublished: post.date,
+    author: post.author
+      ? { '@type': 'Person', name: post.author }
+      : { '@type': 'Organization', name: 'SmplCo' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'SmplCo',
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/smpl-logo.svg` },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${BASE_URL}/work/${post.slug}`,
+    },
+    keywords: post.tags?.join(', '),
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}

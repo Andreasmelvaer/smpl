@@ -650,7 +650,7 @@ export default function BingoGame() {
           <div className="mb-8">
             <Image
               src="/images/404-illustration.png"
-              alt=""
+              alt="Bingo closed illustration"
               width={200}
               height={200}
               className="mx-auto opacity-50"

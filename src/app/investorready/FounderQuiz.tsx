@@ -210,7 +210,7 @@ function BrowseCarousel({ currentKey }: { currentKey: ArchetypeKey }) {
       <div className="relative flex items-center justify-center min-h-[200px]" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         {prevIdx !== null && (
           <button onClick={() => goTo(prevIdx)} className="absolute left-0 w-16 md:w-24 opacity-15 scale-[0.65] transition-all duration-500 cursor-pointer z-0">
-            <Image src={archetypeImages[allKeys[prevIdx]]} alt="" width={120} height={120} className="w-full object-contain" />
+            <Image src={archetypeImages[allKeys[prevIdx]]} alt={`Previous founder archetype: ${allKeys[prevIdx]}`} width={120} height={120} className="w-full object-contain" />
           </button>
         )}
         <div className="text-center transition-all duration-500 z-10 px-16">
@@ -220,7 +220,7 @@ function BrowseCarousel({ currentKey }: { currentKey: ArchetypeKey }) {
         </div>
         {nextIdx !== null && (
           <button onClick={() => goTo(nextIdx)} className="absolute right-0 w-16 md:w-24 opacity-15 scale-[0.65] transition-all duration-500 cursor-pointer z-0">
-            <Image src={archetypeImages[allKeys[nextIdx]]} alt="" width={120} height={120} className="w-full object-contain" />
+            <Image src={archetypeImages[allKeys[nextIdx]]} alt={`Next founder archetype: ${allKeys[nextIdx]}`} width={120} height={120} className="w-full object-contain" />
           </button>
         )}
       </div>
@@ -333,7 +333,7 @@ export default function FounderQuiz() {
           </div>
         </div>
         <div className="relative z-10 w-full pointer-events-none -mt-24 md:-mt-10">
-          <Image src="/whatdesignerareyou/all.png" alt="" width={1200} height={300} className="w-full max-w-5xl mx-auto object-contain" priority />
+          <Image src="/whatdesignerareyou/all.png" alt="All founder archetypes from the SmplCo Founder Quiz" width={1200} height={300} className="w-full max-w-5xl mx-auto object-contain" priority />
         </div>
       </section>
     )
@@ -382,7 +382,7 @@ export default function FounderQuiz() {
                   }}
                   aria-hidden="true"
                 />
-                <Image src={archetypeImages[activeReaction.character]} alt="" width={160} height={160} className="relative w-32 h-32 md:w-40 md:h-40 mx-auto object-contain" />
+                <Image src={archetypeImages[activeReaction.character]} alt={`Founder archetype: ${activeReaction.character}`} width={160} height={160} className="relative w-32 h-32 md:w-40 md:h-40 mx-auto object-contain" />
               </div>
             </div>
             <p className="text-[11px] text-gray-400 font-mono mt-8 tracking-wider animate-pulse">tap to continue</p>

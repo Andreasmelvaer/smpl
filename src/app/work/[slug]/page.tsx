@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import ScrollZoomImage from '@/components/ScrollZoomImage'
+import { CreativeWorkJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -57,7 +58,7 @@ async function RelatedWork({ currentSlug }: { currentSlug: string }) {
         <div className="flex items-center justify-center gap-6 mb-12">
           <Image
             src="/images/illustrations/smplco-illustration-notebook.png"
-            alt=""
+            alt="SmplCo case study notebook illustration"
             width={80}
             height={80}
             className="shrink-0"
@@ -111,6 +112,14 @@ export default async function WorkProject({ params }: Props) {
 
     return (
       <article className="min-h-screen">
+        <CreativeWorkJsonLd post={project} />
+        <BreadcrumbJsonLd
+          items={[
+            { name: 'Home', href: '/' },
+            { name: 'Work', href: '/work' },
+            { name: project.title, href: `/work/${slug}` },
+          ]}
+        />
         {/* ============ BRAND HERO — full width edge-to-edge ============ */}
         <section className="w-full" style={{ backgroundColor: '#f0ece6' }}>
           {project.hero_image && (

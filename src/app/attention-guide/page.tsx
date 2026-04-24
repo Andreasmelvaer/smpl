@@ -1,6 +1,35 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import AttentionGuideForm from '@/components/AttentionGuideForm'
+import { FAQJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
+
+const ATTENTION_FAQS = [
+  {
+    question: 'What is the TRUTH framework?',
+    answer:
+      'TRUTH is a storytelling framework used by SmplCo to test whether a piece of content will cut through. It stands for Topical (connected to something people care about today), Relevant (written for a specific audience), Unusual (surprising or counterintuitive), Trouble (tension or something at stake), and Human (real people, real emotion). Every piece of content is run through TRUTH before it ships.',
+  },
+  {
+    question: 'Why is attention called the new gold?',
+    answer:
+      "People see between 4,000 and 10,000 brand messages per day and ignore most of them. Attention has become the scarce resource in marketing — not reach, not budget. Founders who understand how to earn attention with specific, honest, relevant content can outperform competitors with larger budgets.",
+  },
+  {
+    question: 'Who is the Attention Is New Gold guide for?',
+    answer:
+      'Founders and marketers at startups and scale-ups who want to cut through without a large advertising budget. Particularly useful for founders who are their own primary marketer and need frameworks they can apply the same day.',
+  },
+  {
+    question: 'Is the guide free?',
+    answer:
+      'Yes. The Attention Is New Gold guide is a free 6-page PDF covering the TRUTH framework, 8 principles of behavioural science, and 6 field lessons. Enter your email at smpl.as/attention-guide to download it.',
+  },
+  {
+    question: 'Who wrote the Attention Is New Gold guide?',
+    answer:
+      'Michael Millar, Partner and Brand Strategist at SmplCo. Mike has over two decades of brand strategy experience across startups and global brands.',
+  },
+]
 
 export const metadata: Metadata = {
   title: 'Attention is New Gold — Free Guide',
@@ -113,6 +142,13 @@ const lessons = [
 export default function AttentionGuide() {
   return (
     <div className="min-h-screen">
+      <FAQJsonLd faqs={ATTENTION_FAQS} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', href: '/' },
+          { name: 'Attention Is New Gold', href: '/attention-guide' },
+        ]}
+      />
       {/* ============ HERO ============ */}
       <section className="py-24 md:py-32 lg:py-40 relative overflow-hidden bg-offwhite">
         <div className="container-main relative z-10">

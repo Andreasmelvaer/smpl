@@ -97,7 +97,7 @@ export default function About() {
         <div className="container-main">
           <AnimateOnScroll>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-6">
-              <Image src="/images/illustrations/smplco-illustration-high-five.png" alt="" width={120} height={120} className="shrink-0" />
+              <Image src="/images/illustrations/smplco-illustration-high-five.png" alt="Team high-five illustration" width={120} height={120} className="shrink-0" />
               <div className="text-center md:text-left">
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight">
                   <span className="font-editorial italic">Our</span>
@@ -151,7 +151,7 @@ export default function About() {
               </p>
             </div>
             <div className="flex justify-center">
-              <Image src="/images/illustrations/smplco-illustration-ideas-investors.png" alt="" width={600} height={600} className="w-full" />
+              <Image src="/images/illustrations/smplco-illustration-ideas-investors.png" alt="Ideas meeting investors illustration" width={600} height={600} className="w-full" />
             </div>
           </div>
         </div>
@@ -188,7 +188,7 @@ export default function About() {
               </ul>
             </div>
             <div className="flex justify-center">
-              <Image src="/images/illustrations/smplco-illustration-ui-components.png" alt="" width={600} height={600} className="w-full" />
+              <Image src="/images/illustrations/smplco-illustration-ui-components.png" alt="UI components illustration" width={600} height={600} className="w-full" />
             </div>
           </div>
         </div>
@@ -199,7 +199,7 @@ export default function About() {
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
-              <Image src="/images/illustrations/smplco-illustration-code-development.png" alt="" width={600} height={600} className="w-full" />
+              <Image src="/images/illustrations/smplco-illustration-code-development.png" alt="Code development illustration" width={600} height={600} className="w-full" />
             </div>
             <div>
               <AnimateOnScroll>
@@ -230,7 +230,7 @@ export default function About() {
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
-              <Image src="/images/illustrations/smplco-illustration-space-astronaut.png" alt="" width={600} height={600} className="w-full" />
+              <Image src="/images/illustrations/smplco-illustration-space-astronaut.png" alt="Astronaut illustration representing launching digital products" width={600} height={600} className="w-full" />
             </div>
             <div>
               <AnimateOnScroll>
@@ -255,7 +255,7 @@ export default function About() {
         <div className="container-main">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="flex justify-center">
-              <Image src="/images/illustrations/smplco-illustration-mobile-app.png" alt="" width={600} height={600} className="w-full" />
+              <Image src="/images/illustrations/smplco-illustration-mobile-app.png" alt="Mobile app development illustration" width={600} height={600} className="w-full" />
             </div>
             <div>
               <AnimateOnScroll>
@@ -281,7 +281,7 @@ export default function About() {
         <div className="container-main">
           <AnimateOnScroll>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-12">
-              <Image src="/images/illustrations/smplco-illustration-signpost.png" alt="" width={120} height={120} className="shrink-0" />
+              <Image src="/images/illustrations/smplco-illustration-signpost.png" alt="Signpost illustration" width={120} height={120} className="shrink-0" />
               <div className="text-center md:text-left">
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight">
                   <span className="font-editorial italic">The</span>

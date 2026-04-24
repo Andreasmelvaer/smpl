@@ -7,6 +7,7 @@ import AnimateOnScroll from '@/components/AnimateOnScroll'
 import LogoMarquee from '@/components/LogoMarquee'
 import ParallaxImage from '@/components/ParallaxImage'
 import ShimmerGrid from '@/components/ShimmerGrid'
+import { WebSiteJsonLd, LocalBusinessJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 
 export const metadata = {
   alternates: { canonical: 'https://smpl.as/' },
@@ -18,6 +19,9 @@ export default async function HomePage() {
 
   return (
     <div className="min-h-screen">
+      <WebSiteJsonLd />
+      <LocalBusinessJsonLd />
+      <BreadcrumbJsonLd items={[{ name: 'Home', href: '/' }]} />
       {/* ============ HERO ============ */}
       <section className="py-24 md:py-32 lg:py-44 relative overflow-hidden bg-offwhite">
         <ShimmerGrid />

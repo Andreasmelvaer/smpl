@@ -322,7 +322,7 @@ function BrowseCarousel({ locale, currentKey }: { locale: Locale; currentKey: Ar
             onClick={() => goTo(prevIdx)}
             className="absolute left-0 w-16 md:w-24 opacity-15 scale-[0.65] transition-all duration-500 ease-out cursor-pointer z-0"
           >
-            <Image src={archetypeImages[allKeys[prevIdx]]} alt="" width={120} height={120} className="w-full object-contain" />
+            <Image src={archetypeImages[allKeys[prevIdx]]} alt={`Previous designer archetype: ${allKeys[prevIdx]}`} width={120} height={120} className="w-full object-contain" />
           </button>
         )}
 
@@ -343,7 +343,7 @@ function BrowseCarousel({ locale, currentKey }: { locale: Locale; currentKey: Ar
             onClick={() => goTo(nextIdx)}
             className="absolute right-0 w-16 md:w-24 opacity-15 scale-[0.65] transition-all duration-500 ease-out cursor-pointer z-0"
           >
-            <Image src={archetypeImages[allKeys[nextIdx]]} alt="" width={120} height={120} className="w-full object-contain" />
+            <Image src={archetypeImages[allKeys[nextIdx]]} alt={`Next designer archetype: ${allKeys[nextIdx]}`} width={120} height={120} className="w-full object-contain" />
           </button>
         )}
       </div>
@@ -531,7 +531,7 @@ export default function DesignerQuiz() {
         <div className="relative z-10 w-full pointer-events-none -mt-24 md:-mt-10">
           <Image
             src="/whatdesignerareyou/all.png"
-            alt=""
+            alt="All designer archetypes from the SmplCo Designer Quiz"
             width={1200}
             height={300}
             className="w-full max-w-5xl mx-auto object-contain"
@@ -630,7 +630,7 @@ export default function DesignerQuiz() {
                 />
                 <Image
                   src={archetypeImages[activeReaction.character]}
-                  alt=""
+                  alt={`Designer archetype: ${activeReaction.character}`}
                   width={160}
                   height={160}
                   className="relative w-32 h-32 md:w-40 md:h-40 mx-auto object-contain"
