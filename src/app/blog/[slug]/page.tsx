@@ -1,4 +1,4 @@
-import { getPostData, getAllPosts } from '@/lib/markdown'
+import { getPostData, getAllPosts, getAllPostsData } from '@/lib/markdown'
 import { generateBlogMetadata } from '@/lib/metadata'
 import { getAuthor } from '@/lib/authors'
 import { notFound } from 'next/navigation'
@@ -6,6 +6,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import AuthorBio from '@/components/AuthorBio'
+import RelatedPosts from '@/components/RelatedPosts'
 import { BlogPostJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 
 interface Props {
@@ -26,6 +27,7 @@ export default async function BlogPost({ params }: Props) {
   const { slug } = await params
   try {
     const post = await getPostData('blog', slug)
+    const allPosts = await getAllPostsData('blog')
 
     return (
       <article className="py-16 md:py-24">
@@ -110,6 +112,9 @@ export default async function BlogPost({ params }: Props) {
             const author = getAuthor(post.author)
             return author ? <AuthorBio author={author} /> : null
           })()}
+
+          {/* Related posts */}
+          <RelatedPosts current={post} posts={allPosts} max={3} />
         </div>
       </article>
     )

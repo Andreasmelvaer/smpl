@@ -4,10 +4,18 @@ import Image from 'next/image'
 const footerNav = [
   { name: 'Home', href: '/' },
   { name: 'Work', href: '/work' },
+  { name: 'Services', href: '/services' },
   { name: 'Academy', href: '/academy' },
   { name: 'About', href: '/about' },
   { name: 'Partners', href: '/partners' },
   { name: 'Blog', href: '/blog' },
+]
+
+const resources = [
+  { name: 'Attention Is New Gold', href: '/attention-guide' },
+  { name: 'Build Your Own Tools', href: '/build-guide' },
+  { name: 'Pitch Prep Guide', href: '/pitch-prep' },
+  { name: 'Founder Quiz', href: '/investorready' },
 ]
 
 export default function Footer() {
@@ -20,17 +28,33 @@ export default function Footer() {
             <Image src="/images/smpl-logo.svg" alt="SmplCo" width={80} height={26} className="h-6 w-auto brightness-0 invert" />
           </Link>
 
-          <nav className="flex flex-wrap gap-6">
-            {footerNav.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-gray-300 hover:text-white transition-colors text-sm font-satoshi uppercase tracking-wider"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
+          <div className="flex flex-col md:flex-row gap-10 md:gap-16">
+            <nav className="flex flex-col gap-3">
+              <p className="text-gray-500 text-xs font-satoshi uppercase tracking-wider mb-1">Site</p>
+              {footerNav.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-gray-300 hover:text-white transition-colors text-sm font-satoshi"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+
+            <nav className="flex flex-col gap-3">
+              <p className="text-gray-500 text-xs font-satoshi uppercase tracking-wider mb-1">Free resources</p>
+              {resources.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-gray-300 hover:text-white transition-colors text-sm font-satoshi"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
 
         {/* Bottom row: copyright + socials left, CTA right */}
