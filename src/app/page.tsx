@@ -36,12 +36,10 @@ export default async function HomePage() {
               className="w-full max-w-[550px] md:max-w-[650px] lg:max-w-[750px] h-auto mx-auto mix-blend-multiply"
               priority
             />
-            <h1 className="sr-only">Prototype Fast, Build Smart, Launch in Weeks — SmplCo Digital Product Studio</h1>
+            <h1 className="sr-only">SmplCo — a digital product studio for founders who need to move fast</h1>
           </div>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-satoshi">
-            Join 125+ start-ups, scale-ups, and global brands who&apos;ve brought big ideas to
-            life, backed by a team that has built and sold digital companies, including a $3bn
-            tech unicorn. Recognised as a world-leader in AI-assisted development by Figma.
+            SmplCo builds digital products fast using AI-assisted design and development. We ship working prototypes in 5 days and production software in weeks, not quarters. 125+ products built, €10m+ raised by our clients, and recognised by Figma as a world-leader in AI-assisted development.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -345,13 +345,13 @@ export default function ServicePackages() {
       <section className="py-20 md:py-28 bg-offwhite">
         <div className="container-main">
           <div className="max-w-2xl">
-            <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-4">Services & Packages</p>
+            <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-4">For founders &amp; scale-ups</p>
             <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
-              Bring your product, and business,{' '}
-              <span className="font-editorial italic">to life</span>
+              Services & Packages — everything a founder needs{' '}
+              <span className="font-editorial italic">under one roof</span>
             </h1>
             <p className="text-base text-gray-500 font-satoshi leading-relaxed">
-              SmplCo has everything you need to bring your product or service to life, and take on the world. We help start-ups and scale-ups nail their idea and build something users will love, while delivering the go-to-market support you need to turn an idea into a business.
+              SmplCo offers six packaged services: the 5-Day Prototype, Product Design as a Service, Branding, Websites, Investor Pitch &amp; Sales Decks, and Video &amp; Animation. Each is fixed-scope, fixed-price, and covers the essentials a founder or scale-up needs to go from idea to growth without assembling a dozen separate vendors.
             </p>
           </div>
         </div>
