@@ -5,7 +5,7 @@ import ShimmerGrid from '@/components/ShimmerGrid'
 import PartnerCard from '@/components/PartnerCard'
 
 export const metadata: Metadata = {
-  title: 'Partners | SmplCo – Our Partner Network',
+  title: 'Our Partner Network',
   description: 'Our partnerships offer expertise, access, discounts, and investment opportunities — carefully chosen to give you everything you need to succeed.',
   alternates: { canonical: 'https://smpl.as/partners' },
 }

@@ -1,6 +1,6 @@
 ---
 title: "Attention Is the New Gold. Here's How Founders Win It."
-description: "The average person sees 4,000–10,000 brand messages a day. Most are ignored. Here's how founders cut through with TRUTH, behavioural science, and 6 field lessons."
+description: "People see 4,000–10,000 brand messages a day. Most are ignored. Here's how founders cut through — with TRUTH, behavioural science, and field lessons."
 excerpt: "You don't have an attention problem. You have a relevance problem. Here's what founders get wrong about winning attention — and the frameworks we use every day to help them fix it."
 hero_image: "/images/attention-guide-promo.png"
 date: "2026-04-21"

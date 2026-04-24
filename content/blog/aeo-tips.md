@@ -1,6 +1,6 @@
 ---
 title: "Is Your Website AI-Ready? 5 Tips for Maximum AEO"
-description: "Answer Engine Optimisation is the new SEO. Here are 5 tips SmplCo used to make our website highly visible to AI search engines like ChatGPT, Perplexity, and Google AI Overviews."
+description: "AEO is the new SEO. Here are 5 tips SmplCo used to make our website visible to ChatGPT, Perplexity, and Google AI Overviews."
 hero_image: "/images/blog/aeo-hero.png"
 thumbnail_image: "/images/blog/aeo-hero-thumb.png"
 hero_border: true

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import FounderQuiz from './FounderQuiz'
 
 export const metadata: Metadata = {
-  title: 'What Kind of Founder Are You? | SmplCo',
+  title: 'What Kind of Founder Are You?',
   description:
     'Take this brutally honest quiz to find your founder archetype. Are you The Visionary, The Deck Polisher, or The Serial Pivoter? 6 questions. Total honesty.',
   alternates: { canonical: 'https://smpl.as/investorready' },

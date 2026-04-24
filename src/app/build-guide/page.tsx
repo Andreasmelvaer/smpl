@@ -3,15 +3,29 @@ import Link from 'next/link'
 import BuildGuideForm from '@/components/BuildGuideForm'
 
 export const metadata: Metadata = {
-  title: 'Build Your Own Internal Tools — Free Guide | SmplCo',
+  title: 'Build Your Own Internal Tools — Free Guide',
   description: 'Free practical guide to building internal tools with Claude Code, Figma, and modern web tech. Stop paying for platforms you only use 10% of.',
   alternates: { canonical: 'https://smpl.as/build-guide' },
   openGraph: {
-    title: 'Build Your Own Internal Tools — Free Guide | SmplCo',
+    title: 'Build Your Own Internal Tools — Free Guide',
     description: 'Free practical guide to building internal tools with Claude Code, Figma, and modern web tech. Stop paying for platforms you only use 10% of.',
     url: 'https://smpl.as/build-guide',
     siteName: 'SmplCo',
     type: 'website',
+    images: [
+      {
+        url: '/images/smpl_buil_your_own_promo.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Build Your Own Internal Tools — Free Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Build Your Own Internal Tools — Free Guide',
+    description: 'Free practical guide to building internal tools with Claude Code, Figma, and modern web tech.',
+    images: ['/images/smpl_buil_your_own_promo.jpg'],
   },
 }
 

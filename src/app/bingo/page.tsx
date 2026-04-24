@@ -11,6 +11,20 @@ export const metadata: Metadata = {
     url: 'https://smpl.as/bingo',
     type: 'website',
     siteName: 'SmplCo',
+    images: [
+      {
+        url: '/images/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bingo — Yggdrasil 2026',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Bingo — Yggdrasil 2026',
+    description: 'Spel bingo under foredraget. Fem på rad = Gnu rabattkort!',
+    images: ['/images/og-default.png'],
   },
 }
 

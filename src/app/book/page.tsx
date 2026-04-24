@@ -3,15 +3,32 @@ import type { Metadata } from "next";
 import ShimmerGrid from "@/components/ShimmerGrid";
 
 export const metadata: Metadata = {
-  title: "Book a Discovery Call | SmplCo",
+  title: "Book a Discovery Call",
   description:
     "Schedule a free 30-minute discovery call with the SmplCo team. We'll explore your idea, challenge, or project and map out next steps.",
   alternates: { canonical: "https://smpl.as/book" },
   openGraph: {
-    title: "Book a Discovery Call | SmplCo",
+    title: "Book a Discovery Call",
     description:
       "Schedule a free 30-minute discovery call with the SmplCo team.",
     url: "https://smpl.as/book",
+    siteName: "SmplCo",
+    type: "website",
+    images: [
+      {
+        url: "/images/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Book a discovery call with SmplCo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book a Discovery Call",
+    description:
+      "Schedule a free 30-minute discovery call with the SmplCo team.",
+    images: ["/images/og-default.png"],
   },
 };
 

@@ -4,7 +4,7 @@ import LogoMarquee from '@/components/LogoMarquee'
 import ShimmerGrid from '@/components/ShimmerGrid'
 
 export const metadata = {
-  title: 'Smpl Academy – AI Training, Coding & Design Workshops',
+  title: 'Smpl Academy — AI, Coding & Design Workshops',
   description: 'Hands-on training in AI, coding, and product design. From one-day workshops to company-wide programmes. Startups to enterprise.',
   alternates: { canonical: 'https://smpl.as/academy' },
 }

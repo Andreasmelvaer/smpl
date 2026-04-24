@@ -3,11 +3,11 @@ import Link from 'next/link'
 import AttentionGuideForm from '@/components/AttentionGuideForm'
 
 export const metadata: Metadata = {
-  title: 'Attention is New Gold — Free Guide | SmplCo',
+  title: 'Attention is New Gold — Free Guide',
   description: 'The founder\'s guide to brand & storytelling. 6 pages of practical frameworks — TRUTH, behavioural science, and 6 field lessons for cutting through the noise.',
   alternates: { canonical: 'https://smpl.as/attention-guide' },
   openGraph: {
-    title: 'Attention is New Gold — Free Guide | SmplCo',
+    title: 'Attention is New Gold — Free Guide',
     description: 'The founder\'s guide to brand & storytelling. TRUTH storytelling, 8 behavioural science principles, 6 field lessons.',
     url: 'https://smpl.as/attention-guide',
     siteName: 'SmplCo',

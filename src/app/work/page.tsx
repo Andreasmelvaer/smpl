@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import ShimmerGrid from '@/components/ShimmerGrid'
 
 export const metadata: Metadata = {
-  title: 'Our Work | SmplCo – Projects & Case Studies',
+  title: 'Our Work — Projects & Case Studies',
   description: 'Explore our portfolio of digital products, prototypes, and case studies for startups and enterprises.',
   alternates: { canonical: 'https://smpl.as/work' },
 }

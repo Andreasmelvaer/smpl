@@ -4,15 +4,29 @@ import Image from 'next/image'
 import PitchPrepForm from '@/components/PitchPrepForm'
 
 export const metadata: Metadata = {
-  title: 'Pitch Prep Guide — Free Fundraising Toolkit | SmplCo',
+  title: 'Pitch Prep Guide — Free Fundraising Toolkit',
   description: 'Free guide to nail your investor pitch. Practical frameworks to brainstorm your key messages, tell an engaging story, and think like an investor.',
   alternates: { canonical: 'https://smpl.as/pitch-prep' },
   openGraph: {
-    title: 'Pitch Prep Guide — Free Fundraising Toolkit | SmplCo',
+    title: 'Pitch Prep Guide — Free Fundraising Toolkit',
     description: 'Free guide to nail your investor pitch. Practical frameworks to brainstorm your key messages, tell an engaging story, and think like an investor.',
     url: 'https://smpl.as/pitch-prep',
     siteName: 'SmplCo',
     type: 'website',
+    images: [
+      {
+        url: '/images/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Pitch Prep Guide — Free Fundraising Toolkit',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pitch Prep Guide — Free Fundraising Toolkit',
+    description: 'Free guide to nail your investor pitch. Practical frameworks to tell an engaging story and think like an investor.',
+    images: ['/images/og-default.png'],
   },
 }
 
