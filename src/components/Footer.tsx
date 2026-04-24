@@ -63,7 +63,10 @@ export default function Footer() {
             <p className="text-gray-500 text-sm">
               Copyright &copy; {new Date().getFullYear()} SmplCo.
               <br />
-              All rights reserved.
+              All rights reserved. &middot;{' '}
+              <Link href="/privacy" className="underline hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
             </p>
             <div className="flex items-center gap-4 mt-4">
               <a
