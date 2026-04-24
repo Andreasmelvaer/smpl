@@ -8,6 +8,27 @@ export const metadata: Metadata = {
   title: 'Eagle Labs — 25% Off 5-Day Prototype',
   description: 'Exclusive 25% discount on our 5-Day Prototype service for Barclays Eagle Labs members. See your vision brought to life in just five days.',
   alternates: { canonical: 'https://smpl.as/eaglelabs' },
+  openGraph: {
+    title: 'Eagle Labs — 25% Off 5-Day Prototype',
+    description: 'Exclusive 25% discount on the 5-Day Prototype for Barclays Eagle Labs members.',
+    url: 'https://smpl.as/eaglelabs',
+    type: 'website',
+    siteName: 'SmplCo',
+    images: [
+      {
+        url: '/images/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Barclays Eagle Labs — 25% Off 5-Day Prototype',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Eagle Labs — 25% Off 5-Day Prototype',
+    description: 'Exclusive 25% discount on the 5-Day Prototype for Barclays Eagle Labs members.',
+    images: ['/images/og-default.png'],
+  },
 }
 
 const caseStudies = [

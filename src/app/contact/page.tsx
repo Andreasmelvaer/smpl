@@ -5,9 +5,30 @@ import ShimmerGrid from '@/components/ShimmerGrid'
 import { FAQJsonLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
-  title: 'Contact Us | SmplCo – Let\'s Build Together',
+  title: 'Contact Us – Let\'s Build Together',
   description: 'Get a free consultation with our digital innovation experts. One hour of advice, absolutely free.',
   alternates: { canonical: 'https://smpl.as/contact' },
+  openGraph: {
+    title: 'Contact Us – Let\'s Build Together',
+    description: 'Get a free consultation with our digital innovation experts. One hour of advice, absolutely free.',
+    url: 'https://smpl.as/contact',
+    type: 'website',
+    siteName: 'SmplCo',
+    images: [
+      {
+        url: '/images/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Contact SmplCo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us – Let\'s Build Together',
+    description: 'Get a free consultation with our digital innovation experts. One hour of advice, absolutely free.',
+    images: ['/images/og-default.png'],
+  },
 }
 
 const offices = [

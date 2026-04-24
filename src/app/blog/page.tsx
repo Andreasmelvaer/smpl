@@ -8,6 +8,27 @@ export const metadata: Metadata = {
   title: 'Blog – AI Development, Prototyping & Startup Insights',
   description: 'Insights on AI development, digital products, vibecoding, and building startups from the SmplCo team.',
   alternates: { canonical: 'https://smpl.as/blog' },
+  openGraph: {
+    title: 'Blog – AI Development, Prototyping & Startup Insights',
+    description: 'Insights on AI development, digital products, vibecoding, and building startups.',
+    url: 'https://smpl.as/blog',
+    type: 'website',
+    siteName: 'SmplCo',
+    images: [
+      {
+        url: '/images/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'SmplCo Blog',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog – AI Development, Prototyping & Startup Insights',
+    description: 'Insights on AI development, digital products, vibecoding, and building startups.',
+    images: ['/images/og-default.png'],
+  },
 }
 
 export default async function Blog() {

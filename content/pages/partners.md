@@ -63,7 +63,7 @@ We've built strategic partnerships with industry leaders to provide our clients 
 **Category:** Product Development
 
 ### 🌐 Evista
-**Website:** [evistaweb.com](http://www.evistaweb.com/)
+**Website:** [evistaweb.com](https://www.evistaweb.com/)
 **Service:** An interactive agency specialising in web design & web development, mobile app development and search engine optimization.
 **Category:** Product Development
 

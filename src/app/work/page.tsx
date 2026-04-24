@@ -8,6 +8,27 @@ export const metadata: Metadata = {
   title: 'Our Work — Projects & Case Studies',
   description: 'Explore our portfolio of digital products, prototypes, and case studies for startups and enterprises.',
   alternates: { canonical: 'https://smpl.as/work' },
+  openGraph: {
+    title: 'Our Work — Projects & Case Studies',
+    description: 'Explore our portfolio of digital products, prototypes, and case studies.',
+    url: 'https://smpl.as/work',
+    type: 'website',
+    siteName: 'SmplCo',
+    images: [
+      {
+        url: '/images/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'SmplCo Work & Case Studies',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Our Work — Projects & Case Studies',
+    description: 'Explore our portfolio of digital products, prototypes, and case studies.',
+    images: ['/images/og-default.png'],
+  },
 }
 
 export default async function Work() {

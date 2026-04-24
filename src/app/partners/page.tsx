@@ -8,6 +8,27 @@ export const metadata: Metadata = {
   title: 'Our Partner Network',
   description: 'Our partnerships offer expertise, access, discounts, and investment opportunities — carefully chosen to give you everything you need to succeed.',
   alternates: { canonical: 'https://smpl.as/partners' },
+  openGraph: {
+    title: 'Our Partner Network',
+    description: 'Expertise, access, discounts, and investment opportunities from our partner network.',
+    url: 'https://smpl.as/partners',
+    type: 'website',
+    siteName: 'SmplCo',
+    images: [
+      {
+        url: '/images/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'SmplCo Partner Network',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Our Partner Network',
+    description: 'Expertise, access, discounts, and investment opportunities from our partner network.',
+    images: ['/images/og-default.png'],
+  },
 }
 
 const partners = [

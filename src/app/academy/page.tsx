@@ -7,6 +7,27 @@ export const metadata = {
   title: 'Smpl Academy — AI, Coding & Design Workshops',
   description: 'Hands-on training in AI, coding, and product design. From one-day workshops to company-wide programmes. Startups to enterprise.',
   alternates: { canonical: 'https://smpl.as/academy' },
+  openGraph: {
+    title: 'Smpl Academy — AI, Coding & Design Workshops',
+    description: 'Hands-on training in AI, coding, and product design. Startups to enterprise.',
+    url: 'https://smpl.as/academy',
+    type: 'website',
+    siteName: 'SmplCo',
+    images: [
+      {
+        url: '/images/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Smpl Academy — AI, Coding & Design Workshops',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Smpl Academy — AI, Coding & Design Workshops',
+    description: 'Hands-on training in AI, coding, and product design. Startups to enterprise.',
+    images: ['/images/og-default.png'],
+  },
 }
 
 export default function AcademyPage() {
