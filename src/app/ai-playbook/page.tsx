@@ -260,7 +260,7 @@ export default function AIPlaybook() {
                 <span className="font-editorial italic">your AI bet?</span>
               </h2>
               <p className="text-sm text-gray-500 font-satoshi leading-relaxed mb-6">
-                Book a free 30-minute call with Andreas and Mike. No pitch — just a sanity check on what you're building, where the cost is going, and whether the AI part is doing the work it's meant to.
+                Book a free 30-minute call with Andreas. No pitch — just a sanity check on what you're building, where the cost is going, and whether the AI part is doing the work it's meant to.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
@@ -279,8 +279,8 @@ export default function AIPlaybook() {
             </div>
             <div className="bg-white rounded-2xl p-6 md:p-8">
               <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-4">Say hello</p>
-              <h3 className="text-lg font-semibold mb-1">Andreas &amp; Mike</h3>
-              <p className="text-sm text-gray-500 font-satoshi mb-1">Co-founders, SmplCo</p>
+              <h3 className="text-lg font-semibold mb-1">Andreas Melvær</h3>
+              <p className="text-sm text-gray-500 font-satoshi mb-1">Co-founder, SmplCo</p>
               <a
                 href="mailto:andreas@smpl.as"
                 className="text-sm text-gray-900 font-medium underline decoration-lime decoration-2 underline-offset-4"
