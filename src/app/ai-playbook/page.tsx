@@ -5,109 +5,109 @@ import { FAQJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 
 const AI_PLAYBOOK_FAQS = [
   {
-    question: 'What is the AI Integration Playbook?',
+    question: 'What is "Build with AI without building a monster"?',
     answer:
-      'The AI Integration Playbook is a free 6-page guide from SmplCo that walks founders and product teams through a four-stage framework for adding AI to a product without burning cash. It covers picking the right strategy for your stage, prioritising where to apply AI, building with governance and guardrails, and turning AI from a budget drain into a strategic asset.',
+      'It is a free 13-page playbook from SmplCo. The premise is simple: do not start with AI, start with structure. The playbook walks through the workflow we use ourselves — Plan, Figma, Claude Design, Claude Code, GitHub, Deploy — with the prompts, brief templates, and patterns to avoid that we apply on every project.',
   },
   {
     question: 'Who should read it?',
     answer:
-      'Founders, product leaders, and CTOs at startups and scale-ups who are either thinking about their first AI feature or looking to make existing AI investments work harder. The playbook is also useful for innovation teams inside enterprises evaluating where to apply AI in customer-facing products.',
+      'Founders, product leaders, and CTOs at startups and scale-ups who are either thinking about their first AI feature or trying to keep existing AI builds from going off the rails. Also useful for innovation teams inside enterprises evaluating where to apply AI in customer-facing products.',
   },
   {
     question: 'Is it really free?',
     answer:
-      'Yes. The playbook is a free download in exchange for an email address. No paywall, no upsell. We use the email to send you the PDF and occasionally let you know about new resources. You can unsubscribe at any time.',
+      'Yes. The playbook is a free download in exchange for an email address. No paywall, no upsell. We use the email to send you the PDF and occasionally let you know about new resources. Unsubscribe whenever.',
   },
   {
     question: 'Is there a webinar that goes with it?',
     answer:
-      'Yes. Andreas Melvær and Michael Millar are running a free Barclays Eagle Labs webinar on Wednesday 29 April at 12:00 BST that walks through the playbook live with Q&A. Register at labs.uk.barclays/events/effectively-integrate-ai-into-your-product. The recording is sent to all registrants.',
+      'Yes. Andreas Melvær and Michael Millar ran a free Barclays Eagle Labs webinar on Wednesday 29 April 2026 at 12:00 BST that walked through the playbook live with Q&A. The recording is sent to anyone who registers at labs.uk.barclays/events/effectively-integrate-ai-into-your-product.',
   },
   {
     question: 'Does SmplCo help teams integrate AI?',
     answer:
-      'Yes. AI integration is part of every engagement we run, from 5-Day Prototypes through to ongoing Product Design as a Service. We have helped 125+ products use AI in production, and we are recognised by Figma as a global exemplar of AI development. Book a free 30-minute call at smpl.as/book to discuss your specific situation.',
+      'Yes. AI-assisted design and development is part of every engagement we run, from 5-Day Prototypes through to ongoing Product Design as a Service. We have helped 125+ products ship AI in production and are recognised by Figma as a global exemplar of AI development. Book a free 30-minute call at smpl.as/book to talk through your situation.',
   },
 ]
 
 export const metadata: Metadata = {
-  title: 'AI Integration Playbook — Free Guide',
+  title: 'Build with AI Without Building a Monster — Free Playbook',
   description:
-    'A 6-page playbook for founders and product teams on integrating AI without burning cash. Right strategy for your stage, where to apply it, governance, and cost discipline.',
+    'A 13-page playbook for founders and product teams on planning, designing and shipping with AI. The workflow we use ourselves at SmplCo: Plan, Figma, Claude Design, Claude Code, GitHub, Deploy.',
   alternates: { canonical: 'https://smpl.as/ai-playbook' },
   openGraph: {
-    title: 'AI Integration Playbook — Free Guide',
+    title: 'Build with AI Without Building a Monster — Free Playbook',
     description:
-      'A 6-page playbook for founders on integrating AI without burning cash. Right strategy for your stage, where to apply it, governance, and cost discipline.',
+      'A 13-page playbook on planning, designing and shipping with AI. The workflow Andreas and Mike use with founders every week.',
     url: 'https://smpl.as/ai-playbook',
     siteName: 'SmplCo',
     type: 'website',
     images: [
       {
-        url: '/images/ai-playbook-promo.png',
+        url: '/images/ai-playbook-mockup.jpg',
         width: 1200,
         height: 630,
-        alt: 'AI Integration Playbook — A 4-Stage Framework for Product Teams',
+        alt: 'Build with AI without building a monster — free SmplCo playbook',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Integration Playbook — Free Guide',
+    title: 'Build with AI Without Building a Monster — Free Playbook',
     description:
-      'A 6-page playbook for founders on integrating AI without burning cash.',
-    images: ['/images/ai-playbook-promo.png'],
+      'A 13-page playbook on planning, designing and shipping with AI.',
+    images: ['/images/ai-playbook-mockup.jpg'],
   },
 }
 
 const stages = [
   {
     number: '01',
-    title: 'The right strategy for your stage',
+    title: 'Plan, design, decide',
     description:
-      'Pre-seed, seed, Series A, scale-up, enterprise — each has a different AI playbook. Most failures are people copying the wrong stage.',
+      'Brief writing and journey design before AI gets involved. The boring questions — who, problem, journey, what "done" means — are where the value lives.',
   },
   {
     number: '02',
-    title: 'Where AI actually creates value',
+    title: 'Operationalise via Claude Design',
     description:
-      'The 80/20 of where AI pays back. A practical filter to score any feature for AI fit, and the patterns to avoid.',
+      'Turn your Figma system into actual rules so AI builds inside it, not beside it. No purple gradients. No invented colours. No glassmorphism nobody asked for.',
   },
   {
     number: '03',
-    title: 'Governance, guardrails, scalability',
+    title: 'Build with Claude Code, carefully',
     description:
-      'The bit founders skip until something embarrassing happens in production. Lightweight evals, observability, and cost ceilings.',
+      'Plan first. Then prompt. Like a good junior developer, not a caffeinated raccoon with access to your repo. Main journey only, design rules as the source of truth.',
   },
   {
     number: '04',
-    title: 'AI as an asset, not a budget drain',
+    title: 'Ship, secure, sustain',
     description:
-      'Caching, smaller models, batch and async patterns, in-house vs API, and the metrics that actually tell you whether your AI is earning its keep.',
+      'GitHub, deploy, domain, data. The boring infrastructure that turns a prototype into a product. Plus a sanity check on what you can actually defend to a customer.',
   },
 ]
 
 const commonMistakes = [
   {
-    title: 'Bolting AI onto the wrong feature',
-    description: 'Adding a chat interface because a competitor did, instead of starting with the place AI actually moves a metric.',
+    title: 'Starting with the prompt, not the brief',
+    description: 'Asking AI to "make an app" before deciding who it is for, what problem it solves, or what "done" means. Wasted weeks dressed up as iteration.',
+  },
+  {
+    title: 'Letting AI invent its own design system',
+    description: 'Default purple gradients on every screen. Glassmorphism nobody asked for. Crypto-startup dashboards. Fine for a throwaway, less fine when investors are in the room.',
   },
   {
     title: 'Using a Series-B model for a pre-seed problem',
-    description: 'Paying for a frontier model when a small fine-tuned one would do — and burning runway on inference.',
+    description: 'Paying for a frontier model when a small one would do — and burning runway on inference your customers do not feel.',
   },
   {
     title: 'No evals, no observability',
     description: 'Shipping AI features with no way to tell when they degrade or how much they cost per request. Then panicking.',
   },
   {
-    title: 'Confusing AI usage with AI value',
-    description: 'Measuring tokens consumed instead of business outcomes. The result is a budget drain that looks like progress.',
-  },
-  {
-    title: 'Waiting for the perfect moment',
-    description: 'Watching the market move while your team debates infrastructure. Six months of focus is the most expensive thing you can spend.',
+    title: 'Bolting AI onto the wrong feature',
+    description: 'Adding a chat interface because a competitor did, rather than starting where AI actually moves a metric.',
   },
   {
     title: 'Going all-in on one model',
@@ -130,19 +130,19 @@ export default function AIPlaybook() {
         <div className="container-main relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-4">
-              Free guide for founders &amp; product teams
+              Free playbook · 13 pages
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-              The AI Integration{' '}
-              <span className="font-editorial italic">Playbook</span>
+              Build with AI{' '}
+              <span className="font-editorial italic">without building a monster</span>
             </h1>
             <p className="text-base md:text-lg text-gray-500 font-satoshi leading-relaxed max-w-xl mx-auto mb-10">
-              How to turn AI from a risky expense into a real product advantage. A four-stage framework for picking what to build, where, and when — without burning cash.
+              A practical guide to planning, designing and shipping with AI. The workflow we use ourselves at SmplCo to keep AI builds from going off the rails.
             </p>
             <img
-              src="/images/ai-playbook-promo.png"
-              alt="The AI Integration Playbook — a 4-stage framework for product teams"
-              className="w-48 md:w-56 mx-auto rounded-xl shadow-2xl mb-10"
+              src="/images/ai-playbook-mockup.jpg"
+              alt="Build with AI without building a monster — free SmplCo playbook"
+              className="w-56 md:w-64 mx-auto rounded-xl shadow-2xl mb-10"
             />
             <a
               href="#download"
@@ -188,13 +188,13 @@ export default function AIPlaybook() {
           <div className="grid md:grid-cols-2 gap-16 items-start mb-16">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold leading-tight">
-                The four-stage{' '}
-                <span className="font-editorial italic">framework</span>
+                The workflow,{' '}
+                <span className="font-editorial italic">top to bottom</span>
               </h2>
             </div>
             <div>
               <p className="text-sm text-gray-500 font-satoshi leading-relaxed">
-                The same framework SmplCo uses with founders and innovation teams. Built from 125+ products shipped and refined every week. Recognised by Figma as a global exemplar of AI-assisted development.
+                Plan → Figma → Claude Design → Claude Code → GitHub → Deploy. The same flow we use ourselves on every project. Built from 125+ products shipped and refined every week. Recognised by Figma as a global exemplar of AI-assisted development.
               </p>
             </div>
           </div>
@@ -245,10 +245,10 @@ export default function AIPlaybook() {
             <div>
               <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-4">
                 Get the free{' '}
-                <span className="font-editorial italic">AI Playbook</span>
+                <span className="font-editorial italic">playbook</span>
               </h2>
               <p className="text-sm text-gray-500 font-satoshi leading-relaxed mb-6">
-                6 pages. No fluff. The same framework Andreas and Mike use with the founders and product teams they work with every day.
+                13 pages. No fluff. The actual workflow Andreas and Mike use with the founders and product teams they work with every day.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -257,7 +257,7 @@ export default function AIPlaybook() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </span>
-                  <span className="text-sm font-satoshi text-gray-600">The four-stage framework, applied stage by stage</span>
+                  <span className="text-sm font-satoshi text-gray-600">The full workflow: Plan → Figma → Claude Design → Claude Code → Deploy</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="w-5 h-5 rounded-full bg-lime flex items-center justify-center shrink-0 mt-0.5">
@@ -265,7 +265,7 @@ export default function AIPlaybook() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </span>
-                  <span className="text-sm font-satoshi text-gray-600">A practical filter for scoring features for AI fit</span>
+                  <span className="text-sm font-satoshi text-gray-600">The one-page brief that saves you a week of "nearly there"</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="w-5 h-5 rounded-full bg-lime flex items-center justify-center shrink-0 mt-0.5">
@@ -273,7 +273,7 @@ export default function AIPlaybook() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </span>
-                  <span className="text-sm font-satoshi text-gray-600">The cost levers that turn AI into a real moat, not a line item</span>
+                  <span className="text-sm font-satoshi text-gray-600">The boring infrastructure checklist nobody else writes about</span>
                 </div>
               </div>
             </div>

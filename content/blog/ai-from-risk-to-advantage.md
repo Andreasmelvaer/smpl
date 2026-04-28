@@ -27,31 +27,31 @@ We're not consultants who tell people not to build with AI. We've been picked by
 
 <div style="background-color: #141416; border-radius: 16px; padding: 32px; margin: 32px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 24px;">
   <div style="flex: 1; min-width: 220px;">
-    <p style="margin: 0 0 4px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #e5ff21; font-weight: 600;">Free playbook</p>
+    <p style="margin: 0 0 4px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #e5ff21; font-weight: 600;">Free playbook · 13 pages</p>
     <p style="margin: 0 0 8px; font-size: 22px; font-weight: 700; color: #ffffff; line-height: 1.25;">Build with AI <em style="font-weight: 400;">without building a monster</em></p>
-    <p style="margin: 0 0 20px; font-size: 14px; color: #999; line-height: 1.6;">A practical guide to planning, designing and shipping with AI. The four-stage framework Andreas and Mike use with founders every week.</p>
+    <p style="margin: 0 0 20px; font-size: 14px; color: #999; line-height: 1.6;">A practical guide to planning, designing and shipping with AI. The workflow Andreas and Mike use with founders every week.</p>
     <a href="/ai-playbook" style="display: inline-block; padding: 12px 28px; background-color: #e5ff21; color: #141416; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 100px;">Download for free</a>
   </div>
   <div style="flex: 0 0 auto;">
-    <img src="/images/blog/ai-playbook-mockup.jpg" alt="The AI Integration Playbook — free PDF download" style="width: 220px; border-radius: 8px;" />
+    <img src="/images/ai-playbook-mockup.jpg" alt="Build with AI without building a monster — free playbook" style="width: 220px; border-radius: 8px;" />
   </div>
 </div>
 
-## The four-stage framework
+## Don't start with AI. Start with structure.
 
-The webinar walks through the framework we use to figure out what to build, where, and when. The headlines:
+That's the core of the playbook, and the bit most teams skip. People start prompting before they really know what they're building, AI makes something that looks like an app, and then the problems show up — unclear journeys, messy data, design that drifts from screen to screen, and code nobody wants to touch the next morning.
 
-**1. Choose the right AI strategy for your stage.** Pre-seed, seed, Series A, scale-up, enterprise — each has a different set of sensible bets. Most failures we see are people copying the wrong stage's playbook.
+The workflow we've settled on after 125+ products goes like this:
 
-**2. Prioritise the right places to use it.** Not every feature needs AI. Some absolutely do. The 80/20 of where AI actually creates value is narrower than most people think, and the easiest way to waste money is to ignore it.
+**Plan → Figma → Claude Design → Claude Code → GitHub → Deploy.**
 
-**3. Build with governance, guardrails, and scalability in mind.** This is the bit founders skip until something embarrassing happens in production. A small amount of effort early — evals, observability, cost ceilings — saves a lot of pain later.
+Plan first. The boring questions are where the value lives — who is it for, what problem are you solving, what's the first useful journey, what does "done" actually mean. Then a one-page build brief. Then the journey in Figma, including the three states everyone forgets: empty, loading, error. Then Claude Design turns the system into rules so the AI builds inside it, not beside it. Then Claude Code — and you ask it to plan before it codes, like a good junior developer instead of a caffeinated raccoon with access to your repo. GitHub, deploy, README, env vars in the right place. Then a sanity check on data, security, who can access what.
 
-**4. Turn AI into a strategic asset, not a budget drain.** Caching, smaller models, batch and async patterns, in-house vs API. The teams that compound an advantage from AI aren't the ones using the biggest model. They're the ones with discipline about cost and clarity about what they're measuring.
+The whole point: build what makes you different, integrate what doesn't. And before you add any AI feature, ask the question that decides everything — is AI the product, or just a feature? They're very different commitments.
 
 ## Want the detail?
 
-There's a free six-page playbook that walks through all four stages with the questions we actually ask and the patterns we use. [Download it here](/ai-playbook) — no sales pitch, just the framework.
+There's a free 13-page playbook that walks the whole thing through, with the prompts we actually use and the patterns to avoid. [Download it here](/ai-playbook) — no sales pitch, just the framework.
 
 If you'd rather hear it live with the chance to ask Mike and me anything, [register for tomorrow's webinar](https://labs.uk.barclays/events/effectively-integrate-ai-into-your-product/). It's free, it's online, it's an hour, and there's a recording for anyone who registers but can't make it live.
 
