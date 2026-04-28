@@ -49,6 +49,7 @@ SmplCo has helped build over 125 digital products. Partners include Michael Mill
 
 ## Free guides
 
+- [The AI Integration Playbook](${BASE_URL}/ai-playbook): A 4-stage framework for product teams. Right strategy for your stage, where to apply AI, governance and guardrails, AI as a strategic asset not a budget drain.
 - [Attention Is New Gold](${BASE_URL}/attention-guide): The founder's guide to brand & storytelling. TRUTH framework, 8 behavioural science principles, 6 field lessons.
 - [Build Your Own Internal Tools](${BASE_URL}/build-guide): Practical guide to building internal tools with Claude Code, Figma, and modern web tech. Stop paying for SaaS you only use 10% of.
 - [Pitch Prep Guide](${BASE_URL}/pitch-prep): Free fundraising toolkit. Frameworks for brainstorming key messages, telling an engaging story, and thinking like an investor.

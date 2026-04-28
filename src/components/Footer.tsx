@@ -12,6 +12,7 @@ const footerNav = [
 ]
 
 const resources = [
+  { name: 'AI Integration Playbook', href: '/ai-playbook' },
   { name: 'Attention Is New Gold', href: '/attention-guide' },
   { name: 'Build Your Own Tools', href: '/build-guide' },
   { name: 'Pitch Prep Guide', href: '/pitch-prep' },
