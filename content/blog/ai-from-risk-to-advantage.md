@@ -25,6 +25,18 @@ A pre-seed founder treating AI like a Series-B scale problem will burn months on
 
 We're not consultants who tell people not to build with AI. We've been picked by [Figma](https://www.figma.com/) as a global exemplar of AI development, and we just won [Lovable's international SheBuilds hackathon](https://lovable.dev/) — we use AI in nearly every project. But we've also seen plenty of teams use it badly enough that the right answer was *less* AI, not more.
 
+<div style="background-color: #141416; border-radius: 16px; padding: 32px; margin: 32px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 24px;">
+  <div style="flex: 1; min-width: 220px;">
+    <p style="margin: 0 0 4px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #e5ff21; font-weight: 600;">Free playbook</p>
+    <p style="margin: 0 0 8px; font-size: 22px; font-weight: 700; color: #ffffff; line-height: 1.25;">Build with AI <em style="font-weight: 400;">without building a monster</em></p>
+    <p style="margin: 0 0 20px; font-size: 14px; color: #999; line-height: 1.6;">A practical guide to planning, designing and shipping with AI. The four-stage framework Andreas and Mike use with founders every week.</p>
+    <a href="/ai-playbook" style="display: inline-block; padding: 12px 28px; background-color: #e5ff21; color: #141416; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 100px;">Download for free</a>
+  </div>
+  <div style="flex: 0 0 auto;">
+    <img src="/images/blog/ai-playbook-mockup.jpg" alt="The AI Integration Playbook — free PDF download" style="width: 220px; border-radius: 8px;" />
+  </div>
+</div>
+
 ## The four-stage framework
 
 The webinar walks through the framework we use to figure out what to build, where, and when. The headlines:
