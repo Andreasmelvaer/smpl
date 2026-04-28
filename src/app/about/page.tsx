@@ -58,7 +58,7 @@ export default function About() {
         { question: 'How much does the 5-Day Prototype cost?', answer: 'The 5-Day Prototype starts at £8,100. Barclays Eagle Labs members receive an exclusive 25% discount, bringing the price to £6,075. Contact us for a free consultation to discuss your specific needs.' },
       ]} />
       {/* ============ HERO ============ */}
-      <section className="py-24 md:py-32 lg:py-44 relative overflow-hidden bg-offwhite">
+      <section className="py-16 md:py-24 lg:py-36 relative overflow-hidden bg-offwhite">
         <ShimmerGrid />
         <div className="container-main text-center relative z-10">
           <Image
@@ -66,7 +66,7 @@ export default function About() {
             alt="About SmplCo — digital product studio"
             width={700}
             height={400}
-            className="w-full max-w-[400px] md:max-w-[480px] lg:max-w-[560px] h-auto mx-auto"
+            className="w-full max-w-[320px] md:max-w-[380px] lg:max-w-[450px] h-auto mx-auto"
             priority
           />
         </div>

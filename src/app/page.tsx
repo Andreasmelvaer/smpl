@@ -23,7 +23,7 @@ export default async function HomePage() {
       <LocalBusinessJsonLd />
       <BreadcrumbJsonLd items={[{ name: 'Home', href: '/' }]} />
       {/* ============ HERO ============ */}
-      <section className="py-24 md:py-32 lg:py-44 relative overflow-hidden bg-offwhite">
+      <section className="py-16 md:py-24 lg:py-36 relative overflow-hidden bg-offwhite">
         <ShimmerGrid />
         <div className="container-main text-center relative z-10">
           {/* Hero illustration — the full composition from Figma */}
@@ -33,7 +33,7 @@ export default async function HomePage() {
               alt="SmplCo — prototype fast, build smart, launch in weeks"
               width={900}
               height={500}
-              className="w-full max-w-[550px] md:max-w-[650px] lg:max-w-[750px] h-auto mx-auto mix-blend-multiply"
+              className="w-full max-w-[440px] md:max-w-[520px] lg:max-w-[600px] h-auto mx-auto mix-blend-multiply"
               priority
             />
             <h1 className="sr-only">SmplCo — a digital product studio for founders who need to move fast</h1>

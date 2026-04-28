@@ -34,10 +34,10 @@ export default function AcademyPage() {
   return (
     <div className="min-h-screen">
       {/* ============ HERO ============ */}
-      <section className="py-24 md:py-32 relative overflow-hidden bg-offwhite">
+      <section className="py-16 md:py-24 relative overflow-hidden bg-offwhite">
         <ShimmerGrid />
         <div className="container-main text-center relative z-10">
-          <div className="relative mb-8 mx-auto w-full max-w-[500px] md:max-w-[580px] lg:max-w-[650px] aspect-[4/3] overflow-hidden">
+          <div className="relative mb-8 mx-auto w-full max-w-[400px] md:max-w-[465px] lg:max-w-[520px] aspect-[4/3] overflow-hidden">
             <Image
               src="/images/illustrations/Academy.png"
               alt="Smpl Academy — AI training and workshops"

@@ -80,10 +80,10 @@ export default function EagleLabs() {
   return (
     <div className="min-h-screen">
       {/* ============ HERO ============ */}
-      <section className="py-20 md:py-28 lg:py-36 relative overflow-hidden bg-offwhite">
+      <section className="py-16 md:py-24 lg:py-28 relative overflow-hidden bg-offwhite">
         <ShimmerGrid />
         <div className="container-main text-center relative z-10">
-          <div className="relative mb-8 mx-auto w-full max-w-[500px] md:max-w-[600px] lg:max-w-[770px] aspect-[16/9] overflow-hidden">
+          <div className="relative mb-8 mx-auto w-full max-w-[400px] md:max-w-[480px] lg:max-w-[615px] aspect-[16/9] overflow-hidden">
             <Image
               src="/images/illustrations/Barclays Members Reward.png"
               alt="Barclays Eagle Labs exclusive offer"

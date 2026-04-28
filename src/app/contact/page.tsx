@@ -48,7 +48,7 @@ export default function Contact() {
         { question: 'Where are SmplCo offices located?', answer: 'SmplCo has offices in five locations: Stavanger, Norway (Ryfylkegata 9); London, UK (Tottenham Court Road); San Francisco, USA (1 Ferry Building); Szeged, Hungary (Attila utca 11); and St. Gallen, Switzerland (Teufener Str. 3).' },
       ]} />
       {/* ============ HERO ============ */}
-      <section className="py-24 md:py-32 lg:py-44 relative overflow-hidden bg-offwhite">
+      <section className="py-16 md:py-24 lg:py-36 relative overflow-hidden bg-offwhite">
         <ShimmerGrid />
         <div className="container-main text-center relative z-10">
           <Image
@@ -56,7 +56,7 @@ export default function Contact() {
             alt="Contact SmplCo"
             width={700}
             height={400}
-            className="w-full max-w-[400px] md:max-w-[480px] lg:max-w-[560px] h-auto mx-auto"
+            className="w-full max-w-[320px] md:max-w-[380px] lg:max-w-[450px] h-auto mx-auto"
             priority
           />
         </div>

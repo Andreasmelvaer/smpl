@@ -150,7 +150,7 @@ export default function AttentionGuide() {
         ]}
       />
       {/* ============ HERO ============ */}
-      <section className="py-24 md:py-32 lg:py-40 relative overflow-hidden bg-offwhite">
+      <section className="py-16 md:py-24 lg:py-32 relative overflow-hidden bg-offwhite">
         <div className="container-main relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-4">
