@@ -76,7 +76,7 @@ const SERVICE_FAQS = [
   {
     question: 'How do I get started?',
     answer:
-      'Book a free 30-minute discovery call at smpl.as/book, or email hello@smpl.as. SmplCo will map your goal to the right service and share a fixed-price proposal within 48 hours.',
+      'Book a free 30-minute discovery call at smpl.as/book, or email andreas@smpl.as. SmplCo will map your goal to the right service and share a fixed-price proposal within 48 hours.',
   },
 ]
 

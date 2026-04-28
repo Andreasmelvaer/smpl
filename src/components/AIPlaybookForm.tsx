@@ -40,9 +40,9 @@ export default function AIPlaybookForm() {
     return (
       <div className="bg-lime rounded-2xl p-8 md:p-10 text-center">
         <img
-          src="/images/ai-playbook-promo.png"
-          alt="The AI Integration Playbook"
-          className="w-40 mx-auto rounded-lg mb-6"
+          src="/images/ai-playbook-mockup.jpg"
+          alt="Build with AI without building a monster — playbook"
+          className="w-44 mx-auto rounded-lg mb-6"
         />
         <h3 className="text-xl font-semibold mb-2">Your playbook is ready!</h3>
         <p className="text-gray-700 mb-6">

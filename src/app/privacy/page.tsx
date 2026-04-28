@@ -44,7 +44,7 @@ export default function PrivacyPolicy() {
           </p>
           <p>
             For any privacy-related question, contact us at{' '}
-            <a href="mailto:hello@smpl.as">hello@smpl.as</a>.
+            <a href="mailto:andreas@smpl.as">andreas@smpl.as</a>.
           </p>
           <p>
             SmplCo is the data controller for personal data collected through this website
@@ -281,7 +281,7 @@ export default function PrivacyPolicy() {
           </p>
           <p>
             To exercise any of these rights, email{' '}
-            <a href="mailto:hello@smpl.as">hello@smpl.as</a>. We will respond within 30 days.
+            <a href="mailto:andreas@smpl.as">andreas@smpl.as</a>. We will respond within 30 days.
           </p>
 
           <h2>11. Children&apos;s privacy</h2>
@@ -307,7 +307,7 @@ export default function PrivacyPolicy() {
           <p>
             No online system is perfectly secure. If you believe your data may have been
             compromised, contact{' '}
-            <a href="mailto:hello@smpl.as">hello@smpl.as</a> immediately.
+            <a href="mailto:andreas@smpl.as">andreas@smpl.as</a> immediately.
           </p>
 
           <h2>13. Changes to this policy</h2>
@@ -325,7 +325,7 @@ export default function PrivacyPolicy() {
           </p>
           <ul>
             <li>
-              Email: <a href="mailto:hello@smpl.as">hello@smpl.as</a>
+              Email: <a href="mailto:andreas@smpl.as">andreas@smpl.as</a>
             </li>
             <li>Post: SmplCo AS, Ryfylkegata 9, 4014 Stavanger, Norway</li>
           </ul>

@@ -98,8 +98,8 @@ const commonMistakes = [
     description: 'Default purple gradients on every screen. Glassmorphism nobody asked for. Crypto-startup dashboards. Fine for a throwaway, less fine when investors are in the room.',
   },
   {
-    title: 'Using a Series-B model for a pre-seed problem',
-    description: 'Paying for a frontier model when a small one would do — and burning runway on inference your customers do not feel.',
+    title: 'Picking the cheap model first',
+    description: 'Trying to save on inference, then shipping a feature that almost works. The gap between a frontier model and a budget one is usually the whole product — pay for the good one.',
   },
   {
     title: 'No evals, no observability',
@@ -314,10 +314,10 @@ export default function AIPlaybook() {
               <h3 className="text-lg font-semibold mb-1">Andreas &amp; Mike</h3>
               <p className="text-sm text-gray-500 font-satoshi mb-1">Co-founders, SmplCo</p>
               <a
-                href="mailto:hello@smpl.as"
+                href="mailto:andreas@smpl.as"
                 className="text-sm text-gray-900 font-medium underline decoration-lime decoration-2 underline-offset-4"
               >
-                hello@smpl.as
+                andreas@smpl.as
               </a>
               <div className="mt-6 pt-6 border-t border-gray-100">
                 <div className="flex gap-4">

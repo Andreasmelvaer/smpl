@@ -43,7 +43,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen">
       <FAQJsonLd faqs={[
-        { question: 'How do I contact SmplCo?', answer: 'You can reach SmplCo through the contact form on our website at smpl.as/contact, or email us directly at hello@smpl.as. We have offices in Stavanger (Norway), London (UK), San Francisco (USA), Szeged (Hungary), and St. Gallen (Switzerland).' },
+        { question: 'How do I contact SmplCo?', answer: 'You can reach SmplCo through the contact form on our website at smpl.as/contact, or email us directly at andreas@smpl.as. We have offices in Stavanger (Norway), London (UK), San Francisco (USA), Szeged (Hungary), and St. Gallen (Switzerland).' },
         { question: 'Does SmplCo offer free consultations?', answer: 'Yes, SmplCo offers a free 1-hour consultation with our digital innovation experts. Share your idea or challenge, we assign the right specialist, and you get a no-obligation advice session. If there is a fit, we provide an optional proposal.' },
         { question: 'Where are SmplCo offices located?', answer: 'SmplCo has offices in five locations: Stavanger, Norway (Ryfylkegata 9); London, UK (Tottenham Court Road); San Francisco, USA (1 Ferry Building); Szeged, Hungary (Attila utca 11); and St. Gallen, Switzerland (Teufener Str. 3).' },
       ]} />

@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import ShimmerGrid from '@/components/ShimmerGrid'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -341,8 +343,23 @@ export default function ServicePackages() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero */}
-      <section className="py-20 md:py-28 bg-offwhite">
+      {/* ============ HERO ============ */}
+      <section className="py-16 md:py-24 lg:py-36 relative overflow-hidden bg-offwhite">
+        <ShimmerGrid />
+        <div className="container-main text-center relative z-10">
+          <Image
+            src="/images/illustrations/Our packages.png"
+            alt="SmplCo packages — services for founders and scale-ups"
+            width={756}
+            height={612}
+            className="w-full max-w-[320px] md:max-w-[380px] lg:max-w-[450px] h-auto mx-auto"
+            priority
+          />
+        </div>
+      </section>
+
+      {/* Intro */}
+      <section className="py-16 md:py-20 bg-offwhite border-t border-gray-100">
         <div className="container-main">
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-4">For founders &amp; scale-ups</p>

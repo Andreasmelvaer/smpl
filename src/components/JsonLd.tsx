@@ -17,7 +17,7 @@ export function OrganizationJsonLd() {
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      email: 'hello@smpl.as',
+      email: 'andreas@smpl.as',
       contactType: 'sales',
     },
   }
@@ -177,7 +177,7 @@ export function LocalBusinessJsonLd() {
       url: BASE_URL,
       image: `${BASE_URL}/images/og-default.png`,
       telephone: '',
-      email: 'hello@smpl.as',
+      email: 'andreas@smpl.as',
       priceRange: '$$-$$$$',
       address: {
         '@type': 'PostalAddress',

@@ -56,7 +56,7 @@ This file contains the complete blog, case study, and key page content for SmplC
 
 SmplCo is a digital product studio. We build prototypes in 5 days and ship production software using AI-assisted design and development. Founders and scale-ups come to us to turn ideas into working products fast. Offices in Stavanger, London, San Francisco, Szeged, and St. Gallen.
 
-Contact: hello@smpl.as · https://smpl.as/contact
+Contact: andreas@smpl.as · https://smpl.as/contact
 
 ---
 
