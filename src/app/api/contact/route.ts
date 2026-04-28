@@ -36,7 +36,7 @@ function notificationEmailHtml(name: string, email: string, company: string | un
                 </tr>
                 <tr>
                   <td style="padding-top: 24px;">
-                    <p style="margin: 0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #c8ff00; font-weight: 600;">New Contact</p>
+                    <p style="margin: 0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #e5ff21; font-weight: 600;">New Contact</p>
                   </td>
                 </tr>
                 <tr>
@@ -122,7 +122,7 @@ function confirmationEmailHtml(firstName: string) {
               <!-- Book a call -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
                 <tr>
-                  <td style="padding: 24px; background-color: #c8ff00; border-radius: 12px;">
+                  <td style="padding: 24px; background-color: #e5ff21; border-radius: 12px;">
                     <p style="margin: 0 0 4px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #555; font-weight: 600;">Free discovery call</p>
                     <p style="margin: 0 0 4px; font-size: 15px; font-weight: 600; color: #141416;">Book a 30-min call with Andreas &amp; Mike</p>
                     <p style="margin: 0 0 16px; font-size: 13px; line-height: 1.6; color: #333;">No pitch, no pressure. We'll talk through your idea, challenge, or project and map out what makes sense as a next step.</p>

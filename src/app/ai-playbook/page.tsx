@@ -20,11 +20,6 @@ const AI_PLAYBOOK_FAQS = [
       'Yes. The playbook is a free download in exchange for an email address. No paywall, no upsell. We use the email to send you the PDF and occasionally let you know about new resources. Unsubscribe whenever.',
   },
   {
-    question: 'Is there a webinar that goes with it?',
-    answer:
-      'Yes. Andreas Melvær and Michael Millar ran a free Barclays Eagle Labs webinar on Wednesday 29 April 2026 at 12:00 BST that walked through the playbook live with Q&A. The recording is sent to anyone who registers at labs.uk.barclays/events/effectively-integrate-ai-into-your-product.',
-  },
-  {
     question: 'Does SmplCo help teams integrate AI?',
     answer:
       'Yes. AI-assisted design and development is part of every engagement we run, from 5-Day Prototypes through to ongoing Product Design as a Service. We have helped 125+ products ship AI in production and are recognised by Figma as a global exemplar of AI development. Book a free 30-minute call at smpl.as/book to talk through your situation.',
@@ -154,33 +149,6 @@ export default function AIPlaybook() {
         </div>
       </section>
 
-      {/* ============ WEBINAR CALLOUT ============ */}
-      <section className="py-12 md:py-16 bg-gray-900 text-white">
-        <div className="container-main">
-          <div className="max-w-3xl mx-auto bg-lime text-gray-900 rounded-2xl p-8 md:p-10">
-            <div className="grid md:grid-cols-3 gap-6 items-center">
-              <div>
-                <p className="text-xs uppercase tracking-widest font-semibold mb-2">Live with us</p>
-                <p className="text-lg font-bold leading-tight">Wed 29 April · 12:00 BST</p>
-                <p className="text-sm text-gray-700 mt-1">Online · Free · Recording sent to all registrants</p>
-              </div>
-              <div className="md:col-span-2">
-                <p className="text-base font-medium mb-3">
-                  Andreas and Mike walk through the full playbook live at the Barclays Eagle Labs webinar — with Q&amp;A.
-                </p>
-                <a
-                  href="https://labs.uk.barclays/events/effectively-integrate-ai-into-your-product/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
-                >
-                  Register for the webinar →
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ============ WHAT'S INSIDE ============ */}
       <section className="py-20 md:py-28">

@@ -28,7 +28,7 @@ function guideEmailHtml(firstName: string) {
             <td style="background-color: #141416; padding: 32px 40px; border-radius: 16px 16px 0 0;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                 <tr><td>${logoWhite}</td></tr>
-                <tr><td style="padding-top: 24px;"><p style="margin: 0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #c8ff00; font-weight: 600;">AI Integration Playbook</p></td></tr>
+                <tr><td style="padding-top: 24px;"><p style="margin: 0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #e5ff21; font-weight: 600;">Free playbook · 13 pages</p></td></tr>
                 <tr><td style="padding-top: 8px;"><h1 style="margin: 0; font-size: 24px; font-weight: 700; color: #ffffff; line-height: 1.3;">Your playbook is ready, ${escapeHtml(firstName)}!</h1></td></tr>
               </table>
             </td>
@@ -36,7 +36,7 @@ function guideEmailHtml(firstName: string) {
           <tr>
             <td style="background-color: #ffffff; padding: 40px;">
               <p style="margin: 0 0 16px; font-size: 15px; line-height: 1.7; color: #555;">
-                Thanks for downloading the AI Integration Playbook. Inside is the four-stage framework Andreas and Mike use with founders to turn AI from a budget drain into a real product advantage.
+                Thanks for downloading <em>Build with AI without building a monster</em>. It is the workflow Andreas and Mike use with founders every week — Plan, Figma, Claude Design, Claude Code, GitHub, Deploy.
               </p>
               <p style="margin: 0 0 28px; font-size: 15px; line-height: 1.7; color: #555;">
                 Click the button below to download your copy:
@@ -52,23 +52,25 @@ function guideEmailHtml(firstName: string) {
                 <tr>
                   <td style="padding: 24px; background-color: #f5f5f0; border-radius: 12px;">
                     <p style="margin: 0 0 4px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #999; font-weight: 600;">What&apos;s inside</p>
-                    <p style="margin: 0 0 4px; font-size: 14px; color: #555;">Stage 1. Choose the right AI strategy for your stage</p>
-                    <p style="margin: 0 0 4px; font-size: 14px; color: #555;">Stage 2. Prioritise the right places to use AI</p>
-                    <p style="margin: 0 0 4px; font-size: 14px; color: #555;">Stage 3. Build with governance, guardrails &amp; scalability</p>
-                    <p style="margin: 0; font-size: 14px; color: #555;">Stage 4. Turn AI into a strategic asset, not a budget drain</p>
+                    <p style="margin: 0 0 4px; font-size: 14px; color: #555;">1. Plan before you prompt &middot; the boring questions</p>
+                    <p style="margin: 0 0 4px; font-size: 14px; color: #555;">2. Write a one-page build brief</p>
+                    <p style="margin: 0 0 4px; font-size: 14px; color: #555;">3. Design the journey in Figma (incl. empty/loading/error)</p>
+                    <p style="margin: 0 0 4px; font-size: 14px; color: #555;">4. Operationalise the system via Claude Design</p>
+                    <p style="margin: 0 0 4px; font-size: 14px; color: #555;">5. Build with Claude Code &mdash; carefully</p>
+                    <p style="margin: 0; font-size: 14px; color: #555;">6. Ship, secure, sustain &mdash; GitHub, deploy, data</p>
                   </td>
                 </tr>
               </table>
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 24px;">
                 <tr>
-                  <td style="padding: 24px; background-color: #c8ff00; border-radius: 12px;">
-                    <p style="margin: 0 0 4px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #555; font-weight: 600;">Live with us</p>
-                    <p style="margin: 0 0 4px; font-size: 15px; font-weight: 600; color: #141416;">Catch the Eagle Labs webinar</p>
-                    <p style="margin: 0 0 16px; font-size: 13px; line-height: 1.6; color: #333;">Wed 29 April, 12:00 BST. Andreas and Mike walk through the playbook live with Q&amp;A. Free, online, recording sent to all registrants.</p>
+                  <td style="padding: 24px; background-color: #e5ff21; border-radius: 12px;">
+                    <p style="margin: 0 0 4px; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #555; font-weight: 600;">Free 30-min strategy call</p>
+                    <p style="margin: 0 0 4px; font-size: 15px; font-weight: 600; color: #141416;">Want a sanity check on your AI build?</p>
+                    <p style="margin: 0 0 16px; font-size: 13px; line-height: 1.6; color: #333;">Book a free 30-minute call with Andreas and Mike. No pitch &mdash; just a second opinion on what you&apos;re building, where the cost is going, and whether the AI part is doing the work it&apos;s meant to.</p>
                     <table role="presentation" cellpadding="0" cellspacing="0">
                       <tr>
                         <td style="background-color: #141416; border-radius: 100px;">
-                          <a href="https://labs.uk.barclays/events/effectively-integrate-ai-into-your-product/" style="display: inline-block; padding: 12px 28px; color: #ffffff; font-size: 14px; font-weight: 600; text-decoration: none;">Register for the webinar &rarr;</a>
+                          <a href="https://smpl.as/book" style="display: inline-block; padding: 12px 28px; color: #ffffff; font-size: 14px; font-weight: 600; text-decoration: none;">Pick a time &rarr;</a>
                         </td>
                       </tr>
                     </table>
@@ -76,7 +78,7 @@ function guideEmailHtml(firstName: string) {
                 </tr>
               </table>
               <p style="margin: 0; font-size: 15px; color: #141416; font-weight: 500;">
-                See you there,<br>Andreas &amp; Mike — SmplCo
+                Happy building,<br>Andreas &amp; Mike &mdash; SmplCo
               </p>
             </td>
           </tr>
@@ -109,7 +111,7 @@ function notificationEmailHtml(name: string, email: string, company: string | un
             <td style="background-color: #141416; padding: 32px 40px; border-radius: 16px 16px 0 0;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
                 <tr><td>${logoWhite}</td></tr>
-                <tr><td style="padding-top: 24px;"><p style="margin: 0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #c8ff00; font-weight: 600;">New Lead — AI Playbook</p></td></tr>
+                <tr><td style="padding-top: 24px;"><p style="margin: 0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #e5ff21; font-weight: 600;">New Lead — AI Playbook</p></td></tr>
                 <tr><td style="padding-top: 8px;"><h1 style="margin: 0; font-size: 24px; font-weight: 700; color: #ffffff;">${escapeHtml(name)}</h1>${company ? `<p style="margin: 4px 0 0; font-size: 15px; color: #999;">${escapeHtml(company)}</p>` : ''}</td></tr>
               </table>
             </td>
@@ -136,7 +138,7 @@ function notificationEmailHtml(name: string, email: string, company: string | un
               ${wantsConsultation ? `
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 16px;">
                 <tr>
-                  <td style="padding: 12px 16px; background-color: #c8ff00; border-radius: 10px;">
+                  <td style="padding: 12px 16px; background-color: #e5ff21; border-radius: 10px;">
                     <p style="margin: 0; font-size: 14px; font-weight: 600; color: #141416;">&#9889; Wants a free AI strategy call</p>
                   </td>
                 </tr>
