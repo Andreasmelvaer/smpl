@@ -47,9 +47,9 @@ But we've seen plenty of teams use it badly. There's been plenty of times we've 
   </div>
 </div>
 
-## Don't start with AI. Start with structure.
+## Don't start with AI. Start with a plan and a structure.
 
-This lesson is crucial and sits at the core of the playbook. ANd it's the bit most teams skip. 
+This lesson is crucial and sits at the core of the playbook. And it's the bit most teams skip. 
 
 People start prompting before they really know what they're building, AI makes something that looks like an app, and then the problems show up. Things like unclear journeys, messy data, design that drifts from screen to screen, and code nobody wants to touch the next morning.
 
@@ -66,11 +66,13 @@ The boring questions are where the value lives:
 -  what's the first useful journey?
 -  what does "done" actually mean?
 
-Using that, you then create a one-page build brief. Then it's onto building the journey in Figma, including the three states everyone forgets: empty, loading, error. 
+Using that, you create a one-page build brief. Then it's onto building the journey in Figma, including the three states everyone forgets: empty, loading, error. 
 
-_Then_ Claude Design turns the system into rules so the AI builds inside it, not beside it. Then Claude Code — and you ask it to plan before it codes, like a good junior developer instead of a caffeinated raccoon with access to your repo. GitHub, deploy, README, env vars in the right place. Then a sanity check on data, security, who can access what.
+_Then_ Claude Design turns the system into rules so the AI builds inside it, not beside it. Then it's on to Claude Code and - THIS IS CRUCIAL - you ask it to plan before it codes, like a good junior developer instead of a caffeinated raccoon with access to your repo. GitHub, deploy, README, env vars in the right place. Then a sanity check on data, security, who can access what, and so on.
 
-The whole point: build what makes you different, integrate what doesn't. And before you add any AI feature, ask the question that decides everything — is AI the product, or just a feature? They're very different commitments.
+And whenever you're doing anything, always have this mantra repeating in your head: 'Build what makes me different, integrate what doesn't.' 
+
+And before you add any AI feature, ask the question that decides everything: "Is AI the product, or just a feature?" They're very different commitments.
 
 ## Want the detail?
 
@@ -78,4 +80,4 @@ There's a free 13-page playbook that walks the whole thing through, with the pro
 
 If you'd rather hear it live with the chance to ask Mike and me anything, [register for tomorrow's webinar](https://labs.uk.barclays/events/effectively-integrate-ai-into-your-product/). It's free, it's online, it's an hour, and there's a recording for anyone who registers but can't make it live.
 
-And if you're already building something AI-powered and want a second opinion before you ship, [get in touch](/contact). It's the kind of thing we help with.
+And if you're already building something AI-powered and want a second opinion before you ship, [get in touch](/contact). It's the kind of thing we are really rather good at, and we have the badges to prove it.
