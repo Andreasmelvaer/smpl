@@ -33,8 +33,8 @@ export const metadata: Metadata = {
 
 export default async function Work() {
   const allProjects = await getAllPostsData('work')
-  // Show only the 6 featured projects that match the Framer site
-  const featuredSlugs = ['compera', 'nucase', 'share50', 'enquip', '2040', 'altien']
+  // Show only the featured projects that match the Framer site
+  const featuredSlugs = ['bas', 'compera', 'nucase', 'share50', 'enquip', '2040', 'altien']
   const projects = allProjects.filter(p => featuredSlugs.includes(p.slug))
   // Sort to match Framer order
   projects.sort((a, b) => featuredSlugs.indexOf(a.slug) - featuredSlugs.indexOf(b.slug))
@@ -45,6 +45,7 @@ export default async function Work() {
 
   // Card images for the work grid (different from case study hero images)
   const cardImages: Record<string, string> = {
+    bas: '/images/cases/bas-card.jpg',
     compera: '/images/cases/compera-card.jpg',
     altien: '/images/cases/altien-card.jpg',
     nucase: '/images/cases/nucase-card.jpg',

@@ -33,6 +33,7 @@ function cleanContent(html: string): string {
 
 // Card images for related work thumbnails
 const cardImages: Record<string, string> = {
+  bas: '/images/cases/bas-card.jpg',
   compera: '/images/cases/compera-card.jpg',
   altien: '/images/cases/altien-card.jpg',
   nucase: '/images/cases/nucase-card.jpg',
