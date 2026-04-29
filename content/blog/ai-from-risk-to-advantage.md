@@ -13,11 +13,11 @@ slug: "ai-from-risk-to-advantage"
 
  [Mike](https://www.linkedin.com/in/michaelmillarfrsa/) and I are settling in to run a webinar with [Barclays Eagle Labs](https://labs.uk.barclays/events/effectively-integrate-ai-into-your-product/) on how to integrate AI into your product without lighting cash on fire. The 'AI Question' is one that comes up in nearly every conversation we have with founders right now, and the honest answer is that most teams are getting it wrong in one of three predictable ways:
 
-Mistake One: they bolt AI onto the wrong feature.
+**Mistake One:** bolting AI onto the wrong feature.
 
-Mistake Two: they pay for an enterprise model when a small one would do.
+**Mistake Two:** paying for an enterprise model when a small one would do.
 
-Mistake Three: they freeze, waiting for the perfect moment that never comes. 
+**Mistake Three:** freezing, waiting for the perfect moment that never comes. 
 
 Each of these mistakes is expensive, in its own special way.
 
@@ -31,7 +31,7 @@ And here's the thing: the _amount_ of AI embedded in each is not what matters. T
 
 A pre-seed founder treating AI like a Series-B scale problem will burn months on infrastructure they don't need yet. A scale-up bolting on a chat interface because their competitor did will end up with a feature nobody asked for. The cost isn't always money — sometimes it's six months of focus. It can also be security (if you're looking into chatbots, for example, have a quick search for 'prompt injection' and feel the chills.)
 
-We're not consultants who tell people not to build with AI. We've been picked by [Figma](https://www.figma.com/) as a global exemplar of AI development, and we just won [Lovable's international SheBuilds hackathon](https://lovable.dev/) — we use AI in nearly every project. But we've also seen plenty of teams use it badly enough that the right answer was *less* AI, not more.
+To be clear: we think AI is great. We use all the time and, we're proud to say, to great effect. We've been picked by [Figma](https://www.figma.com/) as a global exemplar of AI-assisted product development, and we just won [Lovable's international SheBuilds hackathon](https://lovable.dev/) — we use AI in nearly every project. But we've also seen plenty of teams use it badly enough that the right answer was *less* AI, not more.
 
 <div style="background-color: #141416; border-radius: 16px; padding: 32px; margin: 32px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 24px;">
   <div style="flex: 1; min-width: 220px;">
