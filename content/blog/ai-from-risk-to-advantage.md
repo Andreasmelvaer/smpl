@@ -1,7 +1,7 @@
 ---
 title: "How to Turn AI From a Risky Expense Into a Real Product Advantage"
-description: "Most teams either bolt AI onto the wrong feature, burn cash on the wrong model, or stall waiting for the perfect moment. Here's the framework Mike and I will be walking through at Barclays Eagle Labs tomorrow."
-excerpt: "Most teams either bolt AI onto the wrong feature, burn cash on the wrong model, or stall waiting for the perfect moment. Here's the four-stage framework we use with founders — and what we'll cover at the Barclays Eagle Labs webinar tomorrow."
+description: "Most teams either bolt AI onto the wrong feature, burn cash on the wrong model, or miss their chance while waiting for the perfect moment. Here's the framework we use to stop that happening. You're most welcome."
+excerpt: "Most teams either bolt AI onto the wrong feature, burn cash on the wrong model, or miss their chance while waiting for the perfect moment. Here's the four-stage framework we use to help founders avoid all this. You're most welcome."
 hero_image: "/images/blog/ai-from-risk-to-advantage.jpg"
 date: "2026-04-28"
 author: "Andreas Melvær"
@@ -11,17 +11,25 @@ published: true
 slug: "ai-from-risk-to-advantage"
 ---
 
-Tomorrow at noon BST, [Mike](https://www.linkedin.com/in/michaelmillarfrsa/) and I are running a webinar with [Barclays Eagle Labs](https://labs.uk.barclays/events/effectively-integrate-ai-into-your-product/) on how to integrate AI into your product without lighting cash on fire. It's a question that comes up in nearly every conversation we have with founders right now, and the honest answer is that most teams are getting it wrong in one of three predictable ways.
+ [Mike](https://www.linkedin.com/in/michaelmillarfrsa/) and I are settling in to run a webinar with [Barclays Eagle Labs](https://labs.uk.barclays/events/effectively-integrate-ai-into-your-product/) on how to integrate AI into your product without lighting cash on fire. The 'AI Question' is one that comes up in nearly every conversation we have with founders right now, and the honest answer is that most teams are getting it wrong in one of three predictable ways:
 
-They bolt AI onto the wrong feature. They pay for an enterprise model when a small one would do. Or they freeze, waiting for the perfect moment that never comes. Each one is expensive, in different ways.
+Mistake One: they bolt AI onto the wrong feature.
+
+Mistake Two: they pay for an enterprise model when a small one would do.
+
+Mistake Three: they freeze, waiting for the perfect moment that never comes. 
+
+Each of these mistakes is expensive, in its own special way.
 
 This post is the short version of what we'll be walking through. Sign up for [the webinar](https://labs.uk.barclays/events/effectively-integrate-ai-into-your-product/) if you want the long version with Q&A, or grab the [free playbook](/ai-playbook) if you'd rather just read it.
 
 ## AI is a competitive advantage. It's also a strategic risk.
 
-That's the line Mike and I keep coming back to. Of the 125+ products we've helped build, almost every one of them now has some AI inside it — and the ones doing well aren't necessarily the ones with the most AI. They're the ones that picked the right place to put it, in the right way, at the right stage.
+That's the line we keep coming back to. At the moment we've got ...hang on, just checking the CRM... 16 active clients / product developments on the go at SmplCo, and every single one of those products has some AI inside it. 
 
-A pre-seed founder treating AI like a Series-B scale problem will burn months on infrastructure they don't need yet. A scale-up bolting on a chat interface because their competitor did will end up with a feature nobody asked for. The cost isn't always money — sometimes it's six months of focus.
+And here's the thing: the _amount_ of AI embedded in each is not what matters. The most succesful are the ones that picked the _right_ place to put it, in the right way, at the right stage.
+
+A pre-seed founder treating AI like a Series-B scale problem will burn months on infrastructure they don't need yet. A scale-up bolting on a chat interface because their competitor did will end up with a feature nobody asked for. The cost isn't always money — sometimes it's six months of focus. It can also be security (if you're looking into chatbots, for example, have a quick search for 'prompt injection' and feel the chills.)
 
 We're not consultants who tell people not to build with AI. We've been picked by [Figma](https://www.figma.com/) as a global exemplar of AI development, and we just won [Lovable's international SheBuilds hackathon](https://lovable.dev/) — we use AI in nearly every project. But we've also seen plenty of teams use it badly enough that the right answer was *less* AI, not more.
 
