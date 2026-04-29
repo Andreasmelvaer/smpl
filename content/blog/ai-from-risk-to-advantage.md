@@ -31,7 +31,9 @@ And here's the thing: the _amount_ of AI embedded in each is not what matters. T
 
 A pre-seed founder treating AI like a Series-B scale problem will burn months on infrastructure they don't need yet. A scale-up bolting on a chat interface because their competitor did will end up with a feature nobody asked for. The cost isn't always money — sometimes it's six months of focus. It can also be security (if you're looking into chatbots, for example, have a quick search for 'prompt injection' and feel the chills.)
 
-To be clear: we think AI is great. We use all the time and, we're proud to say, to great effect. We've been picked by [Figma](https://www.figma.com/) as a global exemplar of AI-assisted product development, and we just won [Lovable's international SheBuilds hackathon](https://lovable.dev/) — we use AI in nearly every project. But we've also seen plenty of teams use it badly enough that the right answer was *less* AI, not more.
+To be clear: we think AI is **great**. We use it all the time and, we're proud to say, to great effect. We've been picked by [Figma](https://www.figma.com/) as a global exemplar of AI-assisted product development, and we just won [Lovable's international SheBuilds hackathon](https://lovable.dev/). AI is involved in almost every one of our projects. 
+
+But we've seen plenty of teams use it badly. There's been plenty of times we've coughed politely and suggested maybe the right answer was *less* AI, not more.
 
 <div style="background-color: #141416; border-radius: 16px; padding: 32px; margin: 32px 0; display: flex; flex-wrap: wrap; align-items: center; gap: 24px;">
   <div style="flex: 1; min-width: 220px;">
@@ -47,13 +49,26 @@ To be clear: we think AI is great. We use all the time and, we're proud to say, 
 
 ## Don't start with AI. Start with structure.
 
-That's the core of the playbook, and the bit most teams skip. People start prompting before they really know what they're building, AI makes something that looks like an app, and then the problems show up — unclear journeys, messy data, design that drifts from screen to screen, and code nobody wants to touch the next morning.
+This lesson is crucial and sits at the core of the playbook. ANd it's the bit most teams skip. 
+
+People start prompting before they really know what they're building, AI makes something that looks like an app, and then the problems show up. Things like unclear journeys, messy data, design that drifts from screen to screen, and code nobody wants to touch the next morning.
 
 The workflow we've settled on after 125+ products goes like this:
 
 **Plan → Figma → Claude Design → Claude Code → GitHub → Deploy.**
 
-Plan first. The boring questions are where the value lives — who is it for, what problem are you solving, what's the first useful journey, what does "done" actually mean. Then a one-page build brief. Then the journey in Figma, including the three states everyone forgets: empty, loading, error. Then Claude Design turns the system into rules so the AI builds inside it, not beside it. Then Claude Code — and you ask it to plan before it codes, like a good junior developer instead of a caffeinated raccoon with access to your repo. GitHub, deploy, README, env vars in the right place. Then a sanity check on data, security, who can access what.
+So, for the love of all that is holy, plan first. 
+
+The boring questions are where the value lives:
+
+-  who is it for?
+-  what problem are you solving?
+-  what's the first useful journey?
+-  what does "done" actually mean?
+
+Using that, you then create a one-page build brief. Then it's onto building the journey in Figma, including the three states everyone forgets: empty, loading, error. 
+
+_Then_ Claude Design turns the system into rules so the AI builds inside it, not beside it. Then Claude Code — and you ask it to plan before it codes, like a good junior developer instead of a caffeinated raccoon with access to your repo. GitHub, deploy, README, env vars in the right place. Then a sanity check on data, security, who can access what.
 
 The whole point: build what makes you different, integrate what doesn't. And before you add any AI feature, ask the question that decides everything — is AI the product, or just a feature? They're very different commitments.
 
