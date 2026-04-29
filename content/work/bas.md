@@ -34,13 +34,21 @@ What followed wasn't a tweak. TrustDesk rebuilt the application end-to-end on to
 
 ## Gallery
 
-![BAS TrustDesk overall strategy score](/images/bas/bas-strategy-score.jpg)
+![BAS TrustDesk Assess Project Strategy dashboard](/images/bas/bas-dashboard-strategy.jpg)
+
+![BAS TrustDesk colour palette](/images/bas/bas-palette.jpg)
 
 ![BAS TrustDesk task workflow cards linked to Jira and GitHub](/images/bas/bas-tasks.jpg)
 
+![BAS TrustDesk Link Execution Tools dashboard](/images/bas/bas-dashboard-link-tools.jpg)
+
 ![BAS TrustDesk data quality and completeness scores](/images/bas/bas-quality-scores.jpg)
 
-![BAS TrustDesk colour palette](/images/bas/bas-palette.jpg)
+![BAS TrustDesk overall strategy score](/images/bas/bas-strategy-score.jpg)
+
+![BAS TrustDesk SmartCrowding alignment report](/images/bas/bas-alignment-report.jpg)
+
+![BAS TrustDesk product screens overview](/images/bas/bas-screens-collage.jpg)
 
 ## Review
 
