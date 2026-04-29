@@ -1,5 +1,5 @@
 ---
-title: "BAS TrustDesk — Strategy-to-Execution Validation"
+title: "BAS TrustDesk – Strategy-to-Execution Validation"
 description: "BAS TrustDesk gives boards and investors a traceable view of whether a company is building what its strategy said it would."
 hero_image: "/images/bas/bas-hero.jpg"
 heroAlt: "BAS TrustDesk"
@@ -14,17 +14,19 @@ category: "Strategy / SaaS"
 featured: true
 ---
 
-# BAS TrustDesk — Strategy-to-Execution Validation
+# BAS TrustDesk – Strategy-to-Execution Validation
 
-[**BAS TrustDesk**](https://bastrustdesk.com) is a strategy-to-execution validation platform for boards, investors, and transformation committees. It connects read-only to Jira, Azure DevOps and GitHub, ingests strategy artefacts, and produces a traceable report on whether a company is building what its strategy said — and whether the team has validated the underlying assumptions before committing engineering spend.
+[**BAS TrustDesk**](https://bastrustdesk.com) is a strategy-to-execution validation platform for boards, investors, and transformation committees. It connects read-only to Jira, Azure DevOps and GitHub, ingests strategy artefacts, and produces a traceable report on whether a company is building what its strategy said, and whether the team has validated the underlying assumptions before committing engineering spend.
 
-TrustDesk arrived on a referral from Neetly, already in early production with a handful of customers using it daily. In the weeks before the sprint, the founder had vibe-coded a prototype of where he believed the next version needed to go — directionally opinionated, feature-rich, and built by one person alone on a theory of what users needed. The brief tried to greet six different audiences at once: Series C CTOs as configurators, non-executive directors reading the board pack, VC partners running diligence, angel investors doing light DD, enterprise PMO directors, and founders running TrustDesk on their own companies.
+TrustDesk arrived on a referral from Neetly, already in early production with a handful of customers using it daily. In the weeks before the sprint, the founder had vibe-coded a prototype of where he believed the next version needed to go: directionally opinionated, feature-rich, and built by one person alone on a theory of what users needed. The brief tried to greet six different audiences at once: Series C CTOs as configurators, non-executive directors reading the board pack, VC partners running diligence, angel investors doing light DD, enterprise PMO directors, and founders running TrustDesk on their own companies.
 
 The ask was sharper than the average brief: pick **one** primary user to build for first, and lay a design-system foundation the team could keep building on long-term.
 
 We ran a **5-Day Prototype** in early January 2026, paired with a **Design System** delivered in the same week. By day three the centre of gravity was obvious: the CTO as the primary operator and configurator, the board-pack PDF as the first real artefact, everything else sequenced behind it. By day five Tor Einar walked away with a clickable hi-res prototype and a system of tokens, components and patterns his engineers could carry straight into production.
 
 What followed wasn't a tweak. TrustDesk rebuilt the application end-to-end on top of the system, cut scope, and carried a single visual and interaction language through every screen. The current version is sharper, clearer about the problem it solves, and easier to use.
+
+For more on what TrustDesk does and why it matters to buyers, boards, and investors, [read our blog post on the boardroom-versus-repo gap it closes](/blog/bas-trustdesk).
 
 ## Services Delivered
 
@@ -61,5 +63,5 @@ What followed wasn't a tweak. TrustDesk rebuilt the application end-to-end on to
 
 Explore more success stories:
 
-- [Altien — Healthcare](/work/altien)
-- [Compera — Supply Chain Reporting](/work/compera)
+- [Altien - Healthcare](/work/altien)
+- [Compera – Supply Chain Reporting](/work/compera)
