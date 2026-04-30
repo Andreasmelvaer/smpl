@@ -303,6 +303,54 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ============ SMPL FREEBIES ============ */}
+      <section className="py-24 md:py-32">
+        <div className="container-main">
+          <AnimateOnScroll>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 mb-6">
+              <Image src="/images/illustrations/smplco-illustration-high-five.png" alt="Smpl Freebies" width={120} height={120} className="shrink-0" />
+              <div className="text-center md:text-left">
+                <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+                  <span className="font-editorial italic">Smpl</span>
+                  <br />
+                  <span className="font-bold">Freebies</span>
+                </h2>
+              </div>
+            </div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12 text-center font-satoshi">
+              Practical guides Mike, Andreas and the team have written for the founders we work with every week. Free to download, no strings attached.
+            </p>
+          </AnimateOnScroll>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {[
+              { href: '/ai-playbook', img: '/images/ai-playbook-promo.png', title: 'AI Integration Playbook', meta: '13 pages · Free', desc: 'How to build with AI without lighting cash on fire.' },
+              { href: '/pitch-prep', img: '/images/illustrations/smplco-illustration-ideas-investors.png', title: 'Pitch Prep Guide', meta: '11 pages · Free', desc: 'Frameworks for nailing your investor pitch.' },
+              { href: '/attention-guide', img: '/images/attention-guide-promo.jpg', title: 'Attention is New Gold', meta: '8 pages · Free', desc: 'Brand and storytelling for the most distracted era ever.' },
+              { href: '/build-guide', img: '/images/smpl_buil_your_own_promo.jpg', title: 'Build Your Own Tools', meta: '10 pages · Free', desc: 'Replace SaaS bloat with tools that actually fit.' },
+            ].map((freebie) => (
+              <Link key={freebie.href} href={freebie.href} className="group block">
+                <div className="aspect-[4/3] overflow-hidden relative rounded-2xl mb-4 bg-offwhite">
+                  <Image
+                    src={freebie.img}
+                    alt={freebie.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-contain p-6 group-hover:scale-[1.03] transition-transform duration-500"
+                  />
+                </div>
+                <p className="text-xs uppercase tracking-wider text-gray-400 mb-1">{freebie.meta}</p>
+                <h3 className="text-base font-semibold text-gray-900 mb-1 leading-snug group-hover:text-gray-700 transition-colors">
+                  {freebie.title}
+                </h3>
+                <p className="text-sm text-gray-500 font-satoshi leading-snug">
+                  {freebie.desc}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   )
 }
