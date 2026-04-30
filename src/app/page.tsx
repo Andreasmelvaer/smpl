@@ -330,13 +330,13 @@ export default async function HomePage() {
               { href: '/build-guide', img: '/images/smpl_buil_your_own_promo.jpg', title: 'Build Your Own Tools', meta: '10 pages · Free', desc: 'Replace SaaS bloat with tools that actually fit.' },
             ].map((freebie) => (
               <Link key={freebie.href} href={freebie.href} className="group block">
-                <div className="aspect-[4/3] overflow-hidden relative rounded-2xl mb-4 bg-offwhite">
+                <div className="aspect-[4/3] overflow-hidden relative rounded-2xl mb-4">
                   <Image
                     src={freebie.img}
                     alt={freebie.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-contain p-6 group-hover:scale-[1.03] transition-transform duration-500"
+                    className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
                   />
                 </div>
                 <p className="text-xs uppercase tracking-wider text-gray-400 mb-1">{freebie.meta}</p>
