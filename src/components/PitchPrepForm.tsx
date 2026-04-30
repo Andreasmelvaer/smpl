@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, FormEvent } from 'react'
+import BookCallPrompt from './BookCallPrompt'
 
 const selectClass =
   'w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent appearance-none'
@@ -62,6 +63,7 @@ export default function PitchPrepForm() {
         >
           Download Pitch Prep Guide
         </a>
+        <BookCallPrompt />
       </div>
     )
   }

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, FormEvent } from 'react'
+import BookCallPrompt from './BookCallPrompt'
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
@@ -50,6 +51,7 @@ export default function ContactForm() {
         >
           Send another message
         </button>
+        <BookCallPrompt />
       </div>
     )
   }
