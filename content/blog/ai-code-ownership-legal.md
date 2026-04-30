@@ -1,7 +1,7 @@
 ---
-title: "Who Owns the Code When AI Writes It?"
-description: "AI-assisted coding is fast, but the legal grey areas around ownership, copyright, and liability are real. Here is what you need to know before shipping."
-excerpt: "AI tools write code faster than ever. But who owns it? Can you copyright it? And what happens when it copies someone else's work? The legal landscape is murkier than you think."
+title: "Who Owns AI-Generated Code? A Founder's Legal Guide"
+description: "AI tools ship code in minutes. But can you copyright it? What if it copies someone else's work? Practical answers for founders building with AI."
+excerpt: "AI tools ship code in minutes. But can you copyright it? What if it copies someone else's work? Practical answers for founders building with AI."
 hero_image: "/images/blog/ai-code-ownership-legal.jpg"
 date: "2026-04-15"
 author: "Andreas Melvaer"

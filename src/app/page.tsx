@@ -67,18 +67,30 @@ export default async function HomePage() {
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { label: 'Global Exemplar', logo: '/images/logos/recognition/figma-logo.png' },
-              { label: 'SheBuilds winner', logo: '/images/logos/recognition/lovable-logo.png' },
-              { label: 'Global Runner-Up', logo: '/images/logos/recognition/design-intelligence-award-dia-badge.png' },
-              { label: 'Digital Design Winner', logo: '/images/logos/partners/staerk-reklame-logo.png' },
-            ].map((award) => (
-              <div key={award.label} className="bg-gray-100 rounded-2xl p-8 flex flex-col items-center justify-center gap-4">
-                <div className="h-12 flex items-center justify-center">
-                  <Image src={award.logo} alt={award.label} width={120} height={48} className="object-contain h-10 w-auto" />
+              { label: 'Global Exemplar', logo: '/images/logos/recognition/figma-logo.png', href: undefined as string | undefined },
+              { label: 'SheBuilds winner', logo: '/images/logos/recognition/lovable-logo.png', href: '/blog/lovable-shebuilds-win' },
+              { label: 'Global Runner-Up', logo: '/images/logos/recognition/design-intelligence-award-dia-badge.png', href: undefined },
+              { label: 'Digital Design Winner', logo: '/images/logos/partners/staerk-reklame-logo.png', href: '/blog/andreas-wins-peoples-choice-marketing-awards-2025' },
+            ].map((award) => {
+              const inner = (
+                <>
+                  <div className="h-12 flex items-center justify-center">
+                    <Image src={award.logo} alt={award.label} width={120} height={48} className="object-contain h-10 w-auto" />
+                  </div>
+                  <p className="text-sm text-gray-500 font-satoshi">{award.label}</p>
+                </>
+              )
+              const baseClass = "bg-gray-100 rounded-2xl p-8 flex flex-col items-center justify-center gap-4"
+              return award.href ? (
+                <Link key={award.label} href={award.href} className={`${baseClass} hover:bg-gray-200 transition-colors`}>
+                  {inner}
+                </Link>
+              ) : (
+                <div key={award.label} className={baseClass}>
+                  {inner}
                 </div>
-                <p className="text-sm text-gray-500 font-satoshi">{award.label}</p>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
@@ -204,7 +216,7 @@ export default async function HomePage() {
               Barclays Eagle Labs member?
             </p>
             <p className="text-gray-400 mb-8 max-w-lg mx-auto font-satoshi">
-              Grab your discount using our exclusive offer with Eagle Labs member rewards
+              Grab your discount using our exclusive offer with Eagle Labs member rewards. <Link href="/blog/news-smplco-signs-deal-with-uk-s-barclays-bank" className="text-gray-200 underline underline-offset-4 decoration-gray-500 hover:decoration-gray-200 transition-colors">Read about our Barclays partnership</Link>.
             </p>
             <Link
               href="/eaglelabs"
