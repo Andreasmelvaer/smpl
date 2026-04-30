@@ -262,6 +262,14 @@ export async function POST(request: NextRequest) {
       subject: `Your Pitch Prep Guide Pack is ready, ${name.split(' ')[0]}!`,
       html: guideEmailHtml(name.split(' ')[0], consultation),
     })
+    fetch('https://go.smpl.as/api/crm/email/log', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.CRM_LOG_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ template: 'pitch_prep_user_delivery', to: email }),
+    }).catch(() => {}) // never block send on logging
 
     // Notify the team
     await transporter.sendMail({
@@ -271,6 +279,14 @@ export async function POST(request: NextRequest) {
       subject: `${consultation && consultation !== 'no-thanks' ? '🔥 ' : ''}New lead: ${name}${company ? ` (${company})` : ''} downloaded Pitch Prep Guide`,
       html: notificationEmailHtml(name, email, company, consultation, qualifying),
     })
+    fetch('https://go.smpl.as/api/crm/email/log', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.CRM_LOG_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ template: 'pitch_prep_team_notification', to: ['andreas@smpl.as', 'mike@smpl.as'] }),
+    }).catch(() => {}) // never block send on logging
 
     // Sync to CRM — MUST await to prevent Vercel killing it before completion
     const descParts = []

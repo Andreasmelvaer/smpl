@@ -208,6 +208,14 @@ export async function POST(request: NextRequest) {
       subject: `New contact from ${name}${company ? ` (${company})` : ''}`,
       html: notificationEmailHtml(name, email, company, message),
     })
+    fetch('https://go.smpl.as/api/crm/email/log', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.CRM_LOG_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ template: 'contact_team_notification', to: ['andreas@smpl.as', 'mike@smpl.as'] }),
+    }).catch(() => {}) // never block send on logging
 
     // Send confirmation email to the person who submitted
     await transporter.sendMail({
@@ -216,6 +224,14 @@ export async function POST(request: NextRequest) {
       subject: `Thanks for reaching out, ${name.split(' ')[0]}!`,
       html: confirmationEmailHtml(name.split(' ')[0]),
     })
+    fetch('https://go.smpl.as/api/crm/email/log', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.CRM_LOG_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ template: 'contact_user_confirmation', to: email }),
+    }).catch(() => {}) // never block send on logging
 
     // Sync to CRM — must await to prevent Vercel killing it
     await syncToCrm({

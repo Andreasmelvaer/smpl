@@ -180,6 +180,14 @@ export async function POST(request: NextRequest) {
       subject: `Your Build Guide is ready, ${name.split(' ')[0]}!`,
       html: guideEmailHtml(name.split(' ')[0]),
     })
+    fetch('https://go.smpl.as/api/crm/email/log', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.CRM_LOG_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ template: 'build_guide_user_delivery', to: email }),
+    }).catch(() => {}) // never block send on logging
 
     // Notify the team
     await transporter.sendMail({
@@ -189,6 +197,14 @@ export async function POST(request: NextRequest) {
       subject: `${wantsConsultation ? '🔥 ' : ''}New lead: ${name}${company ? ` (${company})` : ''} downloaded Build Guide${wantsConsultation ? ' — WANTS CONSULTATION' : ''}`,
       html: notificationEmailHtml(name, email, company, currentTools, wantsConsultation),
     })
+    fetch('https://go.smpl.as/api/crm/email/log', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.CRM_LOG_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ template: 'build_guide_team_notification', to: ['andreas@smpl.as'] }),
+    }).catch(() => {}) // never block send on logging
 
     // Sync to CRM
     const descParts = ['Downloaded Build Your Own Tools Guide']
