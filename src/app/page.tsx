@@ -325,7 +325,7 @@ export default async function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               { href: '/ai-playbook', img: '/images/ai-playbook-mockup.jpg', title: 'Build with AI Without Building a Monster', meta: '13 pages · Free', desc: 'Our playbook on how we plan, design and ship AI products.' },
-              { href: '/pitch-prep', img: '/images/illustrations/smplco-illustration-ideas-investors.png', title: 'Pitch Prep Guide', meta: '11 pages · Free', desc: 'Frameworks for nailing your investor pitch.' },
+              { href: '/pitch-prep', img: '/images/pitch-prep-promo.jpg', title: 'Pitch Prep Guide', meta: '11 pages · Free', desc: 'Frameworks for nailing your investor pitch.' },
               { href: '/attention-guide', img: '/images/attention-guide-promo.jpg', title: 'Attention is New Gold', meta: '8 pages · Free', desc: 'Brand and storytelling for the most distracted era ever.' },
               { href: '/build-guide', img: '/images/smpl_buil_your_own_promo.jpg', title: 'Build Your Own Tools', meta: '10 pages · Free', desc: 'Replace SaaS bloat with tools that actually fit.' },
             ].map((freebie) => (
