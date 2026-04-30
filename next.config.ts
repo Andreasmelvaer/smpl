@@ -34,6 +34,14 @@ const nextConfig: NextConfig = {
         destination: '/blog/5-day-prototype-custom-software',
         permanent: true,
       },
+      {
+        // Legacy Framer case study URL surfaced as a 404 in Google Search
+        // Console. The specific hotel/hospitality case study isn't carried
+        // on the new site, so redirect to the work index.
+        source: '/client-case-study-hotel-hospitality-digital-development',
+        destination: '/work',
+        permanent: true,
+      },
     ];
   },
 
