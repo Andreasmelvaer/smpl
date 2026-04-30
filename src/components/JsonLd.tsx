@@ -31,14 +31,24 @@ export function OrganizationJsonLd() {
 }
 
 export function BlogPostJsonLd({ post }: { post: PostData }) {
+  // Approximate word count from rawContent — helps AI engines weight the post.
+  const wordCount = post.rawContent
+    ? post.rawContent.replace(/[#`*_>\[\]\(\)\!]/g, ' ').split(/\s+/).filter(Boolean).length
+    : undefined
+
   const data = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
+    // BlogPosting is a subtype of Article; declaring both helps validators that
+    // index Article specifically (e.g. some AI search engine extractors).
+    '@type': ['BlogPosting', 'Article'],
     headline: post.title,
     description: post.excerpt || post.description || '',
     image: post.hero_image ? `${BASE_URL}${post.hero_image}` : undefined,
     datePublished: post.date,
     dateModified: post.dateModified || post.date,
+    inLanguage: 'en-GB',
+    articleSection: post.tags?.[0],
+    ...(wordCount ? { wordCount } : {}),
     author: post.author
       ? { '@type': 'Person', name: post.author }
       : { '@type': 'Organization', name: 'SmplCo' },

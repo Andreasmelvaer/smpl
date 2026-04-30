@@ -1,11 +1,11 @@
 ---
 title: "Is the team actually building what the strategy said?"
-description: "It's the question every board, buyer, and investor needs answered. BAS TrustDesk turns it from a feeling into a traceable report."
+description: "Boardroom strategy versus repo reality: how BAS TrustDesk gives boards, buyers and investors a traceable view of what's actually being built."
 hero_image: "/images/blog/bas-trustdesk.jpg"
 slug: "bas-trustdesk"
 date: "2026-04-29"
 author: "Andreas Melvær"
-excerpt: "Strategy lives in slide decks. Execution lives in Jira, Azure DevOps, and GitHub. BAS TrustDesk pulls them together so boards, buyers, and investors can finally see whether the team is building what the strategy actually said."
+excerpt: "Boardroom strategy versus repo reality: how BAS TrustDesk gives boards, buyers and investors a traceable view of what's actually being built."
 tags: ["SaaS", "Strategy", "Due Diligence", "Investors", "Boards", "BAS TrustDesk"]
 published: true
 readTime: "5 min read"

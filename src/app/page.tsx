@@ -40,7 +40,7 @@ export default async function HomePage() {
             <h1 className="sr-only">SmplCo — a digital product studio for founders who need to move fast</h1>
           </div>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-satoshi">
-            SmplCo builds digital products fast using AI-assisted design and development. We ship working prototypes in 5 days and production software in weeks, not quarters. 125+ products built, €10m+ raised by our clients, and recognised by Figma as a world-leader in AI-assisted development.
+            SmplCo builds digital products fast using <Link href="/services" className="underline underline-offset-4 decoration-gray-400/40 hover:decoration-gray-700 transition-colors">AI-assisted design and development</Link>. We ship working prototypes in <Link href="/services" className="underline underline-offset-4 decoration-gray-400/40 hover:decoration-gray-700 transition-colors">5 days</Link> and production software in weeks, not quarters. <Link href="/work" className="underline underline-offset-4 decoration-gray-400/40 hover:decoration-gray-700 transition-colors">125+ products built</Link>, &euro;10m+ raised by our clients, and recognised by Figma as a world-leader in AI-assisted development.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -96,7 +96,7 @@ export default async function HomePage() {
                   ...to product
                 </h2>
                 <p className="text-lg text-gray-600 max-w-xl font-satoshi">
-                  Put a rocket under your innovation plans. Our unique process and unbeatable
+                  Put a rocket under your innovation plans. Our <Link href="/services" className="underline underline-offset-4 decoration-gray-400/40 hover:decoration-gray-700 transition-colors">5-Day Prototype process</Link> and unbeatable
                   experience puts you ahead of the game, while slashing risk, time, and cost.
                 </p>
               </div>
