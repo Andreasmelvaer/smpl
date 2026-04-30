@@ -325,7 +325,7 @@ export default async function HomePage() {
           </AnimateOnScroll>
           <FreebieGrid
             freebies={[
-              { href: '/ai-playbook', img: '/images/ai-playbook-mockup.jpg', title: 'Build with AI Without Building a Monster', meta: '13 pages', desc: 'Our playbook on how we plan, design and ship AI products.', initialCount: 487 },
+              { href: '/ai-playbook', img: '/images/ai-playbook-mockup.jpg', title: 'Build with AI Without Building a Monster', meta: '13 pages', desc: 'Our playbook on how we plan, design and ship AI products.', initialCount: 1276 },
               { href: '/pitch-prep', img: '/images/pitch-prep-promo.jpg', title: 'Pitch Prep Guide', meta: '11 pages', desc: 'Frameworks for nailing your investor pitch.', initialCount: 612 },
               { href: '/attention-guide', img: '/images/attention-guide-promo.jpg', title: 'Attention is New Gold', meta: '8 pages', desc: 'Brand and storytelling for the most distracted era ever.', initialCount: 263 },
               { href: '/build-guide', img: '/images/smpl_buil_your_own_promo.jpg', title: 'Build Your Own Tools', meta: '10 pages', desc: 'Replace SaaS bloat with tools that actually fit.', initialCount: 174 },
