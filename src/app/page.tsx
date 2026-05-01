@@ -18,6 +18,9 @@ export default async function HomePage() {
   const blogPosts = await getAllPostsData('blog')
   const latestPosts = blogPosts.slice(0, 3)
 
+  const allWebinars = await getAllPostsData('webinars')
+  const featuredWebinars = allWebinars.filter((w) => w.published !== false).slice(0, 4)
+
   return (
     <div className="min-h-screen">
       <WebSiteJsonLd />
@@ -206,24 +209,99 @@ export default async function HomePage() {
       </section>
 
       {/* ============ EAGLE LABS ============ */}
-      <section className="py-16 md:py-20 bg-gray-900 text-white">
+      <section className="py-16 md:py-24 bg-gray-900 text-white">
         <div className="container-main">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
             <div className="flex justify-center mb-6">
               <Image src="/images/logos/partners/barclays-eagle-labs-logo-blue.png" alt="Barclays Eagle Labs" width={280} height={50} className="h-10 w-auto" />
             </div>
             <p className="text-gray-400 mb-2 font-satoshi">
-              Barclays Eagle Labs member?
+              Our Barclays Eagle Labs partnership
             </p>
-            <p className="text-gray-400 mb-8 max-w-lg mx-auto font-satoshi">
-              Grab your discount using our exclusive offer with Eagle Labs member rewards. <Link href="/blog/news-smplco-signs-deal-with-uk-s-barclays-bank" className="text-gray-200 underline underline-offset-4 decoration-gray-500 hover:decoration-gray-200 transition-colors">Read about our Barclays partnership</Link> or <Link href="/webinars" className="text-gray-200 underline underline-offset-4 decoration-gray-500 hover:decoration-gray-200 transition-colors">watch our Eagle Labs webinar series</Link>.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight" style={{ color: '#ffffff' }}>
+              Live sessions for<br />
+              <span className="font-editorial italic">ambitious founders</span>
+            </h2>
+            <p className="text-gray-400 max-w-xl mx-auto font-satoshi">
+              Webinars Mike, Andreas and the team have run with Barclays Eagle Labs
+              for hundreds of founders — on AI integration, fundraising, vibe coding
+              and prototyping. Watch any session in full.
             </p>
-            <Link
-              href="/eaglelabs"
-              className="inline-flex items-center justify-center px-6 py-3 bg-lime-bright text-gray-900 text-sm font-medium rounded-full hover:bg-lime transition-colors uppercase tracking-wider"
-            >
-              Eagle Labs Deals &amp; Offers Page
-            </Link>
+          </div>
+
+          {featuredWebinars.length > 0 && (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto mb-12">
+              {featuredWebinars.map((w) => (
+                <Link
+                  key={w.slug}
+                  href={`/webinars/${w.slug}`}
+                  className="group block rounded-xl overflow-hidden bg-gray-800 border border-gray-800 hover:border-gray-600 transition-colors"
+                >
+                  {w.youtube_id && (
+                    <div className="relative w-full aspect-video bg-black overflow-hidden">
+                      <Image
+                        src={`https://i.ytimg.com/vi/${w.youtube_id}/maxresdefault.jpg`}
+                        alt={w.title}
+                        fill
+                        unoptimized
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="w-12 h-12 rounded-full bg-white/95 flex items-center justify-center">
+                          <svg className="w-4 h-4 text-gray-900 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                  <div className="p-4">
+                    <h3 className="text-sm font-bold mb-1.5 leading-tight" style={{ color: '#ffffff' }}>
+                      {w.title}
+                    </h3>
+                    <p className="text-xs text-gray-400 font-satoshi">
+                      {w.date && (
+                        <time dateTime={w.date}>
+                          {new Date(w.date).toLocaleDateString('en-GB', {
+                            month: 'short',
+                            year: 'numeric',
+                          })}
+                        </time>
+                      )}
+                      {w.readTime && (
+                        <>
+                          {' · '}
+                          {w.readTime}
+                        </>
+                      )}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+
+          <div className="text-center">
+            <p className="text-gray-400 mb-6 max-w-xl mx-auto font-satoshi text-sm">
+              Eagle Labs member?{' '}
+              <Link href="/blog/news-smplco-signs-deal-with-uk-s-barclays-bank" className="text-gray-200 underline underline-offset-4 decoration-gray-500 hover:decoration-gray-200 transition-colors">Read about our partnership</Link>{' '}
+              or grab your exclusive 25% discount.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link
+                href="/eaglelabs"
+                className="inline-flex items-center justify-center px-6 py-3 bg-lime-bright text-gray-900 text-sm font-medium rounded-full hover:bg-lime transition-colors uppercase tracking-wider"
+              >
+                Eagle Labs Deals &amp; Offers
+              </Link>
+              <Link
+                href="/webinars"
+                className="inline-flex items-center justify-center px-6 py-3 border border-gray-600 text-white text-sm font-medium rounded-full hover:border-gray-300 transition-colors uppercase tracking-wider"
+              >
+                Browse all webinars
+              </Link>
+            </div>
           </div>
         </div>
       </section>
