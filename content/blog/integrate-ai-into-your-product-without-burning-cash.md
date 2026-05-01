@@ -1,7 +1,7 @@
 ---
 title: "How to integrate AI into your product without burning cash"
 description: "Six lessons from our Barclays Eagle Labs webinar on choosing the right AI strategy, where to put AI inside your product, and how to defend it when everyone else can vibe-code an MVP in a weekend."
-hero_image: "/images/blog/ai-from-risk-to-advantage.png"
+hero_image: "/images/blog/ai-from-risk-to-advantage.jpg"
 slug: "integrate-ai-into-your-product-without-burning-cash"
 date: "2026-04-30"
 author: "Andreas Melvær"
