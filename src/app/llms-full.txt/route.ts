@@ -33,6 +33,7 @@ function frontmatterSummary(post: {
 export async function GET() {
   const blogPosts = await getAllPostsData('blog')
   const workPosts = await getAllPostsData('work')
+  const webinarPosts = await getAllPostsData('webinars')
 
   const isPublished = (p: unknown) => (p as { published?: boolean }).published !== false
 
@@ -50,6 +51,14 @@ export async function GET() {
     return `${header}\n\n${url}\n\n${content}`
   })
 
+  const webinarSections = webinarPosts.filter(isPublished).map((p) => {
+    const header = frontmatterSummary(p)
+    const url = `URL: ${BASE_URL}/webinars/${p.slug}`
+    const yt = p.youtube_id ? `YouTube: https://www.youtube.com/watch?v=${p.youtube_id}` : ''
+    const content = (p as unknown as { rawContent?: string }).rawContent || ''
+    return `${header}\n\n${url}\n${yt}\n\n${content}`
+  })
+
   const preamble = `# SmplCo — Full content
 
 This file contains the complete blog, case study, and key page content for SmplCo in plain markdown so AI agents can ingest it efficiently. Short manifest at /llms.txt. Generated dynamically from live content.
@@ -64,8 +73,11 @@ Contact: andreas@smpl.as · https://smpl.as/contact
 
   const blogBlock = `\n\n---\n\n# Blog posts\n\n${blogSections.join('\n\n---\n\n')}`
   const workBlock = `\n\n---\n\n# Case studies\n\n${workSections.join('\n\n---\n\n')}`
+  const webinarBlock = webinarSections.length
+    ? `\n\n---\n\n# Webinars & talks\n\n${webinarSections.join('\n\n---\n\n')}`
+    : ''
 
-  const body = preamble + blogBlock + workBlock
+  const body = preamble + blogBlock + workBlock + webinarBlock
 
   return new Response(body, {
     headers: {

@@ -70,6 +70,44 @@ export function generateBlogMetadata(data: PostData): Metadata {
 }
 
 /**
+ * Generate metadata for a webinar / talk recap page.
+ */
+export function generateWebinarMetadata(data: PostData): Metadata {
+  const title = data.title
+  const description = data.excerpt || data.description || ''
+  const rawOgImage = data.og_image || data.hero_image || '/images/og-default.png'
+  const ogImage = rawOgImage.startsWith('/') ? `${BASE_URL}${rawOgImage}` : rawOgImage
+
+  return {
+    title: `${title} — SmplCo webinar with Barclays Eagle Labs`,
+    description,
+    alternates: { canonical: `${BASE_URL}/webinars/${data.slug}` },
+    openGraph: {
+      title,
+      description,
+      url: `${BASE_URL}/webinars/${data.slug}`,
+      siteName: 'SmplCo',
+      type: 'video.other',
+      images: [{ url: ogImage }],
+      videos: data.youtube_id
+        ? [
+            {
+              url: `https://www.youtube.com/embed/${data.youtube_id}`,
+              type: 'text/html',
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: 'player',
+      title,
+      description,
+      images: [ogImage],
+    },
+  }
+}
+
+/**
  * Generate metadata for a work case study.
  */
 export function generateWorkMetadata(data: PostData): Metadata {

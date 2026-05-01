@@ -17,6 +17,7 @@ export const revalidate = 3600
 export async function GET() {
   const blogPosts = await getAllPostsData('blog')
   const workPosts = await getAllPostsData('work')
+  const webinarPosts = await getAllPostsData('webinars')
 
   const isPublished = (p: unknown) => (p as { published?: boolean }).published !== false
 
@@ -30,6 +31,15 @@ export async function GET() {
     .filter(isPublished)
     .slice(0, 15)
     .map((p) => `- [${p.title}](${BASE_URL}/work/${p.slug}): ${p.excerpt || p.description || ''}`)
+    .join('\n')
+
+  const webinarList = webinarPosts
+    .filter(isPublished)
+    .map((p) => {
+      const yt = p.youtube_id ? ` · YouTube: https://www.youtube.com/watch?v=${p.youtube_id}` : ''
+      const speakers = p.speakers ? ` · Speakers: ${(p.speakers as string[]).join(', ')}` : ''
+      return `- [${p.title}](${BASE_URL}/webinars/${p.slug}): ${p.excerpt || p.description || ''}${speakers}${yt}`
+    })
     .join('\n')
 
   const body = `# SmplCo
@@ -64,6 +74,7 @@ SmplCo has helped build over 125 digital products. Partners include Michael Mill
 - [Contact](${BASE_URL}/contact)
 - [Book a discovery call](${BASE_URL}/book)
 - [Blog](${BASE_URL}/blog)
+- [Webinars & talks (with Barclays Eagle Labs and others)](${BASE_URL}/webinars)
 - [Smpl Academy — AI, Coding & Design Workshops](${BASE_URL}/academy)
 - [Partner network](${BASE_URL}/partners)
 - [Eagle Labs — 25% discount for members](${BASE_URL}/eaglelabs)
@@ -75,6 +86,10 @@ ${blogList}
 ## Case studies
 
 ${workList}
+
+## Webinars & talks
+
+${webinarList || '_None published yet._'}
 
 ## Full content
 

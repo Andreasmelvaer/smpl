@@ -9,6 +9,7 @@ const footerNav = [
   { name: 'About', href: '/about' },
   { name: 'Partners', href: '/partners' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Webinars', href: '/webinars' },
 ]
 
 const resources = [

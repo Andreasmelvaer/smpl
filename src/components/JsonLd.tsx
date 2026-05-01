@@ -254,6 +254,62 @@ export function ServiceListJsonLd({ services }: { services: ServiceJsonLdItem[] 
   )
 }
 
+/**
+ * VideoObject schema for webinar / talk recap pages. Google + AI engines
+ * (Perplexity, ChatGPT search, Gemini) use this to surface video content in
+ * answers and SERP video carousels. youtube_id is required; the rest is
+ * derived from frontmatter.
+ */
+export function WebinarVideoJsonLd({ post }: { post: PostData }) {
+  if (!post.youtube_id) return null
+
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: post.title,
+    description: post.excerpt || post.description || '',
+    thumbnailUrl: [
+      `https://i.ytimg.com/vi/${post.youtube_id}/maxresdefault.jpg`,
+      `https://i.ytimg.com/vi/${post.youtube_id}/hqdefault.jpg`,
+    ],
+    uploadDate: post.date,
+    contentUrl: `https://www.youtube.com/watch?v=${post.youtube_id}`,
+    embedUrl: `https://www.youtube.com/embed/${post.youtube_id}`,
+    ...(post.duration ? { duration: post.duration } : {}),
+    ...(post.publisher_name
+      ? {
+          publication: {
+            '@type': 'BroadcastEvent',
+            name: post.title,
+            isLiveBroadcast: false,
+            startDate: post.date,
+          },
+        }
+      : {}),
+    publisher: {
+      '@type': 'Organization',
+      name: 'SmplCo',
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/images/smpl-logo.svg` },
+    },
+    creator: post.speakers
+      ? (post.speakers as string[]).map((s) => ({ '@type': 'Person', name: s }))
+      : { '@type': 'Organization', name: 'SmplCo' },
+    inLanguage: 'en-GB',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${BASE_URL}/webinars/${post.slug}`,
+    },
+    keywords: post.tags?.join(', '),
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}
+
 export function CreativeWorkJsonLd({ post }: { post: PostData }) {
   const data = {
     '@context': 'https://schema.org',
