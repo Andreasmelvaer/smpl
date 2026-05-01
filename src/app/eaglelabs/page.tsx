@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ShimmerGrid from '@/components/ShimmerGrid'
 import LogoMarquee from '@/components/LogoMarquee'
+import { getAllPostsData } from '@/lib/markdown'
 
 export const metadata: Metadata = {
   title: 'Eagle Labs — 25% Off 5-Day Prototype',
@@ -76,7 +77,10 @@ const stats = [
   },
 ]
 
-export default function EagleLabs() {
+export default async function EagleLabs() {
+  const allWebinars = await getAllPostsData('webinars')
+  const webinars = allWebinars.filter((w) => w.published !== false)
+
   return (
     <div className="min-h-screen">
       {/* ============ HERO ============ */}
@@ -211,6 +215,86 @@ export default function EagleLabs() {
           </div>
         </div>
       </section>
+
+      {/* ============ EAGLE LABS WEBINAR SERIES ============ */}
+      {webinars.length > 0 && (
+        <section className="py-20 md:py-28 bg-offwhite">
+          <div className="container-main">
+            <div className="mb-12 max-w-3xl">
+              <p className="text-xs uppercase tracking-widest text-gray-500 font-medium mb-3">
+                Webinar series · Eagle Labs members
+              </p>
+              <h2 className="font-bold leading-tight mb-4" style={{ fontSize: 'clamp(32px, 4vw, 40px)' }}>
+                Watch our<br />
+                <span className="font-editorial italic">live sessions</span>
+              </h2>
+              <p className="text-sm text-gray-500 font-satoshi leading-relaxed">
+                Recorded sessions from our partnership webinar series with Barclays Eagle Labs —
+                practical guidance on AI integration, vibe coding, fundraising, and prototyping for
+                founders and scale-ups.
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
+              {webinars.map((w) => (
+                <Link
+                  key={w.slug}
+                  href={`/webinars/${w.slug}`}
+                  className="group block rounded-2xl overflow-hidden bg-white border border-gray-200 hover:border-gray-400 transition-colors"
+                >
+                  {w.youtube_id && (
+                    <div className="relative w-full aspect-video bg-black overflow-hidden">
+                      <Image
+                        src={`https://i.ytimg.com/vi/${w.youtube_id}/maxresdefault.jpg`}
+                        alt={w.title}
+                        fill
+                        unoptimized
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center">
+                          <svg className="w-5 h-5 text-gray-900 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                  <div className="p-5">
+                    <h3 className="text-base font-bold mb-1.5 leading-tight">{w.title}</h3>
+                    <p className="text-xs text-gray-500 font-satoshi mb-2">
+                      {w.speakers && (w.speakers as string[]).join(' & ')}
+                      {w.date && (
+                        <>
+                          {' · '}
+                          {new Date(w.date).toLocaleDateString('en-GB', {
+                            month: 'short',
+                            year: 'numeric',
+                          })}
+                        </>
+                      )}
+                      {w.readTime && <>{' · '}{w.readTime}</>}
+                    </p>
+                    <p className="text-sm text-gray-600 font-satoshi leading-relaxed line-clamp-2">
+                      {w.excerpt || w.description}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Link
+                href="/webinars"
+                className="text-xs font-medium text-gray-900 uppercase tracking-widest hover:text-gray-500 transition-colors"
+              >
+                Browse all webinars →
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ============ PRICING ============ */}
       <section className="py-20 md:py-28">

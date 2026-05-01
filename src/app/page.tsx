@@ -216,7 +216,7 @@ export default async function HomePage() {
               Barclays Eagle Labs member?
             </p>
             <p className="text-gray-400 mb-8 max-w-lg mx-auto font-satoshi">
-              Grab your discount using our exclusive offer with Eagle Labs member rewards. <Link href="/blog/news-smplco-signs-deal-with-uk-s-barclays-bank" className="text-gray-200 underline underline-offset-4 decoration-gray-500 hover:decoration-gray-200 transition-colors">Read about our Barclays partnership</Link>.
+              Grab your discount using our exclusive offer with Eagle Labs member rewards. <Link href="/blog/news-smplco-signs-deal-with-uk-s-barclays-bank" className="text-gray-200 underline underline-offset-4 decoration-gray-500 hover:decoration-gray-200 transition-colors">Read about our Barclays partnership</Link> or <Link href="/webinars" className="text-gray-200 underline underline-offset-4 decoration-gray-500 hover:decoration-gray-200 transition-colors">watch our Eagle Labs webinar series</Link>.
             </p>
             <Link
               href="/eaglelabs"
