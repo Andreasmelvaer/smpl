@@ -9,7 +9,7 @@ speakers: ["Andreas Melvær", "Michael Millar"]
 host: "Luke Hampson"
 host_organisation: "Barclays Eagle Labs"
 publisher_name: "Barclays Eagle Labs"
-hero_image: "/images/blog/ai-from-risk-to-advantage.jpg"
+hero_image: "/images/webinars/effectively-integrate-ai-into-your-product.jpg"
 excerpt: "How do you turn AI from a risky expense into a scalable product advantage, without burning cash or slowing execution? Andreas Melvær and Michael Millar of SmplCo cover AI as a building tool vs AI inside the product, common cost traps, vibe-coding risks, and how to defend a product when everyone can suddenly code."
 tags: ["AI", "Product strategy", "Webinar", "Barclays Eagle Labs", "Founder advice"]
 published: true
