@@ -52,7 +52,7 @@ export default async function WebinarsIndex() {
                   key={w.slug}
                   className="rounded-2xl border border-gray-200 overflow-hidden hover:border-gray-400 transition-colors"
                 >
-                  <Link href={`/webinars/${w.slug}`} className="block">
+                  <Link href={`/webinars/${w.slug}`} className="group block h-full">
                     {w.youtube_id && (
                       <div className="relative w-full aspect-video bg-black">
                         <Image
@@ -99,9 +99,15 @@ export default async function WebinarsIndex() {
                           </>
                         )}
                       </div>
-                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-5">
                         {w.excerpt || w.description}
                       </p>
+                      <span className="inline-flex items-center justify-center px-5 py-2.5 bg-gray-900 text-white text-xs font-medium rounded-full group-hover:bg-gray-800 transition-colors uppercase tracking-wider">
+                        Watch webinar
+                        <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </span>
                     </div>
                   </Link>
                 </li>

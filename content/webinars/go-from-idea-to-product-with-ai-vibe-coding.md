@@ -66,7 +66,6 @@ Investors, customers, and partners now expect the surface to look real even when
 - The full [AI Integration Playbook](/ai-playbook) — the framework Andreas and Mike use with founders
 - [Build Your Own Internal Tools guide](/build-guide) — for the "AI for your business" angle
 - [25%-off discovery offer for Eagle Labs members](/eaglelabs)
-- [Barclays Eagle Labs](https://labs.uk.barclays/) — events and membership
 
 ## Want a second pair of eyes on your prototype?
 

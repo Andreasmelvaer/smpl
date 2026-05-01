@@ -76,7 +76,6 @@ This is also covered in detail in the [Build Your Own Internal Tools guide](/bui
 - The full [AI Integration Playbook](/ai-playbook) — the framework Andreas and Mike walked through
 - The [Build Your Own Internal Tools guide](/build-guide) — for the "AI for your business" theme
 - [Free 25%-off discovery offer](/eaglelabs) for Eagle Labs members
-- [Barclays Eagle Labs](https://labs.uk.barclays/) — the Eagle Labs membership and event programme
 
 ## Want to talk about your AI strategy?
 
