@@ -25,15 +25,15 @@ export default function ShimmerGrid() {
     const draw = () => {
       const w = canvas.offsetWidth
       const h = canvas.offsetHeight
-      const gap = 8
-      const dotRadius = 0.8
+      const gap = 10
+      const dotRadius = 1.4
 
       ctx.clearRect(0, 0, w, h)
 
       // Shimmer center moves slowly across the canvas
       const shimmerX = w * 0.5 + Math.cos(time * 0.4) * w * 0.35
       const shimmerY = h * 0.5 + Math.sin(time * 0.3) * h * 0.3
-      const shimmerRadius = Math.max(w, h) * 0.4
+      const shimmerRadius = Math.max(w, h) * 0.45
 
       for (let x = gap / 2; x < w; x += gap) {
         for (let y = gap / 2; y < h; y += gap) {
@@ -43,16 +43,16 @@ export default function ShimmerGrid() {
 
           // Base opacity + shimmer boost for dots near the light
           const shimmer = Math.max(0, 1 - dist / shimmerRadius)
-          const opacity = 0.15 + shimmer * 0.3
+          const opacity = 0.28 + shimmer * 0.55
 
           ctx.beginPath()
           ctx.arc(x, y, dotRadius, 0, Math.PI * 2)
-          ctx.fillStyle = `rgba(150, 150, 150, ${opacity})`
+          ctx.fillStyle = `rgba(120, 120, 120, ${opacity})`
           ctx.fill()
         }
       }
 
-      time += 0.015
+      time += 0.02
       animationId = requestAnimationFrame(draw)
     }
 
