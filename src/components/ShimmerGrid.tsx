@@ -25,15 +25,17 @@ export default function ShimmerGrid() {
     const draw = () => {
       const w = canvas.offsetWidth
       const h = canvas.offsetHeight
-      const gap = 10
-      const dotRadius = 1.4
+      const gap = 8
+      const dotRadius = 0.8
+      const baseOpacity = 0.3
 
       ctx.clearRect(0, 0, w, h)
 
-      // Shimmer center moves slowly across the canvas
+      // Shimmer center moves slowly across the canvas. Inside it, dots fade
+      // OUT — the "light" is a clear patch, not a brighter cluster of dots.
       const shimmerX = w * 0.5 + Math.cos(time * 0.4) * w * 0.35
       const shimmerY = h * 0.5 + Math.sin(time * 0.3) * h * 0.3
-      const shimmerRadius = Math.max(w, h) * 0.45
+      const shimmerRadius = Math.max(w, h) * 0.55
 
       for (let x = gap / 2; x < w; x += gap) {
         for (let y = gap / 2; y < h; y += gap) {
@@ -41,13 +43,15 @@ export default function ShimmerGrid() {
           const dy = y - shimmerY
           const dist = Math.sqrt(dx * dx + dy * dy)
 
-          // Base opacity + shimmer boost for dots near the light
-          const shimmer = Math.max(0, 1 - dist / shimmerRadius)
-          const opacity = 0.28 + shimmer * 0.55
+          // Smoothstep falloff for a soft edge to the clear patch
+          const t = Math.max(0, Math.min(1, 1 - dist / shimmerRadius))
+          const fade = t * t * (3 - 2 * t)
+          const opacity = baseOpacity * (1 - fade)
 
+          if (opacity < 0.01) continue
           ctx.beginPath()
           ctx.arc(x, y, dotRadius, 0, Math.PI * 2)
-          ctx.fillStyle = `rgba(120, 120, 120, ${opacity})`
+          ctx.fillStyle = `rgba(150, 150, 150, ${opacity})`
           ctx.fill()
         }
       }
