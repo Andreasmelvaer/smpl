@@ -1,7 +1,7 @@
 ---
 title: "Is the team actually building what the strategy said?"
 description: "Boardroom strategy versus repo reality: how BAS TrustDesk gives boards, buyers and investors a traceable view of what's actually being built."
-hero_image: "/images/blog/bas-trustdesk.jpg"
+hero_image: "/images/blog/bas-trustdesk.webp"
 slug: "bas-trustdesk"
 date: "2026-04-29"
 author: "Andreas Melvær"
@@ -36,7 +36,7 @@ It connects read-only to the systems where execution actually happens (Jira, Azu
 
 In short, it turns a question that used to depend on trust into one that depends on data.
 
-![BAS TrustDesk overall strategy score](/images/bas/bas-strategy-score.jpg)
+![BAS TrustDesk overall strategy score](/images/bas/bas-strategy-score.webp)
 
 ## Why this matters for buyers and investors
 
@@ -48,7 +48,7 @@ TrustDesk gives you the answer that's hardest to get and most useful to have: a 
 
 For acquirers, that's the difference between buying the strategy and buying the surprise. For VCs and angels, it's the difference between leading from the data and leading from the deck. For non-executive directors, it's the answer to the only question that really matters between board meetings.
 
-![BAS TrustDesk task workflow cards linked to Jira and GitHub](/images/bas/bas-tasks.jpg)
+![BAS TrustDesk task workflow cards linked to Jira and GitHub](/images/bas/bas-tasks.webp)
 
 ## How we got involved
 

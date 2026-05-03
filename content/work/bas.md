@@ -1,7 +1,7 @@
 ---
 title: "BAS TrustDesk – Strategy-to-Execution Validation"
 description: "BAS TrustDesk gives boards and investors a traceable view of whether a company is building what its strategy said it would."
-hero_image: "/images/bas/bas-hero.jpg"
+hero_image: "/images/bas/bas-hero.webp"
 heroAlt: "BAS TrustDesk"
 services:
   - "5-Day Prototype"
@@ -36,21 +36,21 @@ For more on what TrustDesk does and why it matters to buyers, boards, and invest
 
 ## Gallery
 
-![BAS TrustDesk Assess Project Strategy dashboard](/images/bas/bas-dashboard-strategy.jpg)
+![BAS TrustDesk Assess Project Strategy dashboard](/images/bas/bas-dashboard-strategy.webp)
 
 ![BAS TrustDesk colour palette](/images/bas/bas-palette.jpg)
 
-![BAS TrustDesk task workflow cards linked to Jira and GitHub](/images/bas/bas-tasks.jpg)
+![BAS TrustDesk task workflow cards linked to Jira and GitHub](/images/bas/bas-tasks.webp)
 
 ![BAS TrustDesk Link Execution Tools dashboard](/images/bas/bas-dashboard-link-tools.jpg)
 
-![BAS TrustDesk data quality and completeness scores](/images/bas/bas-quality-scores.jpg)
+![BAS TrustDesk data quality and completeness scores](/images/bas/bas-quality-scores.webp)
 
-![BAS TrustDesk overall strategy score](/images/bas/bas-strategy-score.jpg)
+![BAS TrustDesk overall strategy score](/images/bas/bas-strategy-score.webp)
 
-![BAS TrustDesk SmartCrowding alignment report](/images/bas/bas-alignment-report.jpg)
+![BAS TrustDesk SmartCrowding alignment report](/images/bas/bas-alignment-report.webp)
 
-![BAS TrustDesk product screens overview](/images/bas/bas-screens-collage.jpg)
+![BAS TrustDesk product screens overview](/images/bas/bas-screens-collage.webp)
 
 ## Review
 

@@ -41,7 +41,7 @@ export default function AttentionGuideForm() {
     return (
       <div className="bg-lime rounded-2xl p-8 md:p-10 text-center">
         <img
-          src="/images/attention-guide-promo.png"
+          src="/images/attention-guide-promo.webp"
           alt="Attention Is New Gold guide"
           className="w-40 mx-auto rounded-lg mb-6"
         />

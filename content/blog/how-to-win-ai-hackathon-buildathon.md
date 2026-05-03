@@ -27,7 +27,7 @@ We recently helped the fantastic team at [Get to Give](https://gettogive.co/) wi
 
 If you want to find out how we did it - and how to give yourself the best chance of success - then here's our step-by-step guide.
 
-![Press coverage of Get to Give's buildathon win](/images/blog/inline/hackathon-inline.png)
+![Press coverage of Get to Give's buildathon win](/images/blog/inline/hackathon-inline.webp)
 *Press coverage of Get to Give's buildathon win*
 
 ## Day One is not Day One

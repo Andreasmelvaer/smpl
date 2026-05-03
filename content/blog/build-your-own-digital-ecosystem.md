@@ -38,7 +38,7 @@ We moved [the website](/) off Framer and onto Next.js. The Ahrefs health score w
 
 The CRM has three stages. Prospect, active client, complete. That's it. Not seventeen pipeline steps named by someone who's never spoken to a client. The planner is linked to the CRM so we can see what work is happening for who. The newsletter tool sits in the same system, same database.
 
-![Our suite of tools — CRM, Email, Planner, Strategy, Landing Pages, and Meta Ads — all connected as one system.](/images/blog/inline/oursuiteoftools.png)
+![Our suite of tools — CRM, Email, Planner, Strategy, Landing Pages, and Meta Ads — all connected as one system.](/images/blog/inline/oursuiteoftools.webp)
 
 We also built a strategy pipeline where [AI agents](/blog/vibecoding-how-we-actually-ship-products) handle positioning, landing pages, ad copy, and campaign deployment. Each step feeds context into the next one. The campaign tool talks directly to Meta's API, so we can deploy and monitor ads from the same place we manage everything else.
 

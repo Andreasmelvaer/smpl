@@ -11,7 +11,7 @@ published: true
 readTime: "1 minute"
 ---
 
-![SheBuilds winners](/images/blog/inline/shebuilds-inline.png)
+![SheBuilds winners](/images/blog/inline/shebuilds-inline.webp)
 
 In 48 hours, surrounded by 200+ inspiring women, that idea became something tangible.
 

@@ -25,7 +25,7 @@ Will this move the needle for your goals, your customers, or your bottom line?
 
 If it won't, AI is not for you (right now at least).
 
-![AI strategy team](/images/blog/inline/ai-strategy-inline.jpg)
+![AI strategy team](/images/blog/inline/ai-strategy-inline.webp)
 
 ### Ask the Only Question That Matters
 

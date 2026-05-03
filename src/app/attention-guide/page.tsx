@@ -43,14 +43,14 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/attention-guide-promo.png',
+        url: '/images/attention-guide-promo.webp',
         alt: 'Attention Is New Gold — the founder\'s guide to brand & storytelling',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['https://smpl.as/images/attention-guide-promo.png'],
+    images: ['https://smpl.as/images/attention-guide-promo.webp'],
   },
 }
 
@@ -164,7 +164,7 @@ export default function AttentionGuide() {
               How to make your brand and stories stand out in the most distracted era in human history. TRUTH storytelling, behavioural science, and 6 field lessons.
             </p>
             <img
-              src="/images/attention-guide-promo.png"
+              src="/images/attention-guide-promo.webp"
               alt="Attention Is New Gold — the founder's guide to brand & storytelling"
               className="w-72 md:w-80 mx-auto rounded-xl shadow-2xl mb-10"
             />

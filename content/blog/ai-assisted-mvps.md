@@ -23,7 +23,7 @@ This is like being a local carpenter, and Black & Decker (the biggest tool compa
 
 What made this project stand out wasn't just speed, though.
 
-![SmplCo AI development](/images/blog/inline/mvps-inline.png)
+![SmplCo AI development](/images/blog/inline/mvps-inline.webp)
 
 ### Saddle is a software platform that helps companies make faster, better decisions and drive innovation, particularly in crucial periods in mergers and acquisitions (M&A).
 

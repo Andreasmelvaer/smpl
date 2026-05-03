@@ -1,7 +1,7 @@
 ---
 title: "News! SmplCo signs deal with UK's Barclays bank"
 description: "SmplCo has signed a partnership with Barclays to deliver its 5-Day Prototype service through Barclays Eagle Labs to start-ups across the UK."
-hero_image: "/images/blog/news-smplco-signs-deal-with-uk-s-barclays-bank.png"
+hero_image: "/images/blog/news-smplco-signs-deal-with-uk-s-barclays-bank.webp"
 slug: "news-smplco-signs-deal-with-uk-s-barclays-bank"
 date: "2025-08-01"
 author: "Michael Millar"
