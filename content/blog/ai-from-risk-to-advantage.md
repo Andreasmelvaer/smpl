@@ -9,6 +9,15 @@ readTime: "5 min read"
 tags: ["AI", "Product Strategy", "Webinar", "Eagle Labs"]
 published: true
 slug: "ai-from-risk-to-advantage"
+faqs:
+  - question: "How do I integrate AI into my product without burning cash?"
+    answer: "Start by separating two distinct decisions: building with AI (using Claude Code, Cursor, or similar to ship faster) versus putting AI inside your product (where the model serves users at runtime). The second has a fundamentally different cost profile because every interaction costs tokens. Map your usage before you ship — a feature that calls a model on every keystroke is a different proposition from one that runs once per session. SmplCo's free AI Integration Playbook walks through the four-stage framework we use with founders."
+  - question: "What are the most common AI integration mistakes founders make?"
+    answer: "Three mistakes show up in nearly every conversation: bolting AI onto the wrong feature without asking whether the problem actually needs it, paying for an enterprise model when a smaller one would deliver the same result for a fraction of the cost, and freezing while waiting for the perfect moment that never comes. Each of those wastes runway in a different way."
+  - question: "Should every product have AI features in 2026?"
+    answer: "No. Most successful AI integrations are about picking the right place to apply AI, in the right way, at the right stage — not about cramming AI into every feature. Some products are made dramatically better by AI inside the core service; others are best served by using AI to build faster and ship a conventional product. Both are valid choices. SmplCo has worked on more than 125 products and the most successful ones picked one or the other deliberately."
+  - question: "What is the difference between AI-assisted development and AI inside a product?"
+    answer: "AI-assisted development uses tools like Claude Code, Cursor, or Copilot to write code faster — the AI is the construction tool, but the shipped product would still work if every model went offline. AI inside a product uses the model at runtime to deliver core functionality (think: a writing assistant that calls an LLM on every prompt). The first carries minimal ongoing cost or risk; the second carries token costs, prompt-injection risk, and ongoing model dependence."
 ---
 
  [Mike](https://www.linkedin.com/in/michaelmillarfrsa/) and I are settling in to run a webinar with [Barclays Eagle Labs](https://labs.uk.barclays/events/effectively-integrate-ai-into-your-product/) on how to integrate AI into your product without lighting cash on fire. The 'AI Question' is one that comes up in nearly every conversation we have with founders right now, and the honest answer is that most teams are getting it wrong in one of three predictable ways:

@@ -11,6 +11,17 @@ excerpt: "AEO is the new SEO. Here's exactly how we optimised our website for AI
 tags: ["AEO", "SEO", "AI Search", "Digital Marketing", "Website"]
 published: true
 readTime: "4 min read"
+faqs:
+  - question: "What is AEO?"
+    answer: "AEO stands for Answer Engine Optimization. It is the practice of structuring a website so that AI search engines like ChatGPT, Perplexity, Google AI Overviews, Claude, and Gemini can understand, ingest, and cite the content when answering user questions. Where SEO is about ranking in a list of links, AEO is about being the source the AI quotes from."
+  - question: "How is AEO different from SEO?"
+    answer: "Traditional SEO optimises for Google's ranking algorithm — keywords, backlinks, page experience. AEO optimises for AI engines that consume content as structured information rather than as a webpage to display. AEO leans heavily on schema markup (JSON-LD), an /llms.txt manifest, structured headings, and content written as direct answers to specific questions. Done well, the same site ranks for both — most of the techniques overlap."
+  - question: "How do I make my website visible to ChatGPT and Perplexity?"
+    answer: "Five fast wins: (1) publish a /llms.txt manifest at the root of your domain, (2) add JSON-LD structured data (Organization, BlogPosting, FAQPage where relevant), (3) write content as direct answers to questions a user might ask, (4) use clear hierarchical headings (H2/H3) for AI snippet extraction, (5) ensure your robots.txt allows the major AI crawlers (GPTBot, ClaudeBot, PerplexityBot)."
+  - question: "What is llms.txt and why does my site need one?"
+    answer: "llms.txt is an emerging standard, similar to robots.txt, that gives a single readable file at /llms.txt summarising what the site is, what it sells, and where to find its key content. AI crawlers can ingest it as a manifest in one request rather than navigating the whole site. SmplCo publishes one at smpl.as/llms.txt — it is shorter to read than the homepage, but tells an AI engine everything it needs to cite the company correctly."
+  - question: "Does Google's AI Overview use the same signals as traditional Google search?"
+    answer: "Mostly yes, but with three differences. Google's AI Overviews give greater weight to (1) content that directly answers question-style queries, (2) entities defined in structured data (Organization, Product, FAQPage), and (3) freshness signals on rapidly-evolving topics. Pages that rank well for traditional SEO tend to also surface in AI Overviews, but adding FAQ-style content and structured data can lift AI Overview citation specifically."
 ---
 
 We ran an AEO (Answer Engine Optimisation) audit to see how visible SmplCo’s site was to AI search engines. The results weren’t pretty.

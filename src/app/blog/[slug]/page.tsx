@@ -7,7 +7,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import AuthorBio from '@/components/AuthorBio'
 import RelatedPosts from '@/components/RelatedPosts'
-import { BlogPostJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
+import { BlogPostJsonLd, BreadcrumbJsonLd, FAQJsonLd } from '@/components/JsonLd'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -37,6 +37,9 @@ export default async function BlogPost({ params }: Props) {
           { name: 'Blog', href: '/blog' },
           { name: post.title, href: `/blog/${slug}` },
         ]} />
+        {Array.isArray(post.faqs) && post.faqs.length > 0 && (
+          <FAQJsonLd faqs={post.faqs as { question: string; answer: string }[]} />
+        )}
         <div className="container-main">
           {/* Back link */}
           <Link

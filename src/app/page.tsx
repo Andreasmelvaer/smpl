@@ -8,7 +8,40 @@ import LogoMarquee from '@/components/LogoMarquee'
 import ParallaxImage from '@/components/ParallaxImage'
 import ShimmerGrid from '@/components/ShimmerGrid'
 import FreebieGrid from '@/components/FreebieGrid'
-import { WebSiteJsonLd, LocalBusinessJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
+import { WebSiteJsonLd, LocalBusinessJsonLd, BreadcrumbJsonLd, FAQJsonLd } from '@/components/JsonLd'
+
+const HOME_FAQS = [
+  {
+    question: 'How long does a SmplCo prototype take to build?',
+    answer:
+      'Five working days. Our 5-Day Prototype service takes a product idea from concept to a fully clickable, pitch-ready prototype in one week — three workshops, live Figma iteration, and a polished hi-res deliverable that you can show investors and customers. The format is the same whether you are pre-seed, scale-up, or an enterprise innovation team.',
+  },
+  {
+    question: 'How much does the 5-Day Prototype cost?',
+    answer:
+      'The 5-Day Prototype starts at £8,100. Barclays Eagle Labs members receive an exclusive 25% discount, bringing the price to £6,075. The fee covers three workshops, a full design and development team for the week, a hi-res clickable prototype, and pitch-ready brand assets.',
+  },
+  {
+    question: 'What is included in a SmplCo 5-Day Prototype?',
+    answer:
+      'Three workshops with founders, live Figma iteration with strategic input from industry veterans, AI- and UI-specialist support throughout the week, a hi-res clickable prototype that founders can hand directly to investors and partners, and pitch-ready design and brand assets for the round.',
+  },
+  {
+    question: 'Who has SmplCo worked with?',
+    answer:
+      'SmplCo has helped more than 125 entrepreneurs and innovation teams across startups, scale-ups, and global giants, raising over €10 million collectively. Recent work includes BAS, Compera, NuCase, Share50, ENQUIP, TWENTY40, Altien, and Orli. SmplCo is a Barclays Eagle Labs partner and was named by Figma as a global exemplar of AI-assisted product development, and won Lovable\'s international SheBuilds hackathon.',
+  },
+  {
+    question: 'Where is SmplCo based?',
+    answer:
+      'SmplCo operates from five offices: Stavanger (Norway), London (UK), San Francisco (USA), Szeged (Hungary), and St. Gallen (Switzerland). Most clients work with SmplCo remotely; in-person workshops are available in any of the five locations.',
+  },
+  {
+    question: 'Does SmplCo build with AI or just design with it?',
+    answer:
+      'Both. SmplCo uses AI tools (Claude Code, Figma, Gemini) throughout the design and build process, and ships AI-powered features inside client products when it makes sense. The studio also publishes a free AI Integration Playbook for founders evaluating where AI fits in their own product.',
+  },
+]
 
 export const metadata = {
   alternates: { canonical: 'https://smpl.as/' },
@@ -26,6 +59,7 @@ export default async function HomePage() {
       <WebSiteJsonLd />
       <LocalBusinessJsonLd />
       <BreadcrumbJsonLd items={[{ name: 'Home', href: '/' }]} />
+      <FAQJsonLd faqs={HOME_FAQS} />
       {/* ============ HERO ============ */}
       <section className="py-16 md:py-24 lg:py-36 relative overflow-hidden bg-offwhite">
         <ShimmerGrid />
