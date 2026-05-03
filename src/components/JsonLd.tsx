@@ -263,6 +263,12 @@ export function ServiceListJsonLd({ services }: { services: ServiceJsonLdItem[] 
 export function WebinarVideoJsonLd({ post }: { post: PostData }) {
   if (!post.youtube_id) return null
 
+  // VideoObject Rich Results requires uploadDate in ISO 8601 with time +
+  // timezone — a bare YYYY-MM-DD string fails Google's validator.
+  const isoDate = post.date
+    ? new Date(`${post.date}T12:00:00Z`).toISOString()
+    : undefined
+
   const data = {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
@@ -272,7 +278,7 @@ export function WebinarVideoJsonLd({ post }: { post: PostData }) {
       `https://i.ytimg.com/vi/${post.youtube_id}/maxresdefault.jpg`,
       `https://i.ytimg.com/vi/${post.youtube_id}/hqdefault.jpg`,
     ],
-    uploadDate: post.date,
+    uploadDate: isoDate,
     contentUrl: `https://www.youtube.com/watch?v=${post.youtube_id}`,
     embedUrl: `https://www.youtube.com/embed/${post.youtube_id}`,
     ...(post.duration ? { duration: post.duration } : {}),
@@ -282,7 +288,7 @@ export function WebinarVideoJsonLd({ post }: { post: PostData }) {
             '@type': 'BroadcastEvent',
             name: post.title,
             isLiveBroadcast: false,
-            startDate: post.date,
+            startDate: isoDate,
           },
         }
       : {}),
