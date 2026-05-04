@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { OrganizationJsonLd } from "@/components/JsonLd";
+import AttributionCapture from "@/components/AttributionCapture";
 import "./globals.css";
 
 const inter = Inter({
@@ -83,9 +84,11 @@ export default function RootLayout({
             });
             gtag('js', new Date());
             gtag('config', 'G-YCGPE1WTNN');
+            gtag('config', 'AW-18117348115');
           `}
         </Script>
         <OrganizationJsonLd />
+        <AttributionCapture />
         <Navigation />
         <main className="pt-[60px] md:pt-[56px]">{children}</main>
         <Footer />

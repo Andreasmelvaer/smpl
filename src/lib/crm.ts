@@ -6,6 +6,20 @@ interface CrmLead {
   company?: string
   description?: string
   source: string
+  // Lead-magnet metadata — receiving end uses these for segmentation +
+  // surfacing the "wants a call" flag in the team notification UI.
+  lead_magnet?: string
+  wants_consultation?: boolean
+  // Attribution — captured client-side from URL params (see lib/attribution.ts)
+  // and spread into the form POST body. All optional; the receiving end
+  // ignores any field it doesn't recognise.
+  utm_source?: string
+  utm_medium?: string
+  utm_campaign?: string
+  utm_term?: string
+  utm_content?: string
+  gclid?: string
+  fbclid?: string
 }
 
 /**

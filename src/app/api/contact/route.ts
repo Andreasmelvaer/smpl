@@ -190,7 +190,7 @@ function confirmationEmailHtml(firstName: string) {
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, company, message } = await request.json()
+    const { name, email, company, message, attribution } = await request.json()
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -240,6 +240,7 @@ export async function POST(request: NextRequest) {
       company,
       description: message,
       source: 'contact-form',
+      ...(attribution || {}),
     })
 
     return NextResponse.json({ success: true })

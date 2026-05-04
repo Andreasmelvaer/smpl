@@ -2,6 +2,8 @@
 
 import { useState, FormEvent } from 'react'
 import BookCallPrompt from './BookCallPrompt'
+import { getAttribution } from '@/lib/attribution'
+import { trackLeadConversion } from '@/lib/gtag'
 
 const selectClass =
   'w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent appearance-none'
@@ -22,6 +24,7 @@ export default function PitchPrepForm() {
       email: formData.get('email'),
       company: formData.get('company'),
       consultation: formData.get('consultation'),
+      attribution: getAttribution(),
     }
 
     if (consultation === 'investor-ready-audit') {
@@ -42,6 +45,7 @@ export default function PitchPrepForm() {
       })
 
       if (!res.ok) throw new Error('Failed to send')
+      trackLeadConversion()
       setStatus('success')
     } catch {
       setStatus('error')

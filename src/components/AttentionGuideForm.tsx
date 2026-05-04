@@ -2,6 +2,8 @@
 
 import { useState, FormEvent } from 'react'
 import BookCallPrompt from './BookCallPrompt'
+import { getAttribution } from '@/lib/attribution'
+import { trackLeadConversion } from '@/lib/gtag'
 
 const inputClass =
   'w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-lime focus:border-transparent appearance-none'
@@ -21,6 +23,7 @@ export default function AttentionGuideForm() {
       company: formData.get('company'),
       biggestChallenge: formData.get('biggestChallenge'),
       wantsConsultation: formData.get('wantsConsultation') === 'on',
+      attribution: getAttribution(),
     }
 
     try {
@@ -31,6 +34,7 @@ export default function AttentionGuideForm() {
       })
 
       if (!res.ok) throw new Error('Failed to send')
+      trackLeadConversion()
       setStatus('success')
     } catch {
       setStatus('error')

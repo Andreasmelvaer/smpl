@@ -245,7 +245,7 @@ function notificationEmailHtml(name: string, email: string, company: string | un
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, company, consultation, businessStage, raiseAmount, businessDescription, productStage, hasPitchDeck, keyMessage } = await request.json()
+    const { name, email, company, consultation, businessStage, raiseAmount, businessDescription, productStage, hasPitchDeck, keyMessage, attribution } = await request.json()
     const qualifying: QualifyingData = { businessStage, raiseAmount, businessDescription, productStage, hasPitchDeck, keyMessage }
 
     if (!name || !email) {
@@ -306,6 +306,9 @@ export async function POST(request: NextRequest) {
       company,
       description: descParts.length > 0 ? descParts.join('. ') : 'Downloaded Pitch Prep Guide',
       source: 'pitch-prep-guide',
+      lead_magnet: 'pitch-prep',
+      wants_consultation: !!consultation && consultation !== 'no-thanks',
+      ...(attribution || {}),
     })
 
     return NextResponse.json({ success: true })

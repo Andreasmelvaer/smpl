@@ -163,7 +163,7 @@ function notificationEmailHtml(name: string, email: string, company: string | un
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, company, biggestChallenge, wantsConsultation } = await request.json()
+    const { name, email, company, biggestChallenge, wantsConsultation, attribution } = await request.json()
 
     if (!name || !email) {
       return NextResponse.json(
@@ -216,6 +216,9 @@ export async function POST(request: NextRequest) {
       company,
       description: descParts.join('. '),
       source: 'attention-guide',
+      lead_magnet: 'attention-guide',
+      wants_consultation: !!wantsConsultation,
+      ...(attribution || {}),
     })
 
     return NextResponse.json({ success: true })

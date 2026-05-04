@@ -2,6 +2,8 @@
 
 import { useState, FormEvent } from 'react'
 import BookCallPrompt from './BookCallPrompt'
+import { getAttribution } from '@/lib/attribution'
+import { trackLeadConversion } from '@/lib/gtag'
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
@@ -17,6 +19,7 @@ export default function ContactForm() {
       email: formData.get('email'),
       company: formData.get('company'),
       message: formData.get('message'),
+      attribution: getAttribution(),
     }
 
     try {
@@ -30,6 +33,7 @@ export default function ContactForm() {
         throw new Error('Failed to send')
       }
 
+      trackLeadConversion()
       setStatus('success')
       form.reset()
     } catch {
