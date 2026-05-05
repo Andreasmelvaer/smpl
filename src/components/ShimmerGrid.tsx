@@ -85,35 +85,20 @@ export default function ShimmerGrid() {
       const limeY = h * 0.7 + Math.sin(time * 0.3 + 2.2) * h * 0.2
       const limeR = maxDim * 0.12
 
-      // Oil-sheen edge spots — small, drift near the borders, intermittent.
-      // Five clusters across the three pale tints (sky / pink / lime), each
-      // with its own pulse phase so they appear and fade out at different
-      // times rather than all together. Capped low (max 0.4) in the colour
-      // calc below so the dot field still reads gray.
-      const sky1Pulse = Math.max(0, Math.sin(time * 0.32 + 0.2))
-      const sky1X = w * 0.18 + Math.cos(time * 0.18) * w * 0.12
-      const sky1Y = h * 0.12 + Math.sin(time * 0.22 + 0.5) * h * 0.06
-      const sky1R = maxDim * 0.09
-
-      const sky2Pulse = Math.max(0, Math.sin(time * 0.34 + 4.8))
-      const sky2X = w * 0.08 + Math.cos(time * 0.2 + 2.2) * w * 0.04
-      const sky2Y = h * 0.55 + Math.sin(time * 0.18 + 3.0) * h * 0.15
-      const sky2R = maxDim * 0.075
-
-      const pink1Pulse = Math.max(0, Math.sin(time * 0.27 + 1.8))
-      const pink1X = w * 0.92 + Math.cos(time * 0.21 + 1.5) * w * 0.04
-      const pink1Y = h * 0.42 + Math.sin(time * 0.16 + 2.0) * h * 0.18
-      const pink1R = maxDim * 0.08
-
-      const pink2Pulse = Math.max(0, Math.sin(time * 0.29 + 5.5))
-      const pink2X = w * 0.78 + Math.cos(time * 0.22 + 5.5) * w * 0.08
-      const pink2Y = h * 0.18 + Math.sin(time * 0.2 + 1.2) * h * 0.07
-      const pink2R = maxDim * 0.08
-
-      const limePalePulse = Math.max(0, Math.sin(time * 0.3 + 3.2))
-      const limePaleX = w * 0.55 + Math.cos(time * 0.24 + 4.0) * w * 0.18
-      const limePaleY = h * 0.92 + Math.sin(time * 0.18 + 0.8) * h * 0.04
-      const limePaleR = maxDim * 0.085
+      // Oil-slick / holographic colour fields. Three always-present wavy
+      // fields (sky / pink / lime) that each cover the canvas with smoothly-
+      // varying strength. Where two fields overlap, the dot picks up both
+      // hues so boundaries blend — sky+pink=lavender, pink+lime=peach,
+      // sky+lime=mint. Domain-warped sin (sin nested in sin) gives organic,
+      // cloth-like bands rather than circular spots.
+      //
+      // The exact frequencies and phase offsets are tuned so the three
+      // fields drift at different speeds and don't sync into a regular
+      // pattern. They never fully fade out — the visual rhythm comes from
+      // boundaries moving across the canvas.
+      const skyTime = time * 0.18
+      const pinkTime = time * 0.14
+      const limeFieldTime = time * 0.16
 
       for (let x = gap / 2; x < w; x += gap) {
         for (let y = gap / 2; y < h; y += gap) {
@@ -129,49 +114,59 @@ export default function ShimmerGrid() {
           const tintBlue = smoothstep(1 - distBlue / blueR) * bluePulse
           const tintLime = smoothstep(1 - distLime / limeR) * limePulse
 
-          // Pale edge tints — sum the two sky / two pink spots so a dot can
-          // sit in both at once and feel more saturated near the overlap.
-          const tintSky =
-            smoothstep(1 - Math.sqrt((x - sky1X) ** 2 + (y - sky1Y) ** 2) / sky1R) * sky1Pulse +
-            smoothstep(1 - Math.sqrt((x - sky2X) ** 2 + (y - sky2Y) ** 2) / sky2R) * sky2Pulse
-          const tintPink =
-            smoothstep(1 - Math.sqrt((x - pink1X) ** 2 + (y - pink1Y) ** 2) / pink1R) * pink1Pulse +
-            smoothstep(1 - Math.sqrt((x - pink2X) ** 2 + (y - pink2Y) ** 2) / pink2R) * pink2Pulse
-          const tintLimePale =
-            smoothstep(1 - Math.sqrt((x - limePaleX) ** 2 + (y - limePaleY) ** 2) / limePaleR) * limePalePulse
+          // Domain-warped sin produces wavy colour bands that bend organically
+          // and drift over time. fx/fy are spatial frequencies (small =
+          // long wavelengths = big soft swathes). The sin-nested-in-sin
+          // breaks up regular grid patterns so the bands curve rather than
+          // marching in straight lines.
+          const skyField = Math.max(
+            0,
+            0.5 + 0.5 * Math.sin(x * 0.0055 + Math.sin(y * 0.004 + skyTime + 0.3) + skyTime),
+          )
+          const pinkField = Math.max(
+            0,
+            0.5 + 0.5 * Math.sin(x * 0.0042 + Math.cos(y * 0.0058 + pinkTime + 1.7) - pinkTime * 1.1 + 2.4),
+          )
+          const limeField = Math.max(
+            0,
+            0.5 + 0.5 * Math.cos(y * 0.0048 + Math.sin(x * 0.0062 + limeFieldTime + 4.0) + limeFieldTime * 0.8),
+          )
 
           const opacity = (baseOpacity + boostA + boostB) * (1 - fadeBright)
           if (opacity < 0.01) continue
 
           const tb = Math.min(0.7, tintBlue)
           const tl = Math.min(0.7, tintLime)
-          const ts = Math.min(0.4, tintSky)
-          const tp = Math.min(0.4, tintPink)
-          const tlp = Math.min(0.4, tintLimePale)
-          const r = Math.round(
+          // Pale field tints capped at 0.55 each so two-colour overlaps hit
+          // genuinely blended hues without any single field washing out the
+          // dot to white.
+          const ts = Math.min(0.55, skyField)
+          const tp = Math.min(0.55, pinkField)
+          const tlp = Math.min(0.55, limeField)
+          const r = Math.min(255, Math.round(
             GRAY +
               (BLUE[0] - GRAY) * tb +
               (LIME[0] - GRAY) * tl +
               (SKY[0] - GRAY) * ts +
               (PINK[0] - GRAY) * tp +
               (LIME_PALE[0] - GRAY) * tlp,
-          )
-          const g = Math.round(
+          ))
+          const g = Math.min(255, Math.round(
             GRAY +
               (BLUE[1] - GRAY) * tb +
               (LIME[1] - GRAY) * tl +
               (SKY[1] - GRAY) * ts +
               (PINK[1] - GRAY) * tp +
               (LIME_PALE[1] - GRAY) * tlp,
-          )
-          const b = Math.round(
+          ))
+          const b = Math.min(255, Math.round(
             GRAY +
               (BLUE[2] - GRAY) * tb +
               (LIME[2] - GRAY) * tl +
               (SKY[2] - GRAY) * ts +
               (PINK[2] - GRAY) * tp +
               (LIME_PALE[2] - GRAY) * tlp,
-          )
+          ))
 
           ctx.beginPath()
           ctx.arc(x, y, dotRadius, 0, Math.PI * 2)
