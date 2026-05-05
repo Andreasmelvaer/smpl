@@ -4,13 +4,15 @@ import { useEffect, useRef } from 'react'
 
 const BLUE = [62, 138, 226] as const
 const LIME = [235, 254, 96] as const
-// Pale "oil sheen" tints that appear in small clusters near the edges.
-// Closer to the gray base than the strong brand colours, so they read as
-// iridescence rather than coloured spots.
+// Pale tints that appear in small clusters that pulse in and out — the dots
+// inside an active cluster get bigger, more opaque, and pull strongly toward
+// these hues so the colour reads as a soft cluster rather than a wash.
 const SKY = [189, 227, 255] as const // #BDE3FF
 const PINK = [255, 189, 242] as const // #FFBDF2
 const LIME_PALE = [243, 255, 156] as const // #F3FF9C
-const GRAY = 150
+// Light-grey dot base — keeps the field reading as "mainly white" with the
+// colour clusters as occasional bursts.
+const GRAY = 215
 
 const smoothstep = (e: number) => {
   const t = Math.max(0, Math.min(1, e))
@@ -26,15 +28,6 @@ export default function ShimmerGrid() {
 
     const ctx = canvas.getContext('2d', { alpha: true })
     if (!ctx) return
-
-    // Offscreen canvas for the smooth holographic colour wash. We render
-    // the colour fields here at low resolution (64px wide), then drawImage
-    // it scaled up to the main canvas with smoothing — gives a continuous
-    // gradient where the colours flow and meet, which dots alone can't
-    // achieve.
-    const offscreen = document.createElement('canvas')
-    const offCtx = offscreen.getContext('2d', { alpha: true })
-    if (!offCtx) return
 
     let cancelled = false
     let rafId = 0
@@ -94,89 +87,36 @@ export default function ShimmerGrid() {
       const limeY = h * 0.7 + Math.sin(time * 0.3 + 2.2) * h * 0.2
       const limeR = maxDim * 0.12
 
-      // === Holographic wash pass ===
-      // Build a small ImageData where each "field pixel" is the blend of
-      // three colour fields (sky / pink / lime) computed via domain-warped
-      // sin. We then drawImage it up to canvas size with smoothing so the
-      // colours read as continuous flowing bands. This is what gives the
-      // oil-slick feel — the dot loop alone can't carry it because too
-      // much white sits between dots.
-      const fieldW = 96
-      const fieldH = Math.max(16, Math.round(fieldW * (h / w)))
-      if (offscreen.width !== fieldW || offscreen.height !== fieldH) {
-        offscreen.width = fieldW
-        offscreen.height = fieldH
-      }
-      const fieldData = offCtx.createImageData(fieldW, fieldH)
-      const fieldPixels = fieldData.data
+      // Pale colour clusters — small, drift slowly, pulse on a sin cycle so
+      // each cluster spends roughly half its time invisible. When a cluster
+      // IS active, the dots inside it get bigger, more opaque, and pull
+      // strongly toward the cluster's hue so a recognisable splash of
+      // colour appears. Five clusters across the three pale tints with
+      // different pulse phases so they appear at different times.
+      const sky1Pulse = Math.max(0, Math.sin(time * 0.32 + 0.2))
+      const sky1X = w * 0.18 + Math.cos(time * 0.18) * w * 0.15
+      const sky1Y = h * 0.25 + Math.sin(time * 0.22 + 0.5) * h * 0.18
+      const sky1R = maxDim * 0.16
 
-      const skyTime = time * 0.18
-      const pinkTime = time * 0.14
-      const limeFieldTime = time * 0.16
+      const sky2Pulse = Math.max(0, Math.sin(time * 0.34 + 4.8))
+      const sky2X = w * 0.12 + Math.cos(time * 0.2 + 2.2) * w * 0.08
+      const sky2Y = h * 0.7 + Math.sin(time * 0.18 + 3.0) * h * 0.18
+      const sky2R = maxDim * 0.14
 
-      for (let i = 0; i < fieldW; i++) {
-        for (let j = 0; j < fieldH; j++) {
-          const fx = (i / fieldW) * w
-          const fy = (j / fieldH) * h
+      const pink1Pulse = Math.max(0, Math.sin(time * 0.27 + 1.8))
+      const pink1X = w * 0.85 + Math.cos(time * 0.21 + 1.5) * w * 0.1
+      const pink1Y = h * 0.55 + Math.sin(time * 0.16 + 2.0) * h * 0.22
+      const pink1R = maxDim * 0.16
 
-          const skyF = Math.max(
-            0,
-            0.5 + 0.5 * Math.sin(fx * 0.0055 + Math.sin(fy * 0.004 + skyTime + 0.3) + skyTime),
-          )
-          const pinkF = Math.max(
-            0,
-            0.5 + 0.5 * Math.sin(fx * 0.0042 + Math.cos(fy * 0.0058 + pinkTime + 1.7) - pinkTime * 1.1 + 2.4),
-          )
-          const limeF = Math.max(
-            0,
-            0.5 + 0.5 * Math.cos(fy * 0.0048 + Math.sin(fx * 0.0062 + limeFieldTime + 4.0) + limeFieldTime * 0.8),
-          )
+      const pink2Pulse = Math.max(0, Math.sin(time * 0.29 + 5.5))
+      const pink2X = w * 0.72 + Math.cos(time * 0.22 + 5.5) * w * 0.12
+      const pink2Y = h * 0.18 + Math.sin(time * 0.2 + 1.2) * h * 0.1
+      const pink2R = maxDim * 0.13
 
-          // Strong tint caps — the wash IS the colour layer, so it can be
-          // saturated. Where two fields overlap (e.g. sky + pink) the dot
-          // pulls toward both → lavender. Where all three meet → near white.
-          const ts = Math.min(0.95, skyF)
-          const tp = Math.min(0.95, pinkF)
-          const tlp = Math.min(0.95, limeF)
-
-          const r = Math.min(255, Math.round(
-            GRAY + (SKY[0] - GRAY) * ts + (PINK[0] - GRAY) * tp + (LIME_PALE[0] - GRAY) * tlp,
-          ))
-          const g = Math.min(255, Math.round(
-            GRAY + (SKY[1] - GRAY) * ts + (PINK[1] - GRAY) * tp + (LIME_PALE[1] - GRAY) * tlp,
-          ))
-          const b = Math.min(255, Math.round(
-            GRAY + (SKY[2] - GRAY) * ts + (PINK[2] - GRAY) * tp + (LIME_PALE[2] - GRAY) * tlp,
-          ))
-
-          // Wash alpha follows the bright-spotlight inverse so the centre
-          // (where text sits) stays clean and the corners pick up colour.
-          const wx = fx
-          const wy = fy
-          const distBr = Math.sqrt((wx - brightX) ** 2 + (wy - brightY) ** 2)
-          const fadeBr = smoothstep(1 - distBr / brightR)
-          // 0..255 alpha; max ~110 (≈43%) at the edges, 0 in the spotlight.
-          const alpha = Math.round((1 - fadeBr) * 110)
-
-          const idx = (j * fieldW + i) * 4
-          fieldPixels[idx] = r
-          fieldPixels[idx + 1] = g
-          fieldPixels[idx + 2] = b
-          fieldPixels[idx + 3] = alpha
-        }
-      }
-      offCtx.putImageData(fieldData, 0, 0)
-
-      // Smoothly upscale the field onto the main canvas as a colour wash.
-      ctx.imageSmoothingEnabled = true
-      ctx.imageSmoothingQuality = 'high'
-      ctx.drawImage(offscreen, 0, 0, w, h)
-
-      // === Dot pass ===
-      // Dots now sit OVER the wash. They carry only the brand-tint pulses
-      // (blue + lime) and the gray base — the holographic colour comes from
-      // the wash underneath. This keeps the dots reading as texture rather
-      // than competing with the colour field.
+      const limePalePulse = Math.max(0, Math.sin(time * 0.3 + 3.2))
+      const limePaleX = w * 0.5 + Math.cos(time * 0.24 + 4.0) * w * 0.25
+      const limePaleY = h * 0.85 + Math.sin(time * 0.18 + 0.8) * h * 0.1
+      const limePaleR = maxDim * 0.15
 
       for (let x = gap / 2; x < w; x += gap) {
         for (let y = gap / 2; y < h; y += gap) {
@@ -192,17 +132,65 @@ export default function ShimmerGrid() {
           const tintBlue = smoothstep(1 - distBlue / blueR) * bluePulse
           const tintLime = smoothstep(1 - distLime / limeR) * limePulse
 
-          const opacity = (baseOpacity + boostA + boostB) * (1 - fadeBright)
+          // Cluster strengths — each one is the geometric falloff times the
+          // pulse, so a dot is only "in a cluster" when the cluster is
+          // currently visible AND nearby.
+          const sky1S = smoothstep(1 - Math.sqrt((x - sky1X) ** 2 + (y - sky1Y) ** 2) / sky1R) * sky1Pulse
+          const sky2S = smoothstep(1 - Math.sqrt((x - sky2X) ** 2 + (y - sky2Y) ** 2) / sky2R) * sky2Pulse
+          const pink1S = smoothstep(1 - Math.sqrt((x - pink1X) ** 2 + (y - pink1Y) ** 2) / pink1R) * pink1Pulse
+          const pink2S = smoothstep(1 - Math.sqrt((x - pink2X) ** 2 + (y - pink2Y) ** 2) / pink2R) * pink2Pulse
+          const limePaleS = smoothstep(1 - Math.sqrt((x - limePaleX) ** 2 + (y - limePaleY) ** 2) / limePaleR) * limePalePulse
+
+          const tintSky = Math.min(0.85, sky1S + sky2S)
+          const tintPink = Math.min(0.85, pink1S + pink2S)
+          const tintLimePale = Math.min(0.85, limePaleS)
+          const clusterStrength = Math.min(1, tintSky + tintPink + tintLimePale)
+
+          // Dots inside a cluster grow + get more opaque so the colour
+          // actually pops; outside clusters the field stays subtle.
+          const opacity =
+            (baseOpacity + boostA + boostB + clusterStrength * 0.5) * (1 - fadeBright)
           if (opacity < 0.01) continue
+          const radius = dotRadius + clusterStrength * 0.7
 
           const tb = Math.min(0.7, tintBlue)
           const tl = Math.min(0.7, tintLime)
-          const r = Math.round(GRAY + (BLUE[0] - GRAY) * tb + (LIME[0] - GRAY) * tl)
-          const g = Math.round(GRAY + (BLUE[1] - GRAY) * tb + (LIME[1] - GRAY) * tl)
-          const b = Math.round(GRAY + (BLUE[2] - GRAY) * tb + (LIME[2] - GRAY) * tl)
+          const r = Math.min(
+            255,
+            Math.round(
+              GRAY +
+                (BLUE[0] - GRAY) * tb +
+                (LIME[0] - GRAY) * tl +
+                (SKY[0] - GRAY) * tintSky +
+                (PINK[0] - GRAY) * tintPink +
+                (LIME_PALE[0] - GRAY) * tintLimePale,
+            ),
+          )
+          const g = Math.min(
+            255,
+            Math.round(
+              GRAY +
+                (BLUE[1] - GRAY) * tb +
+                (LIME[1] - GRAY) * tl +
+                (SKY[1] - GRAY) * tintSky +
+                (PINK[1] - GRAY) * tintPink +
+                (LIME_PALE[1] - GRAY) * tintLimePale,
+            ),
+          )
+          const b = Math.min(
+            255,
+            Math.round(
+              GRAY +
+                (BLUE[2] - GRAY) * tb +
+                (LIME[2] - GRAY) * tl +
+                (SKY[2] - GRAY) * tintSky +
+                (PINK[2] - GRAY) * tintPink +
+                (LIME_PALE[2] - GRAY) * tintLimePale,
+            ),
+          )
 
           ctx.beginPath()
-          ctx.arc(x, y, dotRadius, 0, Math.PI * 2)
+          ctx.arc(x, y, radius, 0, Math.PI * 2)
           ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${opacity})`
           ctx.fill()
         }
