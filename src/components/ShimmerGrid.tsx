@@ -4,6 +4,12 @@ import { useEffect, useRef } from 'react'
 
 const BLUE = [62, 138, 226] as const
 const LIME = [235, 254, 96] as const
+// Pale "oil sheen" tints that appear in small clusters near the edges.
+// Closer to the gray base than the strong brand colours, so they read as
+// iridescence rather than coloured spots.
+const SKY = [189, 227, 255] as const // #BDE3FF
+const PINK = [255, 189, 242] as const // #FFBDF2
+const LIME_PALE = [243, 255, 156] as const // #F3FF9C
 const GRAY = 150
 
 const smoothstep = (e: number) => {
@@ -79,6 +85,36 @@ export default function ShimmerGrid() {
       const limeY = h * 0.7 + Math.sin(time * 0.3 + 2.2) * h * 0.2
       const limeR = maxDim * 0.12
 
+      // Oil-sheen edge spots — small, drift near the borders, intermittent.
+      // Five clusters across the three pale tints (sky / pink / lime), each
+      // with its own pulse phase so they appear and fade out at different
+      // times rather than all together. Capped low (max 0.4) in the colour
+      // calc below so the dot field still reads gray.
+      const sky1Pulse = Math.max(0, Math.sin(time * 0.32 + 0.2))
+      const sky1X = w * 0.18 + Math.cos(time * 0.18) * w * 0.12
+      const sky1Y = h * 0.12 + Math.sin(time * 0.22 + 0.5) * h * 0.06
+      const sky1R = maxDim * 0.09
+
+      const sky2Pulse = Math.max(0, Math.sin(time * 0.34 + 4.8))
+      const sky2X = w * 0.08 + Math.cos(time * 0.2 + 2.2) * w * 0.04
+      const sky2Y = h * 0.55 + Math.sin(time * 0.18 + 3.0) * h * 0.15
+      const sky2R = maxDim * 0.075
+
+      const pink1Pulse = Math.max(0, Math.sin(time * 0.27 + 1.8))
+      const pink1X = w * 0.92 + Math.cos(time * 0.21 + 1.5) * w * 0.04
+      const pink1Y = h * 0.42 + Math.sin(time * 0.16 + 2.0) * h * 0.18
+      const pink1R = maxDim * 0.08
+
+      const pink2Pulse = Math.max(0, Math.sin(time * 0.29 + 5.5))
+      const pink2X = w * 0.78 + Math.cos(time * 0.22 + 5.5) * w * 0.08
+      const pink2Y = h * 0.18 + Math.sin(time * 0.2 + 1.2) * h * 0.07
+      const pink2R = maxDim * 0.08
+
+      const limePalePulse = Math.max(0, Math.sin(time * 0.3 + 3.2))
+      const limePaleX = w * 0.55 + Math.cos(time * 0.24 + 4.0) * w * 0.18
+      const limePaleY = h * 0.92 + Math.sin(time * 0.18 + 0.8) * h * 0.04
+      const limePaleR = maxDim * 0.085
+
       for (let x = gap / 2; x < w; x += gap) {
         for (let y = gap / 2; y < h; y += gap) {
           const distBright = Math.sqrt((x - brightX) ** 2 + (y - brightY) ** 2)
@@ -93,14 +129,49 @@ export default function ShimmerGrid() {
           const tintBlue = smoothstep(1 - distBlue / blueR) * bluePulse
           const tintLime = smoothstep(1 - distLime / limeR) * limePulse
 
+          // Pale edge tints — sum the two sky / two pink spots so a dot can
+          // sit in both at once and feel more saturated near the overlap.
+          const tintSky =
+            smoothstep(1 - Math.sqrt((x - sky1X) ** 2 + (y - sky1Y) ** 2) / sky1R) * sky1Pulse +
+            smoothstep(1 - Math.sqrt((x - sky2X) ** 2 + (y - sky2Y) ** 2) / sky2R) * sky2Pulse
+          const tintPink =
+            smoothstep(1 - Math.sqrt((x - pink1X) ** 2 + (y - pink1Y) ** 2) / pink1R) * pink1Pulse +
+            smoothstep(1 - Math.sqrt((x - pink2X) ** 2 + (y - pink2Y) ** 2) / pink2R) * pink2Pulse
+          const tintLimePale =
+            smoothstep(1 - Math.sqrt((x - limePaleX) ** 2 + (y - limePaleY) ** 2) / limePaleR) * limePalePulse
+
           const opacity = (baseOpacity + boostA + boostB) * (1 - fadeBright)
           if (opacity < 0.01) continue
 
           const tb = Math.min(0.7, tintBlue)
           const tl = Math.min(0.7, tintLime)
-          const r = Math.round(GRAY + (BLUE[0] - GRAY) * tb + (LIME[0] - GRAY) * tl)
-          const g = Math.round(GRAY + (BLUE[1] - GRAY) * tb + (LIME[1] - GRAY) * tl)
-          const b = Math.round(GRAY + (BLUE[2] - GRAY) * tb + (LIME[2] - GRAY) * tl)
+          const ts = Math.min(0.4, tintSky)
+          const tp = Math.min(0.4, tintPink)
+          const tlp = Math.min(0.4, tintLimePale)
+          const r = Math.round(
+            GRAY +
+              (BLUE[0] - GRAY) * tb +
+              (LIME[0] - GRAY) * tl +
+              (SKY[0] - GRAY) * ts +
+              (PINK[0] - GRAY) * tp +
+              (LIME_PALE[0] - GRAY) * tlp,
+          )
+          const g = Math.round(
+            GRAY +
+              (BLUE[1] - GRAY) * tb +
+              (LIME[1] - GRAY) * tl +
+              (SKY[1] - GRAY) * ts +
+              (PINK[1] - GRAY) * tp +
+              (LIME_PALE[1] - GRAY) * tlp,
+          )
+          const b = Math.round(
+            GRAY +
+              (BLUE[2] - GRAY) * tb +
+              (LIME[2] - GRAY) * tl +
+              (SKY[2] - GRAY) * ts +
+              (PINK[2] - GRAY) * tp +
+              (LIME_PALE[2] - GRAY) * tlp,
+          )
 
           ctx.beginPath()
           ctx.arc(x, y, dotRadius, 0, Math.PI * 2)
