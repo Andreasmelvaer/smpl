@@ -175,7 +175,7 @@ const CATEGORIES: ServiceCategory[] = [
       {
         tier: 'Essential',
         name: 'Video Essentials',
-        tagline: 'A screen recording of your product with a crafted narrative — fast and effective.',
+        tagline: 'A tour of your product with a crafted narrative — fast and effective.',
         bestFor: ['Founders needing a quick explainer', 'Products with a strong visual flow', 'Pitch support & investor follow-ups', 'Social media & landing page content'],
         sections: [
           { title: 'What You Get', items: ['Narrative writing & scripting', 'Storyboarding', 'Screen recording of your prototype or product', 'Professional editing & pacing', 'Optimised for under 1 minute (recommended)'] },
