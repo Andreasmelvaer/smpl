@@ -175,7 +175,6 @@ const CATEGORIES: ServiceCategory[] = [
       {
         tier: 'Essential',
         name: 'Video Essentials',
-        delivery: 'Approx 1–2 weeks',
         tagline: 'A screen recording of your product with a crafted narrative — fast and effective.',
         bestFor: ['Founders needing a quick explainer', 'Products with a strong visual flow', 'Pitch support & investor follow-ups', 'Social media & landing page content'],
         sections: [
