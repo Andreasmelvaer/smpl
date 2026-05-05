@@ -27,7 +27,7 @@ const SERVICES = [
   {
     name: 'Websites',
     description:
-      'Modern marketing and product websites built in Next.js on Vercel. Fast, SEO-optimised, integrated with your CRM and analytics stack.',
+      'Modern marketing and product websites built in Next.js on Vercel. Fast, SEO & AEO-optimised, integrated with your CRM and analytics stack.',
     url: '/services',
     serviceType: 'Website design and development',
   },
