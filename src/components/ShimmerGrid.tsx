@@ -27,6 +27,15 @@ export default function ShimmerGrid() {
     const ctx = canvas.getContext('2d', { alpha: true })
     if (!ctx) return
 
+    // Offscreen canvas for the smooth holographic colour wash. We render
+    // the colour fields here at low resolution (64px wide), then drawImage
+    // it scaled up to the main canvas with smoothing — gives a continuous
+    // gradient where the colours flow and meet, which dots alone can't
+    // achieve.
+    const offscreen = document.createElement('canvas')
+    const offCtx = offscreen.getContext('2d', { alpha: true })
+    if (!offCtx) return
+
     let cancelled = false
     let rafId = 0
     let dpr = window.devicePixelRatio || 1
@@ -85,20 +94,89 @@ export default function ShimmerGrid() {
       const limeY = h * 0.7 + Math.sin(time * 0.3 + 2.2) * h * 0.2
       const limeR = maxDim * 0.12
 
-      // Oil-slick / holographic colour fields. Three always-present wavy
-      // fields (sky / pink / lime) that each cover the canvas with smoothly-
-      // varying strength. Where two fields overlap, the dot picks up both
-      // hues so boundaries blend — sky+pink=lavender, pink+lime=peach,
-      // sky+lime=mint. Domain-warped sin (sin nested in sin) gives organic,
-      // cloth-like bands rather than circular spots.
-      //
-      // The exact frequencies and phase offsets are tuned so the three
-      // fields drift at different speeds and don't sync into a regular
-      // pattern. They never fully fade out — the visual rhythm comes from
-      // boundaries moving across the canvas.
+      // === Holographic wash pass ===
+      // Build a small ImageData where each "field pixel" is the blend of
+      // three colour fields (sky / pink / lime) computed via domain-warped
+      // sin. We then drawImage it up to canvas size with smoothing so the
+      // colours read as continuous flowing bands. This is what gives the
+      // oil-slick feel — the dot loop alone can't carry it because too
+      // much white sits between dots.
+      const fieldW = 96
+      const fieldH = Math.max(16, Math.round(fieldW * (h / w)))
+      if (offscreen.width !== fieldW || offscreen.height !== fieldH) {
+        offscreen.width = fieldW
+        offscreen.height = fieldH
+      }
+      const fieldData = offCtx.createImageData(fieldW, fieldH)
+      const fieldPixels = fieldData.data
+
       const skyTime = time * 0.18
       const pinkTime = time * 0.14
       const limeFieldTime = time * 0.16
+
+      for (let i = 0; i < fieldW; i++) {
+        for (let j = 0; j < fieldH; j++) {
+          const fx = (i / fieldW) * w
+          const fy = (j / fieldH) * h
+
+          const skyF = Math.max(
+            0,
+            0.5 + 0.5 * Math.sin(fx * 0.0055 + Math.sin(fy * 0.004 + skyTime + 0.3) + skyTime),
+          )
+          const pinkF = Math.max(
+            0,
+            0.5 + 0.5 * Math.sin(fx * 0.0042 + Math.cos(fy * 0.0058 + pinkTime + 1.7) - pinkTime * 1.1 + 2.4),
+          )
+          const limeF = Math.max(
+            0,
+            0.5 + 0.5 * Math.cos(fy * 0.0048 + Math.sin(fx * 0.0062 + limeFieldTime + 4.0) + limeFieldTime * 0.8),
+          )
+
+          // Strong tint caps — the wash IS the colour layer, so it can be
+          // saturated. Where two fields overlap (e.g. sky + pink) the dot
+          // pulls toward both → lavender. Where all three meet → near white.
+          const ts = Math.min(0.95, skyF)
+          const tp = Math.min(0.95, pinkF)
+          const tlp = Math.min(0.95, limeF)
+
+          const r = Math.min(255, Math.round(
+            GRAY + (SKY[0] - GRAY) * ts + (PINK[0] - GRAY) * tp + (LIME_PALE[0] - GRAY) * tlp,
+          ))
+          const g = Math.min(255, Math.round(
+            GRAY + (SKY[1] - GRAY) * ts + (PINK[1] - GRAY) * tp + (LIME_PALE[1] - GRAY) * tlp,
+          ))
+          const b = Math.min(255, Math.round(
+            GRAY + (SKY[2] - GRAY) * ts + (PINK[2] - GRAY) * tp + (LIME_PALE[2] - GRAY) * tlp,
+          ))
+
+          // Wash alpha follows the bright-spotlight inverse so the centre
+          // (where text sits) stays clean and the corners pick up colour.
+          const wx = fx
+          const wy = fy
+          const distBr = Math.sqrt((wx - brightX) ** 2 + (wy - brightY) ** 2)
+          const fadeBr = smoothstep(1 - distBr / brightR)
+          // 0..255 alpha; max ~110 (≈43%) at the edges, 0 in the spotlight.
+          const alpha = Math.round((1 - fadeBr) * 110)
+
+          const idx = (j * fieldW + i) * 4
+          fieldPixels[idx] = r
+          fieldPixels[idx + 1] = g
+          fieldPixels[idx + 2] = b
+          fieldPixels[idx + 3] = alpha
+        }
+      }
+      offCtx.putImageData(fieldData, 0, 0)
+
+      // Smoothly upscale the field onto the main canvas as a colour wash.
+      ctx.imageSmoothingEnabled = true
+      ctx.imageSmoothingQuality = 'high'
+      ctx.drawImage(offscreen, 0, 0, w, h)
+
+      // === Dot pass ===
+      // Dots now sit OVER the wash. They carry only the brand-tint pulses
+      // (blue + lime) and the gray base — the holographic colour comes from
+      // the wash underneath. This keeps the dots reading as texture rather
+      // than competing with the colour field.
 
       for (let x = gap / 2; x < w; x += gap) {
         for (let y = gap / 2; y < h; y += gap) {
@@ -114,59 +192,14 @@ export default function ShimmerGrid() {
           const tintBlue = smoothstep(1 - distBlue / blueR) * bluePulse
           const tintLime = smoothstep(1 - distLime / limeR) * limePulse
 
-          // Domain-warped sin produces wavy colour bands that bend organically
-          // and drift over time. fx/fy are spatial frequencies (small =
-          // long wavelengths = big soft swathes). The sin-nested-in-sin
-          // breaks up regular grid patterns so the bands curve rather than
-          // marching in straight lines.
-          const skyField = Math.max(
-            0,
-            0.5 + 0.5 * Math.sin(x * 0.0055 + Math.sin(y * 0.004 + skyTime + 0.3) + skyTime),
-          )
-          const pinkField = Math.max(
-            0,
-            0.5 + 0.5 * Math.sin(x * 0.0042 + Math.cos(y * 0.0058 + pinkTime + 1.7) - pinkTime * 1.1 + 2.4),
-          )
-          const limeField = Math.max(
-            0,
-            0.5 + 0.5 * Math.cos(y * 0.0048 + Math.sin(x * 0.0062 + limeFieldTime + 4.0) + limeFieldTime * 0.8),
-          )
-
           const opacity = (baseOpacity + boostA + boostB) * (1 - fadeBright)
           if (opacity < 0.01) continue
 
           const tb = Math.min(0.7, tintBlue)
           const tl = Math.min(0.7, tintLime)
-          // Pale field tints capped at 0.55 each so two-colour overlaps hit
-          // genuinely blended hues without any single field washing out the
-          // dot to white.
-          const ts = Math.min(0.55, skyField)
-          const tp = Math.min(0.55, pinkField)
-          const tlp = Math.min(0.55, limeField)
-          const r = Math.min(255, Math.round(
-            GRAY +
-              (BLUE[0] - GRAY) * tb +
-              (LIME[0] - GRAY) * tl +
-              (SKY[0] - GRAY) * ts +
-              (PINK[0] - GRAY) * tp +
-              (LIME_PALE[0] - GRAY) * tlp,
-          ))
-          const g = Math.min(255, Math.round(
-            GRAY +
-              (BLUE[1] - GRAY) * tb +
-              (LIME[1] - GRAY) * tl +
-              (SKY[1] - GRAY) * ts +
-              (PINK[1] - GRAY) * tp +
-              (LIME_PALE[1] - GRAY) * tlp,
-          ))
-          const b = Math.min(255, Math.round(
-            GRAY +
-              (BLUE[2] - GRAY) * tb +
-              (LIME[2] - GRAY) * tl +
-              (SKY[2] - GRAY) * ts +
-              (PINK[2] - GRAY) * tp +
-              (LIME_PALE[2] - GRAY) * tlp,
-          ))
+          const r = Math.round(GRAY + (BLUE[0] - GRAY) * tb + (LIME[0] - GRAY) * tl)
+          const g = Math.round(GRAY + (BLUE[1] - GRAY) * tb + (LIME[1] - GRAY) * tl)
+          const b = Math.round(GRAY + (BLUE[2] - GRAY) * tb + (LIME[2] - GRAY) * tl)
 
           ctx.beginPath()
           ctx.arc(x, y, dotRadius, 0, Math.PI * 2)
