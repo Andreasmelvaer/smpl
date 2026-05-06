@@ -87,36 +87,31 @@ export default function ShimmerGrid() {
       const limeY = h * 0.7 + Math.sin(time * 0.3 + 2.2) * h * 0.2
       const limeR = maxDim * 0.12
 
-      // Pale colour clusters — small, drift slowly, pulse on a sin cycle so
-      // each cluster spends roughly half its time invisible. When a cluster
-      // IS active, the dots inside it get bigger, more opaque, and pull
-      // strongly toward the cluster's hue so a recognisable splash of
-      // colour appears. Five clusters across the three pale tints with
-      // different pulse phases so they appear at different times.
-      const sky1Pulse = Math.max(0, Math.sin(time * 0.32 + 0.2))
-      const sky1X = w * 0.18 + Math.cos(time * 0.18) * w * 0.15
-      const sky1Y = h * 0.25 + Math.sin(time * 0.22 + 0.5) * h * 0.18
-      const sky1R = maxDim * 0.16
+      // Colour bursts. Each burst is an envelope (organic shape, not a
+      // circle — its radius wobbles around its angle so the edge has
+      // lobes/inlets) that pulses on a sin cycle so it's invisible roughly
+      // half the time. When a burst IS active, the dots inside it pick up
+      // ALL THREE colours (sky / pink / lime), with each colour's strength
+      // determined by a small-scale field sampled at the dot's position.
+      // So a single burst contains lavender, peach, and mint regions where
+      // the inner sub-fields overlap — never just one flat colour.
+      const burst1Pulse = Math.max(0, Math.sin(time * 0.32 + 0.2))
+      const burst1X = w * 0.22 + Math.cos(time * 0.18) * w * 0.15
+      const burst1Y = h * 0.3 + Math.sin(time * 0.22 + 0.5) * h * 0.2
+      const burst1R = maxDim * 0.22
+      const burst1Phase = 0.0
 
-      const sky2Pulse = Math.max(0, Math.sin(time * 0.34 + 4.8))
-      const sky2X = w * 0.12 + Math.cos(time * 0.2 + 2.2) * w * 0.08
-      const sky2Y = h * 0.7 + Math.sin(time * 0.18 + 3.0) * h * 0.18
-      const sky2R = maxDim * 0.14
+      const burst2Pulse = Math.max(0, Math.sin(time * 0.27 + 1.8))
+      const burst2X = w * 0.78 + Math.cos(time * 0.21 + 1.5) * w * 0.12
+      const burst2Y = h * 0.55 + Math.sin(time * 0.16 + 2.0) * h * 0.22
+      const burst2R = maxDim * 0.2
+      const burst2Phase = 2.4
 
-      const pink1Pulse = Math.max(0, Math.sin(time * 0.27 + 1.8))
-      const pink1X = w * 0.85 + Math.cos(time * 0.21 + 1.5) * w * 0.1
-      const pink1Y = h * 0.55 + Math.sin(time * 0.16 + 2.0) * h * 0.22
-      const pink1R = maxDim * 0.16
-
-      const pink2Pulse = Math.max(0, Math.sin(time * 0.29 + 5.5))
-      const pink2X = w * 0.72 + Math.cos(time * 0.22 + 5.5) * w * 0.12
-      const pink2Y = h * 0.18 + Math.sin(time * 0.2 + 1.2) * h * 0.1
-      const pink2R = maxDim * 0.13
-
-      const limePalePulse = Math.max(0, Math.sin(time * 0.3 + 3.2))
-      const limePaleX = w * 0.5 + Math.cos(time * 0.24 + 4.0) * w * 0.25
-      const limePaleY = h * 0.85 + Math.sin(time * 0.18 + 0.8) * h * 0.1
-      const limePaleR = maxDim * 0.15
+      const burst3Pulse = Math.max(0, Math.sin(time * 0.3 + 3.6))
+      const burst3X = w * 0.5 + Math.cos(time * 0.24 + 4.0) * w * 0.25
+      const burst3Y = h * 0.82 + Math.sin(time * 0.18 + 0.8) * h * 0.12
+      const burst3R = maxDim * 0.21
+      const burst3Phase = 4.8
 
       for (let x = gap / 2; x < w; x += gap) {
         for (let y = gap / 2; y < h; y += gap) {
@@ -132,19 +127,48 @@ export default function ShimmerGrid() {
           const tintBlue = smoothstep(1 - distBlue / blueR) * bluePulse
           const tintLime = smoothstep(1 - distLime / limeR) * limePulse
 
-          // Cluster strengths — each one is the geometric falloff times the
-          // pulse, so a dot is only "in a cluster" when the cluster is
-          // currently visible AND nearby.
-          const sky1S = smoothstep(1 - Math.sqrt((x - sky1X) ** 2 + (y - sky1Y) ** 2) / sky1R) * sky1Pulse
-          const sky2S = smoothstep(1 - Math.sqrt((x - sky2X) ** 2 + (y - sky2Y) ** 2) / sky2R) * sky2Pulse
-          const pink1S = smoothstep(1 - Math.sqrt((x - pink1X) ** 2 + (y - pink1Y) ** 2) / pink1R) * pink1Pulse
-          const pink2S = smoothstep(1 - Math.sqrt((x - pink2X) ** 2 + (y - pink2Y) ** 2) / pink2R) * pink2Pulse
-          const limePaleS = smoothstep(1 - Math.sqrt((x - limePaleX) ** 2 + (y - limePaleY) ** 2) / limePaleR) * limePalePulse
+          // Burst envelope: angle-modulated radius gives an organic, wobbly
+          // edge (not a clean circle). Two harmonics (3× and 5× the angle)
+          // produce 3-lobed + 5-lobed wobble that drifts with time.
+          const computeBurst = (cx: number, cy: number, baseR: number, phase: number, pulse: number) => {
+            if (pulse <= 0) return 0
+            const dxB = x - cx
+            const dyB = y - cy
+            const angleB = Math.atan2(dyB, dxB)
+            const wobble =
+              1 +
+              0.32 * Math.sin(angleB * 3 + time * 0.4 + phase) +
+              0.18 * Math.sin(angleB * 5 - time * 0.3 + phase * 1.7)
+            const distB = Math.sqrt(dxB * dxB + dyB * dyB)
+            return smoothstep(1 - distB / (baseR * wobble)) * pulse
+          }
 
-          const tintSky = Math.min(0.85, sky1S + sky2S)
-          const tintPink = Math.min(0.85, pink1S + pink2S)
-          const tintLimePale = Math.min(0.85, limePaleS)
-          const clusterStrength = Math.min(1, tintSky + tintPink + tintLimePale)
+          const burst1S = computeBurst(burst1X, burst1Y, burst1R, burst1Phase, burst1Pulse)
+          const burst2S = computeBurst(burst2X, burst2Y, burst2R, burst2Phase, burst2Pulse)
+          const burst3S = computeBurst(burst3X, burst3Y, burst3R, burst3Phase, burst3Pulse)
+          const burstStrength = burst1S + burst2S + burst3S
+
+          // Inside any active burst, sample three small-scale colour
+          // sub-fields at this dot's position. Each gives 0..1 strength,
+          // and a single dot can have multiple sub-fields strong at once
+          // → multi-colour blending within one burst.
+          const skySub = Math.max(
+            0,
+            0.4 + 0.6 * Math.sin(x * 0.013 + Math.sin(y * 0.011 + time * 0.5) + time * 0.3),
+          )
+          const pinkSub = Math.max(
+            0,
+            0.4 + 0.6 * Math.sin(x * 0.011 + Math.cos(y * 0.014 + time * 0.4 + 1.7) - time * 0.35 + 2.4),
+          )
+          const limeSub = Math.max(
+            0,
+            0.4 + 0.6 * Math.cos(y * 0.012 + Math.sin(x * 0.015 + time * 0.45 + 4.0) + time * 0.3),
+          )
+
+          const tintSky = Math.min(0.85, burstStrength * skySub)
+          const tintPink = Math.min(0.85, burstStrength * pinkSub)
+          const tintLimePale = Math.min(0.85, burstStrength * limeSub)
+          const clusterStrength = Math.min(1, burstStrength)
 
           // Dots inside a cluster grow + get more opaque so the colour
           // actually pops; outside clusters the field stays subtle.
