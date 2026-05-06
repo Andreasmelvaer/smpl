@@ -364,7 +364,7 @@ export default function KlugeGame() {
       if (navigator.share && navigator.canShare?.({ files: [new File([blob], 'kluge.png', { type: 'image/png' })] })) {
         await navigator.share({
           files: [new File([blob], 'kluge.png', { type: 'image/png' })],
-          title: 'Kluge — AI Buzzword Bingo',
+          title: 'Kluge — Tech-Forum Stavanger',
         })
       } else {
         const a = document.createElement('a')
@@ -392,13 +392,13 @@ export default function KlugeGame() {
         <ShimmerGrid />
         <div className="relative z-10 text-center px-6 max-w-md mx-auto">
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-gray-500 mb-5">
-            AI Buzzword Bingo
+            Tech-Forum Stavanger
           </p>
           <h1 className="text-6xl md:text-7xl font-bold leading-none mb-6" style={{ color: '#ffffff' }}>
             <span className="font-editorial italic text-lime">Kluge</span>
           </h1>
           <p className="font-satoshi text-gray-300 text-base md:text-lg mb-3 leading-relaxed">
-            Mark every buzzword you hear at the next demo, panel, or pitch.
+            AI buzzword bingo. Mark every one you hear during the talks.
           </p>
           <p className="font-satoshi text-gray-400 text-sm mb-8 leading-relaxed">
             Five in a row = <strong className="text-lime font-semibold">bingo</strong>.
@@ -606,7 +606,7 @@ export default function KlugeGame() {
               )}
             </div>
 
-            <p className="text-center font-mono text-[10px] text-gray-600">smpl.as/kluge — AI Buzzword Bingo</p>
+            <p className="text-center font-mono text-[10px] text-gray-600">smpl.as/kluge — Tech-Forum Stavanger</p>
           </div>
 
           <div className="mt-6 text-center motion-safe:animate-[fadeInUp_0.6s_ease-out_0.4s_both]">
