@@ -394,11 +394,15 @@ export default function KlugeGame() {
           <p className="font-mono text-xs tracking-[0.3em] uppercase text-gray-500 mb-5">
             Tech-Forum Stavanger
           </p>
-          <h1 className="text-6xl md:text-7xl font-bold leading-none mb-6" style={{ color: '#ffffff' }}>
-            <span className="font-editorial italic text-lime">Kluge</span>
+          <h1 className="text-5xl md:text-7xl font-bold leading-[0.95] mb-6" style={{ color: '#ffffff' }}>
+            <span className="font-editorial italic text-lime">
+              Buzzword
+              <br />
+              Bingo
+            </span>
           </h1>
           <p className="font-satoshi text-gray-300 text-base md:text-lg mb-3 leading-relaxed">
-            AI buzzword bingo. Mark every one you hear during the talks.
+            Mark every AI buzzword you hear during the talks.
           </p>
           <p className="font-satoshi text-gray-400 text-sm mb-8 leading-relaxed">
             Five in a row = <strong className="text-lime font-semibold">bingo</strong>.
