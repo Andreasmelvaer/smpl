@@ -79,7 +79,11 @@ export function generateWebinarMetadata(data: PostData): Metadata {
   const ogImage = rawOgImage.startsWith('/') ? `${BASE_URL}${rawOgImage}` : rawOgImage
 
   return {
-    title: `${title} — SmplCo webinar with Barclays Eagle Labs`,
+    // Title kept clean — the layout adds "| SmplCo" at the end. Avoiding
+    // a long "— SmplCo webinar with Barclays Eagle Labs" suffix that would
+    // push the SERP title past 70 chars and trigger Google's auto-rewrite.
+    // Eagle Labs branding lives in the on-page metadata block + body copy.
+    title,
     description,
     alternates: { canonical: `${BASE_URL}/webinars/${data.slug}` },
     openGraph: {
@@ -99,7 +103,12 @@ export function generateWebinarMetadata(data: PostData): Metadata {
         : undefined,
     },
     twitter: {
-      card: 'player',
+      // 'player' card requires a separate playable iframe + width/height —
+      // we don't ship those, so Twitter flagged the card as incomplete.
+      // 'summary_large_image' is the right choice when the YouTube video
+      // is embedded on the destination page rather than served inline in
+      // the tweet.
+      card: 'summary_large_image',
       title,
       description,
       images: [ogImage],

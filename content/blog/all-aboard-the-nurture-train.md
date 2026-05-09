@@ -5,7 +5,7 @@ hero_image: "/images/blog/all-aboard-the-nurture-train.jpg"
 slug: "all-aboard-the-nurture-train"
 date: "2025-06-01"
 author: "SmplCo Team"
-excerpt: "Imagine going to market, not only knowing people want what you're selling, but also having customers willing to pay right away… If this sounds too good to be true, then we've got news for you: it ain't."
+excerpt: "How to go to market with customers already willing to pay — the SmplCo nurture-train approach for founders building before launch."
 tags: ["Market Fit", "Customer Development", "Nurturing", "Lunos", "MVP"]
 published: true
 readTime: "5 minutes"

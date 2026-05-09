@@ -5,7 +5,7 @@ hero_image: "/images/blog/graduation-day.jpg"
 slug: "graduation-day"
 date: "2025-05-01"
 author: "SmplCo Team"
-excerpt: "Congratulations to the first graduates of SmplAcademy! After a month of learning about, and contributing to, our 5-Day Prototyping Service, we're releasing our inaugural cohort back into wilds of education."
+excerpt: "The first graduates of SmplAcademy: after a month learning and contributing to our 5-Day Prototyping Service, what they shipped and what is next."
 tags: ["Digital Development", "SmplAcademy", "Education", "Noroff", "Graduates"]
 published: true
 readTime: "5 minutes"

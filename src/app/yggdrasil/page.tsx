@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     'Ta denne quizen og finn din designer-arketype. E du ein nevrotisk piksel-tellar, ein kaotisk kreativ, eller noko verre? 5 sliders. Full diagnose.',
   alternates: { canonical: 'https://smpl.as/yggdrasil' },
+  robots: { index: false, follow: false },
   openGraph: {
     title: 'What Kind of Designer Are You?',
     description:

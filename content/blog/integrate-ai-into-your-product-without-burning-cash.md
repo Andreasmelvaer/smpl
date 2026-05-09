@@ -5,7 +5,7 @@ hero_image: "/images/webinars/effectively-integrate-ai-into-your-product.jpg"
 slug: "integrate-ai-into-your-product-without-burning-cash"
 date: "2026-04-30"
 author: "Andreas Melvær"
-excerpt: "Six lessons from our Eagle Labs webinar on integrating AI into a product: building with AI vs putting AI inside your product, why tokens cost money, planning before vibe-coding, guardrails, defensibility, and the bigger near-term win — AI for your business, not just the product."
+excerpt: "Six lessons from our Eagle Labs webinar: AI-as-build-tool vs AI-in-product, why tokens cost money, planning before vibe-coding, guardrails, defensibility."
 tags: ["AI", "Product strategy", "Barclays Eagle Labs", "Webinar"]
 published: true
 readTime: "4 minutes"

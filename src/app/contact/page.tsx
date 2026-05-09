@@ -6,11 +6,11 @@ import { FAQJsonLd } from '@/components/JsonLd'
 
 export const metadata: Metadata = {
   title: 'Contact Us – Let\'s Build Together',
-  description: 'Get a free consultation with our digital innovation experts. One hour of advice, absolutely free.',
+  description: 'Get in touch with SmplCo. Free one-hour consultation for founders and product teams on prototypes, AI integration, or fundraising. Five offices, one team.',
   alternates: { canonical: 'https://smpl.as/contact' },
   openGraph: {
     title: 'Contact Us – Let\'s Build Together',
-    description: 'Get a free consultation with our digital innovation experts. One hour of advice, absolutely free.',
+    description: 'Get in touch with SmplCo. Free one-hour consultation for founders and product teams on prototypes, AI integration, or fundraising. Five offices, one team.',
     url: 'https://smpl.as/contact',
     type: 'website',
     siteName: 'SmplCo',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Contact Us – Let\'s Build Together',
-    description: 'Get a free consultation with our digital innovation experts. One hour of advice, absolutely free.',
+    description: 'Get in touch with SmplCo. Free one-hour consultation for founders and product teams on prototypes, AI integration, or fundraising. Five offices, one team.',
     images: ['/images/og-default.png'],
   },
 }

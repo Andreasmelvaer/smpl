@@ -1,7 +1,7 @@
 ---
 title: "Your Brand Is Too Polished. That's the Problem."
 description: "After talking about Gnu Bar at Yggdrasilkonferansen, I keep coming back to one idea: most brand communication is too polished to be remembered."
-excerpt: "A half-chaotic bar in Stavanger ended up building a more distinctive presence than a lot of very serious companies with proper budgets. Here's why that matters for founders."
+excerpt: "A half-chaotic bar in Stavanger built a more distinctive presence than companies with much bigger budgets. Here is why polished is forgettable."
 hero_image: "/images/blog/polished-is-forgettable.jpg"
 date: "2026-04-21"
 author: "Andreas Melvaer"

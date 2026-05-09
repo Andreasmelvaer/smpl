@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Kluge — Tech-Forum Stavanger',
   description: 'AI buzzword bingo for Tech-Forum Stavanger. Mark every buzzword you hear during the talks. Five in a row wins.',
   alternates: { canonical: 'https://smpl.as/kluge' },
+  robots: { index: false, follow: false },
   openGraph: {
     title: 'Kluge — Tech-Forum Stavanger',
     description: 'AI buzzword bingo for Tech-Forum Stavanger. Mark every buzzword you hear. Five in a row wins.',

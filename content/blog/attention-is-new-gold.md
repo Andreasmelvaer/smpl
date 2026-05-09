@@ -1,7 +1,7 @@
 ---
 title: "Attention Is the New Gold. Here's How Founders Win It."
 description: "People see 4,000–10,000 brand messages a day. Most are ignored. Here's how founders cut through — with TRUTH, behavioural science, and field lessons."
-excerpt: "You don't have an attention problem. You have a relevance problem. Here's what founders get wrong about winning attention — and the frameworks we use every day to help them fix it."
+excerpt: "You do not have an attention problem — you have a relevance problem. What founders get wrong about winning attention, and the frameworks we use to fix it."
 hero_image: "/images/attention-guide-promo.webp"
 date: "2026-04-21"
 author: "Michael Millar"

@@ -5,7 +5,7 @@ hero_image: "/images/blog/how-one-big-corporate-nailed-digital-innovation.jpg"
 slug: "how-one-big-corporate-nailed-digital-innovation"
 date: "2025-11-01"
 author: "SmplCo Team"
-excerpt: "Interview with Vibeke Lavik Bjaanes, Innovation Manager at SR‑Bank. She shares how the bank became good at digital innovation, a challenge for many large corporations."
+excerpt: "Interview with Vibeke Bjaanes, Innovation Manager at SR-Bank, on how a major bank became good at digital innovation — and what most corporates miss."
 tags: ["Innovation", "Corporate", "Digital Transformation", "SR-Bank", "Team Structure"]
 published: true
 readTime: "3 minutes"

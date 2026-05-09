@@ -5,7 +5,7 @@ hero_image: "/images/blog/ai-strategy-5-must-knows-truths.webp"
 slug: "ai-strategy-5-must-knows-truths"
 date: "2025-09-15"
 author: "SmplCo Team"
-excerpt: "The great AI gold rush is on. It has become an indispensable part of new tech, while those with existing products and services are rushing to integrate. But there are many traps for the unwary."
+excerpt: "The AI gold rush is on. Five truths every founder and product leader needs to know before they ship their first AI feature."
 tags: ["AI Strategy", "Business Strategy", "AI Implementation", "Fabriq AI"]
 published: true
 readTime: "5 minutes"

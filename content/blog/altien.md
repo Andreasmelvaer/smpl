@@ -5,7 +5,7 @@ hero_image: "/images/blog/altien.webp"
 slug: "altien"
 date: "2025-11-20"
 author: "SmplCo Team"
-excerpt: "Altien is bringing power to those we care for, and care about. Across Europe's residential care homes, the same problems repeat themselves every day: information is scattered across sticky notes and shift books."
+excerpt: "Altien is transforming residential care home communications, replacing scattered notes and missed calls with one connected platform."
 tags: ["Healthcare", "Care Homes", "Communication", "SaaS", "Altien"]
 published: true
 readTime: "8 minutes"

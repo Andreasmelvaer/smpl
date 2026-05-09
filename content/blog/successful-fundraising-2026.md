@@ -1,7 +1,7 @@
 ---
 title: "Successful Fundraising in 2026: What Investors Actually Want"
 description: "Key takeaways from our Barclays Eagle Labs webinar on raising investment in 2026. Traction, storytelling, and closing the deal."
-excerpt: "We joined forces with Neil Wood of Wood Associates London for a packed Barclays Eagle Labs webinar on fundraising. Over 300 founders tuned in. Here's what they learned."
+excerpt: "We joined Neil Wood of Wood Associates London for a packed Eagle Labs webinar on fundraising. 300+ founders tuned in. Here is what they learned."
 hero_image: "/images/blog/successful-fundraising-2026.jpg"
 date: "2026-03-28"
 author: "Andreas Melvær"

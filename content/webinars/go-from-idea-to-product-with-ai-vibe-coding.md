@@ -9,7 +9,7 @@ speakers: ["Line Hjartarson", "Andreas Melvær"]
 host_organisation: "Barclays Eagle Labs"
 publisher_name: "Barclays Eagle Labs"
 hero_image: "/images/blog/wibecoder.jpg"
-excerpt: "How do you turn an idea into a working product using AI? Andreas Melvær and Line Hjartarson walk through the prototype → proof of concept → MVP ladder, the actual workflow they use (Figma, Claude, GitHub, Gemini), and the mistakes that turn a fast vibe-coded build into an expensive rebuild."
+excerpt: "Andreas and Line walk through the prototype → POC → MVP ladder, the workflow they use (Figma, Claude, GitHub), and where vibe-coding turns into rebuild work."
 tags: ["AI", "Vibe coding", "Prototyping", "MVP", "Webinar", "Barclays Eagle Labs"]
 published: true
 readTime: "59 minutes"

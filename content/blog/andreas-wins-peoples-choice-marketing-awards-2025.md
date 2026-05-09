@@ -5,7 +5,7 @@ hero_image: "/images/blog/andreas-wins-peoples-choice-marketing-awards-2025.jpg"
 slug: "andreas-wins-peoples-choice-marketing-awards-2025"
 date: "2026-01-10"
 author: "SmplCo Team"
-excerpt: "Yes, the same Andreas who spends his weekdays leading SmplCo's international projects somehow also runs a local bar that's become a full-blown LinkedIn phenomenon."
+excerpt: "The same Andreas who leads SmplCo's international projects also runs a local bar — and just won the People's Choice Marketing Award for it."
 tags: ["Awards", "Marketing", "Andreas Melvær", "Gnu Bar", "LinkedIn"]
 published: true
 readTime: "1 minute"

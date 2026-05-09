@@ -5,7 +5,7 @@ hero_image: "/images/blog/why-product-nerds-outperform-creative-designers.webp"
 slug: "why-product-nerds-outperform-creative-designers"
 date: "2025-07-15"
 author: "SmplCo Team"
-excerpt: "Many product leads turn to overseas designers for cost savings and access to global talent. Sounds great in theory, until you realize just how much time and effort it takes to make it work."
+excerpt: "Many product leads hire overseas designers for cost savings. Why product-nerd designers — those who think like product people — consistently outperform."
 tags: ["Product Design", "Outsourcing", "Business Strategy", "Design Systems"]
 published: true
 readTime: "3 minutes"

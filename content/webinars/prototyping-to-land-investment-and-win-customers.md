@@ -9,7 +9,7 @@ speakers: ["Michael Millar", "Andreas Melvær"]
 host_organisation: "Barclays Eagle Labs"
 publisher_name: "Barclays Eagle Labs"
 hero_image: "/images/blog/5-day-prototype-custom-software.jpg"
-excerpt: "How can a digital prototype help you raise capital, sign partners, and land first customers — long before you have a finished product? Andreas Melvær and Michael Millar walk through the SmplCo prototyping playbook that's helped founders raise millions, win awards, and skip months of build cost."
+excerpt: "How a digital prototype can help you raise capital, sign partners, and land first customers — long before you have a finished product. Mike and Andreas, live."
 tags: ["Prototyping", "Investor pitch", "5-day prototype", "Webinar", "Barclays Eagle Labs"]
 published: true
 readTime: "62 minutes"

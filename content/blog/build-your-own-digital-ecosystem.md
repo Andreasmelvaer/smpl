@@ -1,12 +1,12 @@
 ---
-title: "We Built Custom Internal Tools Instead of SaaS. Here's Why It Worked."
+title: "We Replaced Our SaaS Stack with Custom Internal Tools"
 description: "Most companies pay for 10 tools and use 10% of each. We built our own CRM, newsletter, planner, and ad tools. Here is why custom beats off-the-shelf SaaS."
 hero_image: "/images/blog/wibecoder.jpg"
 thumbnail_image: "/images/blog/wibecoder.jpg"
 slug: "build-your-own-digital-ecosystem"
 date: "2026-04-07"
 author: "Andreas Melvaer"
-excerpt: "We replaced scattered SaaS tools with a custom CRM, newsletter system, task planner, and Meta Ads integration. Here's what we learned about building internal tools."
+excerpt: "We replaced scattered SaaS with a custom CRM, newsletter, task planner, and Meta Ads integration. What we learned about building internal tools."
 readTime: "3 min read"
 tags: ["Custom Software", "SaaS", "Digital development", "AI", "CRM"]
 published: true

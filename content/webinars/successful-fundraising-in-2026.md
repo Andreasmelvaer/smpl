@@ -9,7 +9,7 @@ speakers: ["Michael Millar", "Neil Wood"]
 host_organisation: "Barclays Eagle Labs"
 publisher_name: "Barclays Eagle Labs"
 hero_image: "/images/blog/successful-fundraising-2026.jpg"
-excerpt: "Investors are backing fewer companies but writing bigger cheques. Michael Millar and Neil Wood break down what the UK angel + VC market actually wants in 2026, how to tell a growth story backed by real traction, and the deal-killing mistakes founders keep making."
+excerpt: "Investors are backing fewer companies but writing bigger cheques. Mike Millar and Neil Wood on what the UK angel + VC market actually wants in 2026."
 tags: ["Fundraising", "Investor pitch", "Webinar", "Barclays Eagle Labs", "Founder advice"]
 published: true
 readTime: "62 minutes"

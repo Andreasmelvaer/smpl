@@ -1,7 +1,7 @@
 ---
-title: "How to Turn AI From a Risky Expense Into a Real Product Advantage"
+title: "Turn AI From a Risky Expense Into a Product Advantage"
 description: "Most teams either bolt AI onto the wrong feature, burn cash on the wrong model, or miss their chance while waiting for the perfect moment. Here's the framework we use to stop that happening. You're most welcome."
-excerpt: "Most teams either bolt AI onto the wrong feature, burn cash on the wrong model, or miss their chance while waiting for the perfect moment. Here's the four-stage framework we use to help founders avoid all this. You're most welcome."
+excerpt: "Most teams bolt AI onto the wrong feature, burn cash on the wrong model, or wait too long. The four-stage framework we use to help founders avoid all of this."
 hero_image: "/images/blog/ai-from-risk-to-advantage.jpg"
 date: "2026-04-28"
 author: "Andreas Melvær"
