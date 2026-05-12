@@ -24,7 +24,7 @@ faqs:
 
 **In short:** A Norwegian consultancy called Frei is a licensed HubSpot partner. They invited me onto their podcast to defend the decision to drop HubSpot and build SmplCo's own CRM. Their CTO is a former sculptor. The most useful 45 minutes I have spent on the build-versus-buy question.
 
-A couple of weeks ago I [wrote about](/blog/build-your-own-digital-ecosystem) why we dropped HubSpot and built our own CRM. The post landed on the LinkedIn feed of [Frei](https://frei.no/), a Norwegian consultancy. Frei consults on HubSpot every day. They are a licensed partner. I sent their producer a half-serious DM: "Is this too hot to talk about, given HubSpot?"
+A couple of weeks ago I [wrote about](/blog/build-your-own-digital-ecosystem) why we dropped HubSpot and built our own CRM. The post landed on the LinkedIn feed of [Frei](https://frei.as/), a Norwegian consultancy. Frei consults on HubSpot every day. They are a licensed partner. I sent their producer a half-serious DM: "Is this too hot to talk about, given HubSpot?"
 
 Their answer was the opposite of what I expected. They sharpened their pencils.
 
@@ -112,7 +112,7 @@ The full debate is in Norwegian. Forty-five minutes of two people who actually d
 
 Listen on [**Spotify**](https://open.spotify.com/episode/6XJKvkwhIDDtSbozeN5x8M) or [**Apple Podcasts**](https://podcasts.apple.com/no/podcast/5-vibe-or-die-eller-stole-p%C3%A5-det-som-er-bygget-debatt/id1874113969?i=1000767276048).
 
-Thanks to Dorian McFarland, host Andreas Oddane, the team at [Frei](https://frei.no/), and producer [Top of Mind](https://topofmind.no/) for taking the conversation seriously.
+Thanks to Dorian McFarland, host Andreas Oddane, the team at [Frei](https://frei.as/), and producer [Top of Mind](https://topofmind.no/) for taking the conversation seriously.
 
 Related reading:
 - [We replaced our SaaS stack with custom internal tools](/blog/build-your-own-digital-ecosystem)
