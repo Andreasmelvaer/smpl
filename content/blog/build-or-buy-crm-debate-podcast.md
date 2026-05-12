@@ -1,7 +1,7 @@
 ---
 title: "I Built My Own CRM. Then a HubSpot Partner Took Me On."
 description: "A licensed HubSpot partner invited me on their podcast to debate dropping HubSpot for a self-built CRM. Six things to think through before you do the same."
-hero_image: "/images/blog/saas-audit-build-custom-tools.jpg"
+hero_image: "/images/blog/build-or-buy-crm-debate-podcast.webp"
 slug: "build-or-buy-crm-debate-podcast"
 date: "2026-05-12"
 author: "Andreas Melvær"
