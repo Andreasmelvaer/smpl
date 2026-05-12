@@ -108,9 +108,9 @@ If you are not small, or not yet sure about the workflow, or worried about the d
 
 If you want a third option, it's the one we run at SmplCo all the time: build something small enough that the team that uses it can also maintain it, on a foundation that the rest of the world can integrate with. It's the version most companies don't realise is available to them. If you want help thinking through whether it fits your situation, [get in touch](/contact). We are not the only people who can build it, but we have done it for our own house, and for clients, often enough to have a few opinions about what works.
 
-The full debate is on Spotify, in Norwegian. Forty-five minutes of two people who actually disagree, hosted with civility.
+The full debate is in Norwegian. Forty-five minutes of two people who actually disagree, hosted with civility.
 
-[**Listen to the episode on Spotify**](https://open.spotify.com/episode/6XJKvkwhIDDtSbozeN5x8M).
+Listen on [**Spotify**](https://open.spotify.com/episode/6XJKvkwhIDDtSbozeN5x8M) or [**Apple Podcasts**](https://podcasts.apple.com/no/podcast/5-vibe-or-die-eller-stole-p%C3%A5-det-som-er-bygget-debatt/id1874113969?i=1000767276048).
 
 Thanks to Dorian McFarland, host Andreas Oddane, the team at [Frei](https://frei.no/), and producer [Top of Mind](https://topofmind.no/) for taking the conversation seriously.
 
