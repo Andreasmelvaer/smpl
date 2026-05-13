@@ -20,7 +20,7 @@ faqs:
     answer: "Tech-Forum Stavanger is a regional gathering for industry leaders in the Stavanger region. The 4 June 2026 edition focuses on AI-assisted coding and the legal grey zones it opens up for companies who want to build their own digital tools. It is hosted at CMS Kluge's offices in Herbarium, with speakers from Easee, Aline, SmplCo, and CMS Kluge. Food, drinks, and industry networking afterwards."
 ---
 
-**In short:** On 4 June I am speaking at Tech-Forum Stavanger at CMS Kluge's offices, alongside the CFO of Easee, the MD of Aline AS, and two of CMS Kluge's lawyers. The topic is AI-assisted coding and the legal grey zones it opens up for companies who want to build their own digital tools. To set it up I wired Claude into PowerOfficeGo, our accounting system. This is what I learned in the process and why we asked the lawyers to be in the room.
+**In short:** On Thursday 4 June I am speaking at Tech-Forum Stavanger at CMS Kluge's offices, alongside the CFO of Easee, the MD of Aline AS, and two of CMS Kluge's lawyers. The format is unusual: I present a working AI-coded tool, the lawyers do a live risk analysis of it on stage, and we see what survives. To set it up I wired Claude into PowerOfficeGo, our accounting system. This is what I learned in the process and why we asked the lawyers to be in the room.
 
 ## Why I built it
 
@@ -99,11 +99,19 @@ The whole reason this is interesting is that the laws were not written for last 
 
 ## If you want to come
 
-**Tech-Forum Stavanger** — Wednesday 4 June 2026, 15:30.
+**Tech-Forum Stavanger**, Thursday 4 June 2026.
 **Where**: CMS Kluge, Herbarium, Olav Kyrres gate 21, Stavanger.
-**Speakers**: Øyvind Osjord (CFO, Easee ASA), Line Hjartarson (MD, Aline AS), Andreas Melvær (MD, SmplCo), and Ove Andre Vanebo and Bernt Olav Thorsheim from CMS Kluge.
 
-Food, drinks, and industry-colleague networking afterwards. Hosted by CMS Kluge alongside Corporater, SpareBank 1 Sør-Norge, Håmsø, and Laerdal.
+**Programme**:
+- 15:30: Doors, registration, food and drinks
+- 16:00: Welcome by Linn Cathrine Jøsendal, CMS Kluge
+- 16:05: Intro to AI-assisted coding, Line Hjartarson (Aline AS)
+- 16:20: Presentation of an AI-coded tool with a live legal-and-risk analysis on stage. Me, plus Ove Andre Vanebo and Bernt Olav Thorsheim from CMS Kluge
+- 16:50: Practical experience with AI-assisted coding, Øyvind Osjord (CFO, Easee ASA)
+- 17:10: Panel discussion moderated by Bernt Olav Thorsheim, CMS Kluge
+- 17:30: Wrap, with the option to stay on the rooftop terrace if the weather holds
+
+Hosted by CMS Kluge alongside Laerdal Medical, Corporater, SpareBank 1 Sør-Norge, and Håmsø Patentbyrå.
 
 [**Register here**](https://news.cms.law/s/de1d5df3ed24f05ff0b0c7aea49148290a7923b3).
 
