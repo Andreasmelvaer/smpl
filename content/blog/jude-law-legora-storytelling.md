@@ -35,7 +35,7 @@ Jude Law isn't a gimmick. He's a signal. The signal that Legora knows the fight 
 
 That a plethora of age-old marketing adages are back ...'Sell the sizzle, not the sausage' ...'People don't buy what you do; they buy why you do it.' 
 
-There is a very long list of these, but the point is 
+There is a very long list of these, but the point is we are in an age where technological proliferation has smashed headlong into the most distrcted era in human history. And that means standing out is incredibly important ... and incredibly difficult.
 
 ## Welcome to the age of vibecoding
 
