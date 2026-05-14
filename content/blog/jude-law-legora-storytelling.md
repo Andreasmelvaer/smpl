@@ -21,6 +21,8 @@ The company is [Legora](https://legora.com) and it's just hit $100m in ARR and i
 
 You might think this is a PR trick. A flashy, vacuous piece of ad-land tomfoolery. But the Chief Revenue Officer claims the campaign has been been a [gamechanger](https://podcasts.apple.com/gb/podcast/the-twenty-minute-vc-20vc-venture-capital-startup/id958230465?i=1000767161811) that has generated a $50m sales pipeline.
 
+Welcome to the fall out of trying to market tech in a vibecoding age.
+
 ## What that signal actually means
 
 We're coming out of a cycle where tech would often sell itself. 
@@ -29,7 +31,11 @@ The technical sale is over. Legal firms know AI works. They've stopped asking *"
 
 And trust isn't won with a feature comparison table. Trust is a brand game.
 
-Jude Law isn't a gimmick. He's the signal. The signal that Legora knows the fight has moved from product to perception — and they've decided to fight it where their competitors aren't.
+Jude Law isn't a gimmick. He's a signal. The signal that Legora knows the fight has moved from product to perception — and they've decided to fight it where their competitors aren't.
+
+That a plethora of age-old marketing adages are back ...'Sell the sizzle, not the sausage' ...'People don't buy what you do; they buy why you do it.' 
+
+There is a very long list of these, but the point is 
 
 ## Welcome to the age of vibecoding
 
