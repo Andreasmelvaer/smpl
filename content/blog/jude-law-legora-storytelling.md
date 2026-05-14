@@ -1,11 +1,11 @@
 ---
-title: "A Legal AI Firm Just Hired Jude Law. Storytelling Is the Last Moat."
-description: "A legal AI firm just hired Jude Law. In a world where anyone can vibecode a product, storytelling is the only moat left. Here's why — and how to do it."
+title: "A Legal AI Firm Just Hired Jude Law. Storytelling Is Back As A Must-Have Moat."
+description: "A legal AI firm just hired Jude Law. In a world where anyone can vibecode a product, storytelling is a crucial moat for you & your tech. Here's why — and how to do it."
 hero_image: "/images/blog/jude-law-legora-storytelling.jpg"
 slug: "jude-law-legora-storytelling"
 date: "2026-05-14"
 author: "Michael Millar"
-excerpt: "A legal AI company just hired Jude Law. In a world where anyone can vibecode a product, storytelling is the only moat left. Here's why — and how to do it."
+excerpt: "A legal AI company just hired Jude Law. In a world where anyone can vibecode a product, storytelling is a crucial moat for you & your tech. Here's why — and how to do it."
 tags: ["Brand Strategy", "Storytelling", "Marketing", "AI"]
 published: true
 readTime: "8 minutes"
@@ -19,13 +19,11 @@ The company is [Legora](https://legora.com). $5.6B valuation. $600M raised in tw
 
 *"It's fair to assume I know quite a bit about law — after all, my name is Jude."*
 
-I saw the spot while doom-scrolling on my commute. By the time I'd come out of Old St station, the OOH posters were everywhere. I broke a traffic light to photograph them. Before I'd even opened my laptop, I was already writing this.
-
-That, right there, is the whole point.
+You might think this is a PR trick. A flashy, vacuous piece of ad-land tomfoolery. But the Chief Revenue Officer claims the campaign has been been a [gamechanger](https://podcasts.apple.com/gb/podcast/the-twenty-minute-vc-20vc-venture-capital-startup/id958230465?i=1000767161811) that has generated a $50m sales pipeline.
 
 ## What that signal actually means
 
-When B2B software starts running celebrity campaigns, the category has crossed a line.
+We're coming out of a cycle where tech would often sell itself. 
 
 The technical sale is over. Legal firms know AI works. They've stopped asking *"does this product do the thing?"* and started asking *"do I trust the people behind it?"*.
 
