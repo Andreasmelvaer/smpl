@@ -27,7 +27,7 @@ Welcome to the fall out of trying to market tech in a vibecoding age.
 
 We're coming out of a cycle where tech would often sell itself. 
 
-The technical sale is over. Legal firms know AI works. They've stopped asking *"does this product do the thing?"* and started asking *"do I trust the people behind it?"*.
+That technical sale is over. Take the Legora example: legal firms know AI works. They've stopped asking *"does this product do the thing?"* and started asking *"do I trust the people behind it?"*.
 
 And trust isn't won with a feature comparison table. Trust is a brand game.
 
