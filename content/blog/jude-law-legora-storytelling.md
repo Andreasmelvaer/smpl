@@ -41,7 +41,7 @@ There is a very long list of these, but the point is we are in an age where tech
 
 There's a bigger force at work here, and every founder needs to understand it.
 
-A year ago, you needed engineers, a stack, six months and a runway to build a credible product. Today an enterprising teenager with Claude, Cursor and a free weekend can ship a working B2B SaaS prototype before dinner. We've started calling it [vibecoding](../services) — and it has completely demolished the assumption that *building the thing* is the hard part.
+A year ago, you needed engineers, a stack, six months and a runway to build a credible product. Today an enterprising teenager with Claude, Cursor and a free weekend can ship a working B2B SaaS prototype before dinner. We've started calling it [vibecoding](../services), and it has completely demolished the assumption that *building the thing* is the hard part.
 
 When everyone can build, building stops being the moat.
 
@@ -68,7 +68,7 @@ Probably not. Yet that's exactly how most founders go to market.
 
 They lead with the product. The features. The integrations. The roadmap. The unit economics, if they're feeling really seductive.
 
-But customers — even B2B ones, even procurement teams, even general counsel — don't buy that way. They buy from brands they feel something about. Google's own research found:
+But customers, even B2B ones, even procurement teams, even general counsel, don't buy that way. They buy from brands they feel something about. Google's own research found:
 
 - **50%** of B2B buyers are more likely to buy if they connect emotionally with your brand
 - **71%** purchase when they see personal value in your business
