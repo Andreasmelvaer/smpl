@@ -31,11 +31,13 @@ That technical sale is over. Take the Legora example: legal firms know AI works.
 
 And trust isn't won with a feature comparison table. Trust is a brand game.
 
-Jude Law isn't a gimmick. He's a signal. The signal that Legora knows the fight has moved from product to perception — and they've decided to fight it where their competitors aren't.
+Jude Law isn't a gimmick. He's a signal. The signal that Legora knows the fight has moved from product to perception. And they've decided to fight it where their competitors aren't.
 
-That a plethora of age-old marketing adages are back ...'Sell the sizzle, not the sausage' ...'People don't buy what you do; they buy why you do it.' 
+That means a plethora of age-old marketing adages are back in fashion ...'Sell the sizzle, not the sausage' ...'People don't buy what you do; they buy why you do it.' 
 
-There is a very long list of these, but the point is we are in an age where technological proliferation has smashed headlong into the most distrcted era in human history. And that means standing out is incredibly important ... and incredibly difficult.
+There is a very long list of these, but the point is we are in an age where technological proliferation has smashed headlong into the most distracted era in human history. 
+
+And that means standing out from the crowd is incredibly important ... and incredibly difficult.
 
 ## Welcome to the age of vibecoding
 
