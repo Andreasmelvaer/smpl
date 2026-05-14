@@ -15,7 +15,7 @@ readTime: "8 minutes"
 
 Not a lawyer. Not an AI expert. **Jude Law.**
 
-The company is [Legora](https://legora.com). $5.6B valuation. $600M raised in two months. And they've spent some of it on a Hollywood actor opening a campaign with the line:
+The company is [Legora](https://legora.com) and it's just hit $100m in ARR and is on track to hit $250m in ARR by the end of the year. They've just rasised $550m at Series D. And they've spent some of it on a Hollywood actor opening a campaign with the line:
 
 *"It's fair to assume I know quite a bit about law — after all, my name is Jude."*
 
