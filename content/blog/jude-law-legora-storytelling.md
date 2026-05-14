@@ -49,7 +49,7 @@ When everyone can build, building stops being the moat.
 
 Look around. The same AI features ship in twelve products at once. The same agent demos. The same "we're the [insert noun] for [insert vertical]" pitch decks. The category page on any given AI product hunt looks like a hall of mirrors.
 
-If your differentiator is your product, congratulations: you are differentiating on the cheapest, most replicable thing in the entire stack.
+If your differentiator is your product, congratulations: there's a good chance you are differentiating on the cheapest, most replicable thing in the entire stack.
 
 ## So what *is* the moat?
 
