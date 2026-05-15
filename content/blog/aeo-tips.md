@@ -158,3 +158,15 @@ The five tips above are exactly what we applied to the SmplCo website. None of t
 **If you want help auditing your site for AI searchability, or rebuilding pages to be AEO-ready — [get in touch](/contact) or email me on [mike@smpl.as](mailto:mike@smpl.as).**
 
 **It's the kind of thing we do well. And we have a report to prove it...**
+
+
+---
+
+<div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
+  <div style="width: 56px; height: 56px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
+    <img src="/images/blog/inline/michael-millar.jpeg" alt="Michael Millar" style="width: 100%; height: 100%; object-fit: cover; object-position: center 60%; transform: scale(1.9); transform-origin: center 60%;" />
+  </div>
+  <h2 style="margin: 0;">About the Author</h2>
+</div>
+
+<a href="https://www.linkedin.com/in/michaelmillarfrsa/" target="_blank" rel="noopener noreferrer">Michael Millar</a> is a partner and founder of SmplCo. Before taking on Go-To-Market responsibilities for both SmplCo and our clients, he was a journalist (BBC, Reuters, Spectator, etc.), political lobbyist and global comms leader.
