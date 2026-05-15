@@ -97,7 +97,9 @@ This isn't romanticism. It's neurology.
 
 That's why the WSJ recently declared big US companies [are desperately seeking 'storytellers'](https://www.wsj.com/articles/companies-are-desperately-seeking-storytellers-7b79f54e). They've finally noticed that engineering can scale, distribution can scale, the algorithm can scale — but the part that actually moves a buyer over the line is a human telling another human something they want to hear.
 
-In 2026 a lot of people are realising they have to rediscover one of the oldest skills humanity possesses.
+In 2026 a lot of people are realising they have to rediscover one of the oldest skills humanity possesses: storytelling.
+
+But - and this is a BIG BUT - there's an elephant in room here: if AI can magically produce products, it can, of course, magically create stories. Bad stories. Drab, dull, mid-of-the-road stories. And, by God, we're drowining in those.
 
 ## 7 rules to tell stories that actually land
 
