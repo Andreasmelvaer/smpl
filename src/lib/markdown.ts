@@ -34,11 +34,30 @@ export async function getPostData(folder: string, slug: string): Promise<PostDat
 export function getAllPosts(folder: string): string[] {
   const fullPath = path.join(contentDirectory, folder)
   if (!fs.existsSync(fullPath)) return []
-  
+
   const fileNames = fs.readdirSync(fullPath)
   return fileNames
     .filter(name => name.endsWith('.md'))
     .map(name => name.replace(/\.md$/, ''))
+}
+
+export interface PostMeta {
+  slug: string
+  date?: string
+}
+
+export function getAllPostsMeta(folder: string): PostMeta[] {
+  const fullPath = path.join(contentDirectory, folder)
+  if (!fs.existsSync(fullPath)) return []
+
+  return fs.readdirSync(fullPath)
+    .filter(name => name.endsWith('.md'))
+    .map(name => {
+      const slug = name.replace(/\.md$/, '')
+      const fileContents = fs.readFileSync(path.join(fullPath, name), 'utf8')
+      const { data } = matter(fileContents)
+      return { slug, date: typeof data.date === 'string' ? data.date : undefined }
+    })
 }
 
 export async function getAllPostsData(folder: string): Promise<PostData[]> {
