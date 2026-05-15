@@ -35,7 +35,7 @@ That technical sale is over. Take the Legora example: legal firms know AI works.
 
 And trust isn't won with a feature comparison table. Trust is a brand game. It's about what people say about you when you're not in the room.
 
-Jude Law isn't a gimmick. He's a signal. The signal that Legora knows the fight has moved from product towards perception. And they've decided to fight it where their competitors aren't.
+Jude Law isn't a gimmick. He's a signal. The signal that Legora knows the fight has moved from flashy tech product (AI *obvs*) towards perception. And they've decided to fight it where their competitors aren't.
 
 That means a plethora of age-old marketing adages are back in fashion ...'Sell the sizzle, not the sausage' ...'People don't buy what you do; they buy why you do it.' And so on, and so on.
 
