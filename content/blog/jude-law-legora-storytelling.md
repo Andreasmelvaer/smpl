@@ -160,14 +160,3 @@ If you want the frameworks we use to help founders earn this kind of attention â
 These are the frameworks we use every day to help founders earn attention that converts.
 
 And if you want to talk through how to apply any of it to your own situation, [drop me a line](mailto:mike@smpl.as) or [get in touch](../contact). I love a bit of storytelling...
-
----
-
-<div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem;">
-  <div style="width: 56px; height: 56px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
-    <img src="/images/blog/inline/michael-millar.jpeg" alt="Michael Millar" style="width: 100%; height: 100%; object-fit: cover; object-position: center 60%; transform: scale(1.9); transform-origin: center 60%;" />
-  </div>
-  <h2 style="margin: 0;">About the Author</h2>
-</div>
-
-<a href="https://www.linkedin.com/in/michaelmillarfrsa/" target="_blank" rel="noopener noreferrer">Michael Millar</a> is a partner and founder of SmplCo. Before taking on Go-To-Market responsibilities for both SmplCo and our clients, he was a journalist (BBC, Reuters, Spectator, etc.), political lobbyist and global comms leader.
