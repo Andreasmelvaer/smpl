@@ -15,27 +15,31 @@ readTime: "8 minutes"
 
 Not a lawyer. Not an AI expert. **Jude Law.**
 
-The company is [Legora](https://legora.com) and it's just hit $100m in ARR and is on track to hit $250m in ARR by the end of the year. They've just raised $550m at Series D. And they've spent some of it on a Hollywood actor opening a campaign with the line:
+The company is [Legora](https://legora.com) and it's just hit $100m in ARR and is on track to hit $250m in ARR by the end of the year. They've just raised $550m at Series D. 
+
+And they've spent some of it on a Hollywood actor opening a campaign with the line:
 
 *"It's fair to assume I know quite a bit about law — after all, my name is Jude."*
 
-You might think this is a PR trick. A flashy, vacuous piece of ad-land tomfoolery. But the Chief Revenue Officer claims the campaign has been been a [gamechanger](https://podcasts.apple.com/gb/podcast/the-twenty-minute-vc-20vc-venture-capital-startup/id958230465?i=1000767161811) that has generated a $50m sales pipeline.
+You might think this is a PR trick. A flashy, vacuous piece of ad-land tomfoolery, born of suddenly having too much cash. 
 
-Welcome to the fall out of trying to market tech in a vibecoding age.
+But the Chief Revenue Officer claims the campaign has been been a [gamechanger](https://podcasts.apple.com/gb/podcast/the-twenty-minute-vc-20vc-venture-capital-startup/id958230465?i=1000767161811), generating a $50m sales pipeline.
+
+Welcome to marketing tech in a vibecoding age.
 
 ## What that signal actually means
 
 We're coming out of a cycle where tech would often sell itself. 
 
-That technical sale is over. Take the Legora example: legal firms know AI works. They've stopped asking *"does this product do the thing?"* and started asking *"do I trust the people behind it?"*.
+That technical sale is over. Take the Legora example: legal firms know AI works. Now, they're not just asking *"does this product do the thing?"*, they've started asking *"do I trust the people behind it?"*. 
 
-And trust isn't won with a feature comparison table. Trust is a brand game.
+And trust isn't won with a feature comparison table. Trust is a brand game. It's about what people say about you when you're not in the room.
 
-Jude Law isn't a gimmick. He's a signal. The signal that Legora knows the fight has moved from product to perception. And they've decided to fight it where their competitors aren't.
+Jude Law isn't a gimmick. He's a signal. The signal that Legora knows the fight has moved from product towards perception. And they've decided to fight it where their competitors aren't.
 
-That means a plethora of age-old marketing adages are back in fashion ...'Sell the sizzle, not the sausage' ...'People don't buy what you do; they buy why you do it.' 
+That means a plethora of age-old marketing adages are back in fashion ...'Sell the sizzle, not the sausage' ...'People don't buy what you do; they buy why you do it.' And so on, and so on.
 
-There is a very long list of these, but the point is we are in an age where technological proliferation has smashed headlong into the most distracted era in human history. 
+The point is we are in an age where technological proliferation has smashed headlong into the most distracted era in human history. 
 
 And that means standing out from the crowd is incredibly important ... and incredibly difficult.
 
