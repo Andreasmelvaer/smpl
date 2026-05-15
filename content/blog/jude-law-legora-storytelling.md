@@ -45,11 +45,11 @@ And that means standing out from the crowd is incredibly important ... and incre
 
 ## Welcome to the age of vibecoding
 
-There's a bigger force at work here, and every founder needs to understand it.
+There's a bigger force at work here, and every entepreneur and innovator needs to understand it.
 
-A year ago, you needed engineers, a stack, six months and a runway to build a credible product. Today an enterprising teenager with Claude, Cursor and a free weekend can ship a working B2B SaaS prototype before dinner. We've started calling it [vibecoding](../services), and it has completely demolished the assumption that *building the thing* is the hard part.
+A year ago, you needed engineers, a stack, six months and a runway to build a credible product. Today an enterprising teenager with Claude, Lovable, or Base 44 can ship a working B2B SaaS prototype before dinner. We've started calling it [vibecoding](../services), and it has completely demolished the assumption that *building the thing* is the hard part.
 
-When everyone can build, building stops being the moat.
+When everyone can build, building stops being the moat. (Building *well* is a different matter altogether - we've got a whole guide to that [here](https://smpl.as/blog/ai-from-risk-to-advantage).
 
 Look around. The same AI features ship in twelve products at once. The same agent demos. The same "we're the [insert noun] for [insert vertical]" pitch decks. The category page on any given AI product hunt looks like a hall of mirrors.
 
