@@ -48,21 +48,23 @@ And that means standing out from the crowd is incredibly important ... and incre
 
 There's a bigger force at work here, and every entepreneur and innovator needs to understand it.
 
-A year ago, you needed engineers, a stack, six months and a runway to build a credible product. Today an enterprising teenager with Claude, Lovable, or Base 44 can ship a working B2B SaaS prototype before dinner. We've started calling it [vibecoding](../services), and it has completely demolished the assumption that *building the thing* is the hard part.
+A year ago, you needed engineers, a stack, six months and a runway to build a credible product. Today an enterprising teenager with Claude, Lovable, or Base 44 can ship a working B2B SaaS prototype before dinner. 
 
-When everyone can build, building stops being the moat. (Building *well* is a different matter altogether - we've got a whole guide to that [here](https://smpl.as/blog/ai-from-risk-to-advantage).
+We've started calling it [vibecoding](../services), and it has completely demolished the assumption that *building the thing* is the hard part.
 
-Look around. The same AI features ship in twelve products at once. The same agent demos. The same "we're the [insert noun] for [insert vertical]" pitch decks. The category page on any given AI product hunt looks like a hall of mirrors.
+When everyone can build, building alone stops being the moat - particularly when so many vibecoding builds don't stand a chance of being sustainable or scalable (we've got a whole guide to building well [here](https://smpl.as/blog/ai-from-risk-to-advantage).
 
-If your differentiator is your product, congratulations: there's a good chance you are differentiating on the cheapest, most replicable thing in the entire stack.
+But, whether you build well or not, the core truth remains: if your differentiator is your product alone, there's a good chance you are differentiating on the cheapest, most replicable thing in the entire stack.
 
-## So what *is* the moat?
+## So what *is* a moat exactly?
 
-The moat is the thing that can't be instantly vibecoded. It's the thing a competitor can't replicate over a free weekend.
+A moat is the thing that can't be instantly vibecoded. It's the thing a competitor can't replicate over a free weekend.
 
-And your proprietary tech - or clever application of multiple other pieces of tech - can and should still be a crucial part of that moat.
+And your proprietary tech - or clever application of multiple other pieces of tech - MUST still be a crucial part of that moat. 
 
-But much harder to rpelicate is how people feel when they hear your name. The story they tell their colleagues about you. The reason they pick you when, on paper, the two options look identical.
+*Stories only work if you base them on something of substance.*
+
+But much harder to replicate than your tech is how people feel when they hear your name. The story they tell their colleagues about you. The reason they pick you when, on paper, the two options look identical.
 
 That's the power of brand. And the engine that builds brand at speed is storytelling.
 
@@ -73,7 +75,7 @@ That's the power of brand. And the engine that builds brand at speed is storytel
 
 Probably not. Yet that's exactly how most tech entrepreneurs go to market.
 
-They lead with the product. The features. The integrations. The roadmap. The unit economics, if they're feeling really seductive.
+They lead with the product. The features. The integrations. The roadmap. The unit economics, if they're feeling really seductive. 
 
 But customers, even B2B ones, even procurement teams, (even general counsel in the case of Legora), don't buy that way. They buy from brands they feel something about. Google's own research found:
 
@@ -81,9 +83,9 @@ But customers, even B2B ones, even procurement teams, (even general counsel in t
 - **71%** purchase when they see personal value in your business
 - **69%** will pay a higher price to do business with a brand they believe in
 
-These aren't consumer purchases of fizzy water. These are CFO-signed enterprise contracts. And they still hinge on feeling.
+We aren't talking about consumer purchases of fizzy water. These are CFO-signed enterprise contracts. And they still hinge on feeling.
 
-That's because feeling is a shortcut for trust. And in a world where anyone can vibecode a passable product, trust is the *only* variable left worth competing on.
+That's because feeling is a shortcut for trust. And in a world where anyone can vibecode a passable product, trust is a variable that is worth competing on and will repay you many times over.
 
 ## Why storytelling, specifically?
 
