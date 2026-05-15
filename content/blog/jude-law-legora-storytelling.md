@@ -57,24 +57,24 @@ If your differentiator is your product, congratulations: there's a good chance y
 
 ## So what *is* the moat?
 
-The moat is the thing that can't be vibecoded. It's the thing a competitor can't replicate over a free weekend.
+The moat is the thing that can't be instantly vibecoded. It's the thing a competitor can't replicate over a free weekend.
 
-It's how people feel when they hear your name. The story they tell their colleagues about you. The reason they pick you when, on paper, the two options look identical.
+And your proprietary tech - or clever application of multiple other pieces of tech - can and should still be a crucial part of that moat.
 
-It's brand. And the engine that builds brand at speed is storytelling.
+But much harder to rpelicate is how people feel when they hear your name. The story they tell their colleagues about you. The reason they pick you when, on paper, the two options look identical.
 
-Legora figured it out. So did Liquid Death (water — *water* — built into a billion-dollar brand on attitude alone). So did Mailchimp before them. So did Patagonia. None of these companies have a technical moat. They have a *story* moat.
+That's the power of brand. And the engine that builds brand at speed is storytelling.
 
 ![The author, telling stories back in the day](/images/blog/inline/brand-stories-inline.png)
 *The author, telling stories back in the day*
 
 ## "Would you ask someone to marry you on the first date?"
 
-Probably not. Yet that's exactly how most founders go to market.
+Probably not. Yet that's exactly how most tech entrepreneurs go to market.
 
 They lead with the product. The features. The integrations. The roadmap. The unit economics, if they're feeling really seductive.
 
-But customers, even B2B ones, even procurement teams, even general counsel, don't buy that way. They buy from brands they feel something about. Google's own research found:
+But customers, even B2B ones, even procurement teams, (even general counsel in the case of Legora), don't buy that way. They buy from brands they feel something about. Google's own research found:
 
 - **50%** of B2B buyers are more likely to buy if they connect emotionally with your brand
 - **71%** purchase when they see personal value in your business
@@ -86,7 +86,7 @@ That's because feeling is a shortcut for trust. And in a world where anyone can 
 
 ## Why storytelling, specifically?
 
-Because it's the only format the human brain is actually built for.
+Because it's the format the human brain is actually built for.
 
 Studies show neural activity increases roughly fivefold when we hear a good story. People retain about [70% of information delivered through stories](https://speakingcpr.com/the-numbers-dont-lie-stories-not-statistics-make-you-memorable/), versus only 10% from data and statistics. A good story triggers dopamine (memory) and oxytocin (connection). A good spec sheet triggers… nothing.
 
@@ -94,19 +94,19 @@ This isn't romanticism. It's neurology.
 
 That's why the WSJ recently declared big US companies [are desperately seeking 'storytellers'](https://www.wsj.com/articles/companies-are-desperately-seeking-storytellers-7b79f54e). They've finally noticed that engineering can scale, distribution can scale, the algorithm can scale — but the part that actually moves a buyer over the line is a human telling another human something they want to hear.
 
-In 2026, that's the rarest skill in the building.
+In 2026 a lot of people are realising they have to rediscover one of the oldest skills humanity possesses.
 
 ## 7 rules to tell stories that actually land
 
-The rules of good storytelling haven't changed since we were doing it around campfires. The medium has — the principles haven't.
+The rules of good storytelling haven't changed since we were doing it around campfires. The medium has, but the principles haven't.
 
-- **Pick a defined audience.** One size never fits all. Generic stories land generically — which is to say, nowhere.
+- **Pick a defined audience.** One size never fits all. Generic stories land generically, which is to say, nowhere.
 - **Lead with entertain / educate / inspire — not "look at me, I'm great."** Use an 80/20 rule. Eighty percent serving them, twenty percent serving you.
 - **Benefits before features.** Nobody cares about your shiny thing until they know what it does for them.
-- **Topical, relevant, unusual.** Inject conflict. Put a human at the centre. (Yes — even in B2B. *Especially* in B2B.)
+- **Use TRUTH.** All the best stories are Topical, Relevant (to the audience), Unusual, contain Trouble / conflict, and have Humans at their heart. (Yes, even in B2B. *Especially* in B2B.)
 - **Consistency beats virality.** Show up reliably enough that showing up becomes expected. That compounds. Viral doesn't.
 - **Pick a voice and stay in it.** Clarity over flare. Always.
-- **Add hooks throughout.** Strong opinions, questions, weird facts, a memorable line, a quote. Like the one you're reading now.
+- **Add hooks throughout.** Strong opinions, questions, weird facts, a memorable line, a quote.
 
 If you read those and felt a stab of *we don't do most of those*, you're not alone. Most companies are *rubbish* at storytelling — which is exactly why getting it right wins you so much ground.
 
@@ -128,7 +128,7 @@ If you read those and felt a stab of *we don't do most of those*, you're not alo
 
 You don't need a $600M raise to do what Legora did. You need to find the thing in your business that's worth talking about — and then talk about it like a human.
 
-Stories live in places founders chronically overlook:
+Stories live in places founders overlook:
 
 - Your take on the news, trends, or someone else's story (this article is exactly that — a Jude Law ad triggered it)
 - Your origin story — *why* you built this, not *what* you built
@@ -147,19 +147,19 @@ Not awareness. They could have bought awareness with paid media at a fraction of
 
 What they bought was **a story people would tell each other** — at law firm coffee machines, on commutes, in posts like this one. Free distribution. Genuine emotional response. A category that previously thought of itself as serious and dry suddenly associated with something charming and self-aware.
 
-That's the trade every founder should be making right now, at whatever scale you can afford. You probably can't hire Jude Law. But you can do the *equivalent* — find the unexpected, human, slightly-too-bold thing that signals you understand the world your customer lives in.
+That's the trade every founder should be making right now, at whatever scale you can afford. I suspect you can't afford Jude Law. But you can do the *equivalent*. Find the unexpected, human, slightly-too-bold thing that signals you understand the world your customer lives in.
 
 In a world where everyone can build, the founder who can *tell* wins.
 
 ## Want the full version?
 
-If you want the frameworks we use to help founders earn this kind of attention — TRUTH storytelling, the master story formula, the eight behavioural science principles that actually move buyers, and six field lessons from real brand-building — we've put it all into a free 6-page guide.
+If you want the frameworks we use to help founders earn this kind of attention — TRUTH storytelling, the master story formula, the  behavioural science principles that actually move buyers, and six field lessons from real brand-building — we've put it all into a free 6-page guide.
 
 [**Download: Attention Is New Gold — The Founder's Guide to Brand & Storytelling**](../attention-guide)
 
-No buzzword salad. No thought-leadership filler. The frameworks we use every day to help founders earn attention that converts.
+These are the frameworks we use every day to help founders earn attention that converts.
 
-And if you want to talk through how to apply any of it to your own situation, [drop me a line](mailto:mike@smpl.as) or [get in touch](../contact). It's the kind of thing we help with.
+And if you want to talk through how to apply any of it to your own situation, [drop me a line](mailto:mike@smpl.as) or [get in touch](../contact). I love a bit of storytelling...
 
 ---
 
