@@ -105,10 +105,12 @@ But - and this is a BIG BUT - there's an elephant in room here: if AI can magica
 
 The rules of good storytelling haven't changed since we were doing it around campfires. The medium has, but the principles haven't.
 
+Underpinning everything is the need to tell stories with honesty
+
 - **Pick a defined audience.** One size never fits all. Generic stories land generically, which is to say, nowhere.
-- **Lead with entertain / educate / inspire — not "look at me, I'm great."** Use an 80/20 rule. Eighty percent serving them, twenty percent serving you.
-- **Benefits before features.** Nobody cares about your shiny thing until they know what it does for them.
-- **Use TRUTH.** All the best stories are Topical, Relevant (to the audience), Unusual, contain Trouble / conflict, and have Humans at their heart. (Yes, even in B2B. *Especially* in B2B.)
+- **Make it all about them.** All good stories aim to entertain, educate, inspire, and/or inform. They prioritise giving value (in whatever form that takes). They do not scream: "Look at me, I'm great"
+- **Benefits before features.** Nobody cares about your shiny thing until they know what it does for them. 
+- **Use T.R.U.T.H.** All the best stories are Topical, Relevant (to your audience), Unusual, contain Trouble / conflict, and have Humans at their heart. (Yes, even in B2B. *Especially* in B2B.)
 - **Consistency beats virality.** Show up reliably enough that showing up becomes expected. That compounds. Viral doesn't.
 - **Pick a voice and stay in it.** Clarity over flare. Always.
 - **Add hooks throughout.** Strong opinions, questions, weird facts, a memorable line, a quote.
