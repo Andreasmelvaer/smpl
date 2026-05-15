@@ -10,7 +10,7 @@ tags: ["Brand Strategy", "Storytelling", "Marketing", "AI"]
 published: true
 readTime: "8 minutes"
 ---
-**In short:** In a world where anyone can vibecode a product, storytelling has re-emerged a both crucial defensive moat for you & your tech, as well as a way to stand out and be noticed in the most distracted time in human history. Here's why — and how you can do it.
+**In short:** In a world where anyone can vibecode a product, storytelling has re-emerged a both crucial defensive moat for you & your tech, as well as a way to get noticed in the most distracted time in human history. Here's how you can tell a story and build a brand at the same time.
 
 ## A legal AI company just hired Jude Law.
 
