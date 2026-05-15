@@ -106,7 +106,7 @@ export default async function BlogPost({ params }: Props) {
 
           {/* Content */}
           <div
-            className="prose max-w-3xl"
+            className="prose blog-content max-w-3xl"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
