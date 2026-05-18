@@ -150,7 +150,7 @@ Then the SEO/AEO pass:
 5. **Commit**: `git add` the post file + any images, commit with `Publish blog: {short title}`.
 6. **Push**: `git push origin main` (or merge into main first if working on a branch/worktree). Vercel auto-deploys within ~60s.
 
-### 8. Post-Publish — Verify + Submit to Google
+### 8. Post-Publish — Verify + Submit to Google Search Console
 
 After push:
 
@@ -160,41 +160,15 @@ After push:
    ```
    Expect `200`.
 
-2. **Submit to Google Search Console** to accelerate indexing:
-   ```bash
-   node scripts/submit-to-gsc.mjs https://smpl.as/blog/{slug}
-   ```
-   - If `GSC_SERVICE_ACCOUNT_KEY_FILE` is set in `.env.local`, the script auto-submits via the Indexing API and prints the response.
-   - If the env var is missing, the script prints setup instructions — OR the user can paste the URL into [Google Search Console](https://search.google.com/search-console) URL Inspector and click "Request Indexing" manually.
+2. **Submit to Google Search Console for faster indexing** (manual, ~30 seconds):
+   - Open [Google Search Console](https://search.google.com/search-console) and select the `smpl.as` property
+   - Paste `https://smpl.as/blog/{slug}` into the URL Inspector at the top
+   - Click **Request Indexing**
+   - Done — Google usually picks it up within minutes to hours
 
-3. Report the live URL and the GSC submission result back to the user.
+   (We tried automating this via the Indexing API once. Google's API is officially scoped to `JobPosting` and `BroadcastEvent` content and the GSC ownership flow does not accept service-account emails. The 30-second manual step is the reliable path.)
 
----
-
-## One-Time Setup: Google Search Console Indexing API
-
-This only needs to be done once per dev machine. After that, every publish auto-submits.
-
-1. **Create a Google Cloud project** at https://console.cloud.google.com (or reuse an existing one).
-2. **Enable the Indexing API**: APIs & Services → Library → search "Indexing API" → Enable.
-3. **Create a service account**: IAM & Admin → Service Accounts → Create. Name it `gsc-indexer` or similar. No roles needed at the project level.
-4. **Create a JSON key**: Keys → Add Key → Create new key → JSON. Save the downloaded file somewhere safe *outside* the repo (e.g. `~/.config/smpl/gsc-key.json`).
-5. **Add the service account as an Owner** in Search Console:
-   - Open https://search.google.com/search-console
-   - Select the `smpl.as` property → Settings → Users and permissions → Add user
-   - Paste the service account's email (looks like `gsc-indexer@your-project.iam.gserviceaccount.com`)
-   - Permission: **Owner** (the Indexing API requires Owner — Full user isn't enough)
-6. **Set the env var in `.env.local`** (gitignored):
-   ```
-   GSC_SERVICE_ACCOUNT_KEY_FILE=/Users/andreasmelvaer/.config/smpl/gsc-key.json
-   ```
-7. **Test it**:
-   ```bash
-   node scripts/submit-to-gsc.mjs https://smpl.as/blog/automated-beer-festival-in-an-afternoon
-   ```
-   You should see a JSON response with a `notifyTime` field. If you see an auth error, the service account isn't an Owner yet (step 5).
-
-**Caveat**: Google officially restricts the Indexing API to `JobPosting` and `BroadcastEvent` schemas. In practice it works for blog content, but Google reserves the right to reject. If submission ever stops working, fall back to the manual URL Inspector step.
+3. Report the live URL back to the user, with a reminder to submit it to GSC manually.
 
 ---
 
